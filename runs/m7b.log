@@ -1,0 +1,349 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260712_185711.log
+2026-07-12T18:57:12Z [166ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:12Z [166ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:12Z [235ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-07-12T18:57:12Z [237ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-07-12T18:57:12Z [237ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-07-12T18:57:12Z [237ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-07-12T18:57:12Z [795ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:12Z [795ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-12T18:57:12Z [980ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [981ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-12T18:57:12Z [981ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [981ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-12T18:57:12Z [981ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-12T18:57:12Z [981ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 478780
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 8379
+|---------------------------------------------------------------------------------------------|
+2026-07-12T18:57:14Z [2,236ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,236ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,245ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,245ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,250ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,250ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,259ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,259ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,260ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,260ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,261ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-12T18:57:14Z [2,261ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-12T18:57:14Z [2,510ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-07-12T18:57:14Z [3,014ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-07-12T18:57:15Z [3,029ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-07-12T18:57:17Z [5,116ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-07-12T18:57:17Z [5,218ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-07-12T18:57:17Z [5,218ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-07-12T18:57:17Z [5,219ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-07-12T18:57:18Z [6,590ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-07-12T18:57:20Z [8,907ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-07-12T18:57:21Z [9,399ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-07-12_18-57-21.log[0m
+[36m========================================================================================================[0m
+
+[33m18:57:21 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.583043 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 3.300528 seconds
+[INFO]: Completed setting up the environment...
+2026-07-12T18:57:30Z [18,684ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+iter   1/244  step     8192  return     nan  success   nan  ep_len    nan  hazard_steps   nan  approx_kl 0.0161  SPS 857
+iter   2/244  step    16384  return     nan  success   nan  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 840
+iter   3/244  step    24576  return     nan  success   nan  ep_len    nan  hazard_steps   nan  approx_kl 0.0103  SPS 850
+iter   4/244  step    32768  return     nan  success   nan  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 860
+iter   5/244  step    40960  return  -4.066  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0079  SPS 862
+iter   6/244  step    49152  return  -4.066  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0080  SPS 862
+iter   7/244  step    57344  return  -4.066  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0096  SPS 846
+iter   8/244  step    65536  return  -4.066  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0071  SPS 818
+iter   9/244  step    73728  return  -4.066  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0073  SPS 795
+iter  10/244  step    81920  return  -3.584  success  0.00  ep_len  599.0  hazard_steps   1.4  approx_kl 0.0050  SPS 778
+iter  11/244  step    90112  return  -3.584  success  0.00  ep_len  599.0  hazard_steps   1.4  approx_kl 0.0063  SPS 765
+iter  12/244  step    98304  return  -3.584  success  0.00  ep_len  599.0  hazard_steps   1.4  approx_kl 0.0034  SPS 757
+iter  13/244  step   106496  return  -3.394  success  0.01  ep_len  597.0  hazard_steps   1.4  approx_kl 0.0029  SPS 754
+iter  14/244  step   114688  return  -3.758  success  0.02  ep_len  596.0  hazard_steps   2.5  approx_kl 0.0036  SPS 750
+iter  15/244  step   122880  return  -4.163  success  0.02  ep_len  596.0  hazard_steps   4.2  approx_kl 0.0081  SPS 742
+iter  16/244  step   131072  return  -4.163  success  0.02  ep_len  596.0  hazard_steps   4.2  approx_kl 0.0056  SPS 747
+iter  17/244  step   139264  return  -4.163  success  0.02  ep_len  596.0  hazard_steps   4.2  approx_kl 0.0035  SPS 754
+iter  18/244  step   147456  return  -4.175  success  0.02  ep_len  596.0  hazard_steps   4.2  approx_kl 0.0078  SPS 758
+iter  19/244  step   155648  return  -4.006  success  0.00  ep_len  599.0  hazard_steps   2.8  approx_kl 0.0043  SPS 763
+iter  20/244  step   163840  return  -4.006  success  0.00  ep_len  599.0  hazard_steps   2.8  approx_kl 0.0090  SPS 768
+iter  21/244  step   172032  return  -4.006  success  0.00  ep_len  599.0  hazard_steps   2.8  approx_kl 0.0023  SPS 769
+iter  22/244  step   180224  return  -3.996  success  0.00  ep_len  599.0  hazard_steps   2.8  approx_kl 0.0016  SPS 773
+iter  23/244  step   188416  return  -4.014  success  0.00  ep_len  599.0  hazard_steps   2.8  approx_kl 0.0049  SPS 769
+iter  24/244  step   196608  return  -5.106  success  0.00  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0032  SPS 766
+iter  25/244  step   204800  return  -5.106  success  0.00  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0034  SPS 761
+iter  26/244  step   212992  return  -5.106  success  0.00  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0068  SPS 754
+iter  27/244  step   221184  return  -5.106  success  0.00  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0010  SPS 749
+iter  28/244  step   229376  return  -5.095  success  0.00  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0006  SPS 744
+iter  29/244  step   237568  return  -2.118  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0135  SPS 741
+iter  30/244  step   245760  return  -2.118  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0027  SPS 739
+iter  31/244  step   253952  return  -1.941  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0026  SPS 738
+iter  32/244  step   262144  return  -1.950  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0030  SPS 740
+iter  33/244  step   270336  return  -2.211  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0110  SPS 741
+iter  34/244  step   278528  return  -2.211  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0053  SPS 744
+iter  35/244  step   286720  return  -2.211  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0014  SPS 746
+iter  36/244  step   294912  return  -2.211  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0012  SPS 746
+iter  37/244  step   303104  return  -2.260  success  0.01  ep_len  596.7  hazard_steps   0.0  approx_kl 0.0032  SPS 744
+iter  38/244  step   311296  return  -2.315  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0054  SPS 745
+iter  39/244  step   319488  return  -2.315  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0051  SPS 743
+iter  40/244  step   327680  return  -2.315  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0034  SPS 741
+iter  41/244  step   335872  return  -2.294  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0081  SPS 739
+iter  42/244  step   344064  return  -2.294  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0058  SPS 733
+iter  43/244  step   352256  return  -2.079  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0065  SPS 725
+iter  44/244  step   360448  return  -2.079  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0012  SPS 724
+iter  45/244  step   368640  return  -2.079  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0019  SPS 724
+iter  46/244  step   376832  return  -2.079  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0019  SPS 726
+iter  47/244  step   385024  return  -2.183  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0031  SPS 727
+iter  48/244  step   393216  return  -2.183  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0065  SPS 730
+iter  49/244  step   401408  return  -2.183  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0005  SPS 733
+iter  50/244  step   409600  return  -2.183  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0049  SPS 734
+iter  51/244  step   417792  return  -2.183  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0053  SPS 736
+iter  52/244  step   425984  return  -2.178  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0064  SPS 737
+iter  53/244  step   434176  return  -2.178  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0058  SPS 737
+iter  54/244  step   442368  return  -2.178  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0044  SPS 736
+iter  55/244  step   450560  return  -2.178  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0024  SPS 735
+iter  56/244  step   458752  return  -2.178  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0008  SPS 734
+iter  57/244  step   466944  return  -2.045  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0049  SPS 735
+iter  58/244  step   475136  return  -2.045  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0050  SPS 734
+iter  59/244  step   483328  return  -2.045  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0021  SPS 734
+iter  60/244  step   491520  return  -2.045  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0028  SPS 733
+iter  61/244  step   499712  return  -2.606  success  0.00  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0060  SPS 733
+iter  62/244  step   507904  return  -2.606  success  0.00  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0090  SPS 735
+iter  63/244  step   516096  return  -2.606  success  0.00  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0026  SPS 736
+iter  64/244  step   524288  return  -2.606  success  0.00  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0010  SPS 737
+iter  65/244  step   532480  return  -2.606  success  0.00  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0068  SPS 739
+iter  66/244  step   540672  return  -2.162  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0057  SPS 741
+iter  67/244  step   548864  return  -2.162  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0020  SPS 741
+iter  68/244  step   557056  return  -2.162  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0020  SPS 742
+iter  69/244  step   565248  return  -2.173  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0063  SPS 742
+iter  70/244  step   573440  return  -2.162  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0011  SPS 741
+iter  71/244  step   581632  return  -2.152  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0055  SPS 740
+iter  72/244  step   589824  return  -2.152  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0072  SPS 739
+iter  73/244  step   598016  return  -2.152  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0031  SPS 738
+iter  74/244  step   606208  return  -2.141  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0021  SPS 738
+iter  75/244  step   614400  return  -2.128  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0050  SPS 737
+iter  76/244  step   622592  return  -2.128  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0081  SPS 737
+iter  77/244  step   630784  return  -2.128  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0059  SPS 737
+iter  78/244  step   638976  return  -2.118  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0093  SPS 737
+iter  79/244  step   647168  return  -2.108  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0067  SPS 738
+iter  80/244  step   655360  return  -2.061  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0044  SPS 740
+iter  81/244  step   663552  return  -2.061  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0057  SPS 741
+iter  82/244  step   671744  return  -2.061  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0038  SPS 743
+iter  83/244  step   679936  return  -2.051  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0048  SPS 744
+iter  84/244  step   688128  return  -2.040  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0120  SPS 744
+iter  85/244  step   696320  return  -2.001  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0063  SPS 745
+iter  86/244  step   704512  return  -2.001  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0062  SPS 745
+iter  87/244  step   712704  return  -2.001  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0109  SPS 746
+iter  88/244  step   720896  return  -1.998  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0113  SPS 745
+iter  89/244  step   729088  return  -1.906  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0098  SPS 744
+iter  90/244  step   737280  return  -1.906  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0062  SPS 744
+iter  91/244  step   745472  return  -1.906  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0071  SPS 742
+iter  92/244  step   753664  return  -1.902  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0104  SPS 742
+iter  93/244  step   761856  return  -1.889  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0047  SPS 741
+iter  94/244  step   770048  return  -1.891  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0086  SPS 742
+iter  95/244  step   778240  return  -1.891  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0057  SPS 743
+iter  96/244  step   786432  return  -1.891  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0074  SPS 743
+iter  97/244  step   794624  return  -1.895  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0037  SPS 744
+iter  98/244  step   802816  return  -1.898  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0064  SPS 745
+iter  99/244  step   811008  return  -1.536  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0054  SPS 746
+iter 100/244  step   819200  return  -1.536  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0096  SPS 746
+iter 101/244  step   827392  return  -1.536  success  0.00  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0057  SPS 747
+iter 102/244  step   835584  return  -1.509  success  0.01  ep_len  596.7  hazard_steps   0.3  approx_kl 0.0088  SPS 748
+iter 103/244  step   843776  return  -2.959  success  0.01  ep_len  596.7  hazard_steps   4.1  approx_kl 0.0059  SPS 747
+iter 104/244  step   851968  return  -2.959  success  0.01  ep_len  596.7  hazard_steps   4.1  approx_kl 0.0101  SPS 747
+iter 105/244  step   860160  return  -2.959  success  0.01  ep_len  596.7  hazard_steps   4.1  approx_kl 0.0088  SPS 746
+iter 106/244  step   868352  return  -2.250  success  0.05  ep_len  585.7  hazard_steps   4.1  approx_kl 0.0076  SPS 746
+iter 107/244  step   876544  return  -2.250  success  0.05  ep_len  585.7  hazard_steps   4.1  approx_kl 0.0025  SPS 745
+iter 108/244  step   884736  return  -5.873  success  0.04  ep_len  588.0  hazard_steps  11.4  approx_kl 0.0073  SPS 744
+iter 109/244  step   892928  return  -5.873  success  0.04  ep_len  588.0  hazard_steps  11.4  approx_kl 0.0074  SPS 743
+iter 110/244  step   901120  return  -5.341  success  0.07  ep_len  578.9  hazard_steps  11.4  approx_kl 0.0085  SPS 744
+iter 111/244  step   909312  return  -5.146  success  0.08  ep_len  576.0  hazard_steps  11.4  approx_kl 0.0035  SPS 744
+iter 112/244  step   917504  return  -5.109  success  0.08  ep_len  576.0  hazard_steps  11.4  approx_kl 0.0084  SPS 745
+iter 113/244  step   925696  return -10.016  success  0.07  ep_len  579.1  hazard_steps  21.2  approx_kl 0.0033  SPS 745
+iter 114/244  step   933888  return -10.016  success  0.07  ep_len  579.1  hazard_steps  21.2  approx_kl 0.0050  SPS 746
+iter 115/244  step   942080  return  -6.826  success  0.22  ep_len  536.6  hazard_steps  19.8  approx_kl 0.0123  SPS 747
+iter 116/244  step   950272  return -10.126  success  0.31  ep_len  515.7  hazard_steps  29.5  approx_kl 0.0026  SPS 747
+iter 117/244  step   958464  return -14.085  success  0.27  ep_len  527.7  hazard_steps  35.4  approx_kl 0.0064  SPS 748
+iter 118/244  step   966656  return -14.295  success  0.30  ep_len  519.2  hazard_steps  37.0  approx_kl 0.0039  SPS 748
+iter 119/244  step   974848  return -14.295  success  0.30  ep_len  519.2  hazard_steps  37.0  approx_kl 0.0053  SPS 747
+iter 120/244  step   983040  return -16.881  success  0.34  ep_len  508.1  hazard_steps  42.9  approx_kl 0.0062  SPS 746
+iter 121/244  step   991232  return -19.651  success  0.32  ep_len  518.8  hazard_steps  47.6  approx_kl 0.0123  SPS 746
+iter 122/244  step   999424  return -15.893  success  0.18  ep_len  554.3  hazard_steps  34.3  approx_kl 0.0037  SPS 745
+iter 123/244  step  1007616  return -15.613  success  0.22  ep_len  544.7  hazard_steps  34.9  approx_kl 0.0036  SPS 745
+iter 124/244  step  1015808  return -15.325  success  0.33  ep_len  525.8  hazard_steps  37.8  approx_kl 0.0033  SPS 744
+iter 125/244  step  1024000  return -15.852  success  0.36  ep_len  521.0  hazard_steps  38.9  approx_kl 0.0020  SPS 743
+iter 126/244  step  1032192  return -15.462  success  0.39  ep_len  515.4  hazard_steps  39.1  approx_kl 0.0024  SPS 743
+iter 127/244  step  1040384  return -13.089  success  0.40  ep_len  508.6  hazard_steps  34.4  approx_kl 0.0069  SPS 744
+iter 128/244  step  1048576  return -13.135  success  0.52  ep_len  484.5  hazard_steps  39.0  approx_kl 0.0047  SPS 744
+iter 129/244  step  1056768  return -13.775  success  0.47  ep_len  500.5  hazard_steps  38.1  approx_kl 0.0065  SPS 744
+iter 130/244  step  1064960  return -10.869  success  0.38  ep_len  513.7  hazard_steps  29.4  approx_kl 0.0093  SPS 745
+iter 131/244  step  1073152  return -13.282  success  0.36  ep_len  521.9  hazard_steps  33.6  approx_kl 0.0074  SPS 745
+iter 132/244  step  1081344  return -11.358  success  0.31  ep_len  534.5  hazard_steps  28.6  approx_kl 0.0062  SPS 745
+iter 133/244  step  1089536  return -11.326  success  0.24  ep_len  550.5  hazard_steps  26.2  approx_kl 0.0054  SPS 746
+iter 134/244  step  1097728  return  -9.536  success  0.21  ep_len  557.8  hazard_steps  21.9  approx_kl 0.0034  SPS 746
+iter 135/244  step  1105920  return -10.392  success  0.13  ep_len  577.4  hazard_steps  21.0  approx_kl 0.0052  SPS 745
+iter 136/244  step  1114112  return  -6.746  success  0.05  ep_len  589.7  hazard_steps  11.1  approx_kl 0.0038  SPS 745
+iter 137/244  step  1122304  return  -6.062  success  0.05  ep_len  589.7  hazard_steps   9.9  approx_kl 0.0074  SPS 745
+iter 138/244  step  1130496  return  -3.454  success  0.03  ep_len  592.9  hazard_steps   3.9  approx_kl 0.0051  SPS 744
+iter 139/244  step  1138688  return  -2.104  success  0.02  ep_len  594.0  hazard_steps   0.8  approx_kl 0.0102  SPS 743
+iter 140/244  step  1146880  return  -2.088  success  0.02  ep_len  592.5  hazard_steps   0.8  approx_kl 0.0033  SPS 743
+iter 141/244  step  1155072  return  -1.826  success  0.02  ep_len  592.5  hazard_steps   0.1  approx_kl 0.0064  SPS 742
+iter 142/244  step  1163264  return  -1.848  success  0.02  ep_len  592.5  hazard_steps   0.1  approx_kl 0.0039  SPS 743
+iter 143/244  step  1171456  return  -1.846  success  0.02  ep_len  592.5  hazard_steps   0.1  approx_kl 0.0026  SPS 743
+iter 144/244  step  1179648  return  -1.816  success  0.02  ep_len  592.5  hazard_steps   0.0  approx_kl 0.0031  SPS 744
+iter 145/244  step  1187840  return  -1.798  success  0.02  ep_len  592.5  hazard_steps   0.0  approx_kl 0.0045  SPS 744
+iter 146/244  step  1196032  return  -1.767  success  0.02  ep_len  592.6  hazard_steps   0.0  approx_kl 0.0037  SPS 744
+iter 147/244  step  1204224  return  -1.754  success  0.02  ep_len  592.8  hazard_steps   0.0  approx_kl 0.0038  SPS 744
+iter 148/244  step  1212416  return  -1.534  success  0.03  ep_len  589.9  hazard_steps   0.0  approx_kl 0.0056  SPS 743
+iter 149/244  step  1220608  return  -1.330  success  0.04  ep_len  588.5  hazard_steps   0.0  approx_kl 0.0060  SPS 743
+iter 150/244  step  1228800  return  -1.176  success  0.04  ep_len  588.5  hazard_steps   0.0  approx_kl 0.0062  SPS 742
+iter 151/244  step  1236992  return  -1.201  success  0.05  ep_len  587.6  hazard_steps   0.4  approx_kl 0.0133  SPS 742
+iter 152/244  step  1245184  return  -1.313  success  0.05  ep_len  587.6  hazard_steps   0.7  approx_kl 0.0070  SPS 741
+iter 153/244  step  1253376  return  -3.936  success  0.05  ep_len  587.6  hazard_steps   6.0  approx_kl 0.0036  SPS 741
+iter 154/244  step  1261568  return  -5.090  success  0.04  ep_len  590.9  hazard_steps   8.0  approx_kl 0.0050  SPS 741
+iter 155/244  step  1269760  return  -5.787  success  0.03  ep_len  593.4  hazard_steps   8.7  approx_kl 0.0051  SPS 740
+iter 156/244  step  1277952  return  -5.853  success  0.02  ep_len  594.8  hazard_steps   8.7  approx_kl 0.0066  SPS 740
+iter 157/244  step  1286144  return  -5.945  success  0.02  ep_len  594.8  hazard_steps   8.8  approx_kl 0.0059  SPS 741
+iter 158/244  step  1294336  return  -6.237  success  0.01  ep_len  595.6  hazard_steps   9.0  approx_kl 0.0053  SPS 742
+iter 159/244  step  1302528  return  -5.971  success  0.01  ep_len  595.6  hazard_steps   8.6  approx_kl 0.0027  SPS 742
+iter 160/244  step  1310720  return  -3.960  success  0.01  ep_len  595.6  hazard_steps   4.5  approx_kl 0.0073  SPS 743
+iter 161/244  step  1318912  return  -3.177  success  0.01  ep_len  598.1  hazard_steps   2.8  approx_kl 0.0058  SPS 743
+iter 162/244  step  1327104  return  -3.305  success  0.01  ep_len  598.1  hazard_steps   3.2  approx_kl 0.0052  SPS 743
+iter 163/244  step  1335296  return  -2.360  success  0.04  ep_len  590.3  hazard_steps   2.5  approx_kl 0.0029  SPS 743
+iter 164/244  step  1343488  return  -2.444  success  0.05  ep_len  586.9  hazard_steps   3.0  approx_kl 0.0064  SPS 742
+iter 165/244  step  1351680  return  -2.156  success  0.06  ep_len  583.6  hazard_steps   2.9  approx_kl 0.0060  SPS 742
+iter 166/244  step  1359872  return  -1.759  success  0.08  ep_len  576.7  hazard_steps   2.9  approx_kl 0.0036  SPS 742
+iter 167/244  step  1368064  return  -1.471  success  0.10  ep_len  572.3  hazard_steps   2.9  approx_kl 0.0056  SPS 741
+iter 168/244  step  1376256  return  -1.357  success  0.10  ep_len  572.3  hazard_steps   2.6  approx_kl 0.0077  SPS 741
+iter 169/244  step  1384448  return   0.059  success  0.13  ep_len  561.4  hazard_steps   1.1  approx_kl 0.0053  SPS 740
+iter 170/244  step  1392640  return  -0.313  success  0.11  ep_len  567.5  hazard_steps   1.2  approx_kl 0.0034  SPS 740
+iter 171/244  step  1400832  return   0.049  success  0.12  ep_len  564.0  hazard_steps   0.8  approx_kl 0.0053  SPS 739
+iter 172/244  step  1409024  return  -0.037  success  0.13  ep_len  560.3  hazard_steps   1.2  approx_kl 0.0030  SPS 740
+iter 173/244  step  1417216  return   0.208  success  0.14  ep_len  556.8  hazard_steps   1.2  approx_kl 0.0079  SPS 740
+iter 174/244  step  1425408  return   0.412  success  0.15  ep_len  554.8  hazard_steps   1.5  approx_kl 0.0041  SPS 741
+iter 175/244  step  1433600  return   0.612  success  0.16  ep_len  550.9  hazard_steps   1.5  approx_kl 0.0079  SPS 742
+iter 176/244  step  1441792  return   1.333  success  0.19  ep_len  540.4  hazard_steps   1.1  approx_kl 0.0036  SPS 742
+iter 177/244  step  1449984  return   1.908  success  0.22  ep_len  529.9  hazard_steps   1.0  approx_kl 0.0115  SPS 742
+iter 178/244  step  1458176  return   1.891  success  0.20  ep_len  536.9  hazard_steps   0.3  approx_kl 0.0031  SPS 742
+iter 179/244  step  1466368  return   2.293  success  0.22  ep_len  529.5  hazard_steps   0.3  approx_kl 0.0032  SPS 741
+iter 180/244  step  1474560  return   3.397  success  0.27  ep_len  509.8  hazard_steps   0.0  approx_kl 0.0057  SPS 741
+iter 181/244  step  1482752  return   3.369  success  0.27  ep_len  506.4  hazard_steps   0.0  approx_kl 0.0088  SPS 741
+iter 182/244  step  1490944  return   3.191  success  0.26  ep_len  508.2  hazard_steps   0.0  approx_kl 0.0065  SPS 740
+iter 183/244  step  1499136  return   2.619  success  0.23  ep_len  517.4  hazard_steps   0.0  approx_kl 0.0061  SPS 740
+iter 184/244  step  1507328  return   2.826  success  0.24  ep_len  512.7  hazard_steps   0.0  approx_kl 0.0045  SPS 739
+iter 185/244  step  1515520  return   3.160  success  0.26  ep_len  505.3  hazard_steps   0.0  approx_kl 0.0045  SPS 738
+iter 186/244  step  1523712  return   2.286  success  0.21  ep_len  523.1  hazard_steps   0.0  approx_kl 0.0037  SPS 738
+iter 187/244  step  1531904  return   2.390  success  0.22  ep_len  519.2  hazard_steps   0.0  approx_kl 0.0051  SPS 738
+iter 188/244  step  1540096  return   3.183  success  0.26  ep_len  505.1  hazard_steps   0.0  approx_kl 0.0043  SPS 739
+iter 189/244  step  1548288  return   3.498  success  0.28  ep_len  497.9  hazard_steps   0.0  approx_kl 0.0057  SPS 739
+iter 190/244  step  1556480  return   3.999  success  0.31  ep_len  487.6  hazard_steps   0.0  approx_kl 0.0036  SPS 739
+iter 191/244  step  1564672  return   4.361  success  0.33  ep_len  480.4  hazard_steps   0.0  approx_kl 0.0067  SPS 740
+iter 192/244  step  1572864  return   4.459  success  0.34  ep_len  479.8  hazard_steps   0.0  approx_kl 0.0024  SPS 740
+iter 193/244  step  1581056  return   4.695  success  0.35  ep_len  478.5  hazard_steps   0.1  approx_kl 0.0023  SPS 740
+iter 194/244  step  1589248  return   5.056  success  0.37  ep_len  472.5  hazard_steps   0.1  approx_kl 0.0079  SPS 739
+iter 195/244  step  1597440  return   5.149  success  0.38  ep_len  469.3  hazard_steps   0.3  approx_kl 0.0051  SPS 739
+iter 196/244  step  1605632  return   5.840  success  0.42  ep_len  455.2  hazard_steps   0.5  approx_kl 0.0025  SPS 739
+iter 197/244  step  1613824  return   5.277  success  0.40  ep_len  462.5  hazard_steps   1.0  approx_kl 0.0047  SPS 738
+iter 198/244  step  1622016  return   3.884  success  0.39  ep_len  463.2  hazard_steps   3.4  approx_kl 0.0063  SPS 737
+iter 199/244  step  1630208  return   2.820  success  0.35  ep_len  475.6  hazard_steps   3.9  approx_kl 0.0025  SPS 737
+iter 200/244  step  1638400  return   2.288  success  0.32  ep_len  484.6  hazard_steps   3.9  approx_kl 0.0048  SPS 737
+iter 201/244  step  1646592  return   2.565  success  0.34  ep_len  477.5  hazard_steps   3.9  approx_kl 0.0065  SPS 736
+iter 202/244  step  1654784  return   1.401  success  0.27  ep_len  503.8  hazard_steps   3.7  approx_kl 0.0037  SPS 736
+iter 203/244  step  1662976  return   1.566  success  0.27  ep_len  504.1  hazard_steps   3.5  approx_kl 0.0030  SPS 736
+iter 204/244  step  1671168  return   2.715  success  0.27  ep_len  503.9  hazard_steps   1.3  approx_kl 0.0039  SPS 737
+iter 205/244  step  1679360  return   3.525  success  0.30  ep_len  493.1  hazard_steps   0.8  approx_kl 0.0033  SPS 737
+iter 206/244  step  1687552  return   4.453  success  0.35  ep_len  475.6  hazard_steps   0.9  approx_kl 0.0088  SPS 737
+iter 207/244  step  1695744  return   4.752  success  0.38  ep_len  463.7  hazard_steps   1.5  approx_kl 0.0044  SPS 737
+iter 208/244  step  1703936  return   5.170  success  0.40  ep_len  455.9  hazard_steps   1.3  approx_kl 0.0061  SPS 737
+iter 209/244  step  1712128  return   6.485  success  0.46  ep_len  436.6  hazard_steps   0.9  approx_kl 0.0032  SPS 737
+iter 210/244  step  1720320  return   5.359  success  0.40  ep_len  458.2  hazard_steps   0.9  approx_kl 0.0059  SPS 736
+iter 211/244  step  1728512  return   5.791  success  0.42  ep_len  452.3  hazard_steps   0.8  approx_kl 0.0039  SPS 736
+iter 212/244  step  1736704  return   4.533  success  0.35  ep_len  478.0  hazard_steps   0.7  approx_kl 0.0022  SPS 735
+iter 213/244  step  1744896  return   4.014  success  0.31  ep_len  491.3  hazard_steps   0.4  approx_kl 0.0084  SPS 735
+iter 214/244  step  1753088  return   4.483  success  0.34  ep_len  484.4  hazard_steps   0.3  approx_kl 0.0021  SPS 735
+iter 215/244  step  1761280  return   3.839  success  0.31  ep_len  492.4  hazard_steps   0.3  approx_kl 0.0037  SPS 735
+iter 216/244  step  1769472  return   4.642  success  0.36  ep_len  480.3  hazard_steps   0.3  approx_kl 0.0032  SPS 736
+iter 217/244  step  1777664  return   4.786  success  0.38  ep_len  472.0  hazard_steps   0.7  approx_kl 0.0022  SPS 736
+iter 218/244  step  1785856  return   4.242  success  0.40  ep_len  469.1  hazard_steps   2.4  approx_kl 0.0048  SPS 736
+iter 219/244  step  1794048  return   4.800  success  0.43  ep_len  456.8  hazard_steps   2.0  approx_kl 0.0045  SPS 736
+iter 220/244  step  1802240  return   4.178  success  0.41  ep_len  463.0  hazard_steps   2.0  approx_kl 0.0058  SPS 736
+iter 221/244  step  1810432  return   4.046  success  0.40  ep_len  465.7  hazard_steps   2.2  approx_kl 0.0041  SPS 736
+iter 222/244  step  1818624  return   4.127  success  0.40  ep_len  465.0  hazard_steps   2.3  approx_kl 0.0040  SPS 736
+iter 223/244  step  1826816  return   4.198  success  0.39  ep_len  465.6  hazard_steps   2.0  approx_kl 0.0037  SPS 736
+iter 224/244  step  1835008  return   5.683  success  0.42  ep_len  454.3  hazard_steps   0.3  approx_kl 0.0019  SPS 736
+iter 225/244  step  1843200  return   6.157  success  0.44  ep_len  447.9  hazard_steps   0.5  approx_kl 0.0051  SPS 736
+iter 226/244  step  1851392  return   6.986  success  0.49  ep_len  427.7  hazard_steps   0.3  approx_kl 0.0038  SPS 736
+iter 227/244  step  1859584  return   6.662  success  0.48  ep_len  428.1  hazard_steps   0.3  approx_kl 0.0036  SPS 736
+iter 228/244  step  1867776  return   6.244  success  0.46  ep_len  434.7  hazard_steps   0.3  approx_kl 0.0008  SPS 735
+iter 229/244  step  1875968  return   5.411  success  0.42  ep_len  447.4  hazard_steps   0.3  approx_kl 0.0045  SPS 735
+iter 230/244  step  1884160  return   5.235  success  0.41  ep_len  450.3  hazard_steps   0.5  approx_kl 0.0036  SPS 735
+iter 231/244  step  1892352  return   5.549  success  0.42  ep_len  446.2  hazard_steps   0.6  approx_kl 0.0029  SPS 735
+iter 232/244  step  1900544  return   5.635  success  0.42  ep_len  446.2  hazard_steps   0.6  approx_kl 0.0015  SPS 736
+iter 233/244  step  1908736  return   6.914  success  0.48  ep_len  424.7  hazard_steps   0.7  approx_kl 0.0028  SPS 736
+iter 234/244  step  1916928  return   6.598  success  0.47  ep_len  426.8  hazard_steps   0.7  approx_kl 0.0018  SPS 736
+iter 235/244  step  1925120  return   5.667  success  0.44  ep_len  440.5  hazard_steps   0.6  approx_kl 0.0039  SPS 736
+iter 236/244  step  1933312  return   6.139  success  0.45  ep_len  438.4  hazard_steps   0.3  approx_kl 0.0036  SPS 736
+iter 237/244  step  1941504  return   6.691  success  0.48  ep_len  426.4  hazard_steps   0.3  approx_kl 0.0076  SPS 736
+iter 238/244  step  1949696  return   6.174  success  0.47  ep_len  430.1  hazard_steps   0.6  approx_kl 0.0036  SPS 736
+iter 239/244  step  1957888  return   5.969  success  0.46  ep_len  433.1  hazard_steps   0.7  approx_kl 0.0024  SPS 736
+iter 240/244  step  1966080  return   5.258  success  0.42  ep_len  443.7  hazard_steps   1.1  approx_kl 0.0023  SPS 737
+iter 241/244  step  1974272  return   5.794  success  0.45  ep_len  431.4  hazard_steps   1.3  approx_kl 0.0003  SPS 736
+iter 242/244  step  1982464  return   4.896  success  0.40  ep_len  449.9  hazard_steps   1.3  approx_kl 0.0017  SPS 736
+iter 243/244  step  1990656  return   5.779  success  0.43  ep_len  438.9  hazard_steps   0.9  approx_kl 0.0014  SPS 736
+iter 244/244  step  1998848  return   6.149  success  0.45  ep_len  432.7  hazard_steps   0.9  approx_kl 0.0003  SPS 736
+saved agent to runs/m7b_agent.pt
+
+FINAL success rate (last 100 eps): 0.45
+M7 WEAK (<0.80)
