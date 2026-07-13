@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+
+# Trained weights / checkpoints — regenerable from the logged runs, not source.
+# Keep the .csv/.json/.log next to them (the actual experiment record).
+checkpoints/
+*.pt
+*.pth
+
+# Stray WebRTC livestream recordings (spike/quick_look.py), written next to
+# a literal unexpanded "${data}" dir when run outside the intended cwd.
+${data}/
