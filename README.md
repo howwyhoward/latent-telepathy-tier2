@@ -94,9 +94,17 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
        1.00/0.00). Fix: -0.05/step restores Tier 1's 20% ratio. Warm-starting
        across the reward change did NOT work (the refusing policy never
        samples the slab, so it never sees the new price); m7e retrained fresh.
-- **Phase 2 — JEPA on pixels**: reconstruction auxiliary decodes semantic
-  segmentation logits (hazard/goal/agent upweighted); pre-registered probe
-  gates before freezing.
+- **Phase 2 — JEPA on pixels**: DONE, all four pre-registered gates PASS.
+  Dataset: 204,800 frames / 200k transitions from random-policy rollouts with
+  uniform free-pose spawns (`spike/collect_jepa_data.py`; note: the sim's
+  segmentation idToLabels table grows lazily, remap per step). Model
+  (`chokepoint/jepa.py`) ports Tier 1's BYOL/EMA/VICReg recipe with a CNN
+  encoder (64x64 RGB -> 64-D), continuous-action predictor, and a 16x16
+  segmentation-logit decoder (hazard/goal/agent x10, decoded from both z_t
+  and z_pred). Trainer `rl/train_jepa.py`. Results (`checkpoints/
+  jepa_pixels.pt`, frozen): hazard-visible linear probe 0.935 (majority
+  0.857), goal 0.911 (0.850), wall-count R^2 0.985, eff_rank 44.5/64,
+  min_std 0.92 — no collapse.
 - **Phase 3 — positive control, then reduced race** (4 conditions x 3 seeds).
 - **Phase 4 — ROS2 deployment** on 2 RoboMasters (TensorRT encoder on Jetson,
   64-float latent topic).
