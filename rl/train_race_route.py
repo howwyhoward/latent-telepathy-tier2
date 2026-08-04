@@ -104,6 +104,7 @@ from chokepoint.message_bus import (  # noqa: E402
     OracleBroadcast,
 )
 from chokepoint.receiver import AttentionReceiver  # noqa: E402
+from chokepoint.route_head import RouteHead  # noqa: E402
 
 LEARNER, BEACON = "navigator", "scout"
 ROUTE_DIM = 2
@@ -113,23 +114,6 @@ WIRE = LATENT_DIM + 2  # anchored, matched width — identical across conditions
 # reset-time frames). The head samples provisionally until this step, then
 # freezes the decision the episode is credited to.
 DECIDE_STEP = 2
-
-
-class RouteHead(nn.Module):
-    """message -> corridor. The entire trainable surface of race v8."""
-
-    def __init__(self, wire: int, hidden: int = 64):
-        super().__init__()
-        self.trunk = nn.Sequential(nn.Linear(wire, hidden), nn.ReLU())
-        self.logits = nn.Linear(hidden, 2)
-        self.value = nn.Linear(hidden, 1)
-        # start exactly uniform: no architectural prior on either corridor
-        nn.init.zeros_(self.logits.weight)
-        nn.init.zeros_(self.logits.bias)
-
-    def forward(self, msg: torch.Tensor):
-        h = self.trunk(msg)
-        return self.logits(h), self.value(h).squeeze(-1)
 
 
 def main():

@@ -1,0 +1,332 @@
+[INFO][AppLauncher]: Environment variable `LIVESTREAM=2` has implicitly overridden the environment variable `HEADLESS=0` to True.
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260804_050352.log
+2026-08-04T05:04:03Z [11,673ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:04:03Z [11,673ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:04:03Z [11,738ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-08-04T05:04:03Z [11,740ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-08-04T05:04:03Z [11,740ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-08-04T05:04:03Z [11,740ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,172ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T05:04:06Z [14,173ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 318100
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 7045
+|---------------------------------------------------------------------------------------------|
+2026-08-04T05:05:45Z [112,897ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [112,897ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:05:45Z [112,907ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [112,907ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:05:45Z [112,914ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [112,914ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:05:45Z [113,230ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [113,230ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:05:45Z [113,231ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [113,231ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:05:45Z [113,231ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:05:45Z [113,232ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:06:44Z [172,269ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-08-04T05:08:07Z [255,617ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-08-04T05:08:16Z [263,915ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+Warning: Possible version incompatibility. Attempting to load carb::cudainterop::CudaInterop with version v0.17 against v0.15.
+
+Active user not found. Using default user [kiosk]Streaming server started.
+2026-08-04T05:09:31Z [339,238ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-08-04T05:10:22Z [390,047ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-08-04T05:10:22Z [390,047ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-08-04T05:10:22Z [390,048ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-08-04T05:13:35Z [582,942ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:13:35Z [582,943ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:13:35Z [582,944ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:13:53Z [601,872ms] [Warning] [omni.fabric.plugin] Warning: attribute viewPickingId not found for bucket id 9
+
+2026-08-04T05:14:07Z [615,570ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-08-04_05-14-07.log[0m
+[36m========================================================================================================[0m
+
+[33m05:14:09 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 3.088217 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+2026-08-04T05:14:14Z [622,089ms] [Warning] [omni.fabric.plugin] USD->Fabric: Unhandled array type string[]
+2026-08-04T05:14:14Z [622,095ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:ior_constant)
+2026-08-04T05:14:14Z [622,095ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:transmittance_color)
+2026-08-04T05:14:14Z [622,095ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:reflection_roughness_constant)
+2026-08-04T05:14:18Z [626,728ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:ior_constant)
+2026-08-04T05:14:18Z [626,729ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:reflection_roughness_constant)
+2026-08-04T05:14:18Z [626,729ms] [Warning] [usdrt.population.plugin] [UsdNoticeHandler] Unhandled attribute type VtArray<std::string> (prim attribute: omni:rtx:material:db:flattener:transmittance_color)
+[INFO]: Time taken for simulation start : 7.669925 seconds
+Creating window for environment.
+ManagerLiveVisualizer cannot be created for manager: action_manager, Manager does not exist
+ManagerLiveVisualizer cannot be created for manager: observation_manager, Manager does not exist
+[INFO]: Completed setting up the environment...
+[watch] executor : runs/route_obey_v6/cont.pt
+[watch] head     : runs/race_v8/z_t_s3.pt  condition z_t
+[watch] slab     : flip   route: head
+[watch] scene up — connect the WebRTC client now
+
+[ep 1] slab in TOP corridor — safe route is BOTTOM
+[ep 1] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 1] step  20: west chamber      (-3.58, -1.14)  goal  7.8 m
+[ep 1] step  32: entered the bottom corridor — CLEAN, as commanded
+2026-08-04T05:14:25Z [633,442ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[ep 1] step  40: bottom corridor   (-2.61, -1.31)  goal  6.8 m
+[ep 1] step  60: bottom corridor   (-1.70, -1.88)  goal  5.8 m
+[ep 1] step  80: bottom corridor   (-0.90, -1.79)  goal  5.0 m
+[ep 1] step 100: bottom corridor   (-0.06, -1.26)  goal  4.6 m
+[ep 1] step 120: bottom corridor   (+0.86, -1.24)  goal  3.8 m
+[ep 1] step 140: bottom corridor   (+2.22, -1.23)  goal  2.9 m
+[ep 1] step 160: east chamber      (+3.27, -1.61)  goal  2.2 m
+[ep 1] step 180: east chamber      (+3.44, -2.96)  goal  0.8 m
+[ep 1] REACHED GOAL after 189 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 2] slab in TOP corridor — safe route is BOTTOM
+[ep 2] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 2] step  20: west chamber      (-3.53, -1.18)  goal  7.7 m
+[ep 2] step  31: entered the bottom corridor — CLEAN, as commanded
+[ep 2] step  40: bottom corridor   (-2.56, -1.37)  goal  6.7 m
+[ep 2] step  60: bottom corridor   (-1.65, -1.88)  goal  5.7 m
+[ep 2] step  80: bottom corridor   (-0.87, -1.84)  goal  5.0 m
+[ep 2] step 100: bottom corridor   (-0.11, -1.25)  goal  4.6 m
+[ep 2] step 120: bottom corridor   (+0.76, -1.29)  goal  3.9 m
+[ep 2] step 140: bottom corridor   (+2.12, -1.41)  goal  2.9 m
+[ep 2] step 160: east chamber      (+3.30, -1.74)  goal  2.1 m
+[ep 2] step 180: east chamber      (+3.46, -2.92)  goal  0.9 m
+[ep 2] REACHED GOAL after 190 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 3] slab in BOTTOM corridor — safe route is TOP
+[ep 3] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+[ep 3] step  20: west chamber      (-3.41, +0.48)  goal  8.3 m
+[ep 3] step  29: entered the top corridor — CLEAN, as commanded
+[ep 3] step  40: top corridor      (-2.45, +0.71)  goal  7.6 m
+[ep 3] step  60: top corridor      (-1.52, +0.62)  goal  6.8 m
+[ep 3] step  80: top corridor      (-0.66, +0.66)  goal  6.2 m
+[ep 3] step 100: top corridor      (-0.01, +1.34)  goal  6.3 m
+[ep 3] step 120: top corridor      (+1.03, +1.22)  goal  5.7 m
+[ep 3] step 140: top corridor      (+2.39, +1.13)  goal  5.1 m
+[ep 3] step 160: east chamber      (+3.17, +0.50)  goal  4.3 m
+[ep 3] step 180: east chamber      (+3.26, -0.64)  goal  3.1 m
+[ep 3] step 200: east chamber      (+3.31, -2.00)  goal  1.8 m
+[ep 3] step 220: east chamber      (+3.55, -3.35)  goal  0.5 m
+[ep 3] REACHED GOAL after 223 steps; slab was BOTTOM, commanded TOP, took top corridor, never touched the slab
+
+[ep 4] slab in TOP corridor — safe route is BOTTOM
+[ep 4] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 4] step  20: west chamber      (-3.69, -0.94)  goal  8.0 m
+[ep 4] step  38: entered the bottom corridor — CLEAN, as commanded
+[ep 4] step  40: bottom corridor   (-2.87, -1.25)  goal  7.1 m
+[ep 4] step  60: bottom corridor   (-1.89, -1.79)  goal  6.0 m
+[ep 4] step  80: bottom corridor   (-1.03, -1.67)  goal  5.2 m
+[ep 4] step 100: bottom corridor   (-0.34, -1.64)  goal  4.6 m
+[ep 4] step 120: bottom corridor   (+0.38, -1.28)  goal  4.2 m
+[ep 4] step 140: bottom corridor   (+1.65, -1.35)  goal  3.2 m
+[ep 4] step 160: bottom corridor   (+3.00, -1.54)  goal  2.3 m
+[ep 4] step 180: east chamber      (+3.44, -2.46)  goal  1.3 m
+[ep 4] REACHED GOAL after 197 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 5] slab in TOP corridor — safe route is BOTTOM
+[ep 5] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 5] step  20: west chamber      (-3.48, -1.19)  goal  7.7 m
+[ep 5] step  30: entered the bottom corridor — CLEAN, as commanded
+[ep 5] step  40: bottom corridor   (-2.53, -1.41)  goal  6.7 m
+[ep 5] step  60: bottom corridor   (-1.67, -1.88)  goal  5.7 m
+[ep 5] step  80: bottom corridor   (-0.87, -1.83)  goal  5.0 m
+[ep 5] step 100: bottom corridor   (-0.19, -1.21)  goal  4.7 m
+[ep 5] step 120: bottom corridor   (+0.68, -1.25)  goal  4.0 m
+[ep 5] step 140: bottom corridor   (+2.04, -1.23)  goal  3.0 m
+[ep 5] step 160: east chamber      (+3.28, -1.46)  goal  2.3 m
+[ep 5] step 180: east chamber      (+3.39, -2.82)  goal  1.0 m
+[ep 5] REACHED GOAL after 191 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 6] slab in BOTTOM corridor — safe route is TOP
+[ep 6] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+[ep 6] step  20: west chamber      (-3.44, +0.51)  goal  8.4 m
+[ep 6] step  30: entered the top corridor — CLEAN, as commanded
+[ep 6] step  40: top corridor      (-2.48, +0.72)  goal  7.7 m
+[33mmain: thread_init: already added for thread
+[;m2026-08-04T05:16:30Z [758,780ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:16:30Z [758,780ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:16:30Z [758,781ms] [Warning] [gpu.foundation.plugin] Invalid sync scope for buffer resource 'shared swapchain buffer'. Create resource with valid sync scope for lifetime tracking or use kResourceUsageFlagNoSyncScope.
+2026-08-04T05:16:30Z [758,884ms] [Warning] [carb.livestream-rtc.plugin] onCustomResizeMessage: width (1920) and height (1080) must both be positive and `/app/livestream/allowDynamicResize` enabled.
+[ep 6] step  60: top corridor      (-1.57, +0.62)  goal  6.9 m
+[ep 6] step  80: top corridor      (-0.77, +0.75)  goal  6.4 m
+[ep 6] step 100: top corridor      (-0.12, +1.34)  goal  6.4 m
+[ep 6] step 120: top corridor      (+0.69, +1.20)  goal  5.8 m
+[ep 6] step 140: top corridor      (+2.06, +1.09)  goal  5.1 m
+[ep 6] step 160: east chamber      (+3.19, +0.74)  goal  4.5 m
+[ep 6] step 180: east chamber      (+3.41, -0.61)  goal  3.2 m
+[ep 6] step 200: east chamber      (+3.43, -1.97)  goal  1.8 m
+[ep 6] step 220: east chamber      (+3.55, -3.33)  goal  0.5 m
+[ep 6] REACHED GOAL after 223 steps; slab was BOTTOM, commanded TOP, took top corridor, never touched the slab
+
+[ep 7] slab in TOP corridor — safe route is BOTTOM
+[ep 7] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 7] step  20: west chamber      (-3.49, -1.19)  goal  7.7 m
+[ep 7] step  31: entered the bottom corridor — CLEAN, as commanded
+[ep 7] step  40: bottom corridor   (-2.53, -1.36)  goal  6.7 m
+[ep 7] step  60: bottom corridor   (-1.69, -1.88)  goal  5.8 m
+[ep 7] step  80: bottom corridor   (-0.93, -1.79)  goal  5.1 m
+[ep 7] step 100: bottom corridor   (-0.09, -1.27)  goal  4.6 m
+[ep 7] step 120: bottom corridor   (+0.82, -1.27)  goal  3.8 m
+[ep 7] step 140: bottom corridor   (+2.19, -1.37)  goal  2.8 m
+[ep 7] step 160: east chamber      (+3.33, -1.72)  goal  2.1 m
+[ep 7] step 180: east chamber      (+3.46, -2.91)  goal  0.9 m
+[ep 7] REACHED GOAL after 190 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 8] slab in TOP corridor — safe route is BOTTOM
+[ep 8] step   2: head decodes the z_t message -> commands BOTTOM (p=1.00)  [CORRECT]
+[ep 8] step  20: west chamber      (-3.49, -1.19)  goal  7.7 m
+[ep 8] step  31: entered the bottom corridor — CLEAN, as commanded
+[ep 8] step  40: bottom corridor   (-2.53, -1.33)  goal  6.7 m
+[ep 8] step  60: bottom corridor   (-1.65, -1.88)  goal  5.7 m
+[ep 8] step  80: bottom corridor   (-0.83, -1.82)  goal  5.0 m
+[ep 8] step 100: bottom corridor   (+0.01, -1.23)  goal  4.5 m
+[ep 8] step 120: bottom corridor   (+0.91, -1.27)  goal  3.8 m
+[ep 8] step 140: bottom corridor   (+2.27, -1.34)  goal  2.8 m
+[ep 8] step 160: east chamber      (+3.33, -1.74)  goal  2.1 m
+[ep 8] step 180: east chamber      (+3.45, -2.97)  goal  0.8 m
+[ep 8] REACHED GOAL after 190 steps; slab was TOP, commanded BOTTOM, took bottom corridor, never touched the slab
+
+[ep 9] slab in BOTTOM corridor — safe route is TOP
+[ep 9] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+[ep 9] step  20: west chamber      (-3.50, +0.40)  goal  8.4 m
+[ep 9] step  32: entered the top corridor — CLEAN, as commanded
+[ep 9] step  40: top corridor      (-2.57, +0.73)  goal  7.8 m
+[ep 9] step  60: top corridor      (-1.65, +0.62)  goal  7.0 m
+[ep 9] step  80: top corridor      (-0.80, +0.76)  goal  6.4 m
+[ep 9] step 100: top corridor      (-0.23, +1.29)  goal  6.4 m
+[ep 9] step 120: top corridor      (+0.48, +1.21)  goal  5.9 m
+[ep 9] step 140: top corridor      (+1.85, +1.15)  goal  5.3 m
+[ep 9] step 160: east chamber      (+3.16, +0.98)  goal  4.8 m
+[ep 9] step 180: east chamber      (+3.45, -0.35)  goal  3.4 m
+[ep 9] step 200: east chamber      (+3.47, -1.72)  goal  2.1 m
+[ep 9] step 220: east chamber      (+3.52, -3.08)  goal  0.7 m
+[ep 9] REACHED GOAL after 227 steps; slab was BOTTOM, commanded TOP, took top corridor, never touched the slab
+
+[ep 10] slab in BOTTOM corridor — safe route is TOP
+[ep 10] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+[ep 10] step  20: west chamber      (-3.47, +0.42)  goal  8.3 m
+[ep 10] step  31: entered the top corridor — CLEAN, as commanded
+[ep 10] step  40: top corridor      (-2.52, +0.70)  goal  7.7 m
+[ep 10] step  60: top corridor      (-1.60, +0.62)  goal  6.9 m
+[ep 10] step  80: top corridor      (-0.76, +0.71)  goal  6.3 m
+[ep 10] step 100: top corridor      (-0.03, +1.32)  goal  6.3 m
+[ep 10] step 120: top corridor      (+0.92, +1.21)  goal  5.7 m
+[ep 10] step 140: top corridor      (+2.28, +1.12)  goal  5.1 m
+[ep 10] step 160: east chamber      (+3.18, +0.54)  goal  4.3 m
+[ep 10] step 180: east chamber      (+3.27, -0.75)  goal  3.0 m
+[ep 10] step 200: east chamber      (+3.39, -2.11)  goal  1.7 m
+[ep 10] step 220: east chamber      (+3.61, -3.46)  goal  0.3 m
+[ep 10] REACHED GOAL after 221 steps; slab was BOTTOM, commanded TOP, took top corridor, never touched the slab
+
+[ep 11] slab in BOTTOM corridor — safe route is TOP
+[ep 11] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+[ep 11] step  20: west chamber      (-3.39, +0.53)  goal  8.3 m
+[ep 11] step  29: entered the top corridor — CLEAN, as commanded
+[ep 11] step  40: top corridor      (-2.42, +0.70)  goal  7.6 m
+[ep 11] step  60: top corridor      (-1.53, +0.62)  goal  6.9 m
+[ep 11] step  80: top corridor      (-0.71, +0.78)  goal  6.4 m
+[ep 11] step 100: top corridor      (+0.01, +1.33)  goal  6.3 m
+[ep 11] step 120: top corridor      (+1.12, +1.23)  goal  5.6 m
+[ep 11] step 140: top corridor      (+2.48, +1.13)  goal  5.0 m
+2026-08-04T05:18:53Z [901,428ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:18:53Z [901,428ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:18:53Z [901,431ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:18:53Z [901,431ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T05:18:53Z [901,432ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T05:18:53Z [901,432ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+[ep 11] step 160: east chamber      (+3.16, +0.44)  goal  4.2 m
+[ep 11] step 180: east chamber      (+3.37, -0.57)  goal  3.2 m
+[ep 11] step 200: east chamber      (+3.29, -1.87)  goal  1.9 m
+[ep 11] step 220: east chamber      (+3.44, -3.19)  goal  0.6 m
+[ep 11] REACHED GOAL after 226 steps; slab was BOTTOM, commanded TOP, took top corridor, never touched the slab
+
+[ep 12] slab in BOTTOM corridor — safe route is TOP
+[ep 12] step   2: head decodes the z_t message -> commands TOP (p=1.00)  [CORRECT]
+2026-08-04T05:19:07Z [915,172ms] [Warning] [omni.physx.tensors.plugin] prim '/World/envs/env_0/Wall24/geometry/mesh' was deleted while being used by a shape in a tensor view class. The physics.tensors simulationView was invalidated.
+2026-08-04T05:19:07Z [915,190ms] [Error] [omni.physx.tensors.plugin] Simulation view object is invalidated and cannot be used again to call getTransforms
+Traceback (most recent call last):
+  File "/home/howard/latent-telepathy-tier2/spike/watch_policy.py", line 224, in <module>
+    main()
+  File "/home/howard/latent-telepathy-tier2/spike/watch_policy.py", line 185, in main
+    obs, _, term, tout, _ = env.step(
+                            ^^^^^^^^^
+  File "/data/howard/isaac/IsaacLab/source/isaaclab/isaaclab/envs/direct_marl_env.py", line 402, in step
+    self.terminated_dict, self.time_out_dict = self._get_dones()
+                                               ^^^^^^^^^^^^^^^^^
+  File "/home/howard/latent-telepathy-tier2/chokepoint/env.py", line 418, in _get_dones
+    success = self._team_success()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/howard/latent-telepathy-tier2/chokepoint/env.py", line 414, in _team_success
+    ok &= self._dist_to_goal(a) < self.cfg.goal_radius
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/howard/latent-telepathy-tier2/chokepoint/env.py", line 349, in _dist_to_goal
+    return torch.norm(self._local_pos(agent) - self._goal_pos[agent], dim=1)
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/howard/latent-telepathy-tier2/chokepoint/env.py", line 312, in _local_pos
+    return self.scene[agent].data.root_pos_w[:, :2] - self.scene.env_origins[:, :2]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/howard/isaac/IsaacLab/source/isaaclab/isaaclab/assets/rigid_object/rigid_object_data.py", line 572, in root_pos_w
+    return self.root_link_pos_w
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/howard/isaac/IsaacLab/source/isaaclab/isaaclab/assets/rigid_object/rigid_object_data.py", line 404, in root_link_pos_w
+    return self.root_link_pose_w[:, :3]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/data/howard/isaac/IsaacLab/source/isaaclab/isaaclab/assets/rigid_object/rigid_object_data.py", line 136, in root_link_pose_w
+    pose = self._root_physx_view.get_transforms().clone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py", line 3370, in get_transforms
+    raise Exception("Failed to get rigid body transforms from backend")
+Exception: Failed to get rigid body transforms from backend
