@@ -1,0 +1,4 @@
+launched oracle on GPU 1 (pid 625926)
+launched none on GPU 2 (pid 625927)
+launched z_t on GPU 3 (pid 625928)
+spike/launch_race_v7.sh: line 40: syntax error near unexpected token `('

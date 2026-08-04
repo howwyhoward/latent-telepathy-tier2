@@ -1,0 +1,273 @@
+{
+  "curve": [
+    {
+      "episodes": 256,
+      "route_opt": 0.58203125,
+      "success": 0.58203125,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 10.092193603515625,
+      "entropy": 0.6915499269962311,
+      "sps": 1229
+    },
+    {
+      "episodes": 512,
+      "route_opt": 0.532,
+      "success": 0.532,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 8.384893417358398,
+      "entropy": 0.6759046837687492,
+      "sps": 1219
+    },
+    {
+      "episodes": 768,
+      "route_opt": 0.526,
+      "success": 0.526,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 9.304189682006836,
+      "entropy": 0.6430028043687344,
+      "sps": 1214
+    },
+    {
+      "episodes": 1024,
+      "route_opt": 0.51,
+      "success": 0.51,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 8.063281059265137,
+      "entropy": 0.6001855172216892,
+      "sps": 1215
+    },
+    {
+      "episodes": 1280,
+      "route_opt": 0.486,
+      "success": 0.486,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 8.310989379882812,
+      "entropy": 0.5508613362908363,
+      "sps": 1215
+    },
+    {
+      "episodes": 1536,
+      "route_opt": 0.478,
+      "success": 0.476,
+      "hazard": 0.57,
+      "obey": 1.0,
+      "mean_return": 7.87095832824707,
+      "entropy": 0.5195494145154953,
+      "sps": 1217
+    },
+    {
+      "episodes": 1792,
+      "route_opt": 0.492,
+      "success": 0.488,
+      "hazard": 0.57,
+      "obey": 1.0,
+      "mean_return": 8.8322114944458,
+      "entropy": 0.5268555320799351,
+      "sps": 1219
+    },
+    {
+      "episodes": 2048,
+      "route_opt": 0.52,
+      "success": 0.516,
+      "hazard": 0.078,
+      "obey": 1.0,
+      "mean_return": 8.7310209274292,
+      "entropy": 0.4763654042035341,
+      "sps": 1221
+    },
+    {
+      "episodes": 2304,
+      "route_opt": 0.514,
+      "success": 0.51,
+      "hazard": 0.078,
+      "obey": 1.0,
+      "mean_return": 8.814539909362793,
+      "entropy": 0.49676894024014473,
+      "sps": 1223
+    },
+    {
+      "episodes": 2560,
+      "route_opt": 0.49,
+      "success": 0.488,
+      "hazard": 0.27,
+      "obey": 1.0,
+      "mean_return": 7.848010540008545,
+      "entropy": 0.43008498661220074,
+      "sps": 1222
+    },
+    {
+      "episodes": 2816,
+      "route_opt": 0.496,
+      "success": 0.494,
+      "hazard": 0.27,
+      "obey": 1.0,
+      "mean_return": 9.094331741333008,
+      "entropy": 0.4276833478361368,
+      "sps": 1221
+    },
+    {
+      "episodes": 3072,
+      "route_opt": 0.494,
+      "success": 0.492,
+      "hazard": 0.222,
+      "obey": 1.0,
+      "mean_return": 8.055805206298828,
+      "entropy": 0.44974776916205883,
+      "sps": 1222
+    },
+    {
+      "episodes": 3328,
+      "route_opt": 0.474,
+      "success": 0.474,
+      "hazard": 0.442,
+      "obey": 1.0,
+      "mean_return": 8.384110450744629,
+      "entropy": 0.38933481834828854,
+      "sps": 1219
+    },
+    {
+      "episodes": 3584,
+      "route_opt": 0.504,
+      "success": 0.504,
+      "hazard": 0.1,
+      "obey": 1.0,
+      "mean_return": 8.875368118286133,
+      "entropy": 0.3898123987019062,
+      "sps": 1219
+    },
+    {
+      "episodes": 3840,
+      "route_opt": 0.528,
+      "success": 0.528,
+      "hazard": 0.138,
+      "obey": 1.0,
+      "mean_return": 10.109050750732422,
+      "entropy": 0.3521104548126459,
+      "sps": 1218
+    },
+    {
+      "episodes": 4096,
+      "route_opt": 0.538,
+      "success": 0.536,
+      "hazard": 0.17,
+      "obey": 1.0,
+      "mean_return": 8.898693084716797,
+      "entropy": 0.3832132816314697,
+      "sps": 1218
+    },
+    {
+      "episodes": 4352,
+      "route_opt": 0.488,
+      "success": 0.486,
+      "hazard": 0.17,
+      "obey": 1.0,
+      "mean_return": 7.905386924743652,
+      "entropy": 0.28708976693451405,
+      "sps": 1218
+    },
+    {
+      "episodes": 4608,
+      "route_opt": 0.488,
+      "success": 0.488,
+      "hazard": 0.038,
+      "obey": 1.0,
+      "mean_return": 8.741022109985352,
+      "entropy": 0.3142368905246258,
+      "sps": 1218
+    },
+    {
+      "episodes": 4864,
+      "route_opt": 0.486,
+      "success": 0.486,
+      "hazard": 0.038,
+      "obey": 1.0,
+      "mean_return": 8.173126220703125,
+      "entropy": 0.26206410955637693,
+      "sps": 1219
+    },
+    {
+      "episodes": 5120,
+      "route_opt": 0.496,
+      "success": 0.494,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "mean_return": 8.857931137084961,
+      "entropy": 0.2376531893387437,
+      "sps": 1219
+    },
+    {
+      "episodes": 5376,
+      "route_opt": 0.502,
+      "success": 0.5,
+      "hazard": 0.924,
+      "obey": 1.0,
+      "mean_return": 8.608323097229004,
+      "entropy": 0.2770139593631029,
+      "sps": 1219
+    },
+    {
+      "episodes": 5632,
+      "route_opt": 0.512,
+      "success": 0.51,
+      "hazard": 1.508,
+      "obey": 1.0,
+      "mean_return": 9.421512603759766,
+      "entropy": 0.3061005678027868,
+      "sps": 1218
+    },
+    {
+      "episodes": 5888,
+      "route_opt": 0.542,
+      "success": 0.54,
+      "hazard": 0.584,
+      "obey": 1.0,
+      "mean_return": 9.883977890014648,
+      "entropy": 0.3384580463171005,
+      "sps": 1219
+    }
+  ],
+  "route_opt": 0.518,
+  "success": 0.516,
+  "hazard": 0.482,
+  "args": {
+    "condition": "none",
+    "executor": "runs/route_obey_v6/cont.pt",
+    "jepa_ckpt": "checkpoints/jepa_pixels.pt",
+    "comm_radius": 12.0,
+    "total_episodes": 6000,
+    "batch_episodes": 256,
+    "update_epochs": 4,
+    "minibatch_size": 64,
+    "clip_coef": 0.2,
+    "ent_coef": 0.01,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "learning_rate": 0.003,
+    "num_envs": 64,
+    "seed": 1,
+    "log_csv": "runs/race_v8/none.csv",
+    "run_json": "runs/race_v8/none.json",
+    "save": "runs/race_v8/none.pt",
+    "enable_cameras": true,
+    "xr": false,
+    "device": "cuda:0",
+    "cpu": false,
+    "verbose": false,
+    "info": false,
+    "rendering_mode": null,
+    "kit_args": "",
+    "anim_recording_enabled": false,
+    "anim_recording_start_time": 0,
+    "anim_recording_stop_time": 10,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  }
+}

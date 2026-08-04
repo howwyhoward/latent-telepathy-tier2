@@ -106,6 +106,82 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
   0.857), goal 0.911 (0.850), wall-count R^2 0.985, eff_rank 44.5/64,
   min_std 0.92 — no collapse.
 - **Phase 3 — positive control, then reduced race** (4 conditions x 3 seeds).
+  Six race generations returned nulls, ending with v6: warm-started from the
+  mouth-curriculum trunk, a noiseless ground-truth slab bit (`oracle`) scored
+  0.44/0.53 against 0.50 for silence, at either discount. `spike/
+  diag_exploration.py` found why, and it was not the encoder or the credit
+  horizon. From the canonical start the navigator sampled the top corridor
+  **0.00 of 128 episodes** at its trained noise, and still 0.00 at double it:
+  reaching that mouth needs ~+1.3 of sustained lateral action over the ~30-step
+  decision window, and under iid noise the mean deviation across those steps
+  has std sigma/sqrt(30) ~ 0.09 — a 14-sigma event. Every race so far trained
+  on batches containing no alternative route, so no message could be recruited.
+  Tier 1 never met this: one gridworld action moved a whole cell, making route
+  exploration and action exploration the same thing.
+  v7 restores that temporal abstraction as *exploration only*: AR(1) noise
+  (tau=30) on the lateral axis for the first 40 steps, which has marginal
+  N(mu, sigma) at every step and so leaves PPO's per-step ratios exact,
+  provided actions are re-scored under the std they were drawn with. Measured
+  0.22 top-corridor coverage at 0.51 success (0.55 unperturbed); whole-episode
+  noise also reached 0.12 but crushed success to 0.10. The boost decays to the
+  trained std over 60% of training so the headline numbers end on-policy.
+  v7 result: oracle 0.48, none 0.35, z_t 0.47 — null on the headline, but the
+  most informative run of the series. Coverage worked and was then optimized
+  away: slab-bottom success ran at 0.18-0.23 over iterations 1-40 and decayed
+  to ~0.00 by iteration 80 while the boost was still near full strength, as
+  slab-top success climbed 0.72 -> 0.96. The policy found the other corridor and
+  learned to steer back out of it. Cause is intrinsic to Gaussian exploration:
+  d logpi/dmu = (a-mu)/sigma^2, so the sigma that buys coverage attenuates the
+  gradient carrying it — 0.22 per-sample in-window vs 1.67 post-window, over 40
+  steps vs 560, i.e. ~100x more aggregate gradient saying "keep executing the
+  bottom route" than "the route choice mattered".
+  Two diagnostics then located the real blocker. `spike/
+  diag_msg_sensitivity.py` (Isaac-free: one neighbour means the attention
+  softmax is exactly 1, so pooled = v(msg_proj(msg)) independent of the image)
+  shows the v7 oracle IS strongly message-driven, |dmu_y|/sigma_y = 2.69 vs 0.23
+  for v6. `spike/diag_route_choice.py` shows what it does with it, and it is not
+  routing: deterministic rollouts take the bottom corridor in 100% of all four
+  (slab side x true/lied bit) cells. Feeding a LIE moves slab-top success
+  1.00 -> 0.41 without moving the corridor. So the bit was recruited to gate
+  advance-vs-balk inside the chosen corridor, never to select the corridor —
+  the refusal optimum of v2, now message-conditioned. Execution is not the
+  problem (slab-top success is a clean 1.00) and neither is plumbing.
+  Next: the corridor choice needs to be a first-class decision variable — a
+  2-way categorical route head sampled once per episode — so exploration of it
+  is Categorical (coverage without the 1/sigma^2 penalty) and it cannot be
+  outvoted by the constant-view ego bias. This restores Tier 1's Discrete(5)
+  property, the one architectural difference never revisited.
+- **Phase 3.5 — route obedience** (`rl/train_route_obey.py`): before the head
+  can choose a route, an executor must exist that can be told one. A 1-bit
+  route command is appended to the receiver's feature vector (route-blind at
+  load: widened layers keep their extra columns at zero) and trained until it
+  is obeyed. Two mechanisms survived five failed recipes: obedience as a
+  SUCCESS CONDITION (wrong-corridor entry ends the episode; per-step penalties
+  instead taught "corridors are dangerous" and produced parking), and
+  route-conditioned geodesic shaping (the field routes via the commanded
+  corridor; the wrong corridor is a dead-end pocket whose gradient points back
+  out, slopes bounded so no region outpays the correct route). Gate passed on
+  canonical spawns, both directions: obedience 0.96/0.985, success 0.935/0.895
+  (`runs/route_obey_v6/cont.pt`); with ±0.5 rad spawn-yaw jitter 0.97/0.91 and
+  0.915/0.835 (`cont_yaw2.pt`). Composition check
+  (`spike/eval_pixels_to_route.py`): scout pixels -> frozen JEPA latent ->
+  supervised logistic probe -> route command -> frozen executor = 256/256
+  success, 0 hazard steps.
+- **Phase 3 closed — race v8, reward-only recruitment**
+  (`rl/train_race_route.py`): executor FROZEN, the only learner a ~4.5k-param
+  route head (message -> 2 logits), one categorical decision per episode
+  committed at step 2 (reset-time camera frames are stale), credited with the
+  episode's return — a contextual bandit, which is exactly the exploration
+  structure v1-v7 lacked. Conditions on the same anchored 66-float wire:
+  oracle (ground-truth bit, ceiling), z_t (scout's frozen JEPA latent, the
+  thesis), none (zeros, floor). Route-optimality over 3 seeds:
+  **oracle 0.990-0.996, z_t 0.986-1.000, none 0.488-0.518**; z_t hazard 0.00,
+  executor obedience 1.000. Nobody told the head what the latent means — task
+  reward alone recovered the slab bit from it, to within noise of the oracle.
+  Post-mortems worth keeping: Bessel-corrected std() on a 1-element remainder
+  minibatch NaNs the update (three runs died before it was traced), and a
+  bandit head wants lr ~3e-3, not the pixel-policy 3e-4 (which reads as
+  "not learning" at 112 Adam steps).
 - **Phase 4 — ROS2 deployment** on 2 RoboMasters (TensorRT encoder on Jetson,
   64-float latent topic).
 

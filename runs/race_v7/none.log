@@ -1,0 +1,474 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260725_011638.log
+2026-07-25T01:16:38Z [154ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:38Z [154ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:38Z [230ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-07-25T01:16:38Z [231ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-07-25T01:16:38Z [231ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-07-25T01:16:38Z [231ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-07-25T01:16:38Z [690ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:38Z [690ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:39Z [903ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [903ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-25T01:16:39Z [904ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 305635
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 6388
+|---------------------------------------------------------------------------------------------|
+2026-07-25T01:16:40Z [1,925ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,925ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [1,935ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,935ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [1,943ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,943ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [1,952ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,952ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [1,953ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,953ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [1,954ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-25T01:16:40Z [1,954ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-25T01:16:40Z [2,185ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-07-25T01:16:40Z [2,567ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-07-25T01:16:40Z [2,578ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-07-25T01:16:43Z [4,802ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-07-25T01:16:43Z [4,992ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-07-25T01:16:43Z [4,992ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-07-25T01:16:43Z [4,992ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-07-25T01:16:44Z [6,583ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-07-25T01:16:47Z [9,160ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-07-25T01:16:48Z [9,747ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-07-25_01-16-48.log[0m
+[36m========================================================================================================[0m
+
+[33m01:16:48 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.641257 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 3.639795 seconds
+[INFO]: Completed setting up the environment...
+init_nav: loaded 19/19 tensors from runs/nav_pretrain/nav_s1_mouth.pt
+log_std frozen at [0.6231597661972046, 0.6012086868286133, 0.7243850827217102]; window 40 steps @ std 4.48 on y
+condition=none  wire_dim=0  trainable=74,628 (encoder frozen)
+2026-07-25T01:17:00Z [21,807ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[none] iter   1/366  step     8192  return     nan  success   nan (top  nan/bot  nan)  rand_succ  nan  ep_len    nan  hazard_steps   nan  approx_kl 0.0119  SPS 484
+[none] iter   2/366  step    16384  return  17.079  success  1.00 (top 1.00/bot  nan)  rand_succ  nan  ep_len  236.3  hazard_steps   0.0  approx_kl 0.0342  SPS 475
+[none] iter   3/366  step    24576  return  16.631  success  1.00 (top 1.00/bot 1.00)  rand_succ  nan  ep_len  280.9  hazard_steps   0.0  approx_kl 0.0307  SPS 465
+[none] iter   4/366  step    32768  return  16.465  success  1.00 (top 1.00/bot 1.00)  rand_succ  nan  ep_len  297.6  hazard_steps   0.0  approx_kl 0.0207  SPS 465
+[none] iter   5/366  step    40960  return   4.735  success  0.52 (top 0.71/bot 0.19)  rand_succ  nan  ep_len  447.7  hazard_steps   1.5  approx_kl 0.0211  SPS 461
+[none] iter   6/366  step    49152  return   5.164  success  0.54 (top 0.72/bot 0.21)  rand_succ  nan  ep_len  444.2  hazard_steps   1.4  approx_kl 0.0234  SPS 462
+[none] iter   7/366  step    57344  return   5.839  success  0.57 (top 0.75/bot 0.19)  rand_succ  nan  ep_len  425.0  hazard_steps   1.4  approx_kl 0.0354  SPS 458
+[none] iter   8/366  step    65536  return   4.786  success  0.53 (top 0.74/bot 0.21)  rand_succ  nan  ep_len  440.7  hazard_steps   1.7  approx_kl 0.0334  SPS 459
+[none] iter   9/366  step    73728  return   4.020  success  0.50 (top 0.73/bot 0.20)  rand_succ  nan  ep_len  448.5  hazard_steps   1.7  approx_kl 0.0316  SPS 459
+[none] iter  10/366  step    81920  return  -0.331  success  0.33 (top 0.69/bot 0.12)  rand_succ  nan  ep_len  490.6  hazard_steps   1.5  approx_kl 0.0288  SPS 462
+[none] iter  11/366  step    90112  return   1.354  success  0.40 (top 0.70/bot 0.13)  rand_succ  nan  ep_len  465.4  hazard_steps   1.5  approx_kl 0.0205  SPS 464
+[none] iter  12/366  step    98304  return   0.353  success  0.36 (top 0.66/bot 0.13)  rand_succ  nan  ep_len  483.1  hazard_steps   1.1  approx_kl 0.0330  SPS 461
+[none] iter  13/366  step   106496  return   0.337  success  0.36 (top 0.66/bot 0.12)  rand_succ  nan  ep_len  482.2  hazard_steps   1.2  approx_kl 0.0268  SPS 461
+[none] iter  14/366  step   114688  return   0.582  success  0.37 (top 0.66/bot 0.16)  rand_succ  nan  ep_len  478.4  hazard_steps   1.1  approx_kl 0.0171  SPS 460
+[none] iter  15/366  step   122880  return  -0.207  success  0.33 (top 0.59/bot 0.14)  rand_succ  nan  ep_len  494.2  hazard_steps   2.1  approx_kl 0.0230  SPS 461
+[none] iter  16/366  step   131072  return   1.437  success  0.39 (top 0.60/bot 0.11)  rand_succ  nan  ep_len  476.6  hazard_steps   2.0  approx_kl 0.0202  SPS 460
+[none] iter  17/366  step   139264  return   1.503  success  0.40 (top 0.63/bot 0.15)  rand_succ  nan  ep_len  480.2  hazard_steps   2.2  approx_kl 0.0304  SPS 459
+[none] iter  18/366  step   147456  return   1.321  success  0.40 (top 0.60/bot 0.17)  rand_succ  nan  ep_len  479.9  hazard_steps   2.2  approx_kl 0.0190  SPS 459
+[none] iter  19/366  step   155648  return  -0.112  success  0.33 (top 0.56/bot 0.15)  rand_succ  nan  ep_len  500.0  hazard_steps   2.3  approx_kl 0.0148  SPS 459
+[none] iter  20/366  step   163840  return   0.802  success  0.37 (top 0.58/bot 0.15)  rand_succ  nan  ep_len  487.1  hazard_steps   2.3  approx_kl 0.0282  SPS 459
+[none] iter  21/366  step   172032  return   0.514  success  0.37 (top 0.59/bot 0.16)  rand_succ  nan  ep_len  487.5  hazard_steps   1.6  approx_kl 0.0344  SPS 459
+[none] iter  22/366  step   180224  return   0.306  success  0.37 (top 0.60/bot 0.17)  rand_succ  nan  ep_len  489.6  hazard_steps   1.6  approx_kl 0.0269  SPS 458
+[none] iter  23/366  step   188416  return   0.763  success  0.38 (top 0.61/bot 0.16)  rand_succ  nan  ep_len  481.0  hazard_steps   1.5  approx_kl 0.0289  SPS 458
+[none] iter  24/366  step   196608  return   0.090  success  0.34 (top 0.59/bot 0.15)  rand_succ  nan  ep_len  495.2  hazard_steps   1.6  approx_kl 0.0212  SPS 457
+[none] iter  25/366  step   204800  return   1.047  success  0.38 (top 0.58/bot 0.14)  rand_succ  nan  ep_len  482.7  hazard_steps   1.2  approx_kl 0.0258  SPS 457
+[none] iter  26/366  step   212992  return   2.141  success  0.41 (top 0.62/bot 0.14)  rand_succ  nan  ep_len  468.6  hazard_steps   0.6  approx_kl 0.0201  SPS 456
+[none] iter  27/366  step   221184  return   3.078  success  0.45 (top 0.66/bot 0.15)  rand_succ  nan  ep_len  457.1  hazard_steps   0.5  approx_kl 0.0157  SPS 456
+[none] iter  28/366  step   229376  return   3.974  success  0.48 (top 0.69/bot 0.16)  rand_succ  nan  ep_len  449.1  hazard_steps   0.5  approx_kl 0.0228  SPS 455
+[none] iter  29/366  step   237568  return   3.082  success  0.45 (top 0.70/bot 0.13)  rand_succ  nan  ep_len  460.9  hazard_steps   0.4  approx_kl 0.0260  SPS 455
+[none] iter  30/366  step   245760  return   3.891  success  0.48 (top 0.73/bot 0.12)  rand_succ  nan  ep_len  446.0  hazard_steps   0.3  approx_kl 0.0263  SPS 455
+[none] iter  31/366  step   253952  return   3.410  success  0.46 (top 0.70/bot 0.11)  rand_succ  nan  ep_len  453.2  hazard_steps   0.2  approx_kl 0.0175  SPS 455
+[none] iter  32/366  step   262144  return   3.971  success  0.49 (top 0.72/bot 0.14)  rand_succ  nan  ep_len  444.4  hazard_steps   1.8  approx_kl 0.0302  SPS 454
+[none] iter  33/366  step   270336  return   2.771  success  0.45 (top 0.73/bot 0.14)  rand_succ  nan  ep_len  455.6  hazard_steps   2.0  approx_kl 0.0390  SPS 454
+[none] iter  34/366  step   278528  return   3.178  success  0.47 (top 0.76/bot 0.14)  rand_succ  nan  ep_len  448.1  hazard_steps   2.5  approx_kl 0.0390  SPS 454
+[none] iter  35/366  step   286720  return   3.311  success  0.47 (top 0.76/bot 0.15)  rand_succ  nan  ep_len  445.8  hazard_steps   2.5  approx_kl 0.0265  SPS 454
+[none] iter  36/366  step   294912  return   2.763  success  0.46 (top 0.76/bot 0.17)  rand_succ  nan  ep_len  450.3  hazard_steps   3.0  approx_kl 0.0169  SPS 453
+[none] iter  37/366  step   303104  return   3.190  success  0.47 (top 0.78/bot 0.14)  rand_succ  nan  ep_len  442.9  hazard_steps   1.5  approx_kl 0.0279  SPS 453
+[none] iter  38/366  step   311296  return   3.189  success  0.46 (top 0.77/bot 0.14)  rand_succ  nan  ep_len  446.8  hazard_steps   1.8  approx_kl 0.0195  SPS 453
+[none] iter  39/366  step   319488  return   4.073  success  0.50 (top 0.81/bot 0.13)  rand_succ  nan  ep_len  441.7  hazard_steps   1.4  approx_kl 0.0371  SPS 453
+[none] iter  40/366  step   327680  return   3.923  success  0.50 (top 0.79/bot 0.16)  rand_succ  nan  ep_len  442.8  hazard_steps   1.8  approx_kl 0.0251  SPS 452
+[none] iter  41/366  step   335872  return   4.593  success  0.53 (top 0.79/bot 0.18)  rand_succ  nan  ep_len  435.3  hazard_steps   2.9  approx_kl 0.0352  SPS 453
+[none] iter  42/366  step   344064  return   4.914  success  0.54 (top 0.81/bot 0.20)  rand_succ  nan  ep_len  431.2  hazard_steps   2.4  approx_kl 0.0230  SPS 453
+[none] iter  43/366  step   352256  return   4.762  success  0.54 (top 0.82/bot 0.18)  rand_succ  nan  ep_len  431.2  hazard_steps   2.4  approx_kl 0.0199  SPS 452
+[none] iter  44/366  step   360448  return   3.070  success  0.48 (top 0.82/bot 0.17)  rand_succ  nan  ep_len  449.1  hazard_steps   2.2  approx_kl 0.0304  SPS 452
+[none] iter  45/366  step   368640  return   3.047  success  0.48 (top 0.82/bot 0.17)  rand_succ  nan  ep_len  442.7  hazard_steps   2.8  approx_kl 0.0232  SPS 452
+[none] iter  46/366  step   376832  return   2.920  success  0.47 (top 0.85/bot 0.17)  rand_succ  nan  ep_len  446.9  hazard_steps   2.0  approx_kl 0.0270  SPS 452
+[none] iter  47/366  step   385024  return   3.825  success  0.50 (top 0.85/bot 0.17)  rand_succ  nan  ep_len  435.5  hazard_steps   1.9  approx_kl 0.0112  SPS 451
+[none] iter  48/366  step   393216  return   2.319  success  0.44 (top 0.84/bot 0.16)  rand_succ  nan  ep_len  454.1  hazard_steps   1.5  approx_kl 0.0239  SPS 451
+[none] iter  49/366  step   401408  return   3.923  success  0.50 (top 0.83/bot 0.17)  rand_succ  nan  ep_len  433.2  hazard_steps   2.1  approx_kl 0.0288  SPS 451
+[none] iter  50/366  step   409600  return   4.283  success  0.51 (top 0.84/bot 0.16)  rand_succ  nan  ep_len  429.4  hazard_steps   1.5  approx_kl 0.0182  SPS 451
+[none] iter  51/366  step   417792  return   4.863  success  0.53 (top 0.86/bot 0.13)  rand_succ  nan  ep_len  417.8  hazard_steps   0.9  approx_kl 0.0218  SPS 451
+[none] iter  52/366  step   425984  return   4.607  success  0.53 (top 0.84/bot 0.13)  rand_succ  nan  ep_len  423.8  hazard_steps   1.5  approx_kl 0.0339  SPS 451
+[none] iter  53/366  step   434176  return   5.034  success  0.55 (top 0.84/bot 0.12)  rand_succ  nan  ep_len  418.6  hazard_steps   1.4  approx_kl 0.0244  SPS 451
+[none] iter  54/366  step   442368  return   6.170  success  0.59 (top 0.84/bot 0.11)  rand_succ  nan  ep_len  405.8  hazard_steps   0.7  approx_kl 0.0209  SPS 450
+[none] iter  55/366  step   450560  return   5.598  success  0.57 (top 0.85/bot 0.12)  rand_succ  nan  ep_len  417.4  hazard_steps   0.7  approx_kl 0.0238  SPS 450
+[none] iter  56/366  step   458752  return   5.338  success  0.57 (top 0.87/bot 0.14)  rand_succ  nan  ep_len  417.3  hazard_steps   0.9  approx_kl 0.0307  SPS 450
+[none] iter  57/366  step   466944  return   5.312  success  0.57 (top 0.89/bot 0.11)  rand_succ  nan  ep_len  416.1  hazard_steps   0.3  approx_kl 0.0260  SPS 450
+[none] iter  58/366  step   475136  return   4.797  success  0.55 (top 0.88/bot 0.11)  rand_succ  nan  ep_len  421.6  hazard_steps   0.4  approx_kl 0.0260  SPS 449
+[none] iter  59/366  step   483328  return   4.529  success  0.54 (top 0.88/bot 0.12)  rand_succ  nan  ep_len  424.1  hazard_steps   0.4  approx_kl 0.0194  SPS 449
+[none] iter  60/366  step   491520  return   2.151  success  0.45 (top 0.88/bot 0.11)  rand_succ  nan  ep_len  456.4  hazard_steps   0.4  approx_kl 0.0132  SPS 449
+[none] iter  61/366  step   499712  return   1.488  success  0.42 (top 0.87/bot 0.10)  rand_succ  nan  ep_len  463.1  hazard_steps   0.5  approx_kl 0.0282  SPS 449
+[none] iter  62/366  step   507904  return   1.323  success  0.40 (top 0.89/bot 0.09)  rand_succ  nan  ep_len  469.1  hazard_steps   0.3  approx_kl 0.0252  SPS 449
+[none] iter  63/366  step   516096  return   1.568  success  0.40 (top 0.90/bot 0.06)  rand_succ  nan  ep_len  465.5  hazard_steps   0.5  approx_kl 0.0198  SPS 449
+[none] iter  64/366  step   524288  return   1.459  success  0.40 (top 0.90/bot 0.06)  rand_succ  nan  ep_len  467.7  hazard_steps   1.0  approx_kl 0.0293  SPS 449
+[none] iter  65/366  step   532480  return   2.361  success  0.43 (top 0.91/bot 0.04)  rand_succ  nan  ep_len  453.5  hazard_steps   1.0  approx_kl 0.0188  SPS 449
+[none] iter  66/366  step   540672  return   2.701  success  0.44 (top 0.89/bot 0.04)  rand_succ  nan  ep_len  450.6  hazard_steps   1.0  approx_kl 0.0299  SPS 449
+[none] iter  67/366  step   548864  return   3.041  success  0.45 (top 0.87/bot 0.02)  rand_succ  nan  ep_len  446.0  hazard_steps   1.0  approx_kl 0.0225  SPS 449
+[none] iter  68/366  step   557056  return   2.030  success  0.41 (top 0.83/bot 0.02)  rand_succ  nan  ep_len  460.2  hazard_steps   0.7  approx_kl 0.0265  SPS 449
+[none] iter  69/366  step   565248  return   1.946  success  0.40 (top 0.83/bot 0.02)  rand_succ  nan  ep_len  462.2  hazard_steps   0.7  approx_kl 0.0329  SPS 449
+[none] iter  70/366  step   573440  return   2.818  success  0.42 (top 0.84/bot 0.01)  rand_succ  nan  ep_len  454.6  hazard_steps   0.1  approx_kl 0.0233  SPS 449
+[none] iter  71/366  step   581632  return   2.924  success  0.41 (top 0.84/bot 0.01)  rand_succ  nan  ep_len  461.9  hazard_steps   0.1  approx_kl 0.0260  SPS 449
+[none] iter  72/366  step   589824  return   2.142  success  0.38 (top 0.85/bot 0.01)  rand_succ  nan  ep_len  474.3  hazard_steps   0.2  approx_kl 0.0261  SPS 449
+[none] iter  73/366  step   598016  return   2.406  success  0.39 (top 0.84/bot 0.01)  rand_succ  nan  ep_len  475.3  hazard_steps   0.1  approx_kl 0.0177  SPS 449
+[none] iter  74/366  step   606208  return   3.911  success  0.46 (top 0.85/bot 0.01)  rand_succ  nan  ep_len  455.1  hazard_steps   0.1  approx_kl 0.0198  SPS 449
+[none] iter  75/366  step   614400  return   4.346  success  0.49 (top 0.86/bot 0.03)  rand_succ  nan  ep_len  445.6  hazard_steps   0.1  approx_kl 0.0158  SPS 448
+[none] iter  76/366  step   622592  return   4.568  success  0.51 (top 0.87/bot 0.04)  rand_succ  nan  ep_len  432.9  hazard_steps   0.1  approx_kl 0.0219  SPS 448
+[none] iter  77/366  step   630784  return   5.459  success  0.54 (top 0.88/bot 0.07)  rand_succ  nan  ep_len  423.2  hazard_steps   0.6  approx_kl 0.0237  SPS 448
+[none] iter  78/366  step   638976  return   5.554  success  0.55 (top 0.87/bot 0.06)  rand_succ  nan  ep_len  421.2  hazard_steps   0.6  approx_kl 0.0186  SPS 448
+[none] iter  79/366  step   647168  return   5.249  success  0.54 (top 0.91/bot 0.06)  rand_succ  nan  ep_len  425.8  hazard_steps   0.7  approx_kl 0.0257  SPS 448
+[none] iter  80/366  step   655360  return   3.594  success  0.48 (top 0.91/bot 0.06)  rand_succ  nan  ep_len  441.6  hazard_steps   0.8  approx_kl 0.0226  SPS 448
+[none] iter  81/366  step   663552  return   2.534  success  0.44 (top 0.92/bot 0.06)  rand_succ  nan  ep_len  456.4  hazard_steps   0.9  approx_kl 0.0255  SPS 448
+[none] iter  82/366  step   671744  return   2.807  success  0.45 (top 0.92/bot 0.06)  rand_succ  nan  ep_len  453.2  hazard_steps   0.9  approx_kl 0.0223  SPS 448
+[none] iter  83/366  step   679936  return   3.399  success  0.47 (top 0.93/bot 0.06)  rand_succ  nan  ep_len  439.5  hazard_steps   0.3  approx_kl 0.0228  SPS 448
+[none] iter  84/366  step   688128  return   3.503  success  0.48 (top 0.92/bot 0.06)  rand_succ  nan  ep_len  432.9  hazard_steps   0.5  approx_kl 0.0360  SPS 448
+[none] iter  85/366  step   696320  return   3.640  success  0.48 (top 0.91/bot 0.06)  rand_succ  nan  ep_len  435.2  hazard_steps   0.4  approx_kl 0.0334  SPS 448
+[none] iter  86/366  step   704512  return   3.625  success  0.47 (top 0.90/bot 0.04)  rand_succ  nan  ep_len  435.1  hazard_steps   0.4  approx_kl 0.0237  SPS 448
+[none] iter  87/366  step   712704  return   3.580  success  0.46 (top 0.90/bot 0.02)  rand_succ  nan  ep_len  440.2  hazard_steps   0.2  approx_kl 0.0149  SPS 448
+[none] iter  88/366  step   720896  return   3.090  success  0.43 (top 0.89/bot 0.00)  rand_succ  nan  ep_len  447.5  hazard_steps   0.3  approx_kl 0.0216  SPS 448
+[none] iter  89/366  step   729088  return   2.980  success  0.42 (top 0.90/bot 0.01)  rand_succ  nan  ep_len  452.8  hazard_steps   1.0  approx_kl 0.0202  SPS 448
+[none] iter  90/366  step   737280  return   3.080  success  0.42 (top 0.91/bot 0.01)  rand_succ  nan  ep_len  453.6  hazard_steps   0.8  approx_kl 0.0243  SPS 448
+[none] iter  91/366  step   745472  return   2.933  success  0.42 (top 0.92/bot 0.01)  rand_succ  nan  ep_len  450.9  hazard_steps   0.8  approx_kl 0.0200  SPS 448
+[none] iter  92/366  step   753664  return   2.074  success  0.40 (top 0.93/bot 0.01)  rand_succ  nan  ep_len  462.8  hazard_steps   1.0  approx_kl 0.0220  SPS 448
+[none] iter  93/366  step   761856  return   2.038  success  0.40 (top 0.92/bot 0.01)  rand_succ  nan  ep_len  461.0  hazard_steps   1.3  approx_kl 0.0371  SPS 448
+[none] iter  94/366  step   770048  return   2.117  success  0.40 (top 0.92/bot 0.01)  rand_succ  nan  ep_len  464.8  hazard_steps   0.5  approx_kl 0.0251  SPS 448
+[none] iter  95/366  step   778240  return   2.398  success  0.41 (top 0.93/bot 0.01)  rand_succ  nan  ep_len  461.8  hazard_steps   0.8  approx_kl 0.0249  SPS 448
+[none] iter  96/366  step   786432  return   2.656  success  0.43 (top 0.94/bot 0.02)  rand_succ  nan  ep_len  460.5  hazard_steps   1.6  approx_kl 0.0153  SPS 448
+[none] iter  97/366  step   794624  return   3.023  success  0.43 (top 0.93/bot 0.02)  rand_succ  nan  ep_len  461.5  hazard_steps   1.6  approx_kl 0.0207  SPS 448
+[none] iter  98/366  step   802816  return   3.462  success  0.44 (top 0.93/bot 0.02)  rand_succ  nan  ep_len  454.2  hazard_steps   1.3  approx_kl 0.0237  SPS 448
+[none] iter  99/366  step   811008  return   2.704  success  0.41 (top 0.92/bot 0.02)  rand_succ  nan  ep_len  462.7  hazard_steps   1.6  approx_kl 0.0213  SPS 448
+[none] iter 100/366  step   819200  return   3.630  success  0.44 (top 0.92/bot 0.03)  rand_succ  nan  ep_len  450.3  hazard_steps   1.4  approx_kl 0.0251  SPS 447
+[none] iter 101/366  step   827392  return   3.523  success  0.44 (top 0.91/bot 0.03)  rand_succ  nan  ep_len  446.8  hazard_steps   0.6  approx_kl 0.0320  SPS 447
+[none] iter 102/366  step   835584  return   4.332  success  0.48 (top 0.90/bot 0.03)  rand_succ  nan  ep_len  435.5  hazard_steps   0.6  approx_kl 0.0217  SPS 447
+[none] iter 103/366  step   843776  return   4.626  success  0.49 (top 0.89/bot 0.03)  rand_succ  nan  ep_len  437.6  hazard_steps   0.6  approx_kl 0.0237  SPS 447
+[none] iter 104/366  step   851968  return   4.776  success  0.50 (top 0.90/bot 0.03)  rand_succ  nan  ep_len  438.3  hazard_steps   0.0  approx_kl 0.0248  SPS 447
+[none] iter 105/366  step   860160  return   4.070  success  0.48 (top 0.89/bot 0.03)  rand_succ  nan  ep_len  446.0  hazard_steps   1.8  approx_kl 0.0213  SPS 447
+[none] iter 106/366  step   868352  return   4.094  success  0.48 (top 0.87/bot 0.04)  rand_succ  nan  ep_len  446.8  hazard_steps   2.4  approx_kl 0.0139  SPS 447
+[none] iter 107/366  step   876544  return   3.476  success  0.44 (top 0.86/bot 0.03)  rand_succ  nan  ep_len  461.3  hazard_steps   2.6  approx_kl 0.0167  SPS 447
+[none] iter 108/366  step   884736  return   2.894  success  0.41 (top 0.88/bot 0.03)  rand_succ  nan  ep_len  468.5  hazard_steps   2.6  approx_kl 0.0293  SPS 447
+[none] iter 109/366  step   892928  return   2.573  success  0.40 (top 0.88/bot 0.03)  rand_succ  nan  ep_len  469.1  hazard_steps   4.0  approx_kl 0.0154  SPS 447
+[none] iter 110/366  step   901120  return   2.975  success  0.42 (top 0.89/bot 0.02)  rand_succ  nan  ep_len  462.8  hazard_steps   4.5  approx_kl 0.0269  SPS 447
+[none] iter 111/366  step   909312  return   3.923  success  0.45 (top 0.87/bot 0.02)  rand_succ  nan  ep_len  451.4  hazard_steps   2.5  approx_kl 0.0169  SPS 447
+[none] iter 112/366  step   917504  return   4.463  success  0.48 (top 0.90/bot 0.02)  rand_succ  nan  ep_len  443.1  hazard_steps   2.8  approx_kl 0.0226  SPS 447
+[none] iter 113/366  step   925696  return   3.774  success  0.46 (top 0.89/bot 0.02)  rand_succ  nan  ep_len  450.6  hazard_steps   2.9  approx_kl 0.0221  SPS 447
+[none] iter 114/366  step   933888  return   4.240  success  0.47 (top 0.90/bot 0.02)  rand_succ  nan  ep_len  447.4  hazard_steps   2.0  approx_kl 0.0219  SPS 447
+[none] iter 115/366  step   942080  return   3.724  success  0.45 (top 0.89/bot 0.02)  rand_succ  nan  ep_len  451.9  hazard_steps   2.3  approx_kl 0.0318  SPS 447
+[none] iter 116/366  step   950272  return   3.141  success  0.43 (top 0.89/bot 0.02)  rand_succ  nan  ep_len  459.2  hazard_steps   2.8  approx_kl 0.0384  SPS 447
+[none] iter 117/366  step   958464  return   3.263  success  0.44 (top 0.90/bot 0.01)  rand_succ  nan  ep_len  455.8  hazard_steps   2.0  approx_kl 0.0311  SPS 447
+[none] iter 118/366  step   966656  return   3.648  success  0.45 (top 0.91/bot 0.01)  rand_succ  nan  ep_len  456.5  hazard_steps   1.9  approx_kl 0.0215  SPS 447
+[none] iter 119/366  step   974848  return   3.871  success  0.46 (top 0.90/bot 0.02)  rand_succ  nan  ep_len  457.5  hazard_steps   2.3  approx_kl 0.0187  SPS 447
+[none] iter 120/366  step   983040  return   3.982  success  0.47 (top 0.90/bot 0.02)  rand_succ  nan  ep_len  453.1  hazard_steps   1.1  approx_kl 0.0290  SPS 447
+[none] iter 121/366  step   991232  return   4.831  success  0.51 (top 0.90/bot 0.03)  rand_succ  nan  ep_len  446.9  hazard_steps   0.7  approx_kl 0.0182  SPS 447
+[none] iter 122/366  step   999424  return   4.116  success  0.49 (top 0.91/bot 0.03)  rand_succ  nan  ep_len  453.0  hazard_steps   2.3  approx_kl 0.0199  SPS 447
+[none] iter 123/366  step  1007616  return   4.019  success  0.48 (top 0.92/bot 0.02)  rand_succ  nan  ep_len  458.1  hazard_steps   2.3  approx_kl 0.0412  SPS 447
+[none] iter 124/366  step  1015808  return   4.386  success  0.50 (top 0.93/bot 0.02)  rand_succ  nan  ep_len  451.5  hazard_steps   2.3  approx_kl 0.0165  SPS 447
+[none] iter 125/366  step  1024000  return   3.612  success  0.46 (top 0.93/bot 0.02)  rand_succ  nan  ep_len  461.7  hazard_steps   1.9  approx_kl 0.0193  SPS 447
+[none] iter 126/366  step  1032192  return   3.571  success  0.46 (top 0.92/bot 0.03)  rand_succ  nan  ep_len  463.7  hazard_steps   1.9  approx_kl 0.0182  SPS 447
+[none] iter 127/366  step  1040384  return   3.805  success  0.46 (top 0.94/bot 0.03)  rand_succ  nan  ep_len  460.0  hazard_steps   0.0  approx_kl 0.0149  SPS 447
+[none] iter 128/366  step  1048576  return   3.893  success  0.47 (top 0.95/bot 0.03)  rand_succ  nan  ep_len  454.6  hazard_steps   0.0  approx_kl 0.0188  SPS 447
+[none] iter 129/366  step  1056768  return   3.288  success  0.45 (top 0.94/bot 0.06)  rand_succ  nan  ep_len  461.3  hazard_steps   2.0  approx_kl 0.0267  SPS 447
+[none] iter 130/366  step  1064960  return   4.165  success  0.49 (top 0.94/bot 0.06)  rand_succ  nan  ep_len  444.6  hazard_steps   2.1  approx_kl 0.0257  SPS 447
+[none] iter 131/366  step  1073152  return   3.638  success  0.47 (top 0.94/bot 0.06)  rand_succ  nan  ep_len  446.9  hazard_steps   3.4  approx_kl 0.0211  SPS 447
+[none] iter 132/366  step  1081344  return   3.622  success  0.46 (top 0.94/bot 0.06)  rand_succ  nan  ep_len  447.0  hazard_steps   4.4  approx_kl 0.0253  SPS 447
+[none] iter 133/366  step  1089536  return   3.200  success  0.43 (top 0.90/bot 0.06)  rand_succ  nan  ep_len  458.0  hazard_steps   4.4  approx_kl 0.0284  SPS 447
+[none] iter 134/366  step  1097728  return   3.409  success  0.44 (top 0.89/bot 0.06)  rand_succ  nan  ep_len  454.8  hazard_steps   5.7  approx_kl 0.0329  SPS 447
+[none] iter 135/366  step  1105920  return   2.777  success  0.40 (top 0.89/bot 0.07)  rand_succ  nan  ep_len  465.9  hazard_steps   5.0  approx_kl 0.0237  SPS 447
+[none] iter 136/366  step  1114112  return   3.862  success  0.44 (top 0.89/bot 0.06)  rand_succ  nan  ep_len  451.9  hazard_steps   4.9  approx_kl 0.0209  SPS 447
+[none] iter 137/366  step  1122304  return   4.809  success  0.48 (top 0.90/bot 0.07)  rand_succ  nan  ep_len  440.4  hazard_steps   3.3  approx_kl 0.0173  SPS 447
+[none] iter 138/366  step  1130496  return   6.112  success  0.53 (top 0.90/bot 0.07)  rand_succ  nan  ep_len  423.6  hazard_steps   3.9  approx_kl 0.0273  SPS 447
+[none] iter 139/366  step  1138688  return   6.531  success  0.54 (top 0.90/bot 0.07)  rand_succ  nan  ep_len  418.0  hazard_steps   2.6  approx_kl 0.0191  SPS 447
+[none] iter 140/366  step  1146880  return   5.660  success  0.51 (top 0.90/bot 0.03)  rand_succ  nan  ep_len  426.9  hazard_steps   3.8  approx_kl 0.0259  SPS 447
+[none] iter 141/366  step  1155072  return   5.239  success  0.48 (top 0.90/bot 0.03)  rand_succ  nan  ep_len  437.0  hazard_steps   2.6  approx_kl 0.0245  SPS 447
+[none] iter 142/366  step  1163264  return   4.395  success  0.45 (top 0.88/bot 0.03)  rand_succ  nan  ep_len  450.4  hazard_steps   3.2  approx_kl 0.0189  SPS 447
+[none] iter 143/366  step  1171456  return   3.417  success  0.41 (top 0.89/bot 0.03)  rand_succ  nan  ep_len  462.0  hazard_steps   4.1  approx_kl 0.0276  SPS 447
+[none] iter 144/366  step  1179648  return   2.535  success  0.39 (top 0.89/bot 0.03)  rand_succ  nan  ep_len  473.1  hazard_steps   3.6  approx_kl 0.0241  SPS 447
+[none] iter 145/366  step  1187840  return   2.192  success  0.38 (top 0.91/bot 0.03)  rand_succ  nan  ep_len  478.9  hazard_steps   3.1  approx_kl 0.0119  SPS 447
+[none] iter 146/366  step  1196032  return   2.781  success  0.41 (top 0.91/bot 0.03)  rand_succ  nan  ep_len  468.4  hazard_steps   3.1  approx_kl 0.0238  SPS 447
+[none] iter 147/366  step  1204224  return   4.056  success  0.49 (top 0.91/bot 0.04)  rand_succ  nan  ep_len  445.8  hazard_steps   4.8  approx_kl 0.0244  SPS 447
+[none] iter 148/366  step  1212416  return   5.264  success  0.54 (top 0.92/bot 0.03)  rand_succ  nan  ep_len  429.1  hazard_steps   4.0  approx_kl 0.0180  SPS 447
+[none] iter 149/366  step  1220608  return   5.563  success  0.54 (top 0.92/bot 0.03)  rand_succ  nan  ep_len  425.8  hazard_steps   4.4  approx_kl 0.0225  SPS 446
+[none] iter 150/366  step  1228800  return   5.381  success  0.53 (top 0.92/bot 0.03)  rand_succ  nan  ep_len  430.9  hazard_steps   4.7  approx_kl 0.0249  SPS 447
+[none] iter 151/366  step  1236992  return   5.551  success  0.54 (top 0.93/bot 0.03)  rand_succ  nan  ep_len  428.4  hazard_steps   4.8  approx_kl 0.0208  SPS 447
+[none] iter 152/366  step  1245184  return   5.387  success  0.52 (top 0.94/bot 0.02)  rand_succ  nan  ep_len  438.7  hazard_steps   2.6  approx_kl 0.0150  SPS 447
+[none] iter 153/366  step  1253376  return   4.807  success  0.49 (top 0.94/bot 0.03)  rand_succ  nan  ep_len  441.4  hazard_steps   1.8  approx_kl 0.0171  SPS 447
+[none] iter 154/366  step  1261568  return   4.425  success  0.48 (top 0.94/bot 0.03)  rand_succ  nan  ep_len  447.7  hazard_steps   1.8  approx_kl 0.0218  SPS 447
+[none] iter 155/366  step  1269760  return   4.239  success  0.47 (top 0.94/bot 0.05)  rand_succ  nan  ep_len  453.2  hazard_steps   1.8  approx_kl 0.0142  SPS 447
+[none] iter 156/366  step  1277952  return   4.189  success  0.47 (top 0.95/bot 0.05)  rand_succ  nan  ep_len  450.6  hazard_steps   1.9  approx_kl 0.0365  SPS 447
+[none] iter 157/366  step  1286144  return   3.998  success  0.47 (top 0.93/bot 0.05)  rand_succ  nan  ep_len  450.0  hazard_steps   2.3  approx_kl 0.0208  SPS 446
+[none] iter 158/366  step  1294336  return   3.055  success  0.43 (top 0.91/bot 0.04)  rand_succ  nan  ep_len  466.2  hazard_steps   2.3  approx_kl 0.0139  SPS 446
+[none] iter 159/366  step  1302528  return   3.803  success  0.45 (top 0.90/bot 0.04)  rand_succ  nan  ep_len  452.1  hazard_steps   1.8  approx_kl 0.0239  SPS 446
+[none] iter 160/366  step  1310720  return   4.653  success  0.49 (top 0.88/bot 0.04)  rand_succ  nan  ep_len  439.2  hazard_steps   4.3  approx_kl 0.0232  SPS 446
+[none] iter 161/366  step  1318912  return   4.138  success  0.48 (top 0.88/bot 0.05)  rand_succ  nan  ep_len  441.8  hazard_steps   5.0  approx_kl 0.0276  SPS 446
+[none] iter 162/366  step  1327104  return   4.506  success  0.49 (top 0.87/bot 0.06)  rand_succ  nan  ep_len  434.5  hazard_steps   5.7  approx_kl 0.0256  SPS 446
+[none] iter 163/366  step  1335296  return   4.538  success  0.47 (top 0.87/bot 0.06)  rand_succ  nan  ep_len  443.4  hazard_steps   5.0  approx_kl 0.0318  SPS 446
+[none] iter 164/366  step  1343488  return   4.829  success  0.48 (top 0.83/bot 0.05)  rand_succ  nan  ep_len  443.5  hazard_steps   5.6  approx_kl 0.0288  SPS 446
+[none] iter 165/366  step  1351680  return   4.644  success  0.47 (top 0.83/bot 0.05)  rand_succ  nan  ep_len  450.3  hazard_steps   2.4  approx_kl 0.0120  SPS 446
+[none] iter 166/366  step  1359872  return   5.371  success  0.49 (top 0.85/bot 0.05)  rand_succ  nan  ep_len  444.7  hazard_steps   1.4  approx_kl 0.0188  SPS 446
+[none] iter 167/366  step  1368064  return   6.120  success  0.51 (top 0.84/bot 0.03)  rand_succ  nan  ep_len  439.3  hazard_steps   1.4  approx_kl 0.0261  SPS 446
+[none] iter 168/366  step  1376256  return   5.300  success  0.49 (top 0.83/bot 0.03)  rand_succ  nan  ep_len  443.8  hazard_steps   2.7  approx_kl 0.0145  SPS 446
+[none] iter 169/366  step  1384448  return   6.052  success  0.53 (top 0.84/bot 0.04)  rand_succ  nan  ep_len  430.5  hazard_steps   2.7  approx_kl 0.0207  SPS 446
+[none] iter 170/366  step  1392640  return   4.387  success  0.47 (top 0.80/bot 0.03)  rand_succ  nan  ep_len  447.9  hazard_steps   3.5  approx_kl 0.0271  SPS 446
+[none] iter 171/366  step  1400832  return   4.226  success  0.46 (top 0.81/bot 0.03)  rand_succ  nan  ep_len  451.1  hazard_steps   3.5  approx_kl 0.0196  SPS 446
+[none] iter 172/366  step  1409024  return   4.134  success  0.46 (top 0.80/bot 0.03)  rand_succ  nan  ep_len  458.9  hazard_steps   3.5  approx_kl 0.0213  SPS 446
+[none] iter 173/366  step  1417216  return   4.144  success  0.47 (top 0.83/bot 0.03)  rand_succ  nan  ep_len  456.1  hazard_steps   3.5  approx_kl 0.0141  SPS 446
+[none] iter 174/366  step  1425408  return   4.569  success  0.48 (top 0.85/bot 0.03)  rand_succ  nan  ep_len  453.3  hazard_steps   2.0  approx_kl 0.0146  SPS 446
+[none] iter 175/366  step  1433600  return   4.139  success  0.45 (top 0.85/bot 0.03)  rand_succ  nan  ep_len  461.9  hazard_steps   3.1  approx_kl 0.0240  SPS 446
+[none] iter 176/366  step  1441792  return   4.401  success  0.45 (top 0.85/bot 0.03)  rand_succ  nan  ep_len  463.3  hazard_steps   1.6  approx_kl 0.0209  SPS 446
+[none] iter 177/366  step  1449984  return   3.576  success  0.43 (top 0.86/bot 0.03)  rand_succ  nan  ep_len  468.2  hazard_steps   2.7  approx_kl 0.0192  SPS 446
+[none] iter 178/366  step  1458176  return   2.719  success  0.40 (top 0.83/bot 0.04)  rand_succ  nan  ep_len  481.1  hazard_steps   3.5  approx_kl 0.0162  SPS 446
+[none] iter 179/366  step  1466368  return   2.312  success  0.38 (top 0.83/bot 0.04)  rand_succ  nan  ep_len  493.7  hazard_steps   4.7  approx_kl 0.0158  SPS 446
+[none] iter 180/366  step  1474560  return   2.267  success  0.38 (top 0.82/bot 0.04)  rand_succ  nan  ep_len  494.8  hazard_steps   3.1  approx_kl 0.0156  SPS 446
+[none] iter 181/366  step  1482752  return   2.618  success  0.41 (top 0.81/bot 0.04)  rand_succ  nan  ep_len  492.9  hazard_steps   5.0  approx_kl 0.0082  SPS 446
+[none] iter 182/366  step  1490944  return   2.593  success  0.42 (top 0.84/bot 0.04)  rand_succ  nan  ep_len  493.6  hazard_steps   7.0  approx_kl 0.0147  SPS 446
+[none] iter 183/366  step  1499136  return   2.804  success  0.43 (top 0.82/bot 0.04)  rand_succ  nan  ep_len  494.6  hazard_steps   6.0  approx_kl 0.0129  SPS 446
+[none] iter 184/366  step  1507328  return   1.878  success  0.38 (top 0.80/bot 0.04)  rand_succ  nan  ep_len  504.7  hazard_steps   8.0  approx_kl 0.0253  SPS 446
+[none] iter 185/366  step  1515520  return   2.208  success  0.39 (top 0.79/bot 0.05)  rand_succ  nan  ep_len  505.7  hazard_steps   6.9  approx_kl 0.0187  SPS 446
+[none] iter 186/366  step  1523712  return   2.119  success  0.40 (top 0.76/bot 0.06)  rand_succ  nan  ep_len  504.4  hazard_steps   9.5  approx_kl 0.0154  SPS 446
+[none] iter 187/366  step  1531904  return   2.179  success  0.39 (top 0.73/bot 0.06)  rand_succ  nan  ep_len  502.1  hazard_steps   7.7  approx_kl 0.0239  SPS 446
+[none] iter 188/366  step  1540096  return   1.930  success  0.36 (top 0.65/bot 0.05)  rand_succ  nan  ep_len  508.9  hazard_steps   7.4  approx_kl 0.0178  SPS 446
+[none] iter 189/366  step  1548288  return   1.997  success  0.34 (top 0.63/bot 0.05)  rand_succ  nan  ep_len  517.1  hazard_steps   6.5  approx_kl 0.0129  SPS 446
+[none] iter 190/366  step  1556480  return   3.196  success  0.39 (top 0.62/bot 0.06)  rand_succ  nan  ep_len  507.2  hazard_steps   7.2  approx_kl 0.0143  SPS 446
+[none] iter 191/366  step  1564672  return   2.603  success  0.36 (top 0.63/bot 0.06)  rand_succ  nan  ep_len  508.4  hazard_steps   5.0  approx_kl 0.0162  SPS 446
+[none] iter 192/366  step  1572864  return   2.800  success  0.35 (top 0.61/bot 0.05)  rand_succ  nan  ep_len  512.3  hazard_steps   2.6  approx_kl 0.0135  SPS 446
+[none] iter 193/366  step  1581056  return   1.914  success  0.33 (top 0.61/bot 0.06)  rand_succ  nan  ep_len  518.3  hazard_steps   4.4  approx_kl 0.0198  SPS 446
+[none] iter 194/366  step  1589248  return   2.244  success  0.35 (top 0.59/bot 0.06)  rand_succ  nan  ep_len  512.4  hazard_steps   5.0  approx_kl 0.0259  SPS 446
+[none] iter 195/366  step  1597440  return   3.003  success  0.38 (top 0.59/bot 0.05)  rand_succ  nan  ep_len  500.0  hazard_steps   5.0  approx_kl 0.0156  SPS 446
+[none] iter 196/366  step  1605632  return   2.150  success  0.35 (top 0.59/bot 0.05)  rand_succ  nan  ep_len  504.6  hazard_steps   2.9  approx_kl 0.0142  SPS 446
+[none] iter 197/366  step  1613824  return   1.882  success  0.34 (top 0.58/bot 0.05)  rand_succ  nan  ep_len  508.4  hazard_steps   3.0  approx_kl 0.0204  SPS 446
+[none] iter 198/366  step  1622016  return   2.812  success  0.39 (top 0.60/bot 0.05)  rand_succ  nan  ep_len  491.4  hazard_steps   2.8  approx_kl 0.0104  SPS 446
+[none] iter 199/366  step  1630208  return   2.762  success  0.36 (top 0.63/bot 0.03)  rand_succ  nan  ep_len  492.9  hazard_steps   0.9  approx_kl 0.0199  SPS 446
+[none] iter 200/366  step  1638400  return   2.236  success  0.34 (top 0.65/bot 0.02)  rand_succ  nan  ep_len  498.1  hazard_steps   1.2  approx_kl 0.0097  SPS 446
+[none] iter 201/366  step  1646592  return   2.456  success  0.35 (top 0.68/bot 0.02)  rand_succ  nan  ep_len  493.4  hazard_steps   1.1  approx_kl 0.0131  SPS 446
+[none] iter 202/366  step  1654784  return   2.786  success  0.37 (top 0.67/bot 0.02)  rand_succ  nan  ep_len  484.5  hazard_steps   1.1  approx_kl 0.0272  SPS 446
+[none] iter 203/366  step  1662976  return   3.236  success  0.39 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  479.2  hazard_steps   1.1  approx_kl 0.0136  SPS 446
+[none] iter 204/366  step  1671168  return   2.323  success  0.36 (top 0.70/bot 0.01)  rand_succ  nan  ep_len  495.2  hazard_steps   1.3  approx_kl 0.0167  SPS 446
+[none] iter 205/366  step  1679360  return   1.833  success  0.34 (top 0.69/bot 0.01)  rand_succ  nan  ep_len  501.0  hazard_steps   1.3  approx_kl 0.0162  SPS 446
+[none] iter 206/366  step  1687552  return   2.351  success  0.36 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  494.1  hazard_steps   0.4  approx_kl 0.0131  SPS 446
+[none] iter 207/366  step  1695744  return   2.903  success  0.38 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  485.9  hazard_steps   0.7  approx_kl 0.0162  SPS 446
+[none] iter 208/366  step  1703936  return   2.522  success  0.35 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  496.3  hazard_steps   0.6  approx_kl 0.0158  SPS 446
+[none] iter 209/366  step  1712128  return   1.871  success  0.32 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  501.7  hazard_steps   0.6  approx_kl 0.0200  SPS 446
+[none] iter 210/366  step  1720320  return   2.277  success  0.33 (top 0.68/bot 0.01)  rand_succ  nan  ep_len  495.0  hazard_steps   0.3  approx_kl 0.0167  SPS 446
+[none] iter 211/366  step  1728512  return   2.404  success  0.34 (top 0.69/bot 0.01)  rand_succ  nan  ep_len  489.3  hazard_steps   0.3  approx_kl 0.0184  SPS 446
+[none] iter 212/366  step  1736704  return   2.296  success  0.33 (top 0.67/bot 0.01)  rand_succ  nan  ep_len  493.9  hazard_steps   0.3  approx_kl 0.0063  SPS 446
+[none] iter 213/366  step  1744896  return   1.221  success  0.29 (top 0.66/bot 0.01)  rand_succ  nan  ep_len  509.6  hazard_steps   0.2  approx_kl 0.0189  SPS 446
+[none] iter 214/366  step  1753088  return   1.466  success  0.30 (top 0.61/bot 0.01)  rand_succ  nan  ep_len  510.9  hazard_steps   0.2  approx_kl 0.0361  SPS 446
+[none] iter 215/366  step  1761280  return   1.856  success  0.31 (top 0.61/bot 0.01)  rand_succ  nan  ep_len  505.6  hazard_steps   1.6  approx_kl 0.0139  SPS 446
+[none] iter 216/366  step  1769472  return   2.273  success  0.32 (top 0.61/bot 0.01)  rand_succ  nan  ep_len  501.6  hazard_steps   2.1  approx_kl 0.0182  SPS 446
+[none] iter 217/366  step  1777664  return   2.136  success  0.31 (top 0.59/bot 0.00)  rand_succ  nan  ep_len  501.6  hazard_steps   2.2  approx_kl 0.0158  SPS 446
+[none] iter 218/366  step  1785856  return   2.844  success  0.35 (top 0.61/bot 0.00)  rand_succ  nan  ep_len  483.8  hazard_steps   2.2  approx_kl 0.0184  SPS 446
+[none] iter 219/366  step  1794048  return   3.010  success  0.37 (top 0.62/bot 0.00)  rand_succ  nan  ep_len  475.5  hazard_steps   2.2  approx_kl 0.0180  SPS 446
+[none] iter 220/366  step  1802240  return   2.748  success  0.36 (top 0.60/bot 0.00)  rand_succ  nan  ep_len  475.3  hazard_steps   0.9  approx_kl 0.0169  SPS 446
+[none] iter 221/366  step  1810432  return   2.208  success  0.34 (top 0.62/bot 0.00)  rand_succ  nan  ep_len  483.0  hazard_steps   0.9  approx_kl 0.0141  SPS 446
+[none] iter 222/366  step  1818624  return   2.404  success  0.35 (top 0.62/bot 0.00)  rand_succ  nan  ep_len  481.3  hazard_steps   0.2  approx_kl 0.0334  SPS 446
+[none] iter 223/366  step  1826816  return   2.246  success  0.35 (top 0.62/bot 0.00)  rand_succ  nan  ep_len  480.8  hazard_steps   0.2  approx_kl 0.0141  SPS 446
+[none] iter 224/366  step  1835008  return   1.774  success  0.33 (top 0.63/bot 0.00)  rand_succ  nan  ep_len  487.6  hazard_steps   0.2  approx_kl 0.0112  SPS 446
+[none] iter 225/366  step  1843200  return   1.052  success  0.29 (top 0.65/bot 0.00)  rand_succ  nan  ep_len  499.8  hazard_steps   0.0  approx_kl 0.0196  SPS 446
+[none] iter 226/366  step  1851392  return   0.926  success  0.29 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  502.2  hazard_steps   0.0  approx_kl 0.0216  SPS 446
+[none] iter 227/366  step  1859584  return   1.461  success  0.31 (top 0.68/bot 0.00)  rand_succ  nan  ep_len  494.7  hazard_steps   0.0  approx_kl 0.0253  SPS 446
+[none] iter 228/366  step  1867776  return   1.667  success  0.31 (top 0.66/bot 0.00)  rand_succ  nan  ep_len  492.8  hazard_steps   0.0  approx_kl 0.0093  SPS 446
+[none] iter 229/366  step  1875968  return   2.798  success  0.34 (top 0.70/bot 0.00)  rand_succ  nan  ep_len  483.8  hazard_steps   0.0  approx_kl 0.0260  SPS 446
+[none] iter 230/366  step  1884160  return   2.941  success  0.35 (top 0.67/bot 0.00)  rand_succ  nan  ep_len  483.5  hazard_steps   0.0  approx_kl 0.0147  SPS 446
+[none] iter 231/366  step  1892352  return   3.385  success  0.37 (top 0.66/bot 0.01)  rand_succ  nan  ep_len  480.1  hazard_steps   0.5  approx_kl 0.0244  SPS 445
+[none] iter 232/366  step  1900544  return   4.147  success  0.39 (top 0.67/bot 0.01)  rand_succ  nan  ep_len  471.4  hazard_steps   0.5  approx_kl 0.0102  SPS 443
+[none] iter 233/366  step  1908736  return   3.949  success  0.39 (top 0.69/bot 0.01)  rand_succ  nan  ep_len  473.1  hazard_steps   0.5  approx_kl 0.0227  SPS 442
+[none] iter 234/366  step  1916928  return   3.997  success  0.40 (top 0.72/bot 0.01)  rand_succ  nan  ep_len  471.1  hazard_steps   0.9  approx_kl 0.0143  SPS 441
+[none] iter 235/366  step  1925120  return   4.187  success  0.42 (top 0.73/bot 0.01)  rand_succ  nan  ep_len  463.0  hazard_steps   1.2  approx_kl 0.0147  SPS 440
+[none] iter 236/366  step  1933312  return   3.951  success  0.41 (top 0.73/bot 0.01)  rand_succ  nan  ep_len  464.1  hazard_steps   1.2  approx_kl 0.0166  SPS 439
+[none] iter 237/366  step  1941504  return   3.519  success  0.39 (top 0.72/bot 0.02)  rand_succ  nan  ep_len  471.4  hazard_steps   0.8  approx_kl 0.0135  SPS 438
+[none] iter 238/366  step  1949696  return   3.000  success  0.38 (top 0.72/bot 0.02)  rand_succ  nan  ep_len  475.7  hazard_steps   0.8  approx_kl 0.0179  SPS 437
+[none] iter 239/366  step  1957888  return   2.469  success  0.35 (top 0.69/bot 0.02)  rand_succ  nan  ep_len  485.8  hazard_steps   0.8  approx_kl 0.0170  SPS 436
+[none] iter 240/366  step  1966080  return   2.475  success  0.35 (top 0.69/bot 0.02)  rand_succ  nan  ep_len  486.2  hazard_steps   0.3  approx_kl 0.0171  SPS 435
+[none] iter 241/366  step  1974272  return   3.797  success  0.41 (top 0.70/bot 0.02)  rand_succ  nan  ep_len  470.3  hazard_steps   0.0  approx_kl 0.0108  SPS 434
+[none] iter 242/366  step  1982464  return   4.676  success  0.44 (top 0.69/bot 0.02)  rand_succ  nan  ep_len  456.5  hazard_steps   0.2  approx_kl 0.0129  SPS 433
+[none] iter 243/366  step  1990656  return   4.274  success  0.42 (top 0.68/bot 0.02)  rand_succ  nan  ep_len  458.3  hazard_steps   0.8  approx_kl 0.0132  SPS 432
+[none] iter 244/366  step  1998848  return   5.289  success  0.48 (top 0.68/bot 0.01)  rand_succ  nan  ep_len  437.7  hazard_steps   1.1  approx_kl 0.0111  SPS 431
+[none] iter 245/366  step  2007040  return   5.246  success  0.48 (top 0.70/bot 0.01)  rand_succ  nan  ep_len  437.2  hazard_steps   1.1  approx_kl 0.0213  SPS 430
+[none] iter 246/366  step  2015232  return   5.458  success  0.49 (top 0.69/bot 0.01)  rand_succ  nan  ep_len  429.1  hazard_steps   1.1  approx_kl 0.0138  SPS 429
+[none] iter 247/366  step  2023424  return   4.801  success  0.47 (top 0.72/bot 0.01)  rand_succ  nan  ep_len  436.1  hazard_steps   1.2  approx_kl 0.0134  SPS 428
+[none] iter 248/366  step  2031616  return   4.427  success  0.46 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  440.3  hazard_steps   1.4  approx_kl 0.0118  SPS 427
+[none] iter 249/366  step  2039808  return   4.587  success  0.47 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  442.7  hazard_steps   0.9  approx_kl 0.0157  SPS 426
+[none] iter 250/366  step  2048000  return   4.598  success  0.47 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  442.6  hazard_steps   0.9  approx_kl 0.0205  SPS 425
+[none] iter 251/366  step  2056192  return   3.569  success  0.42 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  466.1  hazard_steps   0.9  approx_kl 0.0159  SPS 424
+[none] iter 252/366  step  2064384  return   3.620  success  0.43 (top 0.79/bot 0.00)  rand_succ  nan  ep_len  463.2  hazard_steps   0.5  approx_kl 0.0154  SPS 424
+[none] iter 253/366  step  2072576  return   3.617  success  0.43 (top 0.80/bot 0.00)  rand_succ  nan  ep_len  467.4  hazard_steps   0.5  approx_kl 0.0091  SPS 423
+[none] iter 254/366  step  2080768  return   3.721  success  0.43 (top 0.79/bot 0.00)  rand_succ  nan  ep_len  467.5  hazard_steps   0.4  approx_kl 0.0091  SPS 422
+[none] iter 255/366  step  2088960  return   3.173  success  0.41 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  470.6  hazard_steps   0.1  approx_kl 0.0152  SPS 421
+[none] iter 256/366  step  2097152  return   2.971  success  0.40 (top 0.75/bot 0.00)  rand_succ  nan  ep_len  470.6  hazard_steps   0.1  approx_kl 0.0151  SPS 420
+[none] iter 257/366  step  2105344  return   4.152  success  0.45 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  451.8  hazard_steps   0.0  approx_kl 0.0139  SPS 419
+[none] iter 258/366  step  2113536  return   4.475  success  0.46 (top 0.80/bot 0.00)  rand_succ  nan  ep_len  442.4  hazard_steps   0.0  approx_kl 0.0103  SPS 419
+[none] iter 259/366  step  2121728  return   4.360  success  0.46 (top 0.79/bot 0.00)  rand_succ  nan  ep_len  441.3  hazard_steps   0.0  approx_kl 0.0106  SPS 418
+[none] iter 260/366  step  2129920  return   3.814  success  0.45 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  445.1  hazard_steps   0.0  approx_kl 0.0125  SPS 417
+[none] iter 261/366  step  2138112  return   3.850  success  0.45 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  447.5  hazard_steps   0.0  approx_kl 0.0122  SPS 416
+[none] iter 262/366  step  2146304  return   4.146  success  0.45 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  446.9  hazard_steps   0.0  approx_kl 0.0167  SPS 415
+[none] iter 263/366  step  2154496  return   2.952  success  0.40 (top 0.74/bot 0.01)  rand_succ  nan  ep_len  465.8  hazard_steps   0.0  approx_kl 0.0222  SPS 415
+[none] iter 264/366  step  2162688  return   3.064  success  0.41 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  461.5  hazard_steps   0.9  approx_kl 0.0116  SPS 414
+[none] iter 265/366  step  2170880  return   3.338  success  0.41 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  458.3  hazard_steps   0.9  approx_kl 0.0116  SPS 413
+[none] iter 266/366  step  2179072  return   4.070  success  0.44 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  448.0  hazard_steps   1.1  approx_kl 0.0150  SPS 413
+[none] iter 267/366  step  2187264  return   3.013  success  0.40 (top 0.78/bot 0.01)  rand_succ  nan  ep_len  458.9  hazard_steps   1.1  approx_kl 0.0109  SPS 412
+[none] iter 268/366  step  2195456  return   2.270  success  0.37 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  474.6  hazard_steps   1.2  approx_kl 0.0130  SPS 411
+[none] iter 269/366  step  2203648  return   2.298  success  0.37 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  475.8  hazard_steps   1.2  approx_kl 0.0117  SPS 410
+[none] iter 270/366  step  2211840  return   2.065  success  0.36 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  476.4  hazard_steps   0.3  approx_kl 0.0113  SPS 410
+[none] iter 271/366  step  2220032  return   1.325  success  0.34 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  486.5  hazard_steps   1.1  approx_kl 0.0062  SPS 409
+[none] iter 272/366  step  2228224  return   0.705  success  0.31 (top 0.79/bot 0.01)  rand_succ  nan  ep_len  497.1  hazard_steps   1.3  approx_kl 0.0139  SPS 408
+[none] iter 273/366  step  2236416  return   1.739  success  0.36 (top 0.78/bot 0.01)  rand_succ  nan  ep_len  479.6  hazard_steps   1.3  approx_kl 0.0174  SPS 408
+[none] iter 274/366  step  2244608  return   2.026  success  0.37 (top 0.79/bot 0.01)  rand_succ  nan  ep_len  475.0  hazard_steps   1.3  approx_kl 0.0098  SPS 407
+[none] iter 275/366  step  2252800  return   1.671  success  0.35 (top 0.79/bot 0.01)  rand_succ  nan  ep_len  481.7  hazard_steps   1.4  approx_kl 0.0122  SPS 406
+[none] iter 276/366  step  2260992  return   1.751  success  0.34 (top 0.78/bot 0.01)  rand_succ  nan  ep_len  485.0  hazard_steps   0.5  approx_kl 0.0119  SPS 405
+[none] iter 277/366  step  2269184  return   1.439  success  0.32 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  489.6  hazard_steps   0.5  approx_kl 0.0084  SPS 405
+[none] iter 278/366  step  2277376  return   2.561  success  0.37 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  473.3  hazard_steps   0.2  approx_kl 0.0094  SPS 404
+[none] iter 279/366  step  2285568  return   1.355  success  0.32 (top 0.73/bot 0.01)  rand_succ  nan  ep_len  492.0  hazard_steps   0.3  approx_kl 0.0120  SPS 404
+[none] iter 280/366  step  2293760  return   0.514  success  0.29 (top 0.72/bot 0.01)  rand_succ  nan  ep_len  504.0  hazard_steps   0.3  approx_kl 0.0099  SPS 403
+[none] iter 281/366  step  2301952  return   1.069  success  0.31 (top 0.72/bot 0.00)  rand_succ  nan  ep_len  496.2  hazard_steps   0.1  approx_kl 0.0123  SPS 402
+[none] iter 282/366  step  2310144  return   1.009  success  0.31 (top 0.72/bot 0.00)  rand_succ  nan  ep_len  496.1  hazard_steps   0.1  approx_kl 0.0095  SPS 402
+[none] iter 283/366  step  2318336  return   1.325  success  0.33 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  489.1  hazard_steps   2.2  approx_kl 0.0098  SPS 401
+[none] iter 284/366  step  2326528  return   0.617  success  0.31 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  497.2  hazard_steps   3.4  approx_kl 0.0075  SPS 400
+[none] iter 285/366  step  2334720  return   1.689  success  0.36 (top 0.68/bot 0.00)  rand_succ  nan  ep_len  480.8  hazard_steps   3.4  approx_kl 0.0108  SPS 400
+[none] iter 286/366  step  2342912  return   1.430  success  0.35 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  481.9  hazard_steps   3.3  approx_kl 0.0091  SPS 399
+[none] iter 287/366  step  2351104  return   1.438  success  0.36 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  478.1  hazard_steps   3.9  approx_kl 0.0085  SPS 399
+[none] iter 288/366  step  2359296  return   1.849  success  0.38 (top 0.68/bot 0.00)  rand_succ  nan  ep_len  468.4  hazard_steps   4.1  approx_kl 0.0070  SPS 398
+[none] iter 289/366  step  2367488  return   1.044  success  0.34 (top 0.69/bot 0.00)  rand_succ  nan  ep_len  480.8  hazard_steps   2.0  approx_kl 0.0079  SPS 398
+[none] iter 290/366  step  2375680  return   2.059  success  0.37 (top 0.70/bot 0.00)  rand_succ  nan  ep_len  471.0  hazard_steps   0.8  approx_kl 0.0084  SPS 397
+[none] iter 291/366  step  2383872  return   2.567  success  0.39 (top 0.76/bot 0.00)  rand_succ  nan  ep_len  463.3  hazard_steps   1.0  approx_kl 0.0077  SPS 396
+[none] iter 292/366  step  2392064  return   1.985  success  0.38 (top 0.76/bot 0.00)  rand_succ  nan  ep_len  467.7  hazard_steps   1.0  approx_kl 0.0071  SPS 396
+[none] iter 293/366  step  2400256  return   2.379  success  0.40 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  460.2  hazard_steps   0.4  approx_kl 0.0058  SPS 395
+[none] iter 294/366  step  2408448  return   1.905  success  0.38 (top 0.75/bot 0.00)  rand_succ  nan  ep_len  468.3  hazard_steps   0.2  approx_kl 0.0048  SPS 395
+[none] iter 295/366  step  2416640  return   2.410  success  0.40 (top 0.76/bot 0.00)  rand_succ  nan  ep_len  462.5  hazard_steps   0.2  approx_kl 0.0075  SPS 394
+[none] iter 296/366  step  2424832  return   1.720  success  0.38 (top 0.76/bot 0.00)  rand_succ  nan  ep_len  468.9  hazard_steps   0.3  approx_kl 0.0092  SPS 394
+[none] iter 297/366  step  2433024  return   0.408  success  0.32 (top 0.75/bot 0.00)  rand_succ  nan  ep_len  490.8  hazard_steps   0.4  approx_kl 0.0121  SPS 393
+[none] iter 298/366  step  2441216  return  -0.151  success  0.29 (top 0.73/bot 0.00)  rand_succ  nan  ep_len  500.1  hazard_steps   1.4  approx_kl 0.0081  SPS 393
+[none] iter 299/366  step  2449408  return  -0.822  success  0.26 (top 0.72/bot 0.00)  rand_succ  nan  ep_len  515.5  hazard_steps   1.4  approx_kl 0.0078  SPS 392
+[none] iter 300/366  step  2457600  return  -0.747  success  0.27 (top 0.73/bot 0.00)  rand_succ  nan  ep_len  516.2  hazard_steps   1.4  approx_kl 0.0119  SPS 392
+[none] iter 301/366  step  2465792  return  -1.399  success  0.25 (top 0.71/bot 0.00)  rand_succ  nan  ep_len  523.6  hazard_steps   1.4  approx_kl 0.0093  SPS 391
+[none] iter 302/366  step  2473984  return  -0.585  success  0.28 (top 0.73/bot 0.00)  rand_succ  nan  ep_len  515.0  hazard_steps   1.2  approx_kl 0.0044  SPS 391
+[none] iter 303/366  step  2482176  return  -0.279  success  0.29 (top 0.74/bot 0.00)  rand_succ  nan  ep_len  510.7  hazard_steps   1.1  approx_kl 0.0094  SPS 390
+[none] iter 304/366  step  2490368  return   0.212  success  0.31 (top 0.71/bot 0.00)  rand_succ  nan  ep_len  501.6  hazard_steps   0.0  approx_kl 0.0095  SPS 390
+[none] iter 305/366  step  2498560  return   0.526  success  0.32 (top 0.68/bot 0.00)  rand_succ  nan  ep_len  496.0  hazard_steps   0.0  approx_kl 0.0194  SPS 389
+[none] iter 306/366  step  2506752  return   1.337  success  0.35 (top 0.66/bot 0.01)  rand_succ  nan  ep_len  487.4  hazard_steps   0.0  approx_kl 0.0057  SPS 389
+[none] iter 307/366  step  2514944  return   3.222  success  0.42 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  464.3  hazard_steps   0.0  approx_kl 0.0065  SPS 388
+[none] iter 308/366  step  2523136  return   2.801  success  0.40 (top 0.70/bot 0.01)  rand_succ  nan  ep_len  468.3  hazard_steps   0.0  approx_kl 0.0069  SPS 388
+[none] iter 309/366  step  2531328  return   3.620  success  0.42 (top 0.72/bot 0.01)  rand_succ  nan  ep_len  466.6  hazard_steps   0.0  approx_kl 0.0028  SPS 387
+[none] iter 310/366  step  2539520  return   4.675  success  0.47 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  451.4  hazard_steps   0.0  approx_kl 0.0098  SPS 387
+[none] iter 311/366  step  2547712  return   4.196  success  0.46 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  458.9  hazard_steps   0.0  approx_kl 0.0093  SPS 386
+[none] iter 312/366  step  2555904  return   4.235  success  0.46 (top 0.78/bot 0.01)  rand_succ  nan  ep_len  451.7  hazard_steps   0.0  approx_kl 0.0116  SPS 386
+[none] iter 313/366  step  2564096  return   1.597  success  0.36 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  489.1  hazard_steps   0.2  approx_kl 0.0029  SPS 385
+[none] iter 314/366  step  2572288  return   1.840  success  0.38 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  481.2  hazard_steps   0.2  approx_kl 0.0235  SPS 385
+[none] iter 315/366  step  2580480  return   1.491  success  0.37 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  481.3  hazard_steps   0.2  approx_kl 0.0111  SPS 385
+[none] iter 316/366  step  2588672  return   0.565  success  0.33 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  490.9  hazard_steps   0.2  approx_kl 0.0080  SPS 384
+[none] iter 317/366  step  2596864  return   0.868  success  0.34 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  483.3  hazard_steps   0.2  approx_kl 0.0045  SPS 384
+[none] iter 318/366  step  2605056  return   1.883  success  0.38 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  468.4  hazard_steps   0.2  approx_kl 0.0050  SPS 383
+[none] iter 319/366  step  2613248  return   2.005  success  0.39 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  465.3  hazard_steps   0.0  approx_kl 0.0049  SPS 383
+[none] iter 320/366  step  2621440  return   2.499  success  0.41 (top 0.76/bot 0.00)  rand_succ  nan  ep_len  459.0  hazard_steps   0.0  approx_kl 0.0071  SPS 382
+[none] iter 321/366  step  2629632  return   1.926  success  0.38 (top 0.73/bot 0.01)  rand_succ  nan  ep_len  470.4  hazard_steps   0.0  approx_kl 0.0062  SPS 382
+[none] iter 322/366  step  2637824  return   2.140  success  0.39 (top 0.69/bot 0.01)  rand_succ  nan  ep_len  465.5  hazard_steps   0.0  approx_kl 0.0105  SPS 381
+[none] iter 323/366  step  2646016  return   1.965  success  0.39 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  469.3  hazard_steps   0.0  approx_kl 0.0060  SPS 381
+[none] iter 324/366  step  2654208  return   1.527  success  0.37 (top 0.71/bot 0.01)  rand_succ  nan  ep_len  476.8  hazard_steps   0.0  approx_kl 0.0053  SPS 380
+[none] iter 325/366  step  2662400  return   1.977  success  0.39 (top 0.74/bot 0.01)  rand_succ  nan  ep_len  475.9  hazard_steps   0.0  approx_kl 0.0069  SPS 380
+[none] iter 326/366  step  2670592  return   2.352  success  0.41 (top 0.74/bot 0.01)  rand_succ  nan  ep_len  467.1  hazard_steps   0.0  approx_kl 0.0063  SPS 380
+[none] iter 327/366  step  2678784  return   2.267  success  0.39 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  471.3  hazard_steps   0.0  approx_kl 0.0076  SPS 379
+[none] iter 328/366  step  2686976  return   1.623  success  0.37 (top 0.77/bot 0.01)  rand_succ  nan  ep_len  477.6  hazard_steps   0.0  approx_kl 0.0080  SPS 379
+[none] iter 329/366  step  2695168  return   1.473  success  0.37 (top 0.76/bot 0.01)  rand_succ  nan  ep_len  477.3  hazard_steps   0.9  approx_kl 0.0159  SPS 378
+[none] iter 330/366  step  2703360  return   1.769  success  0.38 (top 0.75/bot 0.01)  rand_succ  nan  ep_len  475.1  hazard_steps   0.9  approx_kl 0.0035  SPS 378
+[none] iter 331/366  step  2711552  return   1.772  success  0.38 (top 0.78/bot 0.01)  rand_succ  nan  ep_len  476.2  hazard_steps   0.9  approx_kl 0.0075  SPS 378
+[none] iter 332/366  step  2719744  return   3.252  success  0.44 (top 0.79/bot 0.00)  rand_succ  nan  ep_len  460.7  hazard_steps   0.9  approx_kl 0.0044  SPS 377
+[none] iter 333/366  step  2727936  return   3.456  success  0.45 (top 0.81/bot 0.00)  rand_succ  nan  ep_len  455.5  hazard_steps   0.9  approx_kl 0.0080  SPS 377
+[none] iter 334/366  step  2736128  return   4.604  success  0.49 (top 0.83/bot 0.00)  rand_succ  nan  ep_len  443.9  hazard_steps   0.1  approx_kl 0.0134  SPS 376
+[none] iter 335/366  step  2744320  return   4.727  success  0.49 (top 0.84/bot 0.00)  rand_succ  nan  ep_len  446.8  hazard_steps   0.1  approx_kl 0.0055  SPS 376
+[none] iter 336/366  step  2752512  return   4.946  success  0.50 (top 0.84/bot 0.00)  rand_succ  nan  ep_len  437.6  hazard_steps   0.1  approx_kl 0.0168  SPS 376
+[none] iter 337/366  step  2760704  return   2.550  success  0.40 (top 0.80/bot 0.00)  rand_succ  nan  ep_len  467.8  hazard_steps   0.2  approx_kl 0.0047  SPS 375
+[none] iter 338/366  step  2768896  return   2.865  success  0.42 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  460.9  hazard_steps   0.2  approx_kl 0.0050  SPS 375
+[none] iter 339/366  step  2777088  return   2.535  success  0.41 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  463.8  hazard_steps   0.1  approx_kl 0.0069  SPS 374
+[none] iter 340/366  step  2785280  return   1.733  success  0.38 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  473.8  hazard_steps   0.1  approx_kl 0.0038  SPS 374
+[none] iter 341/366  step  2793472  return   1.899  success  0.39 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  471.8  hazard_steps   0.1  approx_kl 0.0119  SPS 374
+[none] iter 342/366  step  2801664  return   2.875  success  0.43 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  456.0  hazard_steps   0.1  approx_kl 0.0022  SPS 373
+[none] iter 343/366  step  2809856  return   1.949  success  0.40 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  463.9  hazard_steps   0.0  approx_kl 0.0126  SPS 373
+[none] iter 344/366  step  2818048  return   2.367  success  0.41 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  462.4  hazard_steps   0.0  approx_kl 0.0055  SPS 373
+[none] iter 345/366  step  2826240  return   2.574  success  0.42 (top 0.78/bot 0.00)  rand_succ  nan  ep_len  457.4  hazard_steps   0.0  approx_kl 0.0106  SPS 373
+[none] iter 346/366  step  2834432  return   2.295  success  0.41 (top 0.77/bot 0.00)  rand_succ  nan  ep_len  458.9  hazard_steps   0.0  approx_kl 0.0142  SPS 373
+[none] iter 347/366  step  2842624  return   2.366  success  0.41 (top 0.80/bot 0.00)  rand_succ  nan  ep_len  455.6  hazard_steps   0.0  approx_kl 0.0126  SPS 373
+[none] iter 348/366  step  2850816  return   2.349  success  0.41 (top 0.81/bot 0.00)  rand_succ  nan  ep_len  456.5  hazard_steps   0.0  approx_kl 0.0080  SPS 373
+[none] iter 349/366  step  2859008  return   3.101  success  0.44 (top 0.85/bot 0.00)  rand_succ  nan  ep_len  449.7  hazard_steps   0.0  approx_kl 0.0145  SPS 373
+[none] iter 350/366  step  2867200  return   2.995  success  0.44 (top 0.87/bot 0.00)  rand_succ  nan  ep_len  447.7  hazard_steps   0.0  approx_kl 0.0064  SPS 372
+[none] iter 351/366  step  2875392  return   4.006  success  0.48 (top 0.89/bot 0.00)  rand_succ  nan  ep_len  437.4  hazard_steps   0.0  approx_kl 0.0065  SPS 372
+[none] iter 352/366  step  2883584  return   4.233  success  0.49 (top 0.90/bot 0.00)  rand_succ  nan  ep_len  433.7  hazard_steps   0.0  approx_kl 0.0097  SPS 372
+[none] iter 353/366  step  2891776  return   4.909  success  0.52 (top 0.93/bot 0.00)  rand_succ  nan  ep_len  425.0  hazard_steps   0.1  approx_kl 0.0173  SPS 372
+[none] iter 354/366  step  2899968  return   4.465  success  0.50 (top 0.92/bot 0.00)  rand_succ  nan  ep_len  429.4  hazard_steps   0.1  approx_kl 0.0141  SPS 372
+[none] iter 355/366  step  2908160  return   5.348  success  0.53 (top 0.93/bot 0.00)  rand_succ  nan  ep_len  419.3  hazard_steps   0.1  approx_kl 0.0094  SPS 371
+[none] iter 356/366  step  2916352  return   5.224  success  0.52 (top 0.92/bot 0.00)  rand_succ  nan  ep_len  422.0  hazard_steps   0.1  approx_kl 0.0123  SPS 371
+[none] iter 357/366  step  2924544  return   4.721  success  0.50 (top 0.92/bot 0.00)  rand_succ  nan  ep_len  430.8  hazard_steps   0.1  approx_kl 0.0111  SPS 371
+[none] iter 358/366  step  2932736  return   4.208  success  0.49 (top 0.91/bot 0.01)  rand_succ  nan  ep_len  435.0  hazard_steps   0.7  approx_kl 0.0085  SPS 371
+[none] iter 359/366  step  2940928  return   4.347  success  0.50 (top 0.91/bot 0.01)  rand_succ  nan  ep_len  432.1  hazard_steps   0.8  approx_kl 0.0038  SPS 371
+[none] iter 360/366  step  2949120  return   3.079  success  0.45 (top 0.88/bot 0.01)  rand_succ  nan  ep_len  449.8  hazard_steps   0.8  approx_kl 0.0079  SPS 371
+[none] iter 361/366  step  2957312  return   2.900  success  0.44 (top 0.89/bot 0.01)  rand_succ  nan  ep_len  453.4  hazard_steps   0.8  approx_kl 0.0027  SPS 371
+[none] iter 362/366  step  2965504  return   2.215  success  0.42 (top 0.88/bot 0.01)  rand_succ  nan  ep_len  459.7  hazard_steps   0.8  approx_kl 0.0023  SPS 371
+[none] iter 363/366  step  2973696  return   1.387  success  0.38 (top 0.87/bot 0.01)  rand_succ  nan  ep_len  471.3  hazard_steps   0.1  approx_kl 0.0013  SPS 370
+[none] iter 364/366  step  2981888  return   1.123  success  0.37 (top 0.86/bot 0.01)  rand_succ  nan  ep_len  476.2  hazard_steps   0.0  approx_kl 0.0032  SPS 370
+[none] iter 365/366  step  2990080  return   0.098  success  0.33 (top 0.85/bot 0.01)  rand_succ  nan  ep_len  491.6  hazard_steps   0.0  approx_kl 0.0001  SPS 370
+[none] iter 366/366  step  2998272  return   0.453  success  0.35 (top 0.86/bot 0.01)  rand_succ  nan  ep_len  487.8  hazard_steps   0.0  approx_kl 0.0001  SPS 370
+
+[none/seed1] FINAL success 0.350  hazard_steps 0.00  rand_spawn_success nan
+saved policy -> runs/race_v7/none.pt
+wrote run json -> runs/race_v7/none.json

@@ -1,0 +1,716 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260718_021203.log
+2026-07-18T02:12:03Z [139ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:03Z [139ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:03Z [204ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-07-18T02:12:03Z [205ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-07-18T02:12:03Z [205ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-07-18T02:12:03Z [205ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-07-18T02:12:03Z [485ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:03Z [485ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:03Z [621ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [621ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-18T02:12:03Z [621ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [621ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-18T02:12:03Z [622ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 309500
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 8038
+|---------------------------------------------------------------------------------------------|
+2026-07-18T02:12:04Z [1,777ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,777ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:04Z [1,786ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,786ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:04Z [1,792ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,792ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:04Z [1,800ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,800ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:04Z [1,801ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,801ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:04Z [1,802ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-18T02:12:04Z [1,802ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-18T02:12:05Z [1,999ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-07-18T02:12:05Z [2,295ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-07-18T02:12:05Z [2,304ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-07-18T02:12:07Z [4,215ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-07-18T02:12:07Z [4,322ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-07-18T02:12:07Z [4,322ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-07-18T02:12:07Z [4,323ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-07-18T02:12:08Z [5,649ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-07-18T02:12:10Z [7,830ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-07-18T02:12:11Z [8,308ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-07-18_02-12-11.log[0m
+[36m========================================================================================================[0m
+
+[33m02:12:11 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.487870 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 2.925875 seconds
+[INFO]: Completed setting up the environment...
+condition=none  wire_dim=0  trainable=74,631 (encoder frozen)
+2026-07-18T02:12:19Z [16,830ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[none] iter   1/610  step     8192  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0246  SPS 966
+[none] iter   2/610  step    16384  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0112  SPS 983
+[none] iter   3/610  step    24576  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0071  SPS 986
+[none] iter   4/610  step    32768  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0094  SPS 991
+[none] iter   5/610  step    40960  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 986
+[none] iter   6/610  step    49152  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 978
+[none] iter   7/610  step    57344  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 972
+[none] iter   8/610  step    65536  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0176  SPS 971
+[none] iter   9/610  step    73728  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 969
+[none] iter  10/610  step    81920  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 956
+[none] iter  11/610  step    90112  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 951
+[none] iter  12/610  step    98304  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0212  SPS 950
+[none] iter  13/610  step   106496  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0213  SPS 949
+[none] iter  14/610  step   114688  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0115  SPS 939
+[none] iter  15/610  step   122880  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 931
+[none] iter  16/610  step   131072  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 926
+[none] iter  17/610  step   139264  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.95  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 922
+[none] iter  18/610  step   147456  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0111  SPS 922
+[none] iter  19/610  step   155648  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 918
+[none] iter  20/610  step   163840  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.78  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 914
+[none] iter  21/610  step   172032  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.79  ep_len    nan  hazard_steps   nan  approx_kl 0.0116  SPS 913
+[none] iter  22/610  step   180224  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 909
+[none] iter  23/610  step   188416  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 908
+[none] iter  24/610  step   196608  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 903
+[none] iter  25/610  step   204800  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 903
+[none] iter  26/610  step   212992  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0055  SPS 899
+[none] iter  27/610  step   221184  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 896
+[none] iter  28/610  step   229376  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0146  SPS 895
+[none] iter  29/610  step   237568  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0148  SPS 893
+[none] iter  30/610  step   245760  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0107  SPS 891
+[none] iter  31/610  step   253952  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0117  SPS 890
+[none] iter  32/610  step   262144  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 888
+[none] iter  33/610  step   270336  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 887
+[none] iter  34/610  step   278528  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 888
+[none] iter  35/610  step   286720  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.78  ep_len    nan  hazard_steps   nan  approx_kl 0.0062  SPS 887
+[none] iter  36/610  step   294912  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 884
+[none] iter  37/610  step   303104  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.81  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 883
+[none] iter  38/610  step   311296  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 881
+[none] iter  39/610  step   319488  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0102  SPS 881
+[none] iter  40/610  step   327680  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.87  ep_len    nan  hazard_steps   nan  approx_kl 0.0099  SPS 880
+[none] iter  41/610  step   335872  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.77  ep_len    nan  hazard_steps   nan  approx_kl 0.0147  SPS 878
+[none] iter  42/610  step   344064  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0057  SPS 875
+[none] iter  43/610  step   352256  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 871
+[none] iter  44/610  step   360448  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 870
+[none] iter  45/610  step   368640  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0057  SPS 867
+[none] iter  46/610  step   376832  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 865
+[none] iter  47/610  step   385024  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 863
+[none] iter  48/610  step   393216  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 860
+[none] iter  49/610  step   401408  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 857
+[none] iter  50/610  step   409600  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 855
+[none] iter  51/610  step   417792  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0158  SPS 853
+[none] iter  52/610  step   425984  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0021  SPS 850
+[none] iter  53/610  step   434176  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0150  SPS 849
+[none] iter  54/610  step   442368  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 848
+[none] iter  55/610  step   450560  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 846
+[none] iter  56/610  step   458752  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 844
+[none] iter  57/610  step   466944  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 842
+[none] iter  58/610  step   475136  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0035  SPS 841
+[none] iter  59/610  step   483328  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 839
+[none] iter  60/610  step   491520  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 836
+[none] iter  61/610  step   499712  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0117  SPS 835
+[none] iter  62/610  step   507904  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 833
+[none] iter  63/610  step   516096  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 831
+[none] iter  64/610  step   524288  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 830
+[none] iter  65/610  step   532480  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0057  SPS 828
+[none] iter  66/610  step   540672  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 826
+[none] iter  67/610  step   548864  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 825
+[none] iter  68/610  step   557056  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 823
+[none] iter  69/610  step   565248  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 822
+[none] iter  70/610  step   573440  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0085  SPS 820
+[none] iter  71/610  step   581632  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 818
+[none] iter  72/610  step   589824  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 817
+[none] iter  73/610  step   598016  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 815
+[none] iter  74/610  step   606208  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 814
+[none] iter  75/610  step   614400  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 813
+[none] iter  76/610  step   622592  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 812
+[none] iter  77/610  step   630784  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 811
+[none] iter  78/610  step   638976  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0097  SPS 809
+[none] iter  79/610  step   647168  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0105  SPS 808
+[none] iter  80/610  step   655360  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0027  SPS 807
+[none] iter  81/610  step   663552  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0099  SPS 806
+[none] iter  82/610  step   671744  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 804
+[none] iter  83/610  step   679936  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0059  SPS 803
+[none] iter  84/610  step   688128  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 802
+[none] iter  85/610  step   696320  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 801
+[none] iter  86/610  step   704512  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0101  SPS 800
+[none] iter  87/610  step   712704  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 799
+[none] iter  88/610  step   720896  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 798
+[none] iter  89/610  step   729088  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 796
+[none] iter  90/610  step   737280  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0125  SPS 795
+[none] iter  91/610  step   745472  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0108  SPS 794
+[none] iter  92/610  step   753664  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 793
+[none] iter  93/610  step   761856  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0120  SPS 792
+[none] iter  94/610  step   770048  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0075  SPS 791
+[none] iter  95/610  step   778240  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 791
+[none] iter  96/610  step   786432  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0098  SPS 790
+[none] iter  97/610  step   794624  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 789
+[none] iter  98/610  step   802816  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0100  SPS 788
+[none] iter  99/610  step   811008  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0077  SPS 788
+[none] iter 100/610  step   819200  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0125  SPS 787
+[none] iter 101/610  step   827392  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 786
+[none] iter 102/610  step   835584  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0077  SPS 786
+[none] iter 103/610  step   843776  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0085  SPS 785
+[none] iter 104/610  step   851968  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 785
+[none] iter 105/610  step   860160  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 785
+[none] iter 106/610  step   868352  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0110  SPS 784
+[none] iter 107/610  step   876544  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 783
+[none] iter 108/610  step   884736  return     nan  success   nan (top  nan/bot  nan)  rand_succ 1.00  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 783
+[none] iter 109/610  step   892928  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 782
+[none] iter 110/610  step   901120  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0131  SPS 782
+[none] iter 111/610  step   909312  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 782
+[none] iter 112/610  step   917504  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0088  SPS 781
+[none] iter 113/610  step   925696  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 781
+[none] iter 114/610  step   933888  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0090  SPS 780
+[none] iter 115/610  step   942080  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0063  SPS 780
+[none] iter 116/610  step   950272  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 780
+[none] iter 117/610  step   958464  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0147  SPS 780
+[none] iter 118/610  step   966656  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 780
+[none] iter 119/610  step   974848  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 780
+[none] iter 120/610  step   983040  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0113  SPS 780
+[none] iter 121/610  step   991232  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 779
+[none] iter 122/610  step   999424  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0077  SPS 779
+[none] iter 123/610  step  1007616  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 779
+[none] iter 124/610  step  1015808  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0090  SPS 778
+[none] iter 125/610  step  1024000  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.95  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 778
+[none] iter 126/610  step  1032192  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 778
+[none] iter 127/610  step  1040384  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 778
+[none] iter 128/610  step  1048576  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.99  ep_len    nan  hazard_steps   nan  approx_kl 0.0076  SPS 778
+[none] iter 129/610  step  1056768  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 778
+[none] iter 130/610  step  1064960  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.95  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 778
+[none] iter 131/610  step  1073152  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 777
+[none] iter 132/610  step  1081344  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 777
+[none] iter 133/610  step  1089536  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0106  SPS 777
+[none] iter 134/610  step  1097728  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.98  ep_len    nan  hazard_steps   nan  approx_kl 0.0093  SPS 777
+[none] iter 135/610  step  1105920  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0172  SPS 777
+[none] iter 136/610  step  1114112  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 777
+[none] iter 137/610  step  1122304  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0125  SPS 777
+[none] iter 138/610  step  1130496  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 777
+[none] iter 139/610  step  1138688  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 777
+[none] iter 140/610  step  1146880  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 777
+[none] iter 141/610  step  1155072  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0106  SPS 777
+[none] iter 142/610  step  1163264  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0154  SPS 777
+[none] iter 143/610  step  1171456  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.95  ep_len    nan  hazard_steps   nan  approx_kl 0.0090  SPS 777
+[none] iter 144/610  step  1179648  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.96  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 776
+[none] iter 145/610  step  1187840  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 776
+[none] iter 146/610  step  1196032  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.97  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 776
+[none] iter 147/610  step  1204224  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.95  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 776
+[none] iter 148/610  step  1212416  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 776
+[none] iter 149/610  step  1220608  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 777
+[none] iter 150/610  step  1228800  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 776
+[none] iter 151/610  step  1236992  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0055  SPS 777
+[none] iter 152/610  step  1245184  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0076  SPS 777
+[none] iter 153/610  step  1253376  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0114  SPS 777
+[none] iter 154/610  step  1261568  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0129  SPS 777
+[none] iter 155/610  step  1269760  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 777
+[none] iter 156/610  step  1277952  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0170  SPS 777
+[none] iter 157/610  step  1286144  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0082  SPS 777
+[none] iter 158/610  step  1294336  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 777
+[none] iter 159/610  step  1302528  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0050  SPS 777
+[none] iter 160/610  step  1310720  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0085  SPS 777
+[none] iter 161/610  step  1318912  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 777
+[none] iter 162/610  step  1327104  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 777
+[none] iter 163/610  step  1335296  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 778
+[none] iter 164/610  step  1343488  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0080  SPS 778
+[none] iter 165/610  step  1351680  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 778
+[none] iter 166/610  step  1359872  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 778
+[none] iter 167/610  step  1368064  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 778
+[none] iter 168/610  step  1376256  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.87  ep_len    nan  hazard_steps   nan  approx_kl 0.0030  SPS 778
+[none] iter 169/610  step  1384448  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 779
+[none] iter 170/610  step  1392640  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0104  SPS 779
+[none] iter 171/610  step  1400832  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 779
+[none] iter 172/610  step  1409024  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 779
+[none] iter 173/610  step  1417216  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.93  ep_len    nan  hazard_steps   nan  approx_kl 0.0081  SPS 779
+[none] iter 174/610  step  1425408  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.92  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 779
+[none] iter 175/610  step  1433600  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 779
+[none] iter 176/610  step  1441792  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.91  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 779
+[none] iter 177/610  step  1449984  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.94  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 780
+[none] iter 178/610  step  1458176  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 780
+[none] iter 179/610  step  1466368  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 780
+[none] iter 180/610  step  1474560  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 780
+[none] iter 181/610  step  1482752  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0161  SPS 781
+[none] iter 182/610  step  1490944  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0117  SPS 781
+[none] iter 183/610  step  1499136  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 781
+[none] iter 184/610  step  1507328  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 782
+[none] iter 185/610  step  1515520  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 782
+[none] iter 186/610  step  1523712  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 782
+[none] iter 187/610  step  1531904  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 782
+[none] iter 188/610  step  1540096  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.90  ep_len    nan  hazard_steps   nan  approx_kl 0.0150  SPS 782
+[none] iter 189/610  step  1548288  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0126  SPS 783
+[none] iter 190/610  step  1556480  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.89  ep_len    nan  hazard_steps   nan  approx_kl 0.0095  SPS 783
+[none] iter 191/610  step  1564672  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 783
+[none] iter 192/610  step  1572864  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.79  ep_len    nan  hazard_steps   nan  approx_kl 0.0112  SPS 784
+[none] iter 193/610  step  1581056  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0134  SPS 784
+[none] iter 194/610  step  1589248  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.87  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 784
+[none] iter 195/610  step  1597440  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0106  SPS 784
+[none] iter 196/610  step  1605632  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.86  ep_len    nan  hazard_steps   nan  approx_kl 0.0106  SPS 785
+[none] iter 197/610  step  1613824  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0171  SPS 785
+[none] iter 198/610  step  1622016  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.79  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 785
+[none] iter 199/610  step  1630208  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 786
+[none] iter 200/610  step  1638400  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 786
+[none] iter 201/610  step  1646592  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0099  SPS 786
+[none] iter 202/610  step  1654784  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0128  SPS 787
+[none] iter 203/610  step  1662976  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0050  SPS 787
+[none] iter 204/610  step  1671168  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 787
+[none] iter 205/610  step  1679360  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0142  SPS 787
+[none] iter 206/610  step  1687552  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.81  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 788
+[none] iter 207/610  step  1695744  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0105  SPS 788
+[none] iter 208/610  step  1703936  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.88  ep_len    nan  hazard_steps   nan  approx_kl 0.0081  SPS 788
+[none] iter 209/610  step  1712128  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0173  SPS 788
+[none] iter 210/610  step  1720320  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0118  SPS 788
+[none] iter 211/610  step  1728512  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0160  SPS 788
+[none] iter 212/610  step  1736704  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.81  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 788
+[none] iter 213/610  step  1744896  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0110  SPS 789
+[none] iter 214/610  step  1753088  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0122  SPS 789
+[none] iter 215/610  step  1761280  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.79  ep_len    nan  hazard_steps   nan  approx_kl 0.0094  SPS 789
+[none] iter 216/610  step  1769472  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.81  ep_len    nan  hazard_steps   nan  approx_kl 0.0107  SPS 789
+[none] iter 217/610  step  1777664  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0100  SPS 790
+[none] iter 218/610  step  1785856  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.83  ep_len    nan  hazard_steps   nan  approx_kl 0.0021  SPS 790
+[none] iter 219/610  step  1794048  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.81  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 790
+[none] iter 220/610  step  1802240  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0080  SPS 790
+[none] iter 221/610  step  1810432  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 791
+[none] iter 222/610  step  1818624  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 791
+[none] iter 223/610  step  1826816  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.80  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 791
+[none] iter 224/610  step  1835008  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.75  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 792
+[none] iter 225/610  step  1843200  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.72  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 792
+[none] iter 226/610  step  1851392  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 792
+[none] iter 227/610  step  1859584  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.78  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 792
+[none] iter 228/610  step  1867776  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.82  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 792
+[none] iter 229/610  step  1875968  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.84  ep_len    nan  hazard_steps   nan  approx_kl 0.0071  SPS 792
+[none] iter 230/610  step  1884160  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0104  SPS 793
+[none] iter 231/610  step  1892352  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.87  ep_len    nan  hazard_steps   nan  approx_kl 0.0030  SPS 793
+[none] iter 232/610  step  1900544  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.85  ep_len    nan  hazard_steps   nan  approx_kl 0.0057  SPS 793
+[none] iter 233/610  step  1908736  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.78  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 793
+[none] iter 234/610  step  1916928  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.71  ep_len    nan  hazard_steps   nan  approx_kl 0.0081  SPS 794
+[none] iter 235/610  step  1925120  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 794
+[none] iter 236/610  step  1933312  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.76  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 794
+[none] iter 237/610  step  1941504  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.75  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 794
+[none] iter 238/610  step  1949696  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.72  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 794
+[none] iter 239/610  step  1957888  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0099  SPS 795
+[none] iter 240/610  step  1966080  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.66  ep_len    nan  hazard_steps   nan  approx_kl 0.0099  SPS 795
+[none] iter 241/610  step  1974272  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0124  SPS 795
+[none] iter 242/610  step  1982464  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.72  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 795
+[none] iter 243/610  step  1990656  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 795
+[none] iter 244/610  step  1998848  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.74  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 796
+[none] iter 245/610  step  2007040  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.75  ep_len    nan  hazard_steps   nan  approx_kl 0.0059  SPS 796
+[none] iter 246/610  step  2015232  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 796
+[none] iter 247/610  step  2023424  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.71  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 796
+[none] iter 248/610  step  2031616  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 797
+[none] iter 249/610  step  2039808  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 797
+[none] iter 250/610  step  2048000  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.69  ep_len    nan  hazard_steps   nan  approx_kl 0.0059  SPS 797
+[none] iter 251/610  step  2056192  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.67  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 798
+[none] iter 252/610  step  2064384  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.69  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 798
+[none] iter 253/610  step  2072576  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.69  ep_len    nan  hazard_steps   nan  approx_kl 0.0084  SPS 798
+[none] iter 254/610  step  2080768  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 799
+[none] iter 255/610  step  2088960  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.75  ep_len    nan  hazard_steps   nan  approx_kl 0.0080  SPS 799
+[none] iter 256/610  step  2097152  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.74  ep_len    nan  hazard_steps   nan  approx_kl 0.0095  SPS 799
+[none] iter 257/610  step  2105344  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.69  ep_len    nan  hazard_steps   nan  approx_kl 0.0122  SPS 799
+[none] iter 258/610  step  2113536  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.68  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 800
+[none] iter 259/610  step  2121728  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.60  ep_len    nan  hazard_steps   nan  approx_kl 0.0071  SPS 800
+[none] iter 260/610  step  2129920  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 800
+[none] iter 261/610  step  2138112  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0134  SPS 801
+[none] iter 262/610  step  2146304  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.66  ep_len    nan  hazard_steps   nan  approx_kl 0.0104  SPS 801
+[none] iter 263/610  step  2154496  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0076  SPS 801
+[none] iter 264/610  step  2162688  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0125  SPS 801
+[none] iter 265/610  step  2170880  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 802
+[none] iter 266/610  step  2179072  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0092  SPS 802
+[none] iter 267/610  step  2187264  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.62  ep_len    nan  hazard_steps   nan  approx_kl 0.0070  SPS 803
+[none] iter 268/610  step  2195456  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.62  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 803
+[none] iter 269/610  step  2203648  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.67  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 803
+[none] iter 270/610  step  2211840  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.67  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 803
+[none] iter 271/610  step  2220032  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.66  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 803
+[none] iter 272/610  step  2228224  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.68  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 804
+[none] iter 273/610  step  2236416  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0122  SPS 804
+[none] iter 274/610  step  2244608  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.73  ep_len    nan  hazard_steps   nan  approx_kl 0.0100  SPS 804
+[none] iter 275/610  step  2252800  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 804
+[none] iter 276/610  step  2260992  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0132  SPS 805
+[none] iter 277/610  step  2269184  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0094  SPS 805
+[none] iter 278/610  step  2277376  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 805
+[none] iter 279/610  step  2285568  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 805
+[none] iter 280/610  step  2293760  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 806
+[none] iter 281/610  step  2301952  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 806
+[none] iter 282/610  step  2310144  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.61  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 806
+[none] iter 283/610  step  2318336  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.62  ep_len    nan  hazard_steps   nan  approx_kl 0.0050  SPS 806
+[none] iter 284/610  step  2326528  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 806
+[none] iter 285/610  step  2334720  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.59  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 807
+[none] iter 286/610  step  2342912  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0088  SPS 807
+[none] iter 287/610  step  2351104  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.65  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 807
+[none] iter 288/610  step  2359296  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0080  SPS 807
+[none] iter 289/610  step  2367488  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.64  ep_len    nan  hazard_steps   nan  approx_kl 0.0084  SPS 808
+[none] iter 290/610  step  2375680  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.59  ep_len    nan  hazard_steps   nan  approx_kl 0.0055  SPS 808
+[none] iter 291/610  step  2383872  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 808
+[none] iter 292/610  step  2392064  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 808
+[none] iter 293/610  step  2400256  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 809
+[none] iter 294/610  step  2408448  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.60  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 809
+[none] iter 295/610  step  2416640  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.57  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 809
+[none] iter 296/610  step  2424832  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0077  SPS 810
+[none] iter 297/610  step  2433024  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.57  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 810
+[none] iter 298/610  step  2441216  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0141  SPS 810
+[none] iter 299/610  step  2449408  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.64  ep_len    nan  hazard_steps   nan  approx_kl 0.0150  SPS 810
+[none] iter 300/610  step  2457600  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.67  ep_len    nan  hazard_steps   nan  approx_kl 0.0097  SPS 810
+[none] iter 301/610  step  2465792  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.70  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 811
+[none] iter 302/610  step  2473984  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.63  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 811
+[none] iter 303/610  step  2482176  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 811
+[none] iter 304/610  step  2490368  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 811
+[none] iter 305/610  step  2498560  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0063  SPS 811
+[none] iter 306/610  step  2506752  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0075  SPS 812
+[none] iter 307/610  step  2514944  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0098  SPS 812
+[none] iter 308/610  step  2523136  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 812
+[none] iter 309/610  step  2531328  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.60  ep_len    nan  hazard_steps   nan  approx_kl 0.0138  SPS 812
+[none] iter 310/610  step  2539520  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 812
+[none] iter 311/610  step  2547712  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 812
+[none] iter 312/610  step  2555904  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0080  SPS 813
+[none] iter 313/610  step  2564096  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0096  SPS 813
+[none] iter 314/610  step  2572288  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 813
+[none] iter 315/610  step  2580480  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.59  ep_len    nan  hazard_steps   nan  approx_kl 0.0170  SPS 813
+[none] iter 316/610  step  2588672  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0116  SPS 813
+[none] iter 317/610  step  2596864  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.57  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 814
+[none] iter 318/610  step  2605056  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 814
+[none] iter 319/610  step  2613248  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 814
+[none] iter 320/610  step  2621440  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 814
+[none] iter 321/610  step  2629632  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 815
+[none] iter 322/610  step  2637824  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 815
+[none] iter 323/610  step  2646016  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0091  SPS 815
+[none] iter 324/610  step  2654208  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 815
+[none] iter 325/610  step  2662400  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0152  SPS 816
+[none] iter 326/610  step  2670592  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0050  SPS 816
+[none] iter 327/610  step  2678784  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 816
+[none] iter 328/610  step  2686976  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0081  SPS 816
+[none] iter 329/610  step  2695168  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 816
+[none] iter 330/610  step  2703360  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 817
+[none] iter 331/610  step  2711552  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 817
+[none] iter 332/610  step  2719744  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 817
+[none] iter 333/610  step  2727936  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0115  SPS 817
+[none] iter 334/610  step  2736128  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0062  SPS 818
+[none] iter 335/610  step  2744320  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0078  SPS 818
+[none] iter 336/610  step  2752512  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 818
+[none] iter 337/610  step  2760704  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 818
+[none] iter 338/610  step  2768896  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 818
+[none] iter 339/610  step  2777088  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0100  SPS 819
+[none] iter 340/610  step  2785280  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 819
+[none] iter 341/610  step  2793472  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 819
+[none] iter 342/610  step  2801664  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0140  SPS 819
+[none] iter 343/610  step  2809856  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0119  SPS 819
+[none] iter 344/610  step  2818048  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0103  SPS 820
+[none] iter 345/610  step  2826240  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0070  SPS 820
+[none] iter 346/610  step  2834432  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 820
+[none] iter 347/610  step  2842624  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 820
+[none] iter 348/610  step  2850816  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0106  SPS 820
+[none] iter 349/610  step  2859008  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 821
+[none] iter 350/610  step  2867200  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0093  SPS 821
+[none] iter 351/610  step  2875392  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 821
+[none] iter 352/610  step  2883584  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0092  SPS 821
+[none] iter 353/610  step  2891776  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0101  SPS 821
+[none] iter 354/610  step  2899968  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0091  SPS 821
+[none] iter 355/610  step  2908160  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0084  SPS 822
+[none] iter 356/610  step  2916352  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.59  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 822
+[none] iter 357/610  step  2924544  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.61  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 822
+[none] iter 358/610  step  2932736  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.61  ep_len    nan  hazard_steps   nan  approx_kl 0.0081  SPS 822
+[none] iter 359/610  step  2940928  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 822
+[none] iter 360/610  step  2949120  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 822
+[none] iter 361/610  step  2957312  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 823
+[none] iter 362/610  step  2965504  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 823
+[none] iter 363/610  step  2973696  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 823
+[none] iter 364/610  step  2981888  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 823
+[none] iter 365/610  step  2990080  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 823
+[none] iter 366/610  step  2998272  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 824
+[none] iter 367/610  step  3006464  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0072  SPS 824
+[none] iter 368/610  step  3014656  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 824
+[none] iter 369/610  step  3022848  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0084  SPS 824
+[none] iter 370/610  step  3031040  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 824
+[none] iter 371/610  step  3039232  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0098  SPS 825
+[none] iter 372/610  step  3047424  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0017  SPS 825
+[none] iter 373/610  step  3055616  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0071  SPS 825
+[none] iter 374/610  step  3063808  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0075  SPS 825
+[none] iter 375/610  step  3072000  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 825
+[none] iter 376/610  step  3080192  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 825
+[none] iter 377/610  step  3088384  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 826
+[none] iter 378/610  step  3096576  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 826
+[none] iter 379/610  step  3104768  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0110  SPS 826
+[none] iter 380/610  step  3112960  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 826
+[none] iter 381/610  step  3121152  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0064  SPS 826
+[none] iter 382/610  step  3129344  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 826
+[none] iter 383/610  step  3137536  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 827
+[none] iter 384/610  step  3145728  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 827
+[none] iter 385/610  step  3153920  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 827
+[none] iter 386/610  step  3162112  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0089  SPS 827
+[none] iter 387/610  step  3170304  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.57  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 827
+[none] iter 388/610  step  3178496  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 827
+[none] iter 389/610  step  3186688  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 827
+[none] iter 390/610  step  3194880  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 828
+[none] iter 391/610  step  3203072  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 828
+[none] iter 392/610  step  3211264  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.58  ep_len    nan  hazard_steps   nan  approx_kl 0.0071  SPS 828
+[none] iter 393/610  step  3219456  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 828
+[none] iter 394/610  step  3227648  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 828
+[none] iter 395/610  step  3235840  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0063  SPS 828
+[none] iter 396/610  step  3244032  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.54  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 828
+[none] iter 397/610  step  3252224  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0062  SPS 829
+[none] iter 398/610  step  3260416  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 829
+[none] iter 399/610  step  3268608  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 829
+[none] iter 400/610  step  3276800  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 829
+[none] iter 401/610  step  3284992  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 829
+[none] iter 402/610  step  3293184  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 830
+[none] iter 403/610  step  3301376  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 830
+[none] iter 404/610  step  3309568  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0093  SPS 830
+[none] iter 405/610  step  3317760  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 830
+[none] iter 406/610  step  3325952  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 830
+[none] iter 407/610  step  3334144  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 830
+[none] iter 408/610  step  3342336  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 831
+[none] iter 409/610  step  3350528  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 831
+[none] iter 410/610  step  3358720  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 831
+[none] iter 411/610  step  3366912  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 831
+[none] iter 412/610  step  3375104  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 831
+[none] iter 413/610  step  3383296  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.56  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 831
+[none] iter 414/610  step  3391488  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.55  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 831
+[none] iter 415/610  step  3399680  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.52  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 831
+[none] iter 416/610  step  3407872  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 832
+[none] iter 417/610  step  3416064  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 832
+[none] iter 418/610  step  3424256  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 832
+[none] iter 419/610  step  3432448  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 832
+[none] iter 420/610  step  3440640  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 832
+[none] iter 421/610  step  3448832  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 832
+[none] iter 422/610  step  3457024  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 832
+[none] iter 423/610  step  3465216  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0025  SPS 832
+[none] iter 424/610  step  3473408  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.48  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 833
+[none] iter 425/610  step  3481600  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.47  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 833
+[none] iter 426/610  step  3489792  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.42  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 833
+[none] iter 427/610  step  3497984  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.39  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 833
+[none] iter 428/610  step  3506176  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0053  SPS 833
+[none] iter 429/610  step  3514368  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.45  ep_len    nan  hazard_steps   nan  approx_kl 0.0075  SPS 833
+[none] iter 430/610  step  3522560  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.49  ep_len    nan  hazard_steps   nan  approx_kl 0.0065  SPS 833
+[none] iter 431/610  step  3530752  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 833
+[none] iter 432/610  step  3538944  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0057  SPS 834
+[none] iter 433/610  step  3547136  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 834
+[none] iter 434/610  step  3555328  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.53  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 834
+[none] iter 435/610  step  3563520  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 834
+[none] iter 436/610  step  3571712  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.51  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 834
+[none] iter 437/610  step  3579904  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.50  ep_len    nan  hazard_steps   nan  approx_kl 0.0058  SPS 834
+[none] iter 438/610  step  3588096  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.45  ep_len    nan  hazard_steps   nan  approx_kl 0.0017  SPS 835
+[none] iter 439/610  step  3596288  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0035  SPS 835
+[none] iter 440/610  step  3604480  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.45  ep_len    nan  hazard_steps   nan  approx_kl 0.0030  SPS 835
+[none] iter 441/610  step  3612672  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 835
+[none] iter 442/610  step  3620864  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 835
+[none] iter 443/610  step  3629056  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 835
+[none] iter 444/610  step  3637248  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0067  SPS 836
+[none] iter 445/610  step  3645440  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 836
+[none] iter 446/610  step  3653632  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 836
+[none] iter 447/610  step  3661824  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0027  SPS 836
+[none] iter 448/610  step  3670016  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.37  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 836
+[none] iter 449/610  step  3678208  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 836
+[none] iter 450/610  step  3686400  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0035  SPS 837
+[none] iter 451/610  step  3694592  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0021  SPS 837
+[none] iter 452/610  step  3702784  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 837
+[none] iter 453/610  step  3710976  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0024  SPS 837
+[none] iter 454/610  step  3719168  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.37  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 837
+[none] iter 455/610  step  3727360  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 837
+[none] iter 456/610  step  3735552  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 837
+[none] iter 457/610  step  3743744  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 838
+[none] iter 458/610  step  3751936  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 838
+[none] iter 459/610  step  3760128  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 838
+[none] iter 460/610  step  3768320  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.46  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 838
+[none] iter 461/610  step  3776512  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0069  SPS 838
+[none] iter 462/610  step  3784704  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 838
+[none] iter 463/610  step  3792896  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 838
+[none] iter 464/610  step  3801088  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0059  SPS 839
+[none] iter 465/610  step  3809280  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.42  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 839
+[none] iter 466/610  step  3817472  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 839
+[none] iter 467/610  step  3825664  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 839
+[none] iter 468/610  step  3833856  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 839
+[none] iter 469/610  step  3842048  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0055  SPS 839
+[none] iter 470/610  step  3850240  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0087  SPS 840
+[none] iter 471/610  step  3858432  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.37  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 840
+[none] iter 472/610  step  3866624  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0016  SPS 840
+[none] iter 473/610  step  3874816  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0066  SPS 840
+[none] iter 474/610  step  3883008  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 840
+[none] iter 475/610  step  3891200  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 840
+[none] iter 476/610  step  3899392  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.42  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 840
+[none] iter 477/610  step  3907584  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.39  ep_len    nan  hazard_steps   nan  approx_kl 0.0055  SPS 841
+[none] iter 478/610  step  3915776  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 841
+[none] iter 479/610  step  3923968  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.40  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 841
+[none] iter 480/610  step  3932160  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 841
+[none] iter 481/610  step  3940352  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 841
+[none] iter 482/610  step  3948544  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.43  ep_len    nan  hazard_steps   nan  approx_kl 0.0082  SPS 841
+[none] iter 483/610  step  3956736  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0060  SPS 841
+[none] iter 484/610  step  3964928  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.44  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 842
+[none] iter 485/610  step  3973120  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 842
+[none] iter 486/610  step  3981312  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0027  SPS 842
+[none] iter 487/610  step  3989504  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 842
+[none] iter 488/610  step  3997696  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 842
+[none] iter 489/610  step  4005888  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 842
+[none] iter 490/610  step  4014080  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.39  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 842
+[none] iter 491/610  step  4022272  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.42  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 842
+[none] iter 492/610  step  4030464  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.39  ep_len    nan  hazard_steps   nan  approx_kl 0.0020  SPS 843
+[none] iter 493/610  step  4038656  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 843
+[none] iter 494/610  step  4046848  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 843
+[none] iter 495/610  step  4055040  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0024  SPS 843
+[none] iter 496/610  step  4063232  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0042  SPS 843
+[none] iter 497/610  step  4071424  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 843
+[none] iter 498/610  step  4079616  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0024  SPS 843
+[none] iter 499/610  step  4087808  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 843
+[none] iter 500/610  step  4096000  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0019  SPS 844
+[none] iter 501/610  step  4104192  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0027  SPS 844
+[none] iter 502/610  step  4112384  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0023  SPS 844
+[none] iter 503/610  step  4120576  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0028  SPS 844
+[none] iter 504/610  step  4128768  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.22  ep_len    nan  hazard_steps   nan  approx_kl 0.0019  SPS 844
+[none] iter 505/610  step  4136960  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 844
+[none] iter 506/610  step  4145152  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.23  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 845
+[none] iter 507/610  step  4153344  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 845
+[none] iter 508/610  step  4161536  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 845
+[none] iter 509/610  step  4169728  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 845
+[none] iter 510/610  step  4177920  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0023  SPS 845
+[none] iter 511/610  step  4186112  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0019  SPS 845
+[none] iter 512/610  step  4194304  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0017  SPS 845
+[none] iter 513/610  step  4202496  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 846
+[none] iter 514/610  step  4210688  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 846
+[none] iter 515/610  step  4218880  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 846
+[none] iter 516/610  step  4227072  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0018  SPS 846
+[none] iter 517/610  step  4235264  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.26  ep_len    nan  hazard_steps   nan  approx_kl 0.0054  SPS 846
+[none] iter 518/610  step  4243456  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 846
+[none] iter 519/610  step  4251648  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0056  SPS 847
+[none] iter 520/610  step  4259840  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.26  ep_len    nan  hazard_steps   nan  approx_kl 0.0038  SPS 847
+[none] iter 521/610  step  4268032  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.23  ep_len    nan  hazard_steps   nan  approx_kl 0.0068  SPS 847
+[none] iter 522/610  step  4276224  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 847
+[none] iter 523/610  step  4284416  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0021  SPS 847
+[none] iter 524/610  step  4292608  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0031  SPS 847
+[none] iter 525/610  step  4300800  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0016  SPS 847
+[none] iter 526/610  step  4308992  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0019  SPS 847
+[none] iter 527/610  step  4317184  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0013  SPS 848
+[none] iter 528/610  step  4325376  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 848
+[none] iter 529/610  step  4333568  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.26  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 848
+[none] iter 530/610  step  4341760  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0020  SPS 848
+[none] iter 531/610  step  4349952  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 848
+[none] iter 532/610  step  4358144  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.21  ep_len    nan  hazard_steps   nan  approx_kl 0.0032  SPS 848
+[none] iter 533/610  step  4366336  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.23  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 848
+[none] iter 534/610  step  4374528  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0083  SPS 848
+[none] iter 535/610  step  4382720  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 848
+[none] iter 536/610  step  4390912  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.37  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 849
+[none] iter 537/610  step  4399104  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 849
+[none] iter 538/610  step  4407296  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0018  SPS 849
+[none] iter 539/610  step  4415488  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0079  SPS 849
+[none] iter 540/610  step  4423680  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0062  SPS 849
+[none] iter 541/610  step  4431872  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.24  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 849
+[none] iter 542/610  step  4440064  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.23  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 849
+[none] iter 543/610  step  4448256  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0030  SPS 849
+[none] iter 544/610  step  4456448  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0046  SPS 850
+[none] iter 545/610  step  4464640  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0018  SPS 850
+[none] iter 546/610  step  4472832  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0027  SPS 850
+[none] iter 547/610  step  4481024  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0037  SPS 850
+[none] iter 548/610  step  4489216  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0025  SPS 850
+[none] iter 549/610  step  4497408  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 850
+[none] iter 550/610  step  4505600  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0043  SPS 850
+[none] iter 551/610  step  4513792  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 850
+[none] iter 552/610  step  4521984  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 851
+[none] iter 553/610  step  4530176  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 851
+[none] iter 554/610  step  4538368  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0025  SPS 851
+[none] iter 555/610  step  4546560  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0023  SPS 851
+[none] iter 556/610  step  4554752  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0017  SPS 851
+[none] iter 557/610  step  4562944  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 851
+[none] iter 558/610  step  4571136  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 851
+[none] iter 559/610  step  4579328  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0040  SPS 851
+[none] iter 560/610  step  4587520  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 852
+[none] iter 561/610  step  4595712  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 852
+[none] iter 562/610  step  4603904  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 852
+[none] iter 563/610  step  4612096  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0034  SPS 852
+[none] iter 564/610  step  4620288  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0077  SPS 852
+[none] iter 565/610  step  4628480  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0023  SPS 852
+[none] iter 566/610  step  4636672  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0070  SPS 852
+[none] iter 567/610  step  4644864  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0074  SPS 852
+[none] iter 568/610  step  4653056  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 853
+[none] iter 569/610  step  4661248  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0044  SPS 853
+[none] iter 570/610  step  4669440  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0024  SPS 853
+[none] iter 571/610  step  4677632  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0005  SPS 853
+[none] iter 572/610  step  4685824  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 853
+[none] iter 573/610  step  4694016  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0086  SPS 853
+[none] iter 574/610  step  4702208  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0041  SPS 853
+[none] iter 575/610  step  4710400  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 853
+[none] iter 576/610  step  4718592  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 853
+[none] iter 577/610  step  4726784  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0048  SPS 854
+[none] iter 578/610  step  4734976  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0118  SPS 854
+[none] iter 579/610  step  4743168  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0092  SPS 854
+[none] iter 580/610  step  4751360  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.27  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 854
+[none] iter 581/610  step  4759552  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0007  SPS 854
+[none] iter 582/610  step  4767744  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0073  SPS 854
+[none] iter 583/610  step  4775936  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0052  SPS 854
+[none] iter 584/610  step  4784128  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0051  SPS 854
+[none] iter 585/610  step  4792320  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.41  ep_len    nan  hazard_steps   nan  approx_kl 0.0039  SPS 854
+[none] iter 586/610  step  4800512  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.42  ep_len    nan  hazard_steps   nan  approx_kl 0.0061  SPS 855
+[none] iter 587/610  step  4808704  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.37  ep_len    nan  hazard_steps   nan  approx_kl 0.0029  SPS 855
+[none] iter 588/610  step  4816896  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0015  SPS 855
+[none] iter 589/610  step  4825088  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.36  ep_len    nan  hazard_steps   nan  approx_kl 0.0036  SPS 855
+[none] iter 590/610  step  4833280  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0022  SPS 855
+[none] iter 591/610  step  4841472  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.31  ep_len    nan  hazard_steps   nan  approx_kl 0.0049  SPS 855
+[none] iter 592/610  step  4849664  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0011  SPS 855
+[none] iter 593/610  step  4857856  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0007  SPS 855
+[none] iter 594/610  step  4866048  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0033  SPS 856
+[none] iter 595/610  step  4874240  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.25  ep_len    nan  hazard_steps   nan  approx_kl 0.0006  SPS 856
+[none] iter 596/610  step  4882432  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0045  SPS 856
+[none] iter 597/610  step  4890624  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0047  SPS 856
+[none] iter 598/610  step  4898816  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.28  ep_len    nan  hazard_steps   nan  approx_kl 0.0014  SPS 856
+[none] iter 599/610  step  4907008  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0003  SPS 856
+[none] iter 600/610  step  4915200  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.26  ep_len    nan  hazard_steps   nan  approx_kl 0.0011  SPS 856
+[none] iter 601/610  step  4923392  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0004  SPS 856
+[none] iter 602/610  step  4931584  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.33  ep_len    nan  hazard_steps   nan  approx_kl 0.0004  SPS 856
+[none] iter 603/610  step  4939776  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0003  SPS 856
+[none] iter 604/610  step  4947968  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0007  SPS 856
+[none] iter 605/610  step  4956160  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.38  ep_len    nan  hazard_steps   nan  approx_kl 0.0005  SPS 857
+[none] iter 606/610  step  4964352  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.34  ep_len    nan  hazard_steps   nan  approx_kl 0.0007  SPS 857
+[none] iter 607/610  step  4972544  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.35  ep_len    nan  hazard_steps   nan  approx_kl 0.0003  SPS 857
+[none] iter 608/610  step  4980736  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.30  ep_len    nan  hazard_steps   nan  approx_kl 0.0001  SPS 857
+[none] iter 609/610  step  4988928  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.29  ep_len    nan  hazard_steps   nan  approx_kl 0.0000  SPS 857
+[none] iter 610/610  step  4997120  return     nan  success   nan (top  nan/bot  nan)  rand_succ 0.32  ep_len    nan  hazard_steps   nan  approx_kl 0.0000  SPS 857
+
+[none/seed1] FINAL success 0.000  hazard_steps nan  rand_spawn_success 0.320
+saved policy -> runs/nav_pretrain/nav_s1_band.pt
+wrote run json -> runs/nav_pretrain/nav_s1_band.json

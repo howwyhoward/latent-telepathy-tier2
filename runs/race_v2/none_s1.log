@@ -1,0 +1,472 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260713_220527.log
+2026-07-13T22:05:27Z [141ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:27Z [141ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:27Z [207ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-07-13T22:05:27Z [212ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-07-13T22:05:27Z [212ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-07-13T22:05:27Z [212ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-07-13T22:05:28Z [601ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:28Z [601ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:28Z [810ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [810ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-07-13T22:05:28Z [811ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 484538
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 8512
+|---------------------------------------------------------------------------------------------|
+2026-07-13T22:05:29Z [2,030ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,030ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,039ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,039ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,045ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,045ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,052ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,052ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,053ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,053ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,054ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-13T22:05:29Z [2,054ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-13T22:05:29Z [2,251ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-07-13T22:05:30Z [2,555ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-07-13T22:05:30Z [2,564ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-07-13T22:05:32Z [4,699ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-07-13T22:05:32Z [4,820ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-07-13T22:05:32Z [4,821ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-07-13T22:05:32Z [4,821ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-07-13T22:05:33Z [6,218ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-07-13T22:05:36Z [8,448ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-07-13T22:05:36Z [8,952ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-07-13_22-05-36.log[0m
+[36m========================================================================================================[0m
+
+[33m22:05:36 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.501712 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 2.947238 seconds
+[INFO]: Completed setting up the environment...
+condition=none  wire_dim=0  trainable=74,631 (encoder frozen)
+2026-07-13T22:05:44Z [17,141ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[none] iter   1/366  step     8192  return     nan  success   nan (top  nan/bot  nan)  ep_len    nan  hazard_steps   nan  approx_kl 0.0105  SPS 1101
+[none] iter   2/366  step    16384  return     nan  success   nan (top  nan/bot  nan)  ep_len    nan  hazard_steps   nan  approx_kl 0.0132  SPS 1122
+[none] iter   3/366  step    24576  return     nan  success   nan (top  nan/bot  nan)  ep_len    nan  hazard_steps   nan  approx_kl 0.0149  SPS 952
+[none] iter   4/366  step    32768  return     nan  success   nan (top  nan/bot  nan)  ep_len    nan  hazard_steps   nan  approx_kl 0.0126  SPS 805
+[none] iter   5/366  step    40960  return  -6.005  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0110  SPS 760
+[none] iter   6/366  step    49152  return  -6.005  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0339  SPS 740
+[none] iter   7/366  step    57344  return  -6.005  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0203  SPS 718
+[none] iter   8/366  step    65536  return  -6.005  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0180  SPS 701
+[none] iter   9/366  step    73728  return  -6.005  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0085  SPS 691
+[none] iter  10/366  step    81920  return  -5.166  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0101  SPS 680
+[none] iter  11/366  step    90112  return  -5.166  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0137  SPS 674
+[none] iter  12/366  step    98304  return  -5.166  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0030  SPS 666
+[none] iter  13/366  step   106496  return  -5.166  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0035  SPS 660
+[none] iter  14/366  step   114688  return  -5.166  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0054  SPS 655
+[none] iter  15/366  step   122880  return  -3.576  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.4  approx_kl 0.0162  SPS 652
+[none] iter  16/366  step   131072  return  -3.576  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.4  approx_kl 0.0076  SPS 649
+[none] iter  17/366  step   139264  return  -3.576  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.4  approx_kl 0.0015  SPS 646
+[none] iter  18/366  step   147456  return  -3.576  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.4  approx_kl 0.0073  SPS 644
+[none] iter  19/366  step   155648  return  -2.803  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.6  approx_kl 0.0047  SPS 641
+[none] iter  20/366  step   163840  return  -2.803  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.6  approx_kl 0.0185  SPS 639
+[none] iter  21/366  step   172032  return  -2.803  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.6  approx_kl 0.0037  SPS 641
+[none] iter  22/366  step   180224  return  -2.803  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.6  approx_kl 0.0069  SPS 639
+[none] iter  23/366  step   188416  return  -2.803  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.6  approx_kl 0.0043  SPS 637
+[none] iter  24/366  step   196608  return  -2.421  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.0  approx_kl 0.0157  SPS 636
+[none] iter  25/366  step   204800  return  -2.421  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.0  approx_kl 0.0051  SPS 634
+[none] iter  26/366  step   212992  return  -2.421  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   2.0  approx_kl 0.0052  SPS 633
+[none] iter  27/366  step   221184  return  -2.371  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   2.9  approx_kl 0.0015  SPS 633
+[none] iter  28/366  step   229376  return  -2.371  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   2.9  approx_kl 0.0102  SPS 631
+[none] iter  29/366  step   237568  return  -2.529  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   4.4  approx_kl 0.0120  SPS 630
+[none] iter  30/366  step   245760  return  -2.529  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   4.4  approx_kl 0.0087  SPS 629
+[none] iter  31/366  step   253952  return  -2.529  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   4.4  approx_kl 0.0066  SPS 628
+[none] iter  32/366  step   262144  return  -2.519  success  0.01 (top 0.00/bot 0.01)  ep_len  597.0  hazard_steps   4.4  approx_kl 0.0106  SPS 628
+[none] iter  33/366  step   270336  return  -2.197  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0027  SPS 627
+[none] iter  34/366  step   278528  return  -2.197  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0079  SPS 627
+[none] iter  35/366  step   286720  return  -2.197  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0024  SPS 626
+[none] iter  36/366  step   294912  return  -2.197  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0014  SPS 625
+[none] iter  37/366  step   303104  return  -2.197  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   0.9  approx_kl 0.0093  SPS 624
+[none] iter  38/366  step   311296  return  -2.222  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   1.1  approx_kl 0.0083  SPS 624
+[none] iter  39/366  step   319488  return  -2.222  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   1.1  approx_kl 0.0086  SPS 623
+[none] iter  40/366  step   327680  return  -2.222  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   1.1  approx_kl 0.0019  SPS 622
+[none] iter  41/366  step   335872  return  -2.222  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   1.1  approx_kl 0.0076  SPS 621
+[none] iter  42/366  step   344064  return  -2.222  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   1.1  approx_kl 0.0051  SPS 621
+[none] iter  43/366  step   352256  return  -2.251  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.8  approx_kl 0.0065  SPS 620
+[none] iter  44/366  step   360448  return  -2.251  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.8  approx_kl 0.0020  SPS 620
+[none] iter  45/366  step   368640  return  -2.251  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.8  approx_kl 0.0036  SPS 619
+[none] iter  46/366  step   376832  return  -2.251  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.8  approx_kl 0.0038  SPS 619
+[none] iter  47/366  step   385024  return  -2.069  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0148  SPS 619
+[none] iter  48/366  step   393216  return  -2.069  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0056  SPS 618
+[none] iter  49/366  step   401408  return  -2.069  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0101  SPS 618
+[none] iter  50/366  step   409600  return  -1.974  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   0.6  approx_kl 0.0041  SPS 618
+[none] iter  51/366  step   417792  return  -1.974  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   0.6  approx_kl 0.0043  SPS 617
+[none] iter  52/366  step   425984  return  -2.707  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   4.4  approx_kl 0.0044  SPS 617
+[none] iter  53/366  step   434176  return  -2.707  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   4.4  approx_kl 0.0066  SPS 617
+[none] iter  54/366  step   442368  return  -2.707  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   4.4  approx_kl 0.0042  SPS 617
+[none] iter  55/366  step   450560  return  -2.718  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   4.4  approx_kl 0.0058  SPS 617
+[none] iter  56/366  step   458752  return  -2.718  success  0.01 (top 0.00/bot 0.01)  ep_len  596.7  hazard_steps   4.4  approx_kl 0.0017  SPS 617
+[none] iter  57/366  step   466944  return  -3.118  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   6.1  approx_kl 0.0189  SPS 618
+[none] iter  58/366  step   475136  return  -3.118  success  0.00 (top 0.00/bot 0.01)  ep_len  599.0  hazard_steps   6.1  approx_kl 0.0083  SPS 618
+[none] iter  59/366  step   483328  return  -2.930  success  0.01 (top 0.01/bot 0.01)  ep_len  596.6  hazard_steps   6.1  approx_kl 0.0047  SPS 618
+[none] iter  60/366  step   491520  return  -2.257  success  0.05 (top 0.05/bot 0.01)  ep_len  588.4  hazard_steps   6.1  approx_kl 0.0056  SPS 618
+[none] iter  61/366  step   499712  return  -1.511  success  0.05 (top 0.05/bot 0.01)  ep_len  588.4  hazard_steps   2.1  approx_kl 0.0052  SPS 617
+[none] iter  62/366  step   507904  return  -1.511  success  0.05 (top 0.05/bot 0.01)  ep_len  588.4  hazard_steps   2.1  approx_kl 0.0052  SPS 617
+[none] iter  63/366  step   516096  return  -1.511  success  0.05 (top 0.05/bot 0.01)  ep_len  588.4  hazard_steps   2.1  approx_kl 0.0036  SPS 617
+[none] iter  64/366  step   524288  return  -1.156  success  0.07 (top 0.07/bot 0.01)  ep_len  582.8  hazard_steps   2.8  approx_kl 0.0007  SPS 616
+[none] iter  65/366  step   532480  return  -1.146  success  0.07 (top 0.07/bot 0.01)  ep_len  582.8  hazard_steps   2.8  approx_kl 0.0036  SPS 616
+[none] iter  66/366  step   540672  return  -1.595  success  0.02 (top 0.07/bot 0.00)  ep_len  593.4  hazard_steps   2.4  approx_kl 0.0045  SPS 616
+[none] iter  67/366  step   548864  return  -1.417  success  0.03 (top 0.08/bot 0.00)  ep_len  591.0  hazard_steps   2.4  approx_kl 0.0079  SPS 616
+[none] iter  68/366  step   557056  return  -0.437  success  0.08 (top 0.13/bot 0.00)  ep_len  576.1  hazard_steps   2.4  approx_kl 0.0126  SPS 616
+[none] iter  69/366  step   565248  return  -0.248  success  0.09 (top 0.14/bot 0.00)  ep_len  574.1  hazard_steps   2.4  approx_kl 0.0018  SPS 616
+[none] iter  70/366  step   573440  return  -0.248  success  0.09 (top 0.14/bot 0.00)  ep_len  574.1  hazard_steps   2.4  approx_kl 0.0055  SPS 616
+[none] iter  71/366  step   581632  return  -0.838  success  0.07 (top 0.14/bot 0.00)  ep_len  579.7  hazard_steps   2.5  approx_kl 0.0127  SPS 616
+[none] iter  72/366  step   589824  return  -0.607  success  0.09 (top 0.15/bot 0.01)  ep_len  576.0  hazard_steps   3.3  approx_kl 0.0084  SPS 616
+[none] iter  73/366  step   598016  return   0.422  success  0.16 (top 0.17/bot 0.02)  ep_len  558.4  hazard_steps   4.8  approx_kl 0.0036  SPS 615
+[none] iter  74/366  step   606208  return   1.952  success  0.25 (top 0.25/bot 0.02)  ep_len  541.1  hazard_steps   5.0  approx_kl 0.0122  SPS 615
+[none] iter  75/366  step   614400  return   0.376  success  0.20 (top 0.27/bot 0.02)  ep_len  558.5  hazard_steps   8.8  approx_kl 0.0064  SPS 615
+[none] iter  76/366  step   622592  return   0.561  success  0.21 (top 0.28/bot 0.02)  ep_len  555.4  hazard_steps   8.8  approx_kl 0.0108  SPS 615
+[none] iter  77/366  step   630784  return   1.076  success  0.23 (top 0.30/bot 0.02)  ep_len  552.0  hazard_steps   7.7  approx_kl 0.0054  SPS 615
+[none] iter  78/366  step   638976  return   1.473  success  0.24 (top 0.30/bot 0.02)  ep_len  549.1  hazard_steps   6.3  approx_kl 0.0069  SPS 615
+[none] iter  79/366  step   647168  return   1.500  success  0.24 (top 0.29/bot 0.02)  ep_len  549.1  hazard_steps   6.3  approx_kl 0.0150  SPS 615
+[none] iter  80/366  step   655360  return  -1.373  success  0.07 (top 0.29/bot 0.02)  ep_len  586.1  hazard_steps   5.3  approx_kl 0.0054  SPS 615
+[none] iter  81/366  step   663552  return  -1.542  success  0.06 (top 0.29/bot 0.02)  ep_len  587.7  hazard_steps   5.3  approx_kl 0.0028  SPS 615
+[none] iter  82/366  step   671744  return  -1.922  success  0.04 (top 0.29/bot 0.02)  ep_len  589.7  hazard_steps   5.3  approx_kl 0.0060  SPS 615
+[none] iter  83/366  step   679936  return  -1.397  success  0.04 (top 0.27/bot 0.02)  ep_len  589.7  hazard_steps   1.5  approx_kl 0.0061  SPS 615
+[none] iter  84/366  step   688128  return  -1.318  success  0.04 (top 0.26/bot 0.02)  ep_len  589.7  hazard_steps   1.5  approx_kl 0.0079  SPS 615
+[none] iter  85/366  step   696320  return  -2.084  success  0.00 (top 0.22/bot 0.02)  ep_len  599.0  hazard_steps   1.5  approx_kl 0.0027  SPS 615
+[none] iter  86/366  step   704512  return  -2.082  success  0.00 (top 0.22/bot 0.02)  ep_len  599.0  hazard_steps   1.5  approx_kl 0.0059  SPS 615
+[none] iter  87/366  step   712704  return  -1.933  success  0.00 (top 0.21/bot 0.01)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0053  SPS 615
+[none] iter  88/366  step   720896  return  -1.885  success  0.00 (top 0.15/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0179  SPS 615
+[none] iter  89/366  step   729088  return  -1.953  success  0.00 (top 0.07/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0066  SPS 615
+[none] iter  90/366  step   737280  return  -1.953  success  0.00 (top 0.06/bot 0.00)  ep_len  599.0  hazard_steps   0.0  approx_kl 0.0064  SPS 615
+[none] iter  91/366  step   745472  return  -1.377  success  0.03 (top 0.07/bot 0.00)  ep_len  594.6  hazard_steps   0.0  approx_kl 0.0098  SPS 615
+[none] iter  92/366  step   753664  return  -0.563  success  0.07 (top 0.07/bot 0.00)  ep_len  583.3  hazard_steps   0.0  approx_kl 0.0244  SPS 614
+[none] iter  93/366  step   761856  return  -0.445  success  0.08 (top 0.08/bot 0.00)  ep_len  581.6  hazard_steps   0.0  approx_kl 0.0041  SPS 614
+[none] iter  94/366  step   770048  return  -0.437  success  0.11 (top 0.10/bot 0.01)  ep_len  573.1  hazard_steps   3.4  approx_kl 0.0026  SPS 614
+[none] iter  95/366  step   778240  return  -0.096  success  0.14 (top 0.12/bot 0.02)  ep_len  567.7  hazard_steps   4.6  approx_kl 0.0021  SPS 614
+[none] iter  96/366  step   786432  return   0.317  success  0.16 (top 0.14/bot 0.02)  ep_len  563.9  hazard_steps   4.6  approx_kl 0.0047  SPS 614
+[none] iter  97/366  step   794624  return   0.358  success  0.17 (top 0.16/bot 0.02)  ep_len  559.8  hazard_steps   7.4  approx_kl 0.0051  SPS 613
+[none] iter  98/366  step   802816  return   0.448  success  0.18 (top 0.18/bot 0.02)  ep_len  554.5  hazard_steps   7.4  approx_kl 0.0121  SPS 614
+[none] iter  99/366  step   811008  return   0.060  success  0.18 (top 0.24/bot 0.02)  ep_len  550.1  hazard_steps  10.3  approx_kl 0.0028  SPS 613
+[none] iter 100/366  step   819200  return   0.351  success  0.20 (top 0.26/bot 0.02)  ep_len  546.1  hazard_steps  10.8  approx_kl 0.0054  SPS 613
+[none] iter 101/366  step   827392  return   1.381  success  0.26 (top 0.30/bot 0.04)  ep_len  527.9  hazard_steps  12.0  approx_kl 0.0044  SPS 613
+[none] iter 102/366  step   835584  return   0.231  success  0.20 (top 0.30/bot 0.04)  ep_len  541.8  hazard_steps  12.9  approx_kl 0.0046  SPS 613
+[none] iter 103/366  step   843776  return  -1.099  success  0.16 (top 0.30/bot 0.04)  ep_len  551.1  hazard_steps  16.0  approx_kl 0.0033  SPS 613
+[none] iter 104/366  step   851968  return  -1.569  success  0.16 (top 0.28/bot 0.04)  ep_len  550.8  hazard_steps  19.6  approx_kl 0.0061  SPS 613
+[none] iter 105/366  step   860160  return  -2.647  success  0.16 (top 0.26/bot 0.04)  ep_len  551.4  hazard_steps  26.6  approx_kl 0.0028  SPS 613
+[none] iter 106/366  step   868352  return  -3.501  success  0.15 (top 0.26/bot 0.04)  ep_len  554.2  hazard_steps  30.7  approx_kl 0.0037  SPS 613
+[none] iter 107/366  step   876544  return  -4.467  success  0.12 (top 0.26/bot 0.05)  ep_len  566.1  hazard_steps  32.7  approx_kl 0.0088  SPS 613
+[none] iter 108/366  step   884736  return  -5.603  success  0.05 (top 0.19/bot 0.05)  ep_len  585.2  hazard_steps  31.4  approx_kl 0.0047  SPS 613
+[none] iter 109/366  step   892928  return  -5.103  success  0.06 (top 0.19/bot 0.05)  ep_len  583.7  hazard_steps  28.8  approx_kl 0.0060  SPS 613
+[none] iter 110/366  step   901120  return  -4.690  success  0.06 (top 0.17/bot 0.04)  ep_len  583.7  hazard_steps  25.7  approx_kl 0.0220  SPS 613
+[none] iter 111/366  step   909312  return  -4.971  success  0.05 (top 0.17/bot 0.03)  ep_len  587.2  hazard_steps  25.7  approx_kl 0.0044  SPS 613
+[none] iter 112/366  step   917504  return  -3.570  success  0.05 (top 0.17/bot 0.03)  ep_len  587.2  hazard_steps  16.4  approx_kl 0.0083  SPS 613
+[none] iter 113/366  step   925696  return  -2.991  success  0.02 (top 0.11/bot 0.03)  ep_len  596.4  hazard_steps   8.3  approx_kl 0.0034  SPS 613
+[none] iter 114/366  step   933888  return  -2.195  success  0.03 (top 0.09/bot 0.03)  ep_len  593.2  hazard_steps   4.3  approx_kl 0.0056  SPS 613
+[none] iter 115/366  step   942080  return  -1.753  success  0.03 (top 0.07/bot 0.03)  ep_len  593.2  hazard_steps   2.3  approx_kl 0.0078  SPS 613
+[none] iter 116/366  step   950272  return  -1.843  success  0.02 (top 0.07/bot 0.01)  ep_len  594.7  hazard_steps   1.0  approx_kl 0.0092  SPS 613
+[none] iter 117/366  step   958464  return  -1.775  success  0.02 (top 0.06/bot 0.01)  ep_len  594.7  hazard_steps   1.0  approx_kl 0.0042  SPS 613
+[none] iter 118/366  step   966656  return  -1.776  success  0.02 (top 0.06/bot 0.01)  ep_len  594.7  hazard_steps   1.0  approx_kl 0.0063  SPS 613
+[none] iter 119/366  step   974848  return  -1.779  success  0.02 (top 0.05/bot 0.01)  ep_len  594.7  hazard_steps   1.0  approx_kl 0.0080  SPS 613
+[none] iter 120/366  step   983040  return  -1.548  success  0.02 (top 0.05/bot 0.01)  ep_len  594.7  hazard_steps   0.2  approx_kl 0.0069  SPS 613
+[none] iter 121/366  step   991232  return  -1.734  success  0.01 (top 0.03/bot 0.00)  ep_len  596.8  hazard_steps   0.2  approx_kl 0.0038  SPS 613
+[none] iter 122/366  step   999424  return  -1.944  success  0.00 (top 0.03/bot 0.00)  ep_len  599.0  hazard_steps   0.3  approx_kl 0.0076  SPS 613
+[none] iter 123/366  step  1007616  return  -1.929  success  0.00 (top 0.03/bot 0.00)  ep_len  599.0  hazard_steps   0.3  approx_kl 0.0026  SPS 613
+[none] iter 124/366  step  1015808  return  -1.926  success  0.00 (top 0.02/bot 0.00)  ep_len  599.0  hazard_steps   0.3  approx_kl 0.0042  SPS 613
+[none] iter 125/366  step  1024000  return  -1.934  success  0.00 (top 0.02/bot 0.00)  ep_len  599.0  hazard_steps   0.3  approx_kl 0.0050  SPS 613
+[none] iter 126/366  step  1032192  return  -1.932  success  0.00 (top 0.02/bot 0.00)  ep_len  599.0  hazard_steps   0.3  approx_kl 0.0073  SPS 613
+[none] iter 127/366  step  1040384  return  -1.868  success  0.00 (top 0.02/bot 0.00)  ep_len  599.0  hazard_steps   0.2  approx_kl 0.0099  SPS 613
+[none] iter 128/366  step  1048576  return  -1.868  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   0.2  approx_kl 0.0107  SPS 613
+[none] iter 129/366  step  1056768  return  -2.271  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   3.1  approx_kl 0.0026  SPS 613
+[none] iter 130/366  step  1064960  return  -2.587  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0045  SPS 613
+[none] iter 131/366  step  1073152  return  -2.584  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0069  SPS 613
+[none] iter 132/366  step  1081344  return  -2.583  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   5.6  approx_kl 0.0051  SPS 613
+[none] iter 133/366  step  1089536  return  -2.389  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   5.6  approx_kl 0.0028  SPS 613
+[none] iter 134/366  step  1097728  return  -2.423  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   5.5  approx_kl 0.0083  SPS 613
+[none] iter 135/366  step  1105920  return  -2.451  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   5.5  approx_kl 0.0140  SPS 613
+[none] iter 136/366  step  1114112  return  -1.996  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   2.5  approx_kl 0.0080  SPS 613
+[none] iter 137/366  step  1122304  return  -1.659  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   0.0  approx_kl 0.0059  SPS 613
+[none] iter 138/366  step  1130496  return  -1.655  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   0.0  approx_kl 0.0049  SPS 612
+[none] iter 139/366  step  1138688  return  -1.831  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   1.6  approx_kl 0.0069  SPS 613
+[none] iter 140/366  step  1146880  return  -1.826  success  0.01 (top 0.01/bot 0.00)  ep_len  596.5  hazard_steps   1.6  approx_kl 0.0039  SPS 613
+[none] iter 141/366  step  1155072  return  -2.051  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   1.6  approx_kl 0.0117  SPS 613
+[none] iter 142/366  step  1163264  return  -2.274  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   3.6  approx_kl 0.0044  SPS 613
+[none] iter 143/366  step  1171456  return  -2.269  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   3.6  approx_kl 0.0035  SPS 613
+[none] iter 144/366  step  1179648  return  -2.312  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   3.6  approx_kl 0.0054  SPS 613
+[none] iter 145/366  step  1187840  return  -2.308  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   3.6  approx_kl 0.0110  SPS 614
+[none] iter 146/366  step  1196032  return  -2.460  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   5.0  approx_kl 0.0078  SPS 614
+[none] iter 147/366  step  1204224  return  -2.272  success  0.00 (top 0.01/bot 0.00)  ep_len  599.0  hazard_steps   3.4  approx_kl 0.0021  SPS 614
+[none] iter 148/366  step  1212416  return  -2.254  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   3.5  approx_kl 0.0045  SPS 613
+[none] iter 149/366  step  1220608  return  -2.413  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   4.9  approx_kl 0.0018  SPS 613
+[none] iter 150/366  step  1228800  return  -2.141  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   3.1  approx_kl 0.0087  SPS 613
+[none] iter 151/366  step  1236992  return  -2.176  success  0.00 (top 0.00/bot 0.00)  ep_len  599.0  hazard_steps   3.1  approx_kl 0.0122  SPS 614
+[none] iter 152/366  step  1245184  return  -2.111  success  0.01 (top 0.01/bot 0.00)  ep_len  595.6  hazard_steps   4.2  approx_kl 0.0056  SPS 613
+[none] iter 153/366  step  1253376  return  -1.980  success  0.01 (top 0.01/bot 0.00)  ep_len  595.6  hazard_steps   2.9  approx_kl 0.0082  SPS 613
+[none] iter 154/366  step  1261568  return  -1.982  success  0.01 (top 0.01/bot 0.00)  ep_len  595.6  hazard_steps   2.9  approx_kl 0.0036  SPS 613
+[none] iter 155/366  step  1269760  return  -1.797  success  0.02 (top 0.02/bot 0.00)  ep_len  592.6  hazard_steps   2.9  approx_kl 0.0115  SPS 613
+[none] iter 156/366  step  1277952  return  -1.426  success  0.03 (top 0.03/bot 0.00)  ep_len  590.9  hazard_steps   1.3  approx_kl 0.0193  SPS 614
+[none] iter 157/366  step  1286144  return  -1.485  success  0.03 (top 0.03/bot 0.00)  ep_len  590.9  hazard_steps   1.2  approx_kl 0.0073  SPS 614
+[none] iter 158/366  step  1294336  return  -1.284  success  0.04 (top 0.04/bot 0.00)  ep_len  588.0  hazard_steps   1.2  approx_kl 0.0078  SPS 614
+[none] iter 159/366  step  1302528  return  -1.104  success  0.06 (top 0.04/bot 0.02)  ep_len  583.9  hazard_steps   2.0  approx_kl 0.0049  SPS 614
+[none] iter 160/366  step  1310720  return  -1.106  success  0.06 (top 0.05/bot 0.02)  ep_len  584.9  hazard_steps   1.9  approx_kl 0.0230  SPS 614
+[none] iter 161/366  step  1318912  return  -1.304  success  0.05 (top 0.05/bot 0.02)  ep_len  588.0  hazard_steps   1.9  approx_kl 0.0065  SPS 614
+[none] iter 162/366  step  1327104  return  -1.139  success  0.06 (top 0.06/bot 0.02)  ep_len  585.4  hazard_steps   1.9  approx_kl 0.0047  SPS 613
+[none] iter 163/366  step  1335296  return  -1.128  success  0.06 (top 0.07/bot 0.02)  ep_len  585.6  hazard_steps   1.9  approx_kl 0.0055  SPS 613
+[none] iter 164/366  step  1343488  return  -1.217  success  0.06 (top 0.06/bot 0.02)  ep_len  585.6  hazard_steps   1.9  approx_kl 0.0028  SPS 613
+[none] iter 165/366  step  1351680  return  -1.086  success  0.07 (top 0.07/bot 0.03)  ep_len  587.6  hazard_steps   1.9  approx_kl 0.0040  SPS 613
+[none] iter 166/366  step  1359872  return  -1.366  success  0.05 (top 0.07/bot 0.03)  ep_len  591.6  hazard_steps   1.7  approx_kl 0.0057  SPS 613
+[none] iter 167/366  step  1368064  return  -1.452  success  0.05 (top 0.07/bot 0.03)  ep_len  592.1  hazard_steps   2.3  approx_kl 0.0152  SPS 613
+[none] iter 168/366  step  1376256  return  -1.460  success  0.05 (top 0.07/bot 0.03)  ep_len  592.1  hazard_steps   2.3  approx_kl 0.0108  SPS 613
+[none] iter 169/366  step  1384448  return  -1.357  success  0.06 (top 0.07/bot 0.04)  ep_len  590.4  hazard_steps   3.0  approx_kl 0.0033  SPS 613
+[none] iter 170/366  step  1392640  return  -1.552  success  0.05 (top 0.06/bot 0.04)  ep_len  591.9  hazard_steps   3.0  approx_kl 0.0057  SPS 613
+[none] iter 171/366  step  1400832  return  -1.488  success  0.05 (top 0.06/bot 0.04)  ep_len  591.9  hazard_steps   3.0  approx_kl 0.0089  SPS 613
+[none] iter 172/366  step  1409024  return  -1.636  success  0.04 (top 0.07/bot 0.04)  ep_len  591.2  hazard_steps   3.0  approx_kl 0.0078  SPS 614
+[none] iter 173/366  step  1417216  return  -1.641  success  0.04 (top 0.07/bot 0.04)  ep_len  591.2  hazard_steps   3.0  approx_kl 0.0049  SPS 614
+[none] iter 174/366  step  1425408  return  -1.519  success  0.03 (top 0.06/bot 0.04)  ep_len  593.1  hazard_steps   0.7  approx_kl 0.0047  SPS 614
+[none] iter 175/366  step  1433600  return  -1.107  success  0.05 (top 0.08/bot 0.02)  ep_len  587.5  hazard_steps   0.7  approx_kl 0.0049  SPS 614
+[none] iter 176/366  step  1441792  return  -1.135  success  0.05 (top 0.07/bot 0.02)  ep_len  587.5  hazard_steps   0.7  approx_kl 0.0066  SPS 613
+[none] iter 177/366  step  1449984  return  -1.057  success  0.05 (top 0.08/bot 0.02)  ep_len  589.1  hazard_steps   0.0  approx_kl 0.0081  SPS 613
+[none] iter 178/366  step  1458176  return  -1.042  success  0.05 (top 0.08/bot 0.02)  ep_len  589.1  hazard_steps   0.0  approx_kl 0.0053  SPS 613
+[none] iter 179/366  step  1466368  return  -1.025  success  0.05 (top 0.07/bot 0.01)  ep_len  589.1  hazard_steps   0.0  approx_kl 0.0074  SPS 613
+[none] iter 180/366  step  1474560  return  -1.204  success  0.04 (top 0.07/bot 0.01)  ep_len  590.7  hazard_steps   0.1  approx_kl 0.0028  SPS 613
+[none] iter 181/366  step  1482752  return  -1.022  success  0.05 (top 0.08/bot 0.01)  ep_len  587.7  hazard_steps   0.1  approx_kl 0.0044  SPS 613
+[none] iter 182/366  step  1490944  return  -1.436  success  0.03 (top 0.07/bot 0.01)  ep_len  594.3  hazard_steps   0.1  approx_kl 0.0048  SPS 613
+[none] iter 183/366  step  1499136  return  -1.412  success  0.03 (top 0.07/bot 0.00)  ep_len  591.6  hazard_steps   0.1  approx_kl 0.0040  SPS 613
+[none] iter 184/366  step  1507328  return  -1.578  success  0.02 (top 0.07/bot 0.00)  ep_len  592.2  hazard_steps   0.1  approx_kl 0.0055  SPS 613
+[none] iter 185/366  step  1515520  return  -1.590  success  0.02 (top 0.07/bot 0.00)  ep_len  592.2  hazard_steps   0.1  approx_kl 0.0051  SPS 613
+[none] iter 186/366  step  1523712  return  -1.338  success  0.04 (top 0.09/bot 0.00)  ep_len  586.1  hazard_steps   0.1  approx_kl 0.0036  SPS 613
+[none] iter 187/366  step  1531904  return  -1.358  success  0.05 (top 0.09/bot 0.01)  ep_len  585.4  hazard_steps   1.4  approx_kl 0.0035  SPS 613
+[none] iter 188/366  step  1540096  return  -1.666  success  0.04 (top 0.08/bot 0.01)  ep_len  588.4  hazard_steps   2.3  approx_kl 0.0026  SPS 613
+[none] iter 189/366  step  1548288  return  -1.946  success  0.05 (top 0.09/bot 0.01)  ep_len  584.9  hazard_steps   5.4  approx_kl 0.0043  SPS 613
+[none] iter 190/366  step  1556480  return  -1.971  success  0.05 (top 0.09/bot 0.01)  ep_len  584.9  hazard_steps   5.4  approx_kl 0.0042  SPS 613
+[none] iter 191/366  step  1564672  return  -2.002  success  0.05 (top 0.07/bot 0.01)  ep_len  586.1  hazard_steps   5.4  approx_kl 0.0054  SPS 613
+[none] iter 192/366  step  1572864  return  -2.007  success  0.05 (top 0.07/bot 0.01)  ep_len  586.1  hazard_steps   5.4  approx_kl 0.0055  SPS 613
+[none] iter 193/366  step  1581056  return  -2.312  success  0.03 (top 0.06/bot 0.01)  ep_len  592.2  hazard_steps   5.4  approx_kl 0.0131  SPS 613
+[none] iter 194/366  step  1589248  return  -2.287  success  0.02 (top 0.06/bot 0.01)  ep_len  593.0  hazard_steps   4.0  approx_kl 0.0050  SPS 613
+[none] iter 195/366  step  1597440  return  -2.188  success  0.02 (top 0.05/bot 0.01)  ep_len  593.0  hazard_steps   3.2  approx_kl 0.0094  SPS 613
+[none] iter 196/366  step  1605632  return  -1.547  success  0.03 (top 0.06/bot 0.01)  ep_len  589.8  hazard_steps   0.0  approx_kl 0.0038  SPS 613
+[none] iter 197/366  step  1613824  return  -1.734  success  0.02 (top 0.06/bot 0.01)  ep_len  593.3  hazard_steps   0.0  approx_kl 0.0035  SPS 613
+[none] iter 198/366  step  1622016  return  -1.533  success  0.03 (top 0.06/bot 0.01)  ep_len  590.5  hazard_steps   0.0  approx_kl 0.0124  SPS 613
+[none] iter 199/366  step  1630208  return  -1.303  success  0.05 (top 0.07/bot 0.01)  ep_len  582.5  hazard_steps   1.3  approx_kl 0.0065  SPS 613
+[none] iter 200/366  step  1638400  return  -1.062  success  0.06 (top 0.08/bot 0.01)  ep_len  579.5  hazard_steps   1.3  approx_kl 0.0028  SPS 613
+[none] iter 201/366  step  1646592  return  -0.823  success  0.08 (top 0.10/bot 0.01)  ep_len  575.2  hazard_steps   2.5  approx_kl 0.0056  SPS 613
+[none] iter 202/366  step  1654784  return  -0.598  success  0.09 (top 0.10/bot 0.00)  ep_len  572.1  hazard_steps   2.5  approx_kl 0.0048  SPS 613
+[none] iter 203/366  step  1662976  return  -0.578  success  0.09 (top 0.11/bot 0.00)  ep_len  572.1  hazard_steps   2.5  approx_kl 0.0110  SPS 613
+[none] iter 204/366  step  1671168  return  -0.066  success  0.12 (top 0.13/bot 0.00)  ep_len  564.6  hazard_steps   3.0  approx_kl 0.0025  SPS 612
+[none] iter 205/366  step  1679360  return  -0.190  success  0.11 (top 0.14/bot 0.00)  ep_len  568.5  hazard_steps   3.0  approx_kl 0.0051  SPS 612
+[none] iter 206/366  step  1687552  return  -0.262  success  0.10 (top 0.15/bot 0.00)  ep_len  573.1  hazard_steps   1.9  approx_kl 0.0032  SPS 613
+[none] iter 207/366  step  1695744  return   0.281  success  0.14 (top 0.19/bot 0.01)  ep_len  566.3  hazard_steps   2.8  approx_kl 0.0036  SPS 613
+[none] iter 208/366  step  1703936  return   0.259  success  0.13 (top 0.19/bot 0.01)  ep_len  568.0  hazard_steps   2.1  approx_kl 0.0081  SPS 612
+[none] iter 209/366  step  1712128  return   0.678  success  0.17 (top 0.22/bot 0.03)  ep_len  559.6  hazard_steps   3.9  approx_kl 0.0039  SPS 612
+[none] iter 210/366  step  1720320  return   0.648  success  0.17 (top 0.22/bot 0.03)  ep_len  560.5  hazard_steps   4.1  approx_kl 0.0050  SPS 612
+[none] iter 211/366  step  1728512  return   0.358  success  0.16 (top 0.20/bot 0.04)  ep_len  563.0  hazard_steps   4.7  approx_kl 0.0044  SPS 612
+[none] iter 212/366  step  1736704  return   0.478  success  0.18 (top 0.21/bot 0.05)  ep_len  557.6  hazard_steps   6.1  approx_kl 0.0053  SPS 612
+[none] iter 213/366  step  1744896  return   0.288  success  0.20 (top 0.22/bot 0.06)  ep_len  552.1  hazard_steps  10.3  approx_kl 0.0047  SPS 612
+[none] iter 214/366  step  1753088  return  -0.826  success  0.16 (top 0.22/bot 0.06)  ep_len  558.3  hazard_steps  14.1  approx_kl 0.0034  SPS 612
+[none] iter 215/366  step  1761280  return  -0.836  success  0.18 (top 0.24/bot 0.07)  ep_len  551.5  hazard_steps  16.4  approx_kl 0.0023  SPS 612
+[none] iter 216/366  step  1769472  return  -2.295  success  0.17 (top 0.24/bot 0.09)  ep_len  556.2  hazard_steps  25.7  approx_kl 0.0020  SPS 612
+[none] iter 217/366  step  1777664  return  -3.083  success  0.16 (top 0.22/bot 0.10)  ep_len  560.5  hazard_steps  30.0  approx_kl 0.0033  SPS 612
+[none] iter 218/366  step  1785856  return  -3.106  success  0.16 (top 0.21/bot 0.11)  ep_len  560.8  hazard_steps  30.3  approx_kl 0.0098  SPS 612
+[none] iter 219/366  step  1794048  return  -3.875  success  0.13 (top 0.19/bot 0.12)  ep_len  568.3  hazard_steps  31.9  approx_kl 0.0043  SPS 612
+[none] iter 220/366  step  1802240  return  -3.915  success  0.11 (top 0.20/bot 0.11)  ep_len  575.6  hazard_steps  28.8  approx_kl 0.0031  SPS 612
+[none] iter 221/366  step  1810432  return  -3.434  success  0.12 (top 0.17/bot 0.12)  ep_len  573.8  hazard_steps  26.4  approx_kl 0.0062  SPS 612
+[none] iter 222/366  step  1818624  return  -3.081  success  0.13 (top 0.19/bot 0.12)  ep_len  574.0  hazard_steps  24.9  approx_kl 0.0040  SPS 612
+[none] iter 223/366  step  1826816  return  -2.284  success  0.09 (top 0.18/bot 0.09)  ep_len  578.3  hazard_steps  14.6  approx_kl 0.0054  SPS 612
+[none] iter 224/366  step  1835008  return  -1.791  success  0.10 (top 0.18/bot 0.09)  ep_len  574.6  hazard_steps  12.4  approx_kl 0.0055  SPS 612
+[none] iter 225/366  step  1843200  return  -1.200  success  0.11 (top 0.19/bot 0.08)  ep_len  567.6  hazard_steps   9.9  approx_kl 0.0031  SPS 612
+[none] iter 226/366  step  1851392  return  -0.984  success  0.12 (top 0.20/bot 0.08)  ep_len  566.8  hazard_steps   9.7  approx_kl 0.0061  SPS 612
+[none] iter 227/366  step  1859584  return  -0.504  success  0.15 (top 0.18/bot 0.08)  ep_len  556.7  hazard_steps   9.8  approx_kl 0.0067  SPS 612
+[none] iter 228/366  step  1867776  return  -1.033  success  0.14 (top 0.19/bot 0.08)  ep_len  556.0  hazard_steps  12.2  approx_kl 0.0072  SPS 611
+[none] iter 229/366  step  1875968  return  -0.868  success  0.14 (top 0.19/bot 0.08)  ep_len  559.9  hazard_steps  10.7  approx_kl 0.0034  SPS 611
+[none] iter 230/366  step  1884160  return  -0.614  success  0.15 (top 0.19/bot 0.06)  ep_len  556.4  hazard_steps   9.9  approx_kl 0.0046  SPS 611
+[none] iter 231/366  step  1892352  return  -0.324  success  0.17 (top 0.23/bot 0.05)  ep_len  552.8  hazard_steps  10.2  approx_kl 0.0041  SPS 611
+[none] iter 232/366  step  1900544  return  -0.395  success  0.18 (top 0.25/bot 0.05)  ep_len  550.7  hazard_steps  11.9  approx_kl 0.0059  SPS 611
+[none] iter 233/366  step  1908736  return  -0.622  success  0.15 (top 0.24/bot 0.04)  ep_len  557.9  hazard_steps  10.0  approx_kl 0.0043  SPS 611
+[none] iter 234/366  step  1916928  return  -0.341  success  0.16 (top 0.26/bot 0.04)  ep_len  557.1  hazard_steps   9.5  approx_kl 0.0071  SPS 611
+[none] iter 235/366  step  1925120  return   0.333  success  0.16 (top 0.25/bot 0.03)  ep_len  556.1  hazard_steps   5.0  approx_kl 0.0030  SPS 611
+[none] iter 236/366  step  1933312  return   0.618  success  0.17 (top 0.28/bot 0.03)  ep_len  551.0  hazard_steps   4.2  approx_kl 0.0086  SPS 611
+[none] iter 237/366  step  1941504  return   0.262  success  0.14 (top 0.28/bot 0.03)  ep_len  558.5  hazard_steps   3.3  approx_kl 0.0061  SPS 611
+[none] iter 238/366  step  1949696  return   0.625  success  0.16 (top 0.30/bot 0.03)  ep_len  555.8  hazard_steps   2.9  approx_kl 0.0080  SPS 611
+[none] iter 239/366  step  1957888  return   0.948  success  0.16 (top 0.31/bot 0.03)  ep_len  553.5  hazard_steps   0.8  approx_kl 0.0026  SPS 611
+[none] iter 240/366  step  1966080  return   1.163  success  0.17 (top 0.29/bot 0.02)  ep_len  549.9  hazard_steps   0.8  approx_kl 0.0053  SPS 611
+[none] iter 241/366  step  1974272  return   0.838  success  0.15 (top 0.31/bot 0.02)  ep_len  553.8  hazard_steps   0.8  approx_kl 0.0021  SPS 611
+[none] iter 242/366  step  1982464  return   0.925  success  0.16 (top 0.34/bot 0.01)  ep_len  552.1  hazard_steps   1.2  approx_kl 0.0037  SPS 611
+[none] iter 243/366  step  1990656  return   1.125  success  0.17 (top 0.33/bot 0.01)  ep_len  548.4  hazard_steps   1.2  approx_kl 0.0023  SPS 611
+[none] iter 244/366  step  1998848  return   1.809  success  0.21 (top 0.34/bot 0.02)  ep_len  537.1  hazard_steps   1.6  approx_kl 0.0034  SPS 611
+[none] iter 245/366  step  2007040  return   1.138  success  0.17 (top 0.31/bot 0.02)  ep_len  549.0  hazard_steps   1.6  approx_kl 0.0031  SPS 611
+[none] iter 246/366  step  2015232  return   0.963  success  0.17 (top 0.32/bot 0.01)  ep_len  548.2  hazard_steps   2.8  approx_kl 0.0026  SPS 611
+[none] iter 247/366  step  2023424  return   0.747  success  0.16 (top 0.31/bot 0.01)  ep_len  551.8  hazard_steps   2.8  approx_kl 0.0054  SPS 610
+[none] iter 248/366  step  2031616  return   0.551  success  0.15 (top 0.31/bot 0.01)  ep_len  554.3  hazard_steps   2.9  approx_kl 0.0041  SPS 610
+[none] iter 249/366  step  2039808  return   0.054  success  0.12 (top 0.29/bot 0.01)  ep_len  563.8  hazard_steps   2.2  approx_kl 0.0028  SPS 610
+[none] iter 250/366  step  2048000  return   0.031  success  0.12 (top 0.28/bot 0.01)  ep_len  563.7  hazard_steps   2.2  approx_kl 0.0039  SPS 610
+[none] iter 251/366  step  2056192  return  -0.262  success  0.10 (top 0.25/bot 0.01)  ep_len  570.0  hazard_steps   1.5  approx_kl 0.0054  SPS 610
+[none] iter 252/366  step  2064384  return  -0.666  success  0.08 (top 0.24/bot 0.01)  ep_len  575.1  hazard_steps   1.4  approx_kl 0.0028  SPS 610
+[none] iter 253/366  step  2072576  return   0.019  success  0.12 (top 0.28/bot 0.01)  ep_len  560.6  hazard_steps   1.4  approx_kl 0.0048  SPS 610
+[none] iter 254/366  step  2080768  return  -0.076  success  0.12 (top 0.28/bot 0.01)  ep_len  559.3  hazard_steps   1.4  approx_kl 0.0040  SPS 610
+[none] iter 255/366  step  2088960  return   0.826  success  0.17 (top 0.29/bot 0.01)  ep_len  539.2  hazard_steps   1.5  approx_kl 0.0033  SPS 610
+[none] iter 256/366  step  2097152  return   1.077  success  0.19 (top 0.29/bot 0.01)  ep_len  534.6  hazard_steps   1.5  approx_kl 0.0055  SPS 610
+[none] iter 257/366  step  2105344  return   1.427  success  0.21 (top 0.30/bot 0.01)  ep_len  527.5  hazard_steps   1.5  approx_kl 0.0034  SPS 610
+[none] iter 258/366  step  2113536  return   1.422  success  0.23 (top 0.31/bot 0.00)  ep_len  518.2  hazard_steps   4.0  approx_kl 0.0053  SPS 610
+[none] iter 259/366  step  2121728  return   0.819  success  0.22 (top 0.33/bot 0.00)  ep_len  522.0  hazard_steps   6.5  approx_kl 0.0035  SPS 610
+[none] iter 260/366  step  2129920  return   0.628  success  0.22 (top 0.35/bot 0.00)  ep_len  525.3  hazard_steps   7.6  approx_kl 0.0023  SPS 610
+[none] iter 261/366  step  2138112  return   0.445  success  0.22 (top 0.37/bot 0.01)  ep_len  528.1  hazard_steps   8.1  approx_kl 0.0036  SPS 610
+[none] iter 262/366  step  2146304  return   0.290  success  0.21 (top 0.37/bot 0.01)  ep_len  531.3  hazard_steps   8.9  approx_kl 0.0043  SPS 610
+[none] iter 263/366  step  2154496  return   0.060  success  0.20 (top 0.38/bot 0.01)  ep_len  533.6  hazard_steps   9.3  approx_kl 0.0038  SPS 610
+[none] iter 264/366  step  2162688  return  -0.117  success  0.19 (top 0.39/bot 0.01)  ep_len  536.9  hazard_steps   9.9  approx_kl 0.0066  SPS 610
+[none] iter 265/366  step  2170880  return  -0.730  success  0.17 (top 0.36/bot 0.01)  ep_len  544.1  hazard_steps  11.5  approx_kl 0.0032  SPS 610
+[none] iter 266/366  step  2179072  return  -0.702  success  0.15 (top 0.36/bot 0.01)  ep_len  550.7  hazard_steps   9.3  approx_kl 0.0065  SPS 610
+[none] iter 267/366  step  2187264  return  -0.692  success  0.14 (top 0.34/bot 0.01)  ep_len  551.5  hazard_steps   8.2  approx_kl 0.0023  SPS 610
+[none] iter 268/366  step  2195456  return  -0.824  success  0.12 (top 0.33/bot 0.01)  ep_len  556.9  hazard_steps   7.7  approx_kl 0.0044  SPS 610
+[none] iter 269/366  step  2203648  return  -1.193  success  0.10 (top 0.31/bot 0.01)  ep_len  564.4  hazard_steps   6.8  approx_kl 0.0050  SPS 610
+[none] iter 270/366  step  2211840  return  -1.660  success  0.10 (top 0.29/bot 0.01)  ep_len  564.7  hazard_steps   9.5  approx_kl 0.0025  SPS 610
+[none] iter 271/366  step  2220032  return  -0.563  success  0.12 (top 0.28/bot 0.01)  ep_len  558.1  hazard_steps   4.8  approx_kl 0.0037  SPS 610
+[none] iter 272/366  step  2228224  return  -0.406  success  0.14 (top 0.29/bot 0.01)  ep_len  552.6  hazard_steps   6.1  approx_kl 0.0024  SPS 609
+[none] iter 273/366  step  2236416  return  -0.301  success  0.14 (top 0.28/bot 0.01)  ep_len  552.9  hazard_steps   5.4  approx_kl 0.0038  SPS 609
+[none] iter 274/366  step  2244608  return   0.086  success  0.16 (top 0.29/bot 0.01)  ep_len  549.3  hazard_steps   5.6  approx_kl 0.0008  SPS 609
+[none] iter 275/366  step  2252800  return   0.364  success  0.17 (top 0.28/bot 0.00)  ep_len  545.1  hazard_steps   5.7  approx_kl 0.0038  SPS 609
+[none] iter 276/366  step  2260992  return   1.082  success  0.20 (top 0.29/bot 0.00)  ep_len  534.8  hazard_steps   4.0  approx_kl 0.0037  SPS 609
+[none] iter 277/366  step  2269184  return   1.610  success  0.21 (top 0.34/bot 0.00)  ep_len  534.0  hazard_steps   2.9  approx_kl 0.0036  SPS 609
+[none] iter 278/366  step  2277376  return   2.001  success  0.22 (top 0.35/bot 0.00)  ep_len  529.1  hazard_steps   1.6  approx_kl 0.0049  SPS 609
+[none] iter 279/366  step  2285568  return   1.571  success  0.20 (top 0.35/bot 0.00)  ep_len  535.9  hazard_steps   1.9  approx_kl 0.0052  SPS 609
+[none] iter 280/366  step  2293760  return   2.252  success  0.24 (top 0.38/bot 0.00)  ep_len  525.2  hazard_steps   1.6  approx_kl 0.0026  SPS 609
+[none] iter 281/366  step  2301952  return   1.339  success  0.20 (top 0.37/bot 0.00)  ep_len  535.9  hazard_steps   1.7  approx_kl 0.0037  SPS 609
+[none] iter 282/366  step  2310144  return   1.070  success  0.19 (top 0.38/bot 0.00)  ep_len  539.4  hazard_steps   1.6  approx_kl 0.0040  SPS 609
+[none] iter 283/366  step  2318336  return   1.315  success  0.20 (top 0.40/bot 0.00)  ep_len  536.1  hazard_steps   1.7  approx_kl 0.0049  SPS 609
+[none] iter 284/366  step  2326528  return   0.790  success  0.17 (top 0.37/bot 0.00)  ep_len  543.3  hazard_steps   1.6  approx_kl 0.0026  SPS 609
+[none] iter 285/366  step  2334720  return   1.094  success  0.19 (top 0.37/bot 0.01)  ep_len  537.9  hazard_steps   1.7  approx_kl 0.0031  SPS 609
+[none] iter 286/366  step  2342912  return   1.124  success  0.19 (top 0.39/bot 0.01)  ep_len  535.9  hazard_steps   0.7  approx_kl 0.0032  SPS 609
+[none] iter 287/366  step  2351104  return   2.053  success  0.23 (top 0.41/bot 0.01)  ep_len  521.0  hazard_steps   0.5  approx_kl 0.0033  SPS 609
+[none] iter 288/366  step  2359296  return   2.528  success  0.26 (top 0.43/bot 0.01)  ep_len  510.6  hazard_steps   0.5  approx_kl 0.0031  SPS 609
+[none] iter 289/366  step  2367488  return   2.723  success  0.28 (top 0.43/bot 0.02)  ep_len  505.8  hazard_steps   0.6  approx_kl 0.0047  SPS 609
+[none] iter 290/366  step  2375680  return   2.694  success  0.28 (top 0.43/bot 0.02)  ep_len  507.2  hazard_steps   0.7  approx_kl 0.0053  SPS 609
+[none] iter 291/366  step  2383872  return   2.585  success  0.27 (top 0.44/bot 0.02)  ep_len  509.0  hazard_steps   0.6  approx_kl 0.0030  SPS 609
+[none] iter 292/366  step  2392064  return   2.860  success  0.28 (top 0.47/bot 0.02)  ep_len  504.1  hazard_steps   0.5  approx_kl 0.0015  SPS 609
+[none] iter 293/366  step  2400256  return   2.821  success  0.28 (top 0.46/bot 0.02)  ep_len  507.4  hazard_steps   0.6  approx_kl 0.0033  SPS 609
+[none] iter 294/366  step  2408448  return   2.286  success  0.25 (top 0.47/bot 0.02)  ep_len  524.7  hazard_steps   0.8  approx_kl 0.0041  SPS 609
+[none] iter 295/366  step  2416640  return   2.625  success  0.26 (top 0.48/bot 0.02)  ep_len  521.9  hazard_steps   0.7  approx_kl 0.0018  SPS 609
+[none] iter 296/366  step  2424832  return   2.762  success  0.27 (top 0.52/bot 0.02)  ep_len  517.5  hazard_steps   0.3  approx_kl 0.0062  SPS 609
+[none] iter 297/366  step  2433024  return   3.297  success  0.29 (top 0.54/bot 0.02)  ep_len  509.8  hazard_steps   0.3  approx_kl 0.0032  SPS 609
+[none] iter 298/366  step  2441216  return   2.661  success  0.26 (top 0.54/bot 0.01)  ep_len  520.2  hazard_steps   0.3  approx_kl 0.0025  SPS 608
+[none] iter 299/366  step  2449408  return   2.638  success  0.26 (top 0.56/bot 0.01)  ep_len  517.4  hazard_steps   0.3  approx_kl 0.0043  SPS 608
+[none] iter 300/366  step  2457600  return   3.381  success  0.30 (top 0.56/bot 0.01)  ep_len  503.2  hazard_steps   0.3  approx_kl 0.0032  SPS 608
+[none] iter 301/366  step  2465792  return   3.554  success  0.30 (top 0.57/bot 0.00)  ep_len  499.0  hazard_steps   0.1  approx_kl 0.0035  SPS 608
+[none] iter 302/366  step  2473984  return   3.484  success  0.29 (top 0.56/bot 0.00)  ep_len  503.6  hazard_steps   0.1  approx_kl 0.0035  SPS 608
+[none] iter 303/366  step  2482176  return   2.896  success  0.26 (top 0.56/bot 0.00)  ep_len  513.0  hazard_steps   0.5  approx_kl 0.0040  SPS 608
+[none] iter 304/366  step  2490368  return   3.072  success  0.27 (top 0.56/bot 0.00)  ep_len  509.6  hazard_steps   0.5  approx_kl 0.0024  SPS 608
+[none] iter 305/366  step  2498560  return   3.874  success  0.31 (top 0.59/bot 0.00)  ep_len  496.7  hazard_steps   0.5  approx_kl 0.0053  SPS 608
+[none] iter 306/366  step  2506752  return   3.315  success  0.28 (top 0.57/bot 0.00)  ep_len  506.2  hazard_steps   0.5  approx_kl 0.0028  SPS 608
+[none] iter 307/366  step  2514944  return   3.341  success  0.28 (top 0.59/bot 0.00)  ep_len  504.5  hazard_steps   0.6  approx_kl 0.0033  SPS 608
+[none] iter 308/366  step  2523136  return   3.109  success  0.27 (top 0.60/bot 0.00)  ep_len  505.2  hazard_steps   0.6  approx_kl 0.0055  SPS 608
+[none] iter 309/366  step  2531328  return   3.539  success  0.29 (top 0.60/bot 0.00)  ep_len  499.0  hazard_steps   0.6  approx_kl 0.0024  SPS 608
+[none] iter 310/366  step  2539520  return   3.820  success  0.31 (top 0.63/bot 0.00)  ep_len  491.7  hazard_steps   0.0  approx_kl 0.0009  SPS 608
+[none] iter 311/366  step  2547712  return   4.363  success  0.34 (top 0.62/bot 0.00)  ep_len  481.1  hazard_steps   0.0  approx_kl 0.0020  SPS 608
+[none] iter 312/366  step  2555904  return   4.613  success  0.36 (top 0.61/bot 0.00)  ep_len  476.4  hazard_steps   0.6  approx_kl 0.0042  SPS 608
+[none] iter 313/366  step  2564096  return   4.946  success  0.38 (top 0.62/bot 0.00)  ep_len  470.2  hazard_steps   0.6  approx_kl 0.0024  SPS 608
+[none] iter 314/366  step  2572288  return   4.814  success  0.37 (top 0.65/bot 0.00)  ep_len  474.8  hazard_steps   0.6  approx_kl 0.0020  SPS 608
+[none] iter 315/366  step  2580480  return   5.283  success  0.39 (top 0.68/bot 0.00)  ep_len  469.1  hazard_steps   0.7  approx_kl 0.0067  SPS 608
+[none] iter 316/366  step  2588672  return   4.758  success  0.36 (top 0.66/bot 0.00)  ep_len  479.5  hazard_steps   0.7  approx_kl 0.0030  SPS 608
+[none] iter 317/366  step  2596864  return   4.377  success  0.34 (top 0.69/bot 0.00)  ep_len  487.3  hazard_steps   0.7  approx_kl 0.0024  SPS 608
+[none] iter 318/366  step  2605056  return   5.236  success  0.38 (top 0.71/bot 0.00)  ep_len  472.2  hazard_steps   0.1  approx_kl 0.0042  SPS 608
+[none] iter 319/366  step  2613248  return   4.684  success  0.35 (top 0.71/bot 0.00)  ep_len  481.9  hazard_steps   0.1  approx_kl 0.0049  SPS 608
+[none] iter 320/366  step  2621440  return   4.338  success  0.33 (top 0.69/bot 0.00)  ep_len  488.1  hazard_steps   0.1  approx_kl 0.0018  SPS 608
+[none] iter 321/366  step  2629632  return   3.656  success  0.29 (top 0.67/bot 0.00)  ep_len  500.3  hazard_steps   0.0  approx_kl 0.0032  SPS 608
+[none] iter 322/366  step  2637824  return   4.409  success  0.33 (top 0.69/bot 0.00)  ep_len  487.2  hazard_steps   0.0  approx_kl 0.0068  SPS 608
+[none] iter 323/366  step  2646016  return   4.178  success  0.32 (top 0.69/bot 0.00)  ep_len  491.7  hazard_steps   0.0  approx_kl 0.0041  SPS 608
+[none] iter 324/366  step  2654208  return   4.167  success  0.32 (top 0.70/bot 0.00)  ep_len  492.2  hazard_steps   0.0  approx_kl 0.0035  SPS 608
+[none] iter 325/366  step  2662400  return   4.391  success  0.33 (top 0.69/bot 0.00)  ep_len  488.4  hazard_steps   0.0  approx_kl 0.0058  SPS 608
+[none] iter 326/366  step  2670592  return   4.441  success  0.34 (top 0.66/bot 0.00)  ep_len  484.7  hazard_steps   0.5  approx_kl 0.0051  SPS 608
+[none] iter 327/366  step  2678784  return   4.716  success  0.36 (top 0.64/bot 0.00)  ep_len  478.4  hazard_steps   0.5  approx_kl 0.0027  SPS 608
+[none] iter 328/366  step  2686976  return   2.748  success  0.26 (top 0.63/bot 0.00)  ep_len  510.5  hazard_steps   1.6  approx_kl 0.0062  SPS 608
+[none] iter 329/366  step  2695168  return   2.978  success  0.27 (top 0.64/bot 0.00)  ep_len  506.2  hazard_steps   1.6  approx_kl 0.0016  SPS 608
+[none] iter 330/366  step  2703360  return   4.128  success  0.33 (top 0.64/bot 0.00)  ep_len  485.1  hazard_steps   1.6  approx_kl 0.0038  SPS 608
+[none] iter 331/366  step  2711552  return   3.545  success  0.30 (top 0.64/bot 0.00)  ep_len  496.1  hazard_steps   1.8  approx_kl 0.0017  SPS 608
+[none] iter 332/366  step  2719744  return   3.610  success  0.30 (top 0.64/bot 0.00)  ep_len  496.4  hazard_steps   1.3  approx_kl 0.0064  SPS 608
+[none] iter 333/366  step  2727936  return   3.836  success  0.31 (top 0.65/bot 0.00)  ep_len  493.2  hazard_steps   1.3  approx_kl 0.0057  SPS 608
+[none] iter 334/366  step  2736128  return   4.135  success  0.32 (top 0.63/bot 0.00)  ep_len  489.6  hazard_steps   0.3  approx_kl 0.0087  SPS 608
+[none] iter 335/366  step  2744320  return   4.234  success  0.33 (top 0.65/bot 0.00)  ep_len  488.1  hazard_steps   0.3  approx_kl 0.0040  SPS 608
+[none] iter 336/366  step  2752512  return   3.646  success  0.30 (top 0.67/bot 0.00)  ep_len  498.0  hazard_steps   0.2  approx_kl 0.0052  SPS 608
+[none] iter 337/366  step  2760704  return   3.874  success  0.31 (top 0.66/bot 0.00)  ep_len  494.7  hazard_steps   0.1  approx_kl 0.0065  SPS 608
+[none] iter 338/366  step  2768896  return   4.853  success  0.36 (top 0.69/bot 0.00)  ep_len  477.8  hazard_steps   0.1  approx_kl 0.0008  SPS 608
+[none] iter 339/366  step  2777088  return   5.259  success  0.39 (top 0.73/bot 0.01)  ep_len  471.6  hazard_steps   1.0  approx_kl 0.0036  SPS 608
+[none] iter 340/366  step  2785280  return   5.444  success  0.39 (top 0.72/bot 0.01)  ep_len  472.2  hazard_steps   1.0  approx_kl 0.0060  SPS 608
+[none] iter 341/366  step  2793472  return   5.450  success  0.39 (top 0.74/bot 0.01)  ep_len  471.7  hazard_steps   1.0  approx_kl 0.0074  SPS 608
+[none] iter 342/366  step  2801664  return   5.321  success  0.38 (top 0.67/bot 0.01)  ep_len  476.0  hazard_steps   0.9  approx_kl 0.0017  SPS 607
+[none] iter 343/366  step  2809856  return   5.270  success  0.39 (top 0.68/bot 0.01)  ep_len  475.0  hazard_steps   1.7  approx_kl 0.0047  SPS 607
+[none] iter 344/366  step  2818048  return   4.492  success  0.35 (top 0.69/bot 0.01)  ep_len  487.2  hazard_steps   1.7  approx_kl 0.0044  SPS 607
+[none] iter 345/366  step  2826240  return   4.266  success  0.33 (top 0.69/bot 0.01)  ep_len  492.4  hazard_steps   0.8  approx_kl 0.0059  SPS 607
+[none] iter 346/366  step  2834432  return   4.718  success  0.36 (top 0.68/bot 0.01)  ep_len  484.5  hazard_steps   0.8  approx_kl 0.0040  SPS 607
+[none] iter 347/366  step  2842624  return   4.529  success  0.35 (top 0.69/bot 0.01)  ep_len  488.8  hazard_steps   0.8  approx_kl 0.0042  SPS 608
+[none] iter 348/366  step  2850816  return   4.153  success  0.33 (top 0.65/bot 0.01)  ep_len  495.2  hazard_steps   0.8  approx_kl 0.0047  SPS 607
+[none] iter 349/366  step  2859008  return   3.924  success  0.31 (top 0.66/bot 0.01)  ep_len  499.6  hazard_steps   0.0  approx_kl 0.0050  SPS 607
+[none] iter 350/366  step  2867200  return   4.329  success  0.34 (top 0.66/bot 0.01)  ep_len  491.6  hazard_steps   1.3  approx_kl 0.0055  SPS 607
+[none] iter 351/366  step  2875392  return   4.129  success  0.36 (top 0.68/bot 0.00)  ep_len  483.0  hazard_steps   5.5  approx_kl 0.0005  SPS 608
+[none] iter 352/366  step  2883584  return   4.210  success  0.37 (top 0.67/bot 0.00)  ep_len  479.3  hazard_steps   5.5  approx_kl 0.0029  SPS 607
+[none] iter 353/366  step  2891776  return   3.961  success  0.36 (top 0.69/bot 0.00)  ep_len  481.7  hazard_steps   5.6  approx_kl 0.0049  SPS 607
+[none] iter 354/366  step  2899968  return   5.280  success  0.43 (top 0.72/bot 0.00)  ep_len  457.1  hazard_steps   5.6  approx_kl 0.0038  SPS 607
+[none] iter 355/366  step  2908160  return   4.641  success  0.41 (top 0.73/bot 0.00)  ep_len  464.3  hazard_steps   6.8  approx_kl 0.0027  SPS 607
+[none] iter 356/366  step  2916352  return   4.007  success  0.37 (top 0.73/bot 0.00)  ep_len  475.9  hazard_steps   5.5  approx_kl 0.0011  SPS 607
+[none] iter 357/366  step  2924544  return   4.718  success  0.38 (top 0.72/bot 0.00)  ep_len  471.7  hazard_steps   1.8  approx_kl 0.0030  SPS 607
+[none] iter 358/366  step  2932736  return   4.523  success  0.37 (top 0.73/bot 0.00)  ep_len  471.0  hazard_steps   2.4  approx_kl 0.0019  SPS 607
+[none] iter 359/366  step  2940928  return   4.344  success  0.36 (top 0.74/bot 0.00)  ep_len  475.2  hazard_steps   2.3  approx_kl 0.0001  SPS 607
+[none] iter 360/366  step  2949120  return   4.041  success  0.34 (top 0.72/bot 0.00)  ep_len  481.8  hazard_steps   2.3  approx_kl 0.0002  SPS 607
+[none] iter 361/366  step  2957312  return   4.272  success  0.34 (top 0.71/bot 0.00)  ep_len  481.3  hazard_steps   0.9  approx_kl 0.0006  SPS 607
+[none] iter 362/366  step  2965504  return   5.146  success  0.38 (top 0.69/bot 0.00)  ep_len  467.9  hazard_steps   0.6  approx_kl 0.0001  SPS 607
+[none] iter 363/366  step  2973696  return   4.832  success  0.36 (top 0.68/bot 0.00)  ep_len  475.1  hazard_steps   0.6  approx_kl 0.0003  SPS 607
+[none] iter 364/366  step  2981888  return   4.416  success  0.33 (top 0.67/bot 0.00)  ep_len  486.2  hazard_steps   0.0  approx_kl 0.0001  SPS 607
+[none] iter 365/366  step  2990080  return   4.317  success  0.33 (top 0.66/bot 0.00)  ep_len  484.9  hazard_steps   0.4  approx_kl 0.0001  SPS 607
+[none] iter 366/366  step  2998272  return   4.421  success  0.34 (top 0.66/bot 0.00)  ep_len  482.4  hazard_steps   0.5  approx_kl 0.0000  SPS 607
+
+[none/seed1] FINAL success 0.340  hazard_steps 0.49
+saved policy -> runs/race_v2/none_s1.pt
+wrote run json -> runs/race_v2/none_s1.json

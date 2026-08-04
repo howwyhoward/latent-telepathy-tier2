@@ -1,0 +1,2 @@
+launched soft on GPU 1 (penalty -0.25/step, window 40) pid 669344
+launched hard on GPU 3 (penalty -0.50/step, window 60) pid 669345

@@ -1,0 +1,129 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260804_035059.log
+2026-08-04T03:50:59Z [140ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:50:59Z [140ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:50:59Z [206ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-08-04T03:50:59Z [210ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-08-04T03:50:59Z [210ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-08-04T03:50:59Z [210ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-08-04T03:51:00Z [1,760ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:00Z [1,760ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:00Z [1,882ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,882ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T03:51:00Z [1,887ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,887ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-04T03:51:00Z [1,888ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 312724
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 7186
+|---------------------------------------------------------------------------------------------|
+2026-08-04T03:51:02Z [3,518ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,518ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,552ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,552ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,559ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,559ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,567ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,567ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,568ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,568ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,569ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-04T03:51:02Z [3,569ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-04T03:51:02Z [3,781ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-08-04T03:51:08Z [9,182ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-08-04T03:51:08Z [9,540ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-08-04T03:52:02Z [63,305ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-08-04T03:52:21Z [82,182ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-08-04T03:52:21Z [82,182ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-08-04T03:52:21Z [82,183ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-08-04T03:53:32Z [153,305ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-08-04T03:54:11Z [192,876ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-08-04_03-54-11.log[0m
+[36m========================================================================================================[0m
+
+[33m03:54:12 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.633047 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 9.975206 seconds
+[INFO]: Completed setting up the environment...
+race v8  condition=oracle  wire=66  trainable=4,483  executor FROZEN (runs/route_obey_v6/cont.pt)
+2026-08-04T03:54:58Z [239,518ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[v8/oracle] update   1  ep   256  route_opt 0.586  succ 0.586  hazard  0.50  obey 1.000  ret  10.04  H 0.691  bad 0  SPS 762
+[v8/oracle] update   2  ep   512  route_opt 0.538  succ 0.534  hazard  0.73  obey 1.000  ret   8.37  H 0.665  bad 0  SPS 771
+[v8/oracle] update   3  ep   769  route_opt 0.586  succ 0.582  hazard  0.48  obey 1.000  ret  11.11  H 0.585  bad 0  SPS 770
+[v8/oracle] update   4  ep  1025  route_opt 0.696  succ 0.694  hazard  0.00  obey 1.000  ret  13.66  H 0.471  bad 0  SPS 767
+[v8/oracle] update   5  ep  1281  route_opt 0.800  succ 0.798  hazard  0.00  obey 1.000  ret  15.07  H 0.379  bad 0  SPS 764
+[v8/oracle] update   6  ep  1537  route_opt 0.844  succ 0.842  hazard  0.00  obey 1.000  ret  15.67  H 0.312  bad 0  SPS 763
+[v8/oracle] update   7  ep  1793  route_opt 0.886  succ 0.874  hazard  0.00  obey 1.000  ret  16.44  H 0.257  bad 0  SPS 761
+[v8/oracle] update   8  ep  2049  route_opt 0.904  succ 0.892  hazard  0.00  obey 1.000  ret  16.55  H 0.226  bad 0  SPS 760
+[v8/oracle] update   9  ep  2305  route_opt 0.920  succ 0.916  hazard  0.00  obey 1.000  ret  17.12  H 0.196  bad 0  SPS 758
+[v8/oracle] update  10  ep  2562  route_opt 0.940  succ 0.938  hazard  0.00  obey 1.000  ret  17.43  H 0.173  bad 0  SPS 757
+[v8/oracle] update  11  ep  2818  route_opt 0.952  succ 0.948  hazard  0.00  obey 1.000  ret  17.49  H 0.151  bad 0  SPS 756
+[v8/oracle] update  12  ep  3074  route_opt 0.946  succ 0.938  hazard  0.00  obey 1.000  ret  17.00  H 0.126  bad 0  SPS 755
+[v8/oracle] update  13  ep  3330  route_opt 0.948  succ 0.946  hazard  0.00  obey 1.000  ret  17.88  H 0.100  bad 0  SPS 755
+[v8/oracle] update  14  ep  3587  route_opt 0.974  succ 0.970  hazard  0.00  obey 1.000  ret  18.34  H 0.088  bad 0  SPS 754
+[v8/oracle] update  15  ep  3843  route_opt 0.976  succ 0.974  hazard  0.00  obey 1.000  ret  17.76  H 0.083  bad 0  SPS 753
+[v8/oracle] update  16  ep  4099  route_opt 0.976  succ 0.972  hazard  0.00  obey 1.000  ret  18.34  H 0.065  bad 0  SPS 752
+[v8/oracle] update  17  ep  4355  route_opt 0.986  succ 0.982  hazard  0.00  obey 1.000  ret  18.19  H 0.063  bad 0  SPS 752
+[v8/oracle] update  18  ep  4611  route_opt 0.990  succ 0.990  hazard  0.00  obey 1.000  ret  18.54  H 0.055  bad 0  SPS 751
+[v8/oracle] update  19  ep  4867  route_opt 0.988  succ 0.984  hazard  0.00  obey 1.000  ret  18.09  H 0.051  bad 0  SPS 751
+[v8/oracle] update  20  ep  5123  route_opt 0.978  succ 0.970  hazard  0.00  obey 1.000  ret  17.87  H 0.045  bad 0  SPS 750
+[v8/oracle] update  21  ep  5379  route_opt 0.978  succ 0.974  hazard  0.00  obey 1.000  ret  18.39  H 0.041  bad 0  SPS 750
+[v8/oracle] update  22  ep  5635  route_opt 0.990  succ 0.986  hazard  0.00  obey 1.000  ret  18.26  H 0.040  bad 0  SPS 750
+[v8/oracle] update  23  ep  5891  route_opt 0.994  succ 0.988  hazard  0.00  obey 1.000  ret  18.40  H 0.038  bad 0  SPS 749
+
+[v8/oracle/seed3] FINAL (last 500 eps)  route_opt 0.990  success 0.986  hazard 0.00  obey 1.000
+RACE-V8 READOUT (oracle): route_opt >= 0.90 and hazard <= 2.0: PASS
+saved head -> runs/race_v8/oracle_s3.pt
+wrote run json -> runs/race_v8/oracle_s3.json

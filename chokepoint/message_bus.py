@@ -226,6 +226,28 @@ class PredictedLatentBroadcast(LatentBroadcast):
         return _pad(zhat, self.broadcast_dim)
 
 
+class OracleBroadcast(MessageBus):
+    """Ceiling control: the ground-truth slab side as a signed bit.
+
+    Not a scientific condition — a DIAGNOSTIC upper bound. It carries exactly
+    the one bit the navigator needs, noiselessly, at the matched channel
+    width, so it isolates optimization from representation: if the policy
+    cannot exploit a perfect bit, the blocker is credit assignment (discount,
+    exploration), not what the frozen encoder puts on the wire. Any z_t
+    shortfall relative to this is a representation gap.
+    """
+
+    def __init__(self, *, comm_radius: float = 3.0, broadcast_dim: int = 64,
+                 anchored: bool = False):
+        super().__init__(
+            comm_radius=comm_radius, broadcast_dim=broadcast_dim, anchored=anchored
+        )
+
+    def get_broadcast_content(self, agent: str, env) -> torch.Tensor:
+        bit = torch.where(env._slab_top, 1.0, -1.0).unsqueeze(1)
+        return _pad(bit, self.broadcast_dim)
+
+
 class RawObsBroadcast(MessageBus):
     """Ceiling condition: the agent's full camera frame, flattened.
 

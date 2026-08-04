@@ -95,7 +95,9 @@ def test_permutation_invariance_over_slots():
     ego = r.ego_proj(r.encode_ego(rgb))
     a = r.pool_neighbors(ego, msgs, mask)
     b = r.pool_neighbors(ego, msgs[:, perm], mask[:, perm])
-    assert torch.allclose(a, b, atol=1e-5)
+    # rtol matters: inputs are latent-scale (~10), and permutation changes
+    # float32 summation order, so exact equality is not achievable
+    assert torch.allclose(a, b, rtol=1e-4, atol=1e-4)
 
 
 def test_none_floor_has_no_message_parameters():
@@ -104,6 +106,52 @@ def test_none_floor_has_no_message_parameters():
     rgb = torch.rand(B, 3, 64, 64)
     logits, value = r(rgb, torch.zeros(B, 0, 1), torch.zeros(B, 0))
     assert logits.shape == (B, 3) and value.shape == (B, 1)
+
+
+def test_route_command_changes_the_action():
+    r = make_receiver(route_dim=2)
+    rgb, msgs, mask = rand_inputs()
+    top = torch.tensor([[1.0, 0.0]]).expand(B, 2)
+    bot = torch.tensor([[0.0, 1.0]]).expand(B, 2)
+    # route columns are only zero-initialized when widening a trunk, so a fresh
+    # model must already be able to act on the command
+    a_top, _ = r(rgb, msgs, mask, route=top)
+    a_bot, _ = r(rgb, msgs, mask, route=bot)
+    assert not torch.allclose(a_top, a_bot, atol=1e-5)
+
+
+def test_route_dim_requires_a_command():
+    r = make_receiver(route_dim=2)
+    rgb, msgs, mask = rand_inputs()
+    try:
+        r(rgb, msgs, mask)
+    except AssertionError:
+        return
+    raise AssertionError("route_dim > 0 must refuse to run without a route")
+
+
+def test_load_trunk_widens_without_discarding_the_controller():
+    """Regression: a plain load_state_dict skips actor.0/critic.0 on the shape
+    mismatch introduced by route_dim, silently throwing away the trunk that
+    stage 1 spent hours learning."""
+    src = make_receiver(route_dim=0)
+    rgb, msgs, mask = rand_inputs()
+    with torch.no_grad():
+        ref_action, ref_value = src(rgb, msgs, mask)
+
+    dst = make_receiver(route_dim=2)
+    dst.encoder.load_state_dict(src.encoder.state_dict())
+    info = dst.load_trunk(src.state_dict())
+
+    assert "actor.0.weight" in info["widened"]
+    assert "critic.0.weight" in info["widened"]
+    # zeroed route columns mean the widened controller is initially route-blind,
+    # so it must reproduce its source exactly under EITHER command
+    for route in (torch.tensor([[1.0, 0.0]]), torch.tensor([[0.0, 1.0]])):
+        with torch.no_grad():
+            a, v = dst(rgb, msgs, mask, route=route.expand(B, 2))
+        assert torch.allclose(a, ref_action, atol=1e-6)
+        assert torch.allclose(v, ref_value, atol=1e-6)
 
 
 def test_gaussian_policy_api_shapes():

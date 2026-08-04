@@ -5,8 +5,9 @@ Both instruments import this module:
   - chokepoint/env.py          (the RL environment)
 
 so the geometry the gate certifies is, by construction, the geometry the
-policy trains in. The grid itself comes from Tier 1's tested
-`generate_chokepoint_map()`; this module only extrudes it to 3D.
+policy trains in. The grid comes from Tier 1's tested
+`generate_chokepoint_map()` with ONE Tier 2 amendment — the inter-corridor
+rung is sealed (see geometry.remove_rung) — then extruded to 3D.
 
 Occlusion note: Tier 1's FOV radius has no 3D equivalent, so each corridor
 carries two staggered light baffles (north-attached at BAFFLE_COLS[0],
@@ -36,8 +37,10 @@ from .geometry import (  # noqa: F401  (re-exported)
     ROBOT_SIZE,
     WALL_H,
     ChokepointGeometry,
+    chokepoint_grid,
     compute_geometry,
     grid_to_world,
+    remove_rung,
     wall_runs,
 )
 
@@ -66,7 +69,8 @@ def build_scene_cfg(
                         kinematic set-pieces (gate renders, nothing moves).
     """
     map_spec = generate_chokepoint_map(np.random.default_rng(seed))
-    grid = map_spec.grid
+    # the rung is sealed in Tier 2 — see geometry.remove_rung for the why
+    grid = remove_rung(map_spec.grid)
     size = grid.shape[0]
     mid = size // 2
 

@@ -34,6 +34,7 @@ class AttentionReceiver(nn.Module):
         d_model: int = 128,
         n_actions: int = N_ACTIONS,
         ego_adapter: bool = False,
+        route_dim: int = 0,
     ):
         super().__init__()
         # Frozen shared perception: no gradients, eval mode (no BN/dropout drift).
@@ -74,15 +75,21 @@ class AttentionReceiver(nn.Module):
         else:
             self.msg_proj = None
 
+        # Route command (stage 1.5+): a one-hot the low-level controller is
+        # trained to obey, appended to the feature vector rather than mixed into
+        # the ego embedding so a trunk trained without it loads unchanged.
+        self.route_dim = route_dim
+        feat_dim = 2 * d_model + route_dim
+
         self.actor = nn.Sequential(
-            nn.Linear(2 * d_model, d_model),
+            nn.Linear(feat_dim, d_model),
             nn.Tanh(),
             nn.Linear(d_model, n_actions),
         )
         # State-independent log-std, PPO-standard for continuous control.
         self.log_std = nn.Parameter(torch.full((n_actions,), -0.5))
         self.critic = nn.Sequential(
-            nn.Linear(2 * d_model, d_model),
+            nn.Linear(feat_dim, d_model),
             nn.Tanh(),
             nn.Linear(d_model, 1),
         )
@@ -130,24 +137,32 @@ class AttentionReceiver(nn.Module):
     # -- forward / policy API ----------------------------------------------
 
     def features(
-        self, ego_rgb: torch.Tensor, messages: torch.Tensor, mask: torch.Tensor
+        self,
+        ego_rgb: torch.Tensor,
+        messages: torch.Tensor,
+        mask: torch.Tensor,
+        route: torch.Tensor | None = None,
     ) -> torch.Tensor:
         z = self.encode_ego(ego_rgb)
         if self.adapter is not None:
             z = z + self.adapter(z)
         ego_embed = self.ego_proj(z)
         pooled = self.pool_neighbors(ego_embed, messages, mask)
-        return torch.cat([ego_embed, pooled], dim=-1)
+        parts = [ego_embed, pooled]
+        if self.route_dim > 0:
+            assert route is not None, "route_dim > 0 but no route command given"
+            parts.append(route)
+        return torch.cat(parts, dim=-1)
 
-    def forward(self, ego_rgb, messages, mask):
-        h = self.features(ego_rgb, messages, mask)
+    def forward(self, ego_rgb, messages, mask, route=None):
+        h = self.features(ego_rgb, messages, mask, route)
         return self.actor(h), self.critic(h)
 
-    def get_value(self, ego_rgb, messages, mask):
-        return self.critic(self.features(ego_rgb, messages, mask))
+    def get_value(self, ego_rgb, messages, mask, route=None):
+        return self.critic(self.features(ego_rgb, messages, mask, route))
 
-    def get_action_and_value(self, ego_rgb, messages, mask, action=None):
-        h = self.features(ego_rgb, messages, mask)
+    def get_action_and_value(self, ego_rgb, messages, mask, action=None, route=None):
+        h = self.features(ego_rgb, messages, mask, route)
         mean = self.actor(h)
         dist = Normal(mean, self.log_std.exp())
         if action is None:
@@ -159,3 +174,33 @@ class AttentionReceiver(nn.Module):
             dist.entropy().sum(-1),
             self.critic(h),
         )
+
+    # -- warm start ---------------------------------------------------------
+
+    def load_trunk(self, src: dict) -> dict:
+        """Load a shared trunk, tolerating a narrower source feature vector.
+
+        Message-branch keys absent from a `none` source keep their zero-init
+        value path, so every condition still starts as the `none` policy. When
+        this model adds a route command, actor/critic first layers are wider
+        than the source's: the shared columns are copied and the route columns
+        left at zero, so the loaded controller is initially route-BLIND and
+        behaves exactly as its source did. Silently skipping those layers on a
+        shape mismatch would instead discard the whole trunk.
+        """
+        own = self.state_dict()
+        loaded, widened = [], []
+        for k, v in src.items():
+            if k not in own:
+                continue
+            if own[k].shape == v.shape:
+                own[k] = v
+                loaded.append(k)
+            elif own[k].dim() == 2 and own[k].shape[0] == v.shape[0] \
+                    and own[k].shape[1] > v.shape[1]:
+                own[k] = torch.zeros_like(own[k])
+                own[k][:, : v.shape[1]] = v
+                loaded.append(k)
+                widened.append(k)
+        self.load_state_dict(own)
+        return {"loaded": loaded, "widened": widened, "total": len(own)}

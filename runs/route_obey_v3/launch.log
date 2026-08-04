@@ -1,0 +1,7 @@
+launched fixed on GPU 1 (penalty -0.25/step, shaping 1) pid 3504790
+launched pen_only on GPU 3 (penalty -0.25/step, shaping 0) pid 3504791
+launched fixed_lowpen on GPU 2 (penalty -0.10/step, shaping 1) pid 3504792
+spike/launch_route_obey.sh: line 58: 3504790 Killed                  CUDA_VISIBLE_DEVICES="$2" nohup python -u rl/train_route_obey.py --init_nav "$TRUNK" --rew_wrong_corridor "$3" --route_shaping "$4" --explore_window 0 --seed 1 --log_csv "runs/route_obey_v3/$1.csv" --run_json "runs/route_obey_v3/$1.json" --save "runs/route_obey_v3/$1.pt" > "runs/route_obey_v3/$1.log" 2>&1
+spike/launch_route_obey.sh: line 58: 3504791 Killed                  CUDA_VISIBLE_DEVICES="$2" nohup python -u rl/train_route_obey.py --init_nav "$TRUNK" --rew_wrong_corridor "$3" --route_shaping "$4" --explore_window 0 --seed 1 --log_csv "runs/route_obey_v3/$1.csv" --run_json "runs/route_obey_v3/$1.json" --save "runs/route_obey_v3/$1.pt" > "runs/route_obey_v3/$1.log" 2>&1
+spike/launch_route_obey.sh: line 74: $1: unbound variable
+spike/launch_route_obey.sh: line 60: $3: unbound variable
