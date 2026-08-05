@@ -1,0 +1,38 @@
+=== v7 oracle (windowed correlated exploration) ===
+policy      runs/race_v7/oracle.pt
+sigma       [0.623, 0.601, 0.724]
+||pooled||  top 4.1533  bottom 4.9569
+||d_pooled|| 8.9767   (message-induced shift in the actor's 128-D message half)
+  ego~N(0,0.0)  |d_mu| per dim [0.4678, 1.6189, 2.4503]   d_mu_y/sigma_y 2.6927
+  ego~N(0,0.5)  |d_mu| per dim [0.4438, 1.4953, 2.4185]   d_mu_y/sigma_y 2.4872
+  ego~N(0,1.0)  |d_mu| per dim [0.4111, 1.2157, 2.3138]   d_mu_y/sigma_y 2.0221
+  ego~N(0,2.0)  |d_mu| per dim [0.4826, 0.7653, 1.9524]   d_mu_y/sigma_y 1.2729
+
+best |d_mu_y| / sigma_y = 2.6927
+P(top) shift from flipping the bit, at mu_y=0: 0.9965 -> compare 0.50 for a policy that ignores the message entirely.
+
+=== v6 oracle (gamma 0.999, no exploration fix) ===
+policy      runs/race_v6/oracle_g999.pt
+sigma       [0.649, 0.629, 0.785]
+||pooled||  top 4.5201  bottom 4.1761
+||d_pooled|| 8.5821   (message-induced shift in the actor's 128-D message half)
+  ego~N(0,0.0)  |d_mu| per dim [0.7349, 0.465, 0.2614]   d_mu_y/sigma_y 0.7397
+  ego~N(0,0.5)  |d_mu| per dim [0.7011, 0.4408, 0.2477]   d_mu_y/sigma_y 0.7011
+  ego~N(0,1.0)  |d_mu| per dim [0.6273, 0.3891, 0.2177]   d_mu_y/sigma_y 0.6188
+  ego~N(0,2.0)  |d_mu| per dim [0.469, 0.288, 0.1635]   d_mu_y/sigma_y 0.4581
+
+best |d_mu_y| / sigma_y = 0.7397
+P(top) shift from flipping the bit, at mu_y=0: 0.7702 -> compare 0.50 for a policy that ignores the message entirely.
+
+=== v6 oracle (gamma 0.99) ===
+policy      runs/race_v6/oracle_g99.pt
+sigma       [0.655, 0.638, 0.797]
+||pooled||  top 2.9165  bottom 3.5256
+||d_pooled|| 6.4205   (message-induced shift in the actor's 128-D message half)
+  ego~N(0,0.0)  |d_mu| per dim [1.4112, 0.1468, 0.5557]   d_mu_y/sigma_y 0.2302
+  ego~N(0,0.5)  |d_mu| per dim [1.3493, 0.1423, 0.5316]   d_mu_y/sigma_y 0.2231
+  ego~N(0,1.0)  |d_mu| per dim [1.2068, 0.1333, 0.4761]   d_mu_y/sigma_y 0.2090
+  ego~N(0,2.0)  |d_mu| per dim [0.9135, 0.1206, 0.3616]   d_mu_y/sigma_y 0.1890
+
+best |d_mu_y| / sigma_y = 0.2302
+P(top) shift from flipping the bit, at mu_y=0: 0.5910 -> compare 0.50 for a policy that ignores the message entirely.

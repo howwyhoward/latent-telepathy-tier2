@@ -138,8 +138,11 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
   Two diagnostics then located the real blocker. `spike/
   diag_msg_sensitivity.py` (Isaac-free: one neighbour means the attention
   softmax is exactly 1, so pooled = v(msg_proj(msg)) independent of the image)
-  shows the v7 oracle IS strongly message-driven, |dmu_y|/sigma_y = 2.69 vs 0.23
-  for v6. `spike/diag_route_choice.py` shows what it does with it, and it is not
+  shows the v7 oracle IS strongly message-driven, |dmu_y|/sigma_y = 2.69, vs
+  0.23 for the v6 gamma-0.99 oracle and 0.74 for its gamma-0.999 variant
+  (longer credit horizon recruited the bit partially; the exploration window
+  did the rest). Measurements: runs/diag/msg_sensitivity.log.
+  `spike/diag_route_choice.py` shows what it does with it, and it is not
   routing: deterministic rollouts take the bottom corridor in 100% of all four
   (slab side x true/lied bit) cells. Feeding a LIE moves slab-top success
   1.00 -> 0.41 without moving the corridor. So the bit was recruited to gate
@@ -165,8 +168,10 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
   (`runs/route_obey_v6/cont.pt`); with ±0.5 rad spawn-yaw jitter 0.97/0.91 and
   0.915/0.835 (`cont_yaw2.pt`). Composition check
   (`spike/eval_pixels_to_route.py`): scout pixels -> frozen JEPA latent ->
-  supervised logistic probe -> route command -> frozen executor = 256/256
-  success, 0 hazard steps.
+  supervised logistic probe -> route command -> frozen executor = 255/256
+  success (0.996), 0 hazard steps, decode accuracy 1.000. (An earlier,
+  unlogged pass of the same eval read 256/256; the number reported here is
+  the one whose log is committed: runs/route_obey_v6/eval_pixels_to_route.log.)
 - **Phase 3 closed — race v8, reward-only recruitment**
   (`rl/train_race_route.py`): executor FROZEN, the only learner a ~4.5k-param
   route head (message -> 2 logits), one categorical decision per episode
