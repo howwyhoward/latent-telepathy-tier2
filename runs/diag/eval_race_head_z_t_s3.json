@@ -1,0 +1,87 @@
+{
+  "results": {
+    "intact": {
+      "episodes": 256,
+      "route_opt": 1.0,
+      "success": 1.0,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "top_frac": 0.5234375,
+      "mean_steps": 209.1875,
+      "bad": 0,
+      "secs": 55.0
+    },
+    "zero_content": {
+      "episodes": 256,
+      "route_opt": 0.49609375,
+      "success": 0.49609375,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "top_frac": 1.0,
+      "mean_steps": 414.3984375,
+      "bad": 0,
+      "secs": 135.1
+    },
+    "zero_all": {
+      "episodes": 256,
+      "route_opt": 0.5078125,
+      "success": 0.5078125,
+      "hazard": 0.51171875,
+      "obey": 1.0,
+      "top_frac": 1.0,
+      "mean_steps": 409.5234375,
+      "bad": 0,
+      "secs": 136.4
+    },
+    "shuffle": {
+      "episodes": 256,
+      "route_opt": 0.4453125,
+      "success": 0.4453125,
+      "hazard": 0.17578125,
+      "obey": 1.0,
+      "top_frac": 0.5078125,
+      "mean_steps": 424.76171875,
+      "bad": 0,
+      "secs": 136.6
+    },
+    "noise": {
+      "episodes": 256,
+      "route_opt": 0.41015625,
+      "success": 0.41015625,
+      "hazard": 0.16015625,
+      "obey": 1.0,
+      "top_frac": 0.58984375,
+      "mean_steps": 439.359375,
+      "bad": 0,
+      "secs": 134.7
+    }
+  },
+  "args": {
+    "condition": "z_t",
+    "head": "runs/race_v8/z_t_s3.pt",
+    "executor": "runs/route_obey_v6/cont.pt",
+    "jepa_ckpt": "checkpoints/jepa_pixels.pt",
+    "comm_radius": 12.0,
+    "episodes": 256,
+    "modes": "intact,zero_content,zero_all,shuffle,noise",
+    "num_envs": 64,
+    "seed": 3,
+    "out": "runs/diag/eval_race_head_z_t_s3.json",
+    "enable_cameras": true,
+    "xr": false,
+    "device": "cuda:0",
+    "cpu": false,
+    "verbose": false,
+    "info": false,
+    "rendering_mode": null,
+    "kit_args": "",
+    "anim_recording_enabled": false,
+    "anim_recording_start_time": 0,
+    "anim_recording_stop_time": 10,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  }
+}

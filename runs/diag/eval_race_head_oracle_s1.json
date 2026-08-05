@@ -1,0 +1,87 @@
+{
+  "results": {
+    "intact": {
+      "episodes": 256,
+      "route_opt": 1.0,
+      "success": 0.99609375,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "top_frac": 0.47265625,
+      "mean_steps": 208.08984375,
+      "bad": 0,
+      "secs": 67.8
+    },
+    "zero_content": {
+      "episodes": 256,
+      "route_opt": 0.546875,
+      "success": 0.54296875,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "top_frac": 0.0,
+      "mean_steps": 375.328125,
+      "bad": 0,
+      "secs": 120.3
+    },
+    "zero_all": {
+      "episodes": 256,
+      "route_opt": 0.48828125,
+      "success": 0.48828125,
+      "hazard": 0.875,
+      "obey": 1.0,
+      "top_frac": 1.0,
+      "mean_steps": 417.0546875,
+      "bad": 0,
+      "secs": 122.3
+    },
+    "shuffle": {
+      "episodes": 256,
+      "route_opt": 0.546875,
+      "success": 0.54296875,
+      "hazard": 0.0,
+      "obey": 1.0,
+      "top_frac": 0.4609375,
+      "mean_steps": 386.2578125,
+      "bad": 0,
+      "secs": 122.9
+    },
+    "noise": {
+      "episodes": 256,
+      "route_opt": 0.5546875,
+      "success": 0.5546875,
+      "hazard": 0.48828125,
+      "obey": 1.0,
+      "top_frac": 0.4921875,
+      "mean_steps": 381.55859375,
+      "bad": 0,
+      "secs": 124.7
+    }
+  },
+  "args": {
+    "condition": "oracle",
+    "head": "runs/race_v8/oracle.pt",
+    "executor": "runs/route_obey_v6/cont.pt",
+    "jepa_ckpt": "checkpoints/jepa_pixels.pt",
+    "comm_radius": 12.0,
+    "episodes": 256,
+    "modes": "intact,zero_content,zero_all,shuffle,noise",
+    "num_envs": 64,
+    "seed": 1,
+    "out": "runs/diag/eval_race_head_oracle_s1.json",
+    "enable_cameras": true,
+    "xr": false,
+    "device": "cuda:0",
+    "cpu": false,
+    "verbose": false,
+    "info": false,
+    "rendering_mode": null,
+    "kit_args": "",
+    "anim_recording_enabled": false,
+    "anim_recording_start_time": 0,
+    "anim_recording_stop_time": 10,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  }
+}
