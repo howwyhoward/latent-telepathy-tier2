@@ -109,14 +109,19 @@ class MessageBus:
 
 
 class PositionBroadcast(MessageBus):
-    """`position` condition: normalized (x, y). broadcast_dim fixed at 2."""
+    """`position` condition: normalized (x, y), zero-padded to the matched
+    channel width when broadcast_dim > 2 (the honest bandwidth control)."""
 
-    def __init__(self, comm_radius: float = 3.0, anchored: bool = False):
-        super().__init__(comm_radius=comm_radius, broadcast_dim=2, anchored=anchored)
+    def __init__(self, comm_radius: float = 3.0, broadcast_dim: int = 2,
+                 anchored: bool = False):
+        super().__init__(
+            comm_radius=comm_radius, broadcast_dim=broadcast_dim, anchored=anchored
+        )
 
     def get_broadcast_content(self, agent: str, env) -> torch.Tensor:
         extent = env.cfg.cell * self._grid_size(env)
-        return (env._local_pos(agent) + extent / 2) / extent  # ~[0, 1]
+        pos = (env._local_pos(agent) + extent / 2) / extent  # ~[0, 1]
+        return _pad(pos, self.broadcast_dim)
 
     @staticmethod
     def _grid_size(env) -> int:

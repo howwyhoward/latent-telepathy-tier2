@@ -14,14 +14,24 @@ episode's return — a contextual bandit. Exploration of the alternative route
 now costs one categorical sample instead of a 14-sigma Gaussian event, which
 is the entire point of the decomposition.
 
-Conditions (same wire as race v7, anchored, matched width):
-  oracle : ground-truth slab bit on the wire — optimization ceiling. If this
-           fails, the bandit machinery is broken, not the representation.
-  z_t    : the scout's frozen JEPA latent — THE thesis condition. Reward is
-           the only supervision; nobody tells the head what the latent means.
-  none   : zero message at matched width — the floor. The head can only learn
-           a constant preference, so route-optimality pins at ~0.5 and every
-           other episode pays the hazard crossing.
+Conditions (anchored, matched 66-float wire unless noted):
+  oracle    : ground-truth slab bit on the wire — optimization ceiling. If it
+              fails, the bandit machinery is broken, not the representation.
+  z_t       : the scout's frozen JEPA latent — THE thesis condition. Reward is
+              the only supervision; nobody says what the latent means.
+  z_hat     : predicted next latent P(z_t, a) under the scout's (stationary)
+              intent — Tier 1's C2 condition.
+  position  : scout's normalized (x, y), padded to matched width. The scout
+              never moves, so this is a CONSTANT — must sit at the floor.
+  kinematic : position + constant-velocity extrapolation. Also constant for a
+              stationary scout — must sit at the floor.
+  raw_obs   : the scout's full 64x64x3 frame (12288 floats + anchor) — the
+              share-everything ceiling that cannot fit a real radio. The only
+              unmatched-width condition, mirroring Tier 1's design.
+  none      : real anchor, ZERO content (matched width). The floor. (The
+              first v8 sweep zeroed the whole wire including the anchor;
+              route-optimality was indistinguishable — 0.488-0.518 — but this
+              is the honest control: geometry present, content absent.)
 
 Pre-registered readout, canonical spawns only: route-optimality (head chose
 the slab-free corridor) and hazard-steps/episode. Thesis result = z_t ~ oracle
@@ -40,7 +50,8 @@ from isaaclab.app import AppLauncher
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--condition", type=str, default="z_t",
-                    choices=["none", "z_t", "oracle"])
+                    choices=["none", "z_t", "oracle", "z_hat", "position",
+                             "kinematic", "raw_obs"])
 parser.add_argument("--executor", type=str, default="runs/route_obey_v6/cont.pt")
 parser.add_argument("--jepa_ckpt", type=str, default="checkpoints/jepa_pixels.pt")
 parser.add_argument("--comm_radius", type=float, default=12.0)
@@ -97,18 +108,21 @@ from torch.distributions import Categorical
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from chokepoint.constants import LATENT_DIM, N_ACTIONS  # noqa: E402
 from chokepoint.env import ChokepointEnv, ChokepointEnvCfg  # noqa: E402
-from chokepoint.jepa import PixelEncoder  # noqa: E402
+from chokepoint.jepa import PixelEncoder, Predictor  # noqa: E402
 from chokepoint.message_bus import (  # noqa: E402
+    KinematicBroadcast,
     LatentBroadcast,
     MessageBus,
     OracleBroadcast,
+    PositionBroadcast,
+    PredictedLatentBroadcast,
+    RawObsBroadcast,
 )
 from chokepoint.receiver import AttentionReceiver  # noqa: E402
 from chokepoint.route_head import RouteHead  # noqa: E402
 
 LEARNER, BEACON = "navigator", "scout"
 ROUTE_DIM = 2
-WIRE = LATENT_DIM + 2  # anchored, matched width — identical across conditions
 # Camera frames for a just-reset env are only guaranteed fresh after a couple
 # of rendered steps (the composition eval measured a CHANCE-level decode off
 # reset-time frames). The head samples provisionally until this step, then
@@ -158,8 +172,32 @@ def main():
             encoder, comm_radius=args.comm_radius,
             broadcast_dim=LATENT_DIM, anchored=True,
         )
-    else:
-        bus = None  # matched-width zeros below
+    elif args.condition == "z_hat":
+        predictor = Predictor(ck["config"]["latent_dim"]).to(device)
+        predictor.load_state_dict(ck["predictor"])
+        # default action_source = zero cmd_vel: the v8 scout is stationary,
+        # so its true intent IS Tier 1's STAY
+        bus = PredictedLatentBroadcast(
+            encoder, predictor, comm_radius=args.comm_radius,
+            broadcast_dim=LATENT_DIM, anchored=True,
+        )
+    elif args.condition == "position":
+        bus = PositionBroadcast(
+            comm_radius=args.comm_radius, broadcast_dim=LATENT_DIM, anchored=True
+        )
+    elif args.condition == "kinematic":
+        bus = KinematicBroadcast(
+            comm_radius=args.comm_radius, broadcast_dim=LATENT_DIM, anchored=True
+        )
+    elif args.condition == "raw_obs":
+        bus = RawObsBroadcast(
+            resolution=cfg.resolution, comm_radius=args.comm_radius, anchored=True
+        )
+    else:  # none — real anchor, zero content (base bus broadcasts silence)
+        bus = MessageBus(
+            comm_radius=args.comm_radius, broadcast_dim=LATENT_DIM, anchored=True
+        )
+    WIRE = bus.wire_dim
 
     head = RouteHead(WIRE).to(device)
     optimizer = optim.Adam(head.parameters(), lr=args.learning_rate, eps=1e-5)
@@ -168,8 +206,6 @@ def main():
           f"executor FROZEN ({args.executor})")
 
     def msg_vec() -> torch.Tensor:
-        if bus is None:
-            return torch.zeros(E, WIRE, device=device)
         messages, mask = bus.deliver(env)[LEARNER]
         return messages[:, 0, :] * mask[:, 0:1].float()
 
