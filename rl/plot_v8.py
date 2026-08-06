@@ -171,7 +171,70 @@ def plot_entropy(runs, out):
     print(f"wrote {out}")
 
 
-# -- panel 5: stage-1.5 gate --------------------------------------------------
+# -- panel 5: WP1 corruption controls ------------------------------------------
+
+MODES = ["intact", "zero_content", "zero_all", "shuffle", "noise"]
+MODE_LABELS = {
+    "intact": "intact",
+    "zero_content": "zero\ncontent",
+    "zero_all": "zero\nwire",
+    "shuffle": "shuffled\nsender",
+    "noise": "gaussian\nnoise",
+}
+
+
+def plot_corruption(diag_glob, out):
+    """Frozen v8 heads under wire corruption: greedy decisions, per-env quotas.
+
+    Red bars = mean over z_t seeds (dots = seeds); blue diamonds = the oracle
+    head. The claim in one picture: only the intact message carries the route.
+    """
+    z_t, oracle = defaultdict(list), {}
+    for fp in sorted(glob.glob(diag_glob)):
+        with open(fp) as f:
+            d = json.load(f)
+        cond = d["args"]["condition"]
+        for m, row in d["results"].items():
+            if cond == "z_t":
+                z_t[m].append(row["route_opt"])
+            else:
+                oracle[m] = row["route_opt"]
+    if not z_t:
+        print(f"no corruption JSONs matched {diag_glob}; skipping")
+        return
+
+    fig, ax = plt.subplots(figsize=(7.5, 5))
+    for i, m in enumerate(MODES):
+        vals = np.array(z_t.get(m, []), dtype=float)
+        ax.bar(i, vals.mean(), color=COLORS["z_t"], alpha=0.45, zorder=1)
+        jitter = (np.arange(len(vals)) - (len(vals) - 1) / 2) * 0.09
+        ax.scatter(i + jitter, vals, color=COLORS["z_t"], edgecolor="black",
+                   linewidth=0.8, s=55, zorder=3)
+        ax.text(i, vals.mean() + 0.035, f"{vals.mean():.3f}", ha="center",
+                fontsize=9)
+        if m in oracle:
+            ax.scatter(i + 0.28, oracle[m], marker="D", s=48,
+                       color=COLORS["oracle"], edgecolor="black",
+                       linewidth=0.8, zorder=3)
+    ax.axhline(0.5, ls=":", c="gray", lw=1)
+    ax.text(len(MODES) - 0.55, 0.512, "coin flip", fontsize=8, color="gray")
+    ax.scatter([], [], marker="D", color=COLORS["oracle"], edgecolor="black",
+               label="oracle head")
+    ax.bar(0, 0, color=COLORS["z_t"], alpha=0.45, label="z_t heads (3 seeds)")
+    ax.set_xticks(range(len(MODES)))
+    ax.set_xticklabels([MODE_LABELS[m] for m in MODES], fontsize=9)
+    ax.set_ylabel("route-optimality (greedy decisions, 256 eps/mode)")
+    ax.set_ylim(0, 1.12)
+    ax.set_title("wire corruption: the decision lives in the message content, "
+                 "and only there", fontsize=11)
+    ax.grid(axis="y", alpha=0.3)
+    ax.legend(loc="upper right", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(out, dpi=DPI)
+    print(f"wrote {out}")
+
+
+# -- panel 6: stage-1.5 gate --------------------------------------------------
 
 def plot_obedience(json_path, out):
     with open(json_path) as f:
@@ -227,6 +290,8 @@ def main():
     )
     plot_hazard_bars(runs, f"{args.out_dir}/v8_hazard_bars.png")
     plot_entropy(runs, f"{args.out_dir}/v8_entropy_curves.png")
+    plot_corruption("runs/diag/eval_race_head_*.json",
+                    f"{args.out_dir}/v8_corruption_bars.png")
     plot_obedience(args.obey_json, f"{args.out_dir}/obey_gate_curves.png")
 
 
