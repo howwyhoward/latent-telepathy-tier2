@@ -20,4 +20,4 @@ ${data}/
 # committed checkpoints, and re-recording every variant would permanently
 # bloat history. Extracted stills ARE kept (they are figures). Force-add a
 # specific cut with `git add -f` when one accompanies a submission.
-plots/*.mp4
+plots/**/*.mp4

@@ -276,23 +276,26 @@ def main():
     args = p.parse_args()
 
     import os
-    os.makedirs(args.out_dir, exist_ok=True)
+    race_dir = os.path.join(args.out_dir, "race_v8")
+    obey_dir = os.path.join(args.out_dir, "stage15")
+    os.makedirs(race_dir, exist_ok=True)
+    os.makedirs(obey_dir, exist_ok=True)
     runs = load_runs(args.runs)
     for c, rs in runs.items():
         print(f"{c}: {len(rs)} seeds, route_opt {[round(r['route_opt'], 3) for r in rs]}")
 
-    plot_curves(runs, f"{args.out_dir}/v8_race_curves.png")
-    plot_seed_bars(runs, f"{args.out_dir}/v8_race_seed_bars.png")
+    plot_curves(runs, f"{race_dir}/v8_race_curves.png")
+    plot_seed_bars(runs, f"{race_dir}/v8_race_seed_bars.png")
     plot_seed_bars(
-        runs, f"{args.out_dir}/v8_success_seed_bars.png", key="success",
+        runs, f"{race_dir}/v8_success_seed_bars.png", key="success",
         ylabel="final success (last 500 eps)",
         title="race v8: task success by message content",
     )
-    plot_hazard_bars(runs, f"{args.out_dir}/v8_hazard_bars.png")
-    plot_entropy(runs, f"{args.out_dir}/v8_entropy_curves.png")
+    plot_hazard_bars(runs, f"{race_dir}/v8_hazard_bars.png")
+    plot_entropy(runs, f"{race_dir}/v8_entropy_curves.png")
     plot_corruption("runs/diag/eval_race_head_*.json",
-                    f"{args.out_dir}/v8_corruption_bars.png")
-    plot_obedience(args.obey_json, f"{args.out_dir}/obey_gate_curves.png")
+                    f"{race_dir}/v8_corruption_bars.png")
+    plot_obedience(args.obey_json, f"{obey_dir}/obey_gate_curves.png")
 
 
 if __name__ == "__main__":
