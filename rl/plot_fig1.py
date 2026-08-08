@@ -1,9 +1,11 @@
 """Figure 1 — Tier 1 vs Tier 2: same information structure, different substrate.
 
-Left panel: the Tier 1 gridworld chokepoint (literal generate_chokepoint_map
-output, seed 2 = the slab-in-scout's-corridor configuration) with BOTH agents'
-real shadowcasting visibility (envs/fov compute_visible, radius 7) as tinted
-shading. The hazard sits inside the scout's FOV and outside the navigator's —
+Left panel: the Tier 1 chokepoint on the gridworld substrate (seed 2 = the
+slab-in-scout's-corridor configuration), drawn from chokepoint_grid — i.e.
+with Tier 2's single geometry edit applied (mid-map rung sealed), so it is the
+literal floor plan of the scene in the other two panels. Both agents' real
+shadowcasting visibility (envs/fov compute_visible, radius 7) as tinted
+shading: the hazard sits inside the scout's FOV and outside the navigator's —
 the asymmetry the message has to bridge.
 
 Middle/right panels: the same seed-2 map extruded in Isaac Sim, seen through
@@ -32,10 +34,13 @@ from matplotlib.patches import Circle
 
 # Tier 1 is the source of truth for the map (same arrangement as chokepoint/geometry.py)
 sys.path.insert(0, str(Path.home() / "latent-telepathy"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from envs.constants import HAZARD, WALL  # noqa: E402
 from envs.fov import compute_visible  # noqa: E402
 from envs.map_generator import generate_chokepoint_map  # noqa: E402
+
+from chokepoint.geometry import chokepoint_grid  # noqa: E402
 
 # Tier 1 figure palette (rl/plot_figure6b_fov_demo.py)
 WALL_C = "#2b2d42"
@@ -51,7 +56,9 @@ FOV_RADIUS = 7  # Tier 1's extract_patch default
 
 def draw_tier1(ax, seed: int):
     spec = generate_chokepoint_map(np.random.default_rng(seed))
-    grid = spec.grid
+    # the exact grid the Tier 2 scene extrudes: Tier 2's single geometry edit
+    # seals the mid-map rung so the corridor choice is irreversible
+    grid = chokepoint_grid(seed)
     nav, scout = spec.agent_starts
     vis_nav = compute_visible(grid, nav, FOV_RADIUS)
     vis_scout = compute_visible(grid, scout, FOV_RADIUS)
@@ -91,7 +98,7 @@ def draw_tier1(ax, seed: int):
     ax.set_ylim(-0.2, h + 0.2)
     ax.set_aspect("equal")
     ax.axis("off")
-    ax.set_title("Tier 1 — gridworld\nshadowcasting FOV (radius 7), both agents",
+    ax.set_title("Tier 1 map, gridworld substrate\nshadowcasting FOV (radius 7), both agents",
                  fontsize=10.5, fontweight="bold", pad=8)
 
 
@@ -150,11 +157,12 @@ def main():
                  fontsize=14, fontweight="bold", y=0.99)
     fig.text(0.5, 0.085,
              "the hazard lies inside the scout's field of view and outside the navigator's — in Tier 1 by a tested shadowcasting algorithm on discrete cells,\n"
-             "in Tier 2 by ray-traced light and staggered baffles on the same extruded map, certified by the occlusion gate (here re-run at 512², policy input is 64²).",
+             "in Tier 2 by ray-traced light and staggered baffles on the same extruded grid (drawn with Tier 2's one edit: the mid-map rung sealed, making the\n"
+             "corridor choice irreversible), certified by the occlusion gate — here re-run at 512², the policy input is the same camera at 64².",
              ha="center", va="center", fontsize=8.2, color=NOTE_GRAY, style="italic")
     fig.legend(handles=legend_handles, loc="lower center", ncol=7, frameon=False,
                fontsize=8.3, bbox_to_anchor=(0.5, 0.008))
-    fig.subplots_adjust(left=0.02, right=0.98, top=0.84, bottom=0.17, wspace=0.05)
+    fig.subplots_adjust(left=0.02, right=0.98, top=0.84, bottom=0.19, wspace=0.05)
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out, dpi=200, facecolor="white")
     print(f"wrote {args.out}")
