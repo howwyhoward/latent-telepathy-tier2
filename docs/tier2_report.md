@@ -676,7 +676,7 @@ as a standalone methods contribution.
 | 11 | Hazard contacts vs the m7e no-comms floor | **done** (floor line pending) | `plots/race_v8/v8_hazard_bars.png` |
 | 11b | Corruption controls (WP1) | **done** | `plots/race_v8/v8_corruption_bars.png` |
 | 11c | Seven-condition sweep (WP2) | **done** | `plots/race_v8/v8b_sweep_bars.png` |
-| 12 | Pipeline schematic, 4,483-param trainable surface highlighted | to render | §6.1 diagram |
+| 12 | Pipeline schematic, 4,483-param trainable surface highlighted | `plots/diagrams/fig_tier2_pipeline.png` | `rl/plot_fig_pipeline.py`: closed loop through the world, episode return drawn as the only gradient, the two absent pathways named |
 | — | Stage 1.5 obedience gate | **done** | `plots/stage15/obey_gate_curves.png` |
 
 Diagrams drafted inline (§7.2 baffle before/after, §8.2 diagnostic chain,

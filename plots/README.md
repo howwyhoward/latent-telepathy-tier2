@@ -15,6 +15,7 @@ translucent mean bars).
 
 | Figure | Shows | Data |
 |---|---|---|
+| `fig_tier2_pipeline.png` | The race v8 pipeline as a closed loop: scout camera → frozen shared encoder → 66-float wire → the 4,483-parameter route head → frozen executor → cmd_vel → the world, and the episode return dashed back into the head and nowhere else. The two paths that do not exist (head has no ego input; executor built with `broadcast_dim=0`) are stated beneath the head rather than floating in the dataflow lane. | `rl/plot_fig_pipeline.py`; numbers checked against `rl/train_race_route.py` and `chokepoint/route_head.py` |
 | `fig_tier2_conditions.png` | Report Figure 2: one channel, six message contents. Left, the content-controlled channel with the shared 66-float wire drawn as 2 anchor floats + 64 content floats and the three held-fixed properties. Right, the ladder ordered by information content — floor, position, kinematic, z_t (C1), ẑ (C2), raw-pixel ceiling — each row carrying its measured route-optimality; the oracle hangs below the rule as an off-ladder diagnostic. Row-6 payload swatch is the scout's real frame at the encoder's 64×64 input resolution. | `rl/plot_fig2_conditions.py`; markers read from `runs/race_v8b/*.json` + `runs/race_v8/{z_t,oracle}*.json` (same pooling as the WP2 sweep) |
 
 ## `jepa/` — Phase 2: the frozen encoder (`rl/plot_jepa.py`)
