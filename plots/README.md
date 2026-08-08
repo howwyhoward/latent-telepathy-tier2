@@ -9,7 +9,7 @@ translucent mean bars).
 
 | Figure | Shows | Data |
 |---|---|---|
-| `fig1_substrate.png` | Report Figure 1: the seed-2 chokepoint (slab in the scout's corridor) three ways. Tier 1 grid with BOTH agents' literal shadowcasting FOV — hazard inside the scout's, outside the navigator's; the Tier 2 scout camera with the slab filling a third of the frame (89,475/262,144 hazard px); the probe camera at the slabbed corridor's mouth with the slab fully hidden behind the staggered baffles (0/262,144). Same map all three panels — identical information structure, different substrate. | Tier 1 `envs/` (map + FOV) + `spike/out/hires/*_s2.png` (occlusion gate re-run at 512², seed 2: all gates PASS) |
+| `fig1_substrate.png` | Report Figure 1, 2×3: rows are the two substrates, columns are three viewpoints (the world / the corridor mouth where the route is chosen / the scout's post), so each column holds the viewpoint fixed and varies only the substrate. Hazard readouts per panel: Tier 1 cells-in-view 0/8 and 8/8 from `compute_visible`; Tier 2 hazard pixels 0 and 89,475 of 262,144 from the gate. Seed 2 (slab in the scout's corridor) throughout. | Tier 1 `envs/` (map + FOV) + `spike/out/hires/*_s2.png` (gate re-run at 512², all PASS) + `spike/out/hires/overhead_s2.png` (`spike/render_overhead.py`) |
 
 ## `diagrams/` — conceptual figures in Tier 1's figure language
 

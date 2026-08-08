@@ -662,7 +662,7 @@ as a standalone methods contribution.
 
 | # | Figure | Status | Source |
 |---|---|---|---|
-| 1 | Tier 1 vs Tier 2 — same information structure, different substrate | `plots/fig1_substrate.png` | `rl/plot_fig1.py`: seed-2 map (slab in scout's corridor) with both agents' shadowcasting FOV, beside 512² gate renders — scout camera (89,475 hazard px) and slabbed-mouth probe (0 px), `spike/out/hires/*_s2.png` |
+| 1 | Tier 1 vs Tier 2 — same information structure, different substrate | `plots/fig1_substrate.png` | `rl/plot_fig1.py`: 2×3, rows = substrate, columns = viewpoint (world / corridor mouth / scout's post). Tier 1 from `envs/fov.compute_visible`; Tier 2 from 512² gate renders + `spike/render_overhead.py`, all seed 2 |
 | 2 | One channel, six message contents — the conditions ladder, every row raced | `plots/diagrams/fig_tier2_conditions.png` | `rl/plot_fig2_conditions.py`: shared 66-float wire (2 anchor + 64 content), held-fixed channel properties, oracle below the rule as an off-ladder diagnostic; row markers read from `runs/race_v8b/*.json` + `runs/race_v8/{z_t,oracle}*.json` |
 | 2b | Throughput and the semantic channel | to render | `spike/spike_fps_benchmark.py`, `spike/out/*_e64_r64.png` |
 | 3 | The occlusion gate — 6 panels with pixel counts | frames committed | `spike/out/occl_*.png` |
