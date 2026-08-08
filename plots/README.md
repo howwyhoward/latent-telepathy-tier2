@@ -28,6 +28,7 @@ translucent mean bars).
 | `v8_hazard_bars.png` | Pre-registered readout: hazard steps/episode. | `runs/race_v8/*.json` |
 | `v8_entropy_curves.png` | Decision entropy: message conditions commit, the floor cannot. | `runs/race_v8/*.json` |
 | `v8_corruption_bars.png` | WP1 controls: frozen heads, greedy decisions — intact 1.000, every corruption (zero content / zero wire / shuffle / noise) at chance. | `runs/diag/eval_race_head_*.json` |
+| `v8b_sweep_bars.png` | WP2 seven-condition sweep: z_t/z_hat/oracle saturate, none/position/kinematic at the floor, raw_obs optimization-fragile (1/3 seeds collapsed, annotated). | `runs/race_v8b/*.json` + v8 z_t/oracle |
 
 ## `demo/` — qualitative
 
@@ -38,7 +39,5 @@ translucent mean bars).
 
 ## Pending
 
-The full WP2 condition sweep (`position`, `kinematic`, `z_hat`, `raw_obs`,
-fixed `none`, 5-seed headline) is training in `runs/race_v8b/`; when it
-completes, a combined seven-condition figure will land here as
-`race_v8/v8b_sweep_bars.png`.
+WP3 (richer-than-one-bit scene) figures will form a new family here once
+that experiment series exists.

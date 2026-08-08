@@ -32,7 +32,22 @@ LABELS = {
     "z_t": "z_t\n(C1 percept)",
     "oracle": "oracle\n(ceiling)",
 }
-COLORS = {"none": "#bbbbbb", "z_t": "#C44E52", "oracle": "#4C72B0"}
+COLORS = {
+    "none": "#bbbbbb", "z_t": "#C44E52", "oracle": "#4C72B0",
+    "position": "#999999", "kinematic": "#8c8c8c",
+    "raw_obs": "#8172B2", "z_hat": "#DD8452",
+}
+# the full WP2 sweep, floors -> percept conditions -> ceilings
+ORDER_SWEEP = ["none", "position", "kinematic", "raw_obs", "z_hat", "z_t", "oracle"]
+LABELS_SWEEP = {
+    "none": "none",
+    "position": "position",
+    "kinematic": "kinematic",
+    "raw_obs": "raw obs\n(12290-d)",
+    "z_hat": "z_hat\n(C2 predicted)",
+    "z_t": "z_t\n(C1 percept)",
+    "oracle": "oracle\n(ceiling)",
+}
 DPI = 130
 
 
@@ -234,7 +249,47 @@ def plot_corruption(diag_glob, out):
     print(f"wrote {out}")
 
 
-# -- panel 6: stage-1.5 gate --------------------------------------------------
+# -- panel 6: the WP2 seven-condition sweep ------------------------------------
+
+def plot_sweep(runs, out):
+    """Every condition, per-seed dots. The claim in one picture: only wires
+    carrying what the scout SEES beat chance; the matched 66-float latent is
+    5/5 at the ceiling while raw pixels are optimization-fragile (1/3 seeds
+    collapsed under premature entropy collapse — annotated, not hidden)."""
+    conds = [c for c in ORDER_SWEEP if c in runs]
+    fig, ax = plt.subplots(figsize=(9.5, 5.2))
+    for i, c in enumerate(conds):
+        finals = np.array([r["route_opt"] for r in runs[c]], dtype=float)
+        ax.bar(i, finals.mean(), color=COLORS[c], alpha=0.45, zorder=1)
+        jitter = (np.arange(len(finals)) - (len(finals) - 1) / 2) * 0.09
+        ax.scatter(i + jitter, finals, color=COLORS[c], edgecolor="black",
+                   linewidth=0.8, s=50, zorder=3)
+        ax.text(i, min(finals.mean() + 0.10, 1.06), f"{finals.mean():.3f}",
+                ha="center", fontsize=9)
+        ax.text(i, 0.03, f"{len(finals)} seeds", ha="center", fontsize=7,
+                color="#444444")
+    ax.axhline(0.5, ls=":", c="gray", lw=1)
+    ax.text(len(conds) - 0.55, 0.512, "coin flip", fontsize=8, color="gray")
+    if "raw_obs" in runs:
+        i = conds.index("raw_obs")
+        lo = min(r["route_opt"] for r in runs["raw_obs"])
+        ax.annotate("premature entropy\ncollapse (1 seed)",
+                    xy=(i, lo), xytext=(i - 1.0, 0.30), fontsize=8,
+                    color="#555555",
+                    arrowprops=dict(arrowstyle="->", color="#555555", lw=0.9))
+    ax.set_xticks(range(len(conds)))
+    ax.set_xticklabels([LABELS_SWEEP.get(c, c) for c in conds], fontsize=9)
+    ax.set_ylabel("final route-optimality (last 500 eps)")
+    ax.set_ylim(0, 1.12)
+    ax.set_title("race v8 sweep: only wires carrying what the scout SEES "
+                 "decide the corridor", fontsize=11)
+    ax.grid(axis="y", alpha=0.3)
+    fig.tight_layout()
+    fig.savefig(out, dpi=DPI)
+    print(f"wrote {out}")
+
+
+# -- panel 7: stage-1.5 gate --------------------------------------------------
 
 def plot_obedience(json_path, out):
     with open(json_path) as f:
@@ -295,6 +350,20 @@ def main():
     plot_entropy(runs, f"{race_dir}/v8_entropy_curves.png")
     plot_corruption("runs/diag/eval_race_head_*.json",
                     f"{race_dir}/v8_corruption_bars.png")
+
+    # WP2 sweep: v8b runs (all conditions incl. the anchored none floor and
+    # headline seeds 4-5) pooled with v8's z_t/oracle seeds 1-3. v8's original
+    # none (whole wire zeroed) stays out: same result, superseded protocol.
+    sweep = defaultdict(list)
+    for pat in ("runs/race_v8b/*.json", "runs/race_v8/z_t*.json",
+                "runs/race_v8/oracle*.json"):
+        for fp in sorted(glob.glob(pat)):
+            with open(fp) as f:
+                d = json.load(f)
+            sweep[d["args"]["condition"]].append(d)
+    if sweep:
+        plot_sweep(sweep, f"{race_dir}/v8b_sweep_bars.png")
+
     plot_obedience(args.obey_json, f"{obey_dir}/obey_gate_curves.png")
 
 

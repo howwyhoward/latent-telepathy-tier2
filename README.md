@@ -187,6 +187,26 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
   minibatch NaNs the update (three runs died before it was traced), and a
   bandit head wants lr ~3e-3, not the pixel-policy 3e-4 (which reads as
   "not learning" at 112 Adam steps).
+- **WP1 — corruption controls** (`spike/eval_race_head.py`, artifacts in
+  `runs/diag/eval_race_head_*`): frozen v8 heads, GREEDY argmax decisions,
+  per-env episode quotas (a completion-stream counter is length-biased:
+  correct episodes finish ~206 steps, wrong ~380+, inflating corrupted modes
+  to 0.55-0.64 before the fix). Intact wire: route-optimality **1.000** on
+  all 3 z_t seeds and the oracle. Zeroed content, zeroed wire, shuffled
+  sender, Gaussian noise: all at chance (0.41-0.56). Worst hazard 0.88
+  steps — a balk-clip, never a ~20-step crossing. The decision lives in the
+  message content, and only there.
+- **WP2 — the full condition sweep** (`runs/race_v8b/`, same protocol,
+  figure `plots/race_v8/v8b_sweep_bars.png`). Headline at 5 seeds:
+  **z_t 0.986-1.000, oracle 0.982-0.996, none (anchored, zero content)
+  0.472-0.522**. Motion-state steelmen at the floor 3/3 seeds each
+  (position 0.480-0.490, kinematic 0.460-0.496) — the stationary scout's
+  pose carries nothing; what it SEES carries everything. z_hat (predicted
+  latent, Tier 1's C2) 0.992-1.000. raw_obs (12290-d unmatched wire):
+  0.948/0.956/0.554 — one seed's entropy collapsed to ~1e-6, peaked at 0.83
+  and fell back to chance, unrecoverable under lr annealing; the 66-float
+  latent went 5/5. Compression is not just radio-feasible, it is easier to
+  recruit.
 - **Phase 4 — ROS2 deployment** on 2 RoboMasters (TensorRT encoder on Jetson,
   64-float latent topic).
 
