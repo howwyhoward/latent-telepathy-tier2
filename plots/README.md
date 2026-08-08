@@ -9,7 +9,7 @@ translucent mean bars).
 
 | Figure | Shows | Data |
 |---|---|---|
-| `fig1_substrate.png` | Report Figure 1: Tier 1 gridworld chokepoint with the navigator's literal shadowcasting FOV beside the Tier 2 scene from the navigator's corridor-choice camera (512² occlusion-gate probe render, 0/262,144 hazard pixels). Same seed-0 map on both sides — identical information structure, different substrate. | Tier 1 `envs/` (map + FOV) + `spike/out/hires/occl_navigator_mouth_bottom_rgb.png` |
+| `fig1_substrate.png` | Report Figure 1: the seed-2 chokepoint (slab in the scout's corridor) three ways. Tier 1 grid with BOTH agents' literal shadowcasting FOV — hazard inside the scout's, outside the navigator's; the Tier 2 scout camera with the slab filling a third of the frame (89,475/262,144 hazard px); the probe camera at the slabbed corridor's mouth with the slab fully hidden behind the staggered baffles (0/262,144). Same map all three panels — identical information structure, different substrate. | Tier 1 `envs/` (map + FOV) + `spike/out/hires/*_s2.png` (occlusion gate re-run at 512², seed 2: all gates PASS) |
 
 ## `jepa/` — Phase 2: the frozen encoder (`rl/plot_jepa.py`)
 

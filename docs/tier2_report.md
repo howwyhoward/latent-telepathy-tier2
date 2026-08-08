@@ -662,7 +662,7 @@ as a standalone methods contribution.
 
 | # | Figure | Status | Source |
 |---|---|---|---|
-| 1 | Tier 1 vs Tier 2 — same information structure, different substrate | `plots/fig1_substrate.png` | `rl/plot_fig1.py`: Tier 1 map + shadowcasting FOV (seed 0) beside the 512² probe render `spike/out/hires/occl_navigator_mouth_bottom_rgb.png` |
+| 1 | Tier 1 vs Tier 2 — same information structure, different substrate | `plots/fig1_substrate.png` | `rl/plot_fig1.py`: seed-2 map (slab in scout's corridor) with both agents' shadowcasting FOV, beside 512² gate renders — scout camera (89,475 hazard px) and slabbed-mouth probe (0 px), `spike/out/hires/*_s2.png` |
 | 2 | Throughput and the semantic channel | to render | `spike/spike_fps_benchmark.py`, `spike/out/*_e64_r64.png` |
 | 3 | The occlusion gate — 6 panels with pixel counts | frames committed | `spike/out/occl_*.png` |
 | 4 | M7 positive control — m7/m7b/m7c/m7e overlaid | to render | `runs/archive/m7_navsolo/m7*.csv` |
