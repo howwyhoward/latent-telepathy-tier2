@@ -5,6 +5,12 @@ and `python rl/plot_v8.py` rebuild the whole set. Same visual language as
 Tier 1 (thesis condition red, controls blue/gray, per-seed dots over
 translucent mean bars).
 
+## top level — report opener (`rl/plot_fig1.py`)
+
+| Figure | Shows | Data |
+|---|---|---|
+| `fig1_substrate.png` | Report Figure 1: Tier 1 gridworld chokepoint with the navigator's literal shadowcasting FOV beside the Tier 2 scene from the navigator's corridor-choice camera (512² occlusion-gate probe render, 0/262,144 hazard pixels). Same seed-0 map on both sides — identical information structure, different substrate. | Tier 1 `envs/` (map + FOV) + `spike/out/hires/occl_navigator_mouth_bottom_rgb.png` |
+
 ## `jepa/` — Phase 2: the frozen encoder (`rl/plot_jepa.py`)
 
 | Figure | Shows | Data |
