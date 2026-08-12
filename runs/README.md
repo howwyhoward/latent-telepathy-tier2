@@ -27,6 +27,15 @@ records the exact launch flags.
 | `route_obey_v5/` | Reverse curriculum along the commanded route | First non-zero canonical obedience; isolated the initial-heading gap. |
 | `route_obey_v6/` | v4 recipe continued (see above) | **Gate passed.** |
 
+## Instrument measurements (Phase 0–1, re-run for the figures)
+
+| Directory | Contents |
+|---|---|
+| `spike/fps_benchmark.log` | Phase 0 throughput, num_envs ∈ {1, 4, 16, 64} at 64×64: 546M env-steps/GPU-day at 64 envs, simulation rate 135 → 99 steps/s across a 64× camera increase. Also captures three different `idToLabels` orderings, which is the lazy-table gotcha as evidence. Figure 2b. |
+| `gate/occl_s2.json` | Occlusion gate, seed 2 (slab TOP): navigator 0 px, scout 1,398 px, both choice points 0 px. PASS. |
+| `gate/occl_s0.json` | Occlusion gate, seed 0 (slab BOTTOM): all four probes 0 px — the scout's *absence* reading. PASS. |
+| `gate/occl_s2_nobaffle.json` | The same scene with `--no_baffles`, reproducing the pre-baffle straight corridor: choice point leaks **10 px**. FAIL, and that failure is the measurement the baffles were designed against. Figure 3. |
+
 ## Archive
 
 | Directory | Contents |

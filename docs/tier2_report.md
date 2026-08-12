@@ -21,18 +21,27 @@ Throughput was benchmarked with tiled cameras producing RGB and semantic
 segmentation at encoder resolution, DLSS off, across several `num_envs`
 settings.
 
-**Result: 447M env-steps/GPU-day** at 64 environments / 128 tiled cameras at
+**Result: 546M env-steps/GPU-day** at 64 environments / 128 tiled cameras at
 64×64. Tractable. No fallback needed.
+
+The original spike reported 447M; the benchmark was re-run on 2026-08-10 on an
+otherwise idle box and logged, so the figure above is the one with a committed
+artifact (`runs/spike/fps_benchmark.log`). Either number clears the bar by an
+order of magnitude, and the decision it drove is unchanged.
 
 The spike also dumped RGB and segmentation frames per configuration so the
 semantic labelling could be confirmed wired correctly — the same check that
 later becomes the occlusion gate.
 
-> **[FIGURE 2 — Throughput and the semantic channel]** Left: env-steps/sec vs
-> num_envs, annotated with the GPU-day figure. Right: a paired RGB /
-> segmentation frame confirming hazard, goal, wall, and agent classes are
-> distinctly labelled. Source: `spike/spike_fps_benchmark.py`,
-> `spike/out/rgb_e64_r64.png`.
+> **[FIGURE 2b — Throughput and the semantic channel]**
+> `plots/diagnostics/fig2b_throughput.png` — left: env-steps/sec vs num_envs
+> against a linear-scaling reference, annotated with the GPU-day figure and the
+> measured render cost (simulation rate falls only 135 → 99 steps/s across a
+> 64× increase in cameras). Right: the paired RGB / segmentation frame at the
+> adopted configuration, with per-class pixel counts, plus the three observed
+> `idToLabels` orderings that make the lazy-table gotcha concrete. Source:
+> `runs/spike/fps_benchmark.log`, `spike/out/{rgb,seg}_e64_r64.npy`,
+> `spike/spike_fps_benchmark.py`.
 
 ### 7.2 Phase 1 — Scene and the occlusion gate
 
@@ -78,12 +87,17 @@ on both slab placements. Peek-past-the-baffle remains possible — matching
 Tier 1's peek-and-reroute — but requires committing to a corridor first,
 which is precisely the decision the message is supposed to inform.
 
-> **[FIGURE 3 — The occlusion gate, real renderer output]** Six-panel grid,
-> RGB above segmentation: navigator at start, scout at start, and both
-> choice-point probes, each overlaid with its hazard-pixel count and PASS
-> marker. Tier 2's analog of Tier 1's shadowcasting figure — literal tool
-> output, not a schematic. Source: `spike/out/occl_*.png` (8 frames,
-> committed).
+> **[FIGURE 3 — The occlusion gate, real renderer output]**
+> `plots/diagnostics/fig3_occlusion_gate.png` — ten panels, RGB above the
+> counted hazard mask: navigator at start, scout with the slab in its own
+> corridor, scout with the slab in the other corridor (absence is signal), the
+> choice-point probe with baffles, and the same probe with the baffles removed.
+> Each carries its hazard-pixel count and gate verdict. Tier 2's analog of Tier
+> 1's shadowcasting figure — literal tool output at the encoder's own 64×64, not
+> a schematic. The pre-baffle leak is *reproduced*, not quoted: `--no_baffles`
+> rebuilds the straight corridor and the gate fails at exactly 10 px. Source:
+> `spike/verify_occlusion.py` (`--no_baffles`, `--tag`, `--json_out`),
+> `runs/gate/occl_{s2,s0,s2_nobaffle}.json`, `spike/out/occl_*`.
 
 ### 7.3 M7 — the pixel positive control
 
@@ -102,11 +116,13 @@ That hazard figure is the tier's **no-communication floor** — what a
 competent, fully-trained, message-less navigator pays. It is the number z_t
 later drives to 0.00.
 
-> **[FIGURE 4 — M7 positive control]** Three panels in Tier 1's M7 style:
-> success rate, episode length, hazard steps/episode, with m7 / m7b / m7c /
-> m7e overlaid so the three failure modes and the pass are visible in one
-> frame. Mark the 0.80 gate line; annotate the m7e hazard plateau as
-> "no-comms floor." Source: `runs/archive/m7_navsolo/m7*.csv`.
+> **[FIGURE 4 — M7 positive control]**
+> `plots/diagnostics/fig4_m7_positive_control.png` — four panels in Tier 1's M7
+> style: success rate against the 0.80 gate, hazard steps/episode against the
+> shaded no-comms floor, episode length, and the slab-side split that exposes
+> m7c's one-sided refusal next to m7e's balance. m7 / m7b / m7c / m7e overlaid,
+> so the three failure modes and the pass read in one frame. Source:
+> `runs/archive/m7_navsolo/m7*.csv`.
 
 ---
 
@@ -214,12 +230,27 @@ exploration and action exploration were the same operation. The temporal
 abstraction that made Tier 1's exploration tractable was an accident of the
 action space, and it did not survive the port.
 
-> **[FIGURE 7 — The exploration collapse]** The most important diagnostic
-> figure in the tier. Top-corridor sampling rate (y) against σ (x), with
-> success rate as a second series, showing coverage and competence trading
-> off. Annotate the trained-policy operating point at 0.00 and overlay the
-> 14σ arithmetic as an inset. Should be readable standalone — it is the
-> methods contribution. Source: `runs/diag/exploration*.log`.
+> **[FIGURE 7 — The exploration collapse]**
+> `plots/diagnostics/fig7_exploration_collapse.png`. The most important
+> diagnostic figure in the tier, and the one that must read standalone, because
+> it is the methods contribution. Read left to right as three steps. **(1) The
+> decision:** the scene from above, the corridor the warm-started policy always
+> takes (128/128) against the one it never takes (0/128), and the cost of
+> switching — 1.25 m of lateral travel held for ~3 s, with the slab redrawn
+> each episode so the never-taken route is sometimes the only safe one. **(2)
+> Why chance never does it:** the sideways command averaged over the 30-step
+> decision window, for noise drawn fresh each step against noise that persists
+> for ~3 s, both at the policy's own σ = 0.55. Independent noise cancels down
+> to ±0.10 and needs 13× that to reach +1.3; AR(1) noise lands at ±0.47 and is
+> still 2.8× short, which is why correlation alone is necessary but not
+> sufficient. **(3) What actually worked:** the five measured settings, from the
+> one all six races used (0.00 coverage, 0.68 success) through louder noise and
+> persistent-but-quiet noise (both still 0.00) to persistent-and-louder on every
+> axis (0.16 coverage, but success collapses to 0.11) and finally persistent,
+> lateral-only, first 40 steps (0.22 coverage at 0.51 success). The σ-sweep
+> parametrics behind panels 2 and 3 are in
+> `plots/diagnostics/fig7b_exploration_sweep.png`. Source:
+> `runs/diag/exploration.log`, `runs/diag/exploration_win.log`.
 
 ### 8.4 Generation 7 — why coverage was not enough
 
@@ -229,10 +260,10 @@ PPO-safe — AR(1) has marginal N(μ, σ) at every step, so per-step ratios stay
 exact provided actions are re-scored under the σ they were drawn with.
 
 Measured 0.22 top-corridor coverage at 0.51 success. Then the optimizer
-undid it: slab-bottom success ran at 0.18–0.23 over iterations 1–40 and
-decayed to ~0.00 by iteration 80 — while the exploration boost was still near
-full strength. The policy found the other corridor and learned to steer back
-out of it.
+undid it: slab-bottom success peaked near 0.22 in the first ~20 iterations and
+decayed to 0.00–0.06 by iteration 80 — while the exploration boost was still
+σ = 2.2, or 3.6× the policy's own learned noise. The policy found the other
+corridor and learned to steer back out of it.
 
 The cause is intrinsic to Gaussian policy gradients. Since
 ∂logπ/∂μ = (a − μ)/σ², the σ that buys coverage attenuates the very gradient
@@ -261,10 +292,12 @@ corridor — the refusal optimum, now message-conditioned. Execution was not
 the problem. Plumbing was not the problem. The corridor choice was never a
 decision variable the optimizer could reach.
 
-> **[FIGURE 8 — Recruited, but for the wrong function]** Two panels. Left: v7
-> coverage decay — slab-bottom success 0.18–0.23 → 0.00 against iteration,
-> with the exploration-boost schedule overlaid to show it was still active.
-> Right: the lie test as a 2×2 grid (slab side × true/lied bit) showing
+> **[FIGURE 8 — Recruited, but for the wrong function]**
+> `plots/diagnostics/fig8_v7_recruited_misused.png`. Left: v7 coverage decay —
+> slab-bottom success against iteration for all three conditions, with the
+> exploration-boost schedule on a second axis. At iteration 80, where the
+> alternative route has gone, the boost is still σ = 2.2, or 3.6× the learned
+> noise. Right: the lie test as a 2×2 grid (slab side × true/lied bit) showing
 > corridor choice unchanged at 100% bottom while success drops 1.00 → 0.41.
 > Source: `runs/race_v7/*.csv`, `runs/diag/route_choice_v7oracle.log`.
 
@@ -320,6 +353,20 @@ success 0.996 (255/256) · hazard steps 0.00
 This established that the pipeline is sound, and isolated the remaining
 question to exactly one thing: **can reward replace the probe's
 supervision?**
+
+> **[FIGURE 8b — The composition check]**
+> `plots/diagnostics/fig8b_composition_check.png`. The chain drawn as it was
+> run, with the one box that is not frozen marked: scout pixels → frozen JEPA →
+> **supervised logistic probe** → route bit → frozen v6 executor → navigation,
+> and the measurement hung under each link it certifies (held-out probe 1.000,
+> in-loop decode 1.000, obeyed 1.000, success 0.996, hazard 0.00). Below, the
+> outcome given scale: success against the Stage 1.5 gate's numbers for the same
+> executor handed the route directly (0.935 / 0.895, canonical spawns, a
+> different episode set), and hazard steps against the ~20 a blind policy pays.
+> The figure exists to make the setup for §8.6 visual — every link is at
+> ceiling, so the only unearned link is the probe's labels, and race v8 replaces
+> exactly that link with reward. Source:
+> `runs/route_obey_v6/eval_pixels_to_route.log`.
 
 ### 8.6 Race v8 — the decisive test
 
@@ -664,13 +711,14 @@ as a standalone methods contribution.
 |---|---|---|---|
 | 1 | Tier 1 vs Tier 2 — same information structure, different substrate | `plots/fig1_substrate.png` | `rl/plot_fig1.py`: 2×3, rows = substrate, columns = viewpoint (world / corridor mouth / scout's post). Tier 1 from `envs/fov.compute_visible`; Tier 2 from 512² gate renders + `spike/render_overhead.py`, all seed 2 |
 | 2 | One channel, six message contents — the conditions ladder, every row raced | `plots/diagrams/fig_tier2_conditions.png` | `rl/plot_fig2_conditions.py`: shared 66-float wire (2 anchor + 64 content), held-fixed channel properties, oracle below the rule as an off-ladder diagnostic; row markers read from `runs/race_v8b/*.json` + `runs/race_v8/{z_t,oracle}*.json` |
-| 2b | Throughput and the semantic channel | to render | `spike/spike_fps_benchmark.py`, `spike/out/*_e64_r64.png` |
-| 3 | The occlusion gate — 6 panels with pixel counts | frames committed | `spike/out/occl_*.png` |
-| 4 | M7 positive control — m7/m7b/m7c/m7e overlaid | to render | `runs/archive/m7_navsolo/m7*.csv` |
+| 2b | Throughput and the semantic channel | **done** | `plots/diagnostics/fig2b_throughput.png` — `rl/plot_fig2b_throughput.py` from `runs/spike/fps_benchmark.log` + `spike/out/{rgb,seg}_e64_r64.npy` |
+| 3 | The occlusion gate — pixel counts, and the pre-baffle leak reproduced | **done** | `plots/diagnostics/fig3_occlusion_gate.png` — `rl/plot_fig3_occlusion.py` from `runs/gate/occl_*.json` + `spike/out/occl_*` |
+| 4 | M7 positive control — m7/m7b/m7c/m7e overlaid | **done** | `plots/diagnostics/fig4_m7_positive_control.png` — `rl/plot_diagnostics.py` from `runs/archive/m7_navsolo/m7*.csv` |
 | 5 | JEPA training health | **done** | `plots/jepa/jepa_training.png` |
 | 6 | Latent information content vs baselines | **done** | `plots/jepa/jepa_probes.png` |
-| 7 | The exploration collapse — coverage vs σ, 14σ inset | to render | `runs/diag/exploration*.log` |
-| 8 | Recruited but misused — v7 decay + the lie test | to render | `runs/race_v7/*.csv`, `runs/diag/route_choice_v7oracle.log` |
+| 7 | The exploration collapse — the decision, the arithmetic, the five measured settings | **done** | `plots/diagnostics/fig7_exploration_collapse.png` (parametrics: `fig7b_exploration_sweep.png`) — `rl/plot_diagnostics.py` from `runs/diag/exploration*.log` |
+| 8 | Recruited but misused — v7 decay + the lie test | **done** | `plots/diagnostics/fig8_v7_recruited_misused.png` — `rl/plot_diagnostics.py` from `runs/race_v7/*.csv`, `runs/diag/route_choice_v7oracle.log` |
+| 8b | The composition check — the frozen chain, its one supervised link | **done** | `plots/diagnostics/fig8b_composition_check.png` — `rl/plot_fig8b_composition.py` from `runs/route_obey_v6/eval_pixels_to_route.log` |
 | 9 | Race v8 headline — per-seed dots, floor line | **done** | `plots/race_v8/v8_race_seed_bars.png` |
 | 10 | Race v8 learning curves + entropy | **done** | `plots/race_v8/v8_race_curves.png`, `v8_entropy_curves.png` |
 | 11 | Hazard contacts vs the m7e no-comms floor | **done** (floor line pending) | `plots/race_v8/v8_hazard_bars.png` |
@@ -679,7 +727,14 @@ as a standalone methods contribution.
 | 12 | Pipeline schematic, 4,483-param trainable surface highlighted | `plots/diagrams/fig_tier2_pipeline.png` | `rl/plot_fig_pipeline.py`: closed loop through the world, episode return drawn as the only gradient, the two absent pathways named |
 | — | Stage 1.5 obedience gate | **done** | `plots/stage15/obey_gate_curves.png` |
 
-Diagrams drafted inline (§7.2 baffle before/after, §8.2 diagnostic chain,
-§11 reality gap, plus §4–§6 in Part I) should be redrawn in the Tier 1 figure
-style — same palette, same box-and-arrow language, trainable modules in blue,
-frozen in green, policy heads in orange.
+Every figure the report cites is now rendered. Diagrams still drafted as ASCII
+inline (§7.2 baffle before/after, §8.2 diagnostic chain, §11 reality gap) are
+narrative aids rather than results; the baffle before/after is now also a
+measurement in Figure 3, so §7.2's sketch is redundant with it.
+
+Updated 2026-08-10: figures 2b, 3, 4, 7, 8 rendered
+(`rl/plot_diagnostics.py`, `rl/plot_fig3_occlusion.py`,
+`rl/plot_fig2b_throughput.py`), and two prose-only numbers turned into
+committed artifacts — the throughput benchmark (`runs/spike/fps_benchmark.log`)
+and the pre-baffle 10 px leak (`runs/gate/occl_s2_nobaffle.json`, via the new
+`--no_baffles` diagnostic path).

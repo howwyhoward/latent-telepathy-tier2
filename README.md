@@ -38,9 +38,11 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
 
 ## Phase plan (from the Tier 2 planning discussion)
 
-- **Phase 0 — feasibility spike** (`spike/`): DONE. 447M env-steps/GPU-day
+- **Phase 0 — feasibility spike** (`spike/`): DONE. 546M env-steps/GPU-day
   at 64 envs / 128 tiled cameras at 64x64 (RGB + semantic segmentation,
-  DLSS off). RL-on-pixels is tractable; no fallback needed.
+  DLSS off). RL-on-pixels is tractable; no fallback needed. The original spike
+  reported 447M; re-run and logged 2026-08-10 (`runs/spike/fps_benchmark.log`),
+  which is the number with a committed artifact.
 - **Phase 1 — instrument**: IN PROGRESS. The chokepoint scene is extruded
   directly from Tier 1's `generate_chokepoint_map()` (0.5 m/cell) in
   `spike/verify_occlusion.py`. Occlusion is verified empirically via static

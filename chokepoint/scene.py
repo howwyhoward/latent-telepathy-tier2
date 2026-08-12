@@ -59,6 +59,7 @@ def build_scene_cfg(
     probe_cameras: bool = False,
     hazards_collidable: bool = False,
     dynamic_agents: bool = False,
+    baffles: bool = True,
 ) -> InteractiveSceneCfg:
     """Extrude the Tier 1 chokepoint grid into an InteractiveSceneCfg.
 
@@ -67,6 +68,10 @@ def build_scene_cfg(
                         visibility; env uses False — hazards are passable).
     dynamic_agents    : robots as dynamic velocity-driven bodies (env) vs
                         kinematic set-pieces (gate renders, nothing moves).
+    baffles           : False reproduces the pre-baffle straight corridor that
+                        leaked the slab to the choice point. Diagnostic only —
+                        the gate and the env both require True, and the gate
+                        FAILS without them, which is the measurement.
     """
     map_spec = generate_chokepoint_map(np.random.default_rng(seed))
     # the rung is sealed in Tier 2 — see geometry.remove_rung for the why
@@ -109,7 +114,7 @@ def build_scene_cfg(
     # occlusion baffles (see module docstring)
     corridors = [(mid - 3, mid - 2), (mid + 2, mid + 3)]
     baffle_i = 0
-    for r0, r1 in corridors:
+    for r0, r1 in corridors if baffles else []:
         _, y_north_c = grid_to_world(r0, 0, size, cell)
         _, y_south_c = grid_to_world(r1, 0, size, cell)
         y_north_edge = y_north_c + cell / 2

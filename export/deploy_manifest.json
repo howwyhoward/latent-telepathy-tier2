@@ -1,0 +1,39 @@
+{
+  "artifact": "policy_deploy.pt (TorchScript, CPU, deterministic mean action)",
+  "source_executor": "runs/route_obey_v6/cont.pt",
+  "source_jepa": "checkpoints/jepa_pixels.pt",
+  "input_rgb": "shape (1,3,64,64), float32, RGB channel order, values in [0,1] (frame.astype(float32)/255)",
+  "input_route": "shape (1,2), one-hot float32: [1,0]=top corridor, [0,1]=bottom corridor. REQUIRED.",
+  "output": "shape (1,3), mean action clamped to [-1,1]: [vx_norm, vy_norm, wz_norm]",
+  "action_scaling": {
+    "vx": "a[0] * 0.5 m/s",
+    "vy": "a[1] * 0.5 m/s",
+    "wz": "a[2] * 1.5 rad/s"
+  },
+  "control_rate_hz": 10,
+  "trained_log_std": [
+    -0.47295233607292175,
+    -0.508813202381134,
+    -0.32243219017982483
+  ],
+  "note_sampling": "Do NOT sample; use the output directly (it is already the mean).",
+  "sim_camera": {
+    "resolution": "64x64",
+    "hfov_deg": 82.3,
+    "height_m": 0.2,
+    "renderer": "pinhole, RGB"
+  },
+  "sanity_gray_frame": {
+    "route_top": [
+      -1.0,
+      0.6430329084396362,
+      -1.0
+    ],
+    "route_bottom": [
+      -1.0,
+      -0.7177271246910095,
+      -1.0
+    ]
+  },
+  "n_actions": 3
+}

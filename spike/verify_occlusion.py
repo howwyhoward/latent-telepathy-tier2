@@ -17,9 +17,15 @@ Run (after `source setup/env.sh`):
 
     python spike/verify_occlusion.py --seed 0   # slab BOTTOM
     python spike/verify_occlusion.py --seed 2   # slab TOP
+
+--no_baffles reproduces the pre-baffle straight corridor and is EXPECTED to
+fail the choice-point gate; that failure is the measurement the baffles were
+designed against. --tag suffixes the frame filenames and --json_out records the
+counts, so a figure can be rebuilt from committed artifacts without a rerun.
 """
 
 import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -30,6 +36,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--resolution", type=int, default=64, help="camera H=W (encoder res)")
 parser.add_argument("--cell", type=float, default=0.5, help="meters per grid cell")
+parser.add_argument("--no_baffles", action="store_true",
+                    help="diagnostic: build the straight corridor that leaked")
+parser.add_argument("--tag", type=str, default="",
+                    help="suffix for output frame filenames")
+parser.add_argument("--json_out", type=str, default=None,
+                    help="write the pixel counts and gate verdicts here")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
 args.headless = True
@@ -68,9 +80,15 @@ def save_frames(cam: TiledCamera, name: str):
 
     rgb = cam.data.output["rgb"][0].cpu().numpy().astype(np.uint8)
     seg = cam.data.output["semantic_segmentation"][0].cpu().numpy().squeeze()
-    iio.imwrite(OUT_DIR / f"occl_{name}_rgb.png", rgb)
+    iio.imwrite(OUT_DIR / f"occl_{name}{args.tag}_rgb.png", rgb)
     seg_vis = (seg.astype(np.float32) / max(seg.max(), 1) * 255).astype(np.uint8)
-    iio.imwrite(OUT_DIR / f"occl_{name}_seg.png", seg_vis)
+    iio.imwrite(OUT_DIR / f"occl_{name}{args.tag}_seg.png", seg_vis)
+    # the hazard mask is what the gate counts; save it so a figure can overlay
+    # the counted pixels rather than re-deriving them from a normalized preview
+    id_to_labels = cam.data.info["semantic_segmentation"]["idToLabels"]
+    hazard_ids = [int(k) for k, v in id_to_labels.items() if v.get("class") == "hazard"]
+    mask = np.isin(seg, hazard_ids) if hazard_ids else np.zeros_like(seg, bool)
+    np.save(OUT_DIR / f"occl_{name}{args.tag}_hazmask.npy", mask)
 
 
 def main():
@@ -93,6 +111,7 @@ def main():
         probe_cameras=True,
         hazards_collidable=True,   # gate keeps colliders: conservative visibility
         dynamic_agents=False,      # nothing moves during the gate
+        baffles=not args.no_baffles,
     )
     scene = InteractiveScene(scene_cfg)
     sim.reset()
@@ -132,6 +151,26 @@ def main():
 
     overall = nav_ok and scout_ok and choice_ok
     print(f"[occl] OVERALL: {'PASS' if overall else 'FAIL'}")
+
+    if args.json_out:
+        Path(args.json_out).parent.mkdir(parents=True, exist_ok=True)
+        with open(args.json_out, "w") as f:
+            json.dump({
+                "seed": args.seed,
+                "resolution": args.resolution,
+                "baffles": not args.no_baffles,
+                "slab_side": slab_side,
+                "total_pixels": total,
+                "hazard_pixels": {
+                    "navigator": results["navigator"],
+                    "scout": results["scout"],
+                    "probe_top": choice["top"],
+                    "probe_bottom": choice["bottom"],
+                },
+                "gates": {"navigator": nav_ok, "scout": scout_ok,
+                          "choice_points": choice_ok, "overall": overall},
+            }, f, indent=2)
+        print(f"[occl] wrote {args.json_out}")
 
     # Kit's extension teardown deadlocks in headless mode; results are printed,
     # so skip graceful close and let the OS reclaim the GPU.

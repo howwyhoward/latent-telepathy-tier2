@@ -1,0 +1,16 @@
+=== num_envs=1
+[spike] scene ready: num_envs=1, res=64
+[spike] seg id mapping: {'idToLabels': {'0': {'class': 'BACKGROUND'}, '1': {'class': 'UNLABELLED'}, '2': {'class': 'wall'}, '3': {'class': 'hazard'}}}
+[spike] RESULT num_envs=1 res=64 sim_steps/s=135.2 env_steps/s=135.2 (11.68M env-steps/GPU-day)
+=== num_envs=4
+[spike] scene ready: num_envs=4, res=64
+[spike] seg id mapping: {'idToLabels': {'0': {'class': 'BACKGROUND'}, '1': {'class': 'UNLABELLED'}, '2': {'class': 'wall'}, '3': {'class': 'agent'}, '4': {'class': 'hazard'}}}
+[spike] RESULT num_envs=4 res=64 sim_steps/s=133.8 env_steps/s=535.2 (46.24M env-steps/GPU-day)
+=== num_envs=16
+[spike] scene ready: num_envs=16, res=64
+[spike] seg id mapping: {'idToLabels': {'0': {'class': 'BACKGROUND'}, '1': {'class': 'UNLABELLED'}, '2': {'class': 'agent'}, '3': {'class': 'wall'}, '4': {'class': 'hazard'}}}
+[spike] RESULT num_envs=16 res=64 sim_steps/s=127.9 env_steps/s=2046.3 (176.80M env-steps/GPU-day)
+=== num_envs=64
+[spike] scene ready: num_envs=64, res=64
+[spike] seg id mapping: {'idToLabels': {'0': {'class': 'BACKGROUND'}, '1': {'class': 'UNLABELLED'}, '2': {'class': 'wall'}, '3': {'class': 'hazard'}, '4': {'class': 'agent'}}}
+[spike] RESULT num_envs=64 res=64 sim_steps/s=98.8 env_steps/s=6324.5 (546.44M env-steps/GPU-day)
