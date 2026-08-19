@@ -375,7 +375,7 @@ def main():
     if missing:
         raise SystemExit(f"no runs found for {missing}")
 
-    fig = plt.figure(figsize=(14.2, 6.9))
+    fig = plt.figure(figsize=(10.5, 6.9))
     gs = fig.add_gridspec(1, 2, width_ratios=[5.55, 13.15], wspace=0.01)
     draw_channel_panel(fig.add_subplot(gs[0, 0]))
     draw_ladder_panel(fig.add_subplot(gs[0, 1]), results, args.frame)

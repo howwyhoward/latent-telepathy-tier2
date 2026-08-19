@@ -204,7 +204,7 @@ def main():
 
     # sized so the axes aspect matches the 102x56 content box exactly —
     # otherwise aspect="equal" letterboxes it with white bars
-    fig, ax = plt.subplots(figsize=(13.4, 8.75))
+    fig, ax = plt.subplots(figsize=(12.3, 8.75))
     draw(ax, args.overhead)
 
     fig.suptitle("The race v8 pipeline \u2014 4,483 trainable parameters, and a scalar that names nothing",

@@ -84,7 +84,7 @@ def main():
     rows, maps = parse_log(Path(args.log))
     top = rows[-1]
 
-    fig = plt.figure(figsize=(13.4, 5.5))
+    fig = plt.figure(figsize=(11.4, 5.5))
     gs = fig.add_gridspec(2, 3, width_ratios=[1.42, 1, 1],
                           height_ratios=[1, 0.50], wspace=0.30, hspace=0.16)
     ax = fig.add_subplot(gs[:, 0])

@@ -291,7 +291,10 @@ def _draw_situation(ax):
     for y0, y1, color, label in ((ty0, ty1, RED, "NEVER taken\n0 of 128 episodes"),
                                  (by0, by1, BLUE,
                                   "ALWAYS taken\n128 of 128 episodes")):
-        ax.text(-1.05, (y0 + y1) / 2, label, color=color, fontsize=10.4,
+        # -1.35 is the window between the sideways-travel arrow on the left and
+        # the dashed alternative-slab box on the right, both of which this label
+        # collided with at the narrower figure width
+        ax.text(-1.35, (y0 + y1) / 2, label, color=color, fontsize=10.4,
                 ha="center", va="center", fontweight="bold", zorder=6,
                 linespacing=1.45)
 
@@ -302,7 +305,7 @@ def _draw_situation(ax):
     ax.annotate("switching corridors costs\n"
                 f"{top_y - ny:.2f} m of sideways travel —\n"
                 "about 3 seconds of pushing",
-                xy=(nx + 0.50, (ny + top_y) / 2 + 0.30), xytext=(-2.05, ty1 + 1.30),
+                xy=(nx + 0.50, (ny + top_y) / 2 + 0.30), xytext=(-2.05, ty1 + 1.62),
                 fontsize=10.2, color=DARK, ha="center", va="center", zorder=7,
                 linespacing=1.55, bbox=_box(),
                 arrowprops=dict(arrowstyle="->", color=DARK, lw=1.4,
@@ -314,8 +317,10 @@ def _draw_situation(ax):
             va="center", zorder=7, fontweight="bold")
 
     ax.text(0.0, by0 - 0.72,
-            "The slab is redrawn every episode. When it lands in the bottom\n"
-            "corridor, the only safe route is the one the robot never takes.",
+            # wrapped to three short lines: at two it was wider than the panel
+            "The slab is redrawn every episode. When it\n"
+            "lands in the bottom corridor, the only safe\n"
+            "route is the one the robot never takes.",
             fontsize=10.2, color=DARK, ha="center", va="top", zorder=7,
             linespacing=1.55, bbox=_box())
 
@@ -374,7 +379,8 @@ def _draw_mechanism(ax, ax_dist, sigma, window=WINDOW, tau=30.0, n_paths=600, se
             linespacing=1.5, zorder=7)
 
     ax.set_xlim(1, window)
-    ax.set_xlabel(f"steps since entering the chamber   ({window} steps "
+    # wrapped: on one line this ran under the box-plot category labels to its right
+    ax.set_xlabel(f"steps since entering the chamber\n({window} steps "
                   f"= {window * STEP_DT:.0f} seconds)", fontsize=10.8)
     ax.set_ylabel("sideways push, averaged over the steps so far", fontsize=10.8)
 
@@ -478,8 +484,10 @@ def plot_exploration_v2(diag_dir: Path, out: Path):
                        "top", "bottom", "neither", "success"])
     sigma = min(r["std"] for r in iid)   # the trained policy's own noise level
 
-    fig = plt.figure(figsize=(20.4, 6.9))
-    gs = fig.add_gridspec(1, 4, width_ratios=[1.14, 0.74, 0.66, 1.30],
+    fig = plt.figure(figsize=(13.2, 6.9))
+    # the box-plot column carries two wide category labels for only two boxes,
+    # so it needs more width than its data does; the bar chart has the slack
+    gs = fig.add_gridspec(1, 4, width_ratios=[1.14, 0.72, 0.86, 1.12],
                           left=0.027, right=0.995, top=0.845, bottom=0.112,
                           wspace=0.26)
     ax_a, ax_b, ax_d, ax_c = (fig.add_subplot(gs[0, i]) for i in range(4))
@@ -523,7 +531,7 @@ def plot_exploration(diag_dir: Path, out: Path):
                       ["log_std", "std", "tau", "win", "dims",
                        "top", "bottom", "neither", "success"])
 
-    fig, (ax_a, ax_b, ax_c) = plt.subplots(1, 3, figsize=(15.2, 5.1))
+    fig, (ax_a, ax_b, ax_c) = plt.subplots(1, 3, figsize=(11.4, 5.1))
 
     # (a) coverage only arrives once competence has left. tau=30 is the
     # correlation time v7 went on to use, so the correlated series is filtered
@@ -573,10 +581,8 @@ def plot_exploration(diag_dir: Path, out: Path):
     ax_b.plot(sig, z_corr, color=BLUE, lw=2.6, zorder=3,
               label="AR(1), tau = 30: one deviation\nthat persists through the window")
     ax_b.axhline(2, color=GREEN, ls=":", lw=1.5, zorder=1)
-    # left of centre, in the gap between the two curves: the right end of this
-    # line runs under the centre-right legend
-    ax_b.text(0.92, 2.1, "merely rare", ha="left", va="bottom", fontsize=10,
-              color=GREEN)
+    # mirrors "never sampled" above it; the legend is raised to clear it
+    ax_b.text(4.62, 2.25, "merely rare", ha="right", fontsize=10, color=GREEN)
 
     z_at_trained = LATERAL_NEEDED / (trained["std"] / np.sqrt(WINDOW))
     z_corr_trained = LATERAL_NEEDED / trained["std"]
@@ -600,7 +606,8 @@ def plot_exploration(diag_dir: Path, out: Path):
     ax_b.set_ylabel("deviation required to reach the far mouth, in sigma",
                     fontsize=10.5)
     ax_b.grid(alpha=0.22, lw=0.6, which="major")
-    ax_b.legend(fontsize=8.2, loc="center right", bbox_to_anchor=(1.0, 0.40),
+    # raised clear of the 2-sigma line and its label at the same right edge
+    ax_b.legend(fontsize=8.2, loc="center right", bbox_to_anchor=(1.0, 0.62),
                 framealpha=0.95)
     ax_b.set_title("(b) why: the fix is correlation, not scale", fontsize=11, loc="left")
 
@@ -640,7 +647,7 @@ def plot_exploration(diag_dir: Path, out: Path):
     ax_c.annotate(f"the v7 configuration\nsigma {best['std']:.2f}, first "
                   f"{int(best['win'])} steps, vy only:\n{best['top']:.2f} coverage "
                   f"AND {best['success']:.2f} success",
-                  xy=(best["success"], best["top"]), xytext=(0.055, 0.185),
+                  xy=(best["success"], best["top"]), xytext=(0.045, 0.185),
                   fontsize=9.5, color=GREEN,
                   arrowprops=dict(arrowstyle="->", color=GREEN, lw=1.3))
     handles = [
@@ -649,7 +656,9 @@ def plot_exploration(diag_dir: Path, out: Path):
         plt.Line2D([], [], marker="o", ls="", color=GREEN, ms=9,
                    label="windowed boost"),
     ]
-    ax_c.legend(handles=handles, fontsize=8.4, loc="upper right", framealpha=0.95)
+    # lower left is the only free quadrant: the wide v7 callout fills the top
+    # and the scatter labels run along the lower right
+    ax_c.legend(handles=handles, fontsize=8.4, loc="lower left", framealpha=0.95)
     ax_c.set_xlabel("success rate          "
                     "(labels: sigma · boost window · axes)", fontsize=10.5)
     ax_c.set_ylabel("alternative-corridor sampling rate", fontsize=11)
@@ -718,7 +727,7 @@ def plot_v7(race_dir: Path, diag_dir: Path, out: Path):
     conds = [("oracle", "oracle (noiseless bit)", BLUE),
              ("z_t", "z_t (latent)", RED),
              ("none", "none (silence)", GRAY)]
-    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(13.2, 4.95),
+    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(11.9, 4.95),
                                      gridspec_kw={"width_ratios": [1.25, 1]})
 
     early = {}

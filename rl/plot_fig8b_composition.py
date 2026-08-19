@@ -219,7 +219,10 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / "fig8b_composition_check.png"
 
-    fig = plt.figure(figsize=(16.4, 8.9))
+    # 13.4 is the floor: the flow labels between the pipeline boxes (z_t (64-D),
+    # conditions) need the inter-box gaps, and below this they touch the boxes.
+    # Narrowing further to reach 6 pt at IEEE width means shortening them.
+    fig = plt.figure(figsize=(13.4, 8.9))
     gs = fig.add_gridspec(2, 2, height_ratios=[1.20, 0.80],
                           width_ratios=[1.42, 1.0],
                           left=0.032, right=0.988, top=0.885, bottom=0.150,

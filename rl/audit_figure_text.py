@@ -3,11 +3,18 @@
 Renders each figure and measures every visible Text artist's bounding box, so
 crowding is reported as numbers rather than eyeballed. Three checks:
 
-  OVERLAP      two text boxes intersect by more than `min_frac` of the smaller
+  OVERLAP      two text boxes intersect by more than `min_overlap_pt` in both
+               directions
   CLEARANCE    a text box sits closer than `min_gap_pt` to an axes title
-  UNDER-LEGEND a text box runs beneath an opaque legend frame, which is drawn
-               above it and hides those glyphs even though no two text boxes
-               collide
+  BEHIND-BOX   a text box runs under an opaque patch drawn over it: a legend
+               frame, or the bbox of another text. Those glyphs are hidden even
+               though no two text boxes collide.
+
+OVERLAP is measured in points rather than as a fraction of the smaller box.
+Two labels that clip each other by a few glyph widths are a defect however
+large the labels are, and the fractional test missed exactly that: a tick
+label sitting on the x-axis label came to 15% and one abutting its neighbour
+16%, both under an 18% threshold, while both were plainly broken in print.
 
 Rotated text is skipped for OVERLAP (its axis-aligned bbox overstates extent,
 which produces false positives against neighbouring row labels).
@@ -61,8 +68,22 @@ def _undrawn_tick_labels(fig):
     return hidden
 
 
-def _opaque_legends(fig):
-    """(legend, frame, own_text_ids) for every legend that hides what it covers."""
+def _opaque(patch):
+    alpha = patch.get_alpha()
+    if alpha is not None and alpha < 0.5:
+        return False
+    return patch.get_visible() and (bool(patch.get_fill())
+                                    or patch.get_edgecolor() is not None)
+
+
+def _occluders(fig, items):
+    """(patch, exempt_ids, zorder, what) for everything opaque drawn over text.
+
+    A legend only hides text drawn below it, so its zorder is returned and
+    compared. A text's own bbox is drawn with that text, and when it lands on a
+    neighbouring label the two collide visually whichever ends up on top, so
+    those are reported unconditionally (zorder None).
+    """
     out = []
     legends = list(fig.legends)
     for ax in fig.axes:
@@ -70,13 +91,13 @@ def _opaque_legends(fig):
         if lg is not None:
             legends.append(lg)
     for lg in legends:
-        frame = lg.get_frame()
-        if not lg.get_visible() or not frame.get_visible():
-            continue
-        alpha = frame.get_alpha()
-        if alpha is not None and alpha < 0.5:
-            continue
-        out.append((lg, frame, {id(t) for t in lg.findobj(Text)}))
+        if lg.get_visible() and _opaque(lg.get_frame()):
+            out.append((lg.get_frame(), {id(t) for t in lg.findobj(Text)},
+                        lg.get_zorder(), "legend"))
+    for t, _ in items:
+        bp = t.get_bbox_patch()
+        if bp is not None and _opaque(bp):
+            out.append((bp, {id(t)}, None, f"box of '{t.get_text().split(chr(10))[0][:24]}'"))
     return out
 
 
@@ -103,7 +124,7 @@ def _boxes(fig):
     return out
 
 
-def audit(fig, name, min_frac=0.18, min_gap_pt=2.0, verbose=True):
+def audit(fig, name, min_overlap_pt=1.5, min_gap_pt=2.0, verbose=True):
     """Return a list of human-readable problems for one rendered figure."""
     items = _boxes(fig)
     dpi = fig.dpi
@@ -121,13 +142,13 @@ def audit(fig, name, min_frac=0.18, min_gap_pt=2.0, verbose=True):
             if t1.get_rotation() % 180 or t2.get_rotation() % 180:
                 continue
             ix = Bbox.intersection(b1, b2)
-            if ix is None or ix.width <= 0 or ix.height <= 0:
+            if ix is None:
                 continue
-            frac = (ix.width * ix.height) / min(b1.width * b1.height,
-                                                b2.width * b2.height)
-            if frac >= min_frac:
+            w_pt, h_pt = ix.width / dpi * 72.0, ix.height / dpi * 72.0
+            if w_pt >= min_overlap_pt and h_pt >= min_overlap_pt:
                 kind = "TITLE-OVERLAP" if (id(t1) in titles or id(t2) in titles) else "OVERLAP"
-                problems.append(f"{kind} {frac:4.0%}  '{label(t1)}'  vs  '{label(t2)}'")
+                problems.append(f"{kind} {w_pt:.1f}x{h_pt:.1f} pt  "
+                                f"'{label(t1)}'  vs  '{label(t2)}'")
 
     for ax in fig.axes:
         tb = ax.title
@@ -147,20 +168,21 @@ def audit(fig, name, min_frac=0.18, min_gap_pt=2.0, verbose=True):
                     f"'{label(t)}'  under  '{label(tb)}'")
 
     r = fig.canvas.get_renderer()
-    for lg, frame, own in _opaque_legends(fig):
+    for patch, exempt, zorder, what in _occluders(fig, items):
         try:
-            fb = frame.get_window_extent(renderer=r)
+            pb = patch.get_window_extent(renderer=r)
         except Exception:
             continue
         for t, b in items:
-            if id(t) in own or t.get_zorder() > lg.get_zorder():
+            if id(t) in exempt or (zorder is not None and t.get_zorder() > zorder):
                 continue
-            ix = Bbox.intersection(b, fb)
-            if ix is None or ix.width <= 0 or ix.height <= 0:
+            ix = Bbox.intersection(b, pb)
+            if ix is None:
                 continue
-            frac = (ix.width * ix.height) / (b.width * b.height)
-            if frac >= 0.03:
-                problems.append(f"UNDER-LEGEND {frac:4.0%}  '{label(t)}'")
+            w_pt, h_pt = ix.width / dpi * 72.0, ix.height / dpi * 72.0
+            if w_pt >= min_overlap_pt and h_pt >= min_overlap_pt:
+                problems.append(f"BEHIND-BOX {w_pt:.1f}x{h_pt:.1f} pt  "
+                                f"'{label(t)}'  under {what}")
 
     if verbose:
         if problems:
