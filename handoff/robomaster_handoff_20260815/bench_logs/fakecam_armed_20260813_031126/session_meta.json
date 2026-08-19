@@ -1,0 +1,55 @@
+{
+  "session_dir": "/root/deploy/logs/20260813_031126",
+  "started_at": "2026-08-13 03:11:26",
+  "route": "top",
+  "route_one_hot": [
+    1.0,
+    0.0
+  ],
+  "robot_id": 1,
+  "image_topic": "/robomaster_1/camera_0/image_raw",
+  "cmd_topic": "/robomaster_1/cmd_vel",
+  "model_sha256": "3bc78f2909e0e940b45f79bfb92a091f0a5938afaa4b5fca38dae27c578aa18e",
+  "control": {
+    "rate_hz": 10.0,
+    "frame_timeout_s": 0.3,
+    "scale_linear": 0.5,
+    "scale_angular": 1.5,
+    "cap_linear": 0.15,
+    "cap_angular": 0.5,
+    "use_header_stamp": false
+  },
+  "camera_geometry": {
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "source_aspect": 1.7778,
+    "crop_box_xywh": [
+      420,
+      0,
+      1080,
+      1080
+    ],
+    "crop_fraction_of_width": 0.5625,
+    "crop_fraction_of_height": 1.0,
+    "resize_to": [
+      64,
+      64
+    ],
+    "interpolation": "INTER_AREA"
+  },
+  "sim_camera": {
+    "resolution": "64x64",
+    "hfov_deg": 82.3,
+    "height_m": 0.2,
+    "renderer": "pinhole, RGB"
+  },
+  "steps_logged": 107,
+  "status_counts": {
+    "no_frame": 3,
+    "armed": 105,
+    "stale": 2
+  },
+  "ended_at": "2026-08-13 03:11:37"
+}

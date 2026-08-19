@@ -1,0 +1,53 @@
+{
+  "source_resolution": [
+    640,
+    360
+  ],
+  "source_aspect": 1.7778,
+  "crop_box_xywh": [
+    140,
+    0,
+    360,
+    360
+  ],
+  "crop_fraction_of_width": 0.5625,
+  "crop_fraction_of_height": 1.0,
+  "rotate_180": true,
+  "tag": "red_l_280",
+  "encoding": "bgr8",
+  "captured_at": "2026-08-15 03:41:19",
+  "sim_reference": {
+    "hfov_deg": 82.3,
+    "renderer": "pinhole",
+    "resolution": "64x64"
+  },
+  "lens_hfov_deg": 54.0,
+  "effective_hfov_after_crop_deg": 31.99,
+  "hfov_is_measured": true,
+  "lens_hfov_source": "measured 2026-08-14 from perpendicular tape at 150 cm and 280 cm (54.8 and 52.8 deg); pinhole-equivalent over the central crop region",
+  "hfov_vs_sim_magnification": 3.05,
+  "placement": {
+    "distance_cm": 280.0,
+    "lateral_offset_cm": -35.0,
+    "pad": "red 60x60"
+  },
+  "pad_diagnostics": {
+    "red": {
+      "coverage_pct_of_crop": 1.86,
+      "bbox_xyxy_in_crop": [
+        8,
+        196,
+        175,
+        211
+      ],
+      "touches_left_edge": false,
+      "touches_right_edge": false,
+      "measured_offset_cm": -35.2,
+      "measured_width_cm": 66.1,
+      "apparent_size_valid": true
+    },
+    "green": {
+      "coverage_pct_of_crop": 0.0
+    }
+  }
+}
