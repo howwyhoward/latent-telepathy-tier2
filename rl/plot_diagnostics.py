@@ -140,8 +140,9 @@ def plot_m7(run_dir: Path, out: Path):
         ax_l.plot(x, smooth(d["ep_len"]), ls, color=color, lw=lw, zorder=z)
 
     ax_s.axhline(0.80, color=DARK, ls="--", lw=1.2, zorder=1)
-    ax_s.text(0.02, 0.815, "gate 0.80", transform=ax_s.get_yaxis_transform(),
-              fontsize=9, color=DARK, va="bottom")
+    # right end of the line: the upper-left legend covers the left end entirely
+    ax_s.text(0.985, 0.815, "gate 0.80", transform=ax_s.get_yaxis_transform(),
+              fontsize=9, color=DARK, va="bottom", ha="right")
     ax_s.set_ylabel("success rate", fontsize=11)
     ax_s.set_ylim(-0.03, 1.03)
     ax_s.set_title("(a) can PPO solve this from pixels at all?", fontsize=11, loc="left")
@@ -554,7 +555,8 @@ def plot_exploration(diag_dir: Path, out: Path):
     ax_a.set_ylim(-0.03, 0.95)
     ax_a.set_xlim(0.42, 1.78)
     ax_a.grid(alpha=0.25, lw=0.6)
-    ax_a.legend(fontsize=8.2, loc="center right", bbox_to_anchor=(1.0, 0.56),
+    # raised: at 0.56 the frame clipped the tail of the red callout below it
+    ax_a.legend(fontsize=8.2, loc="center right", bbox_to_anchor=(1.0, 0.66),
                 framealpha=0.95, ncol=1)
     ax_a.set_title("(a) buying coverage with sigma destroys the policy first",
                    fontsize=11, loc="left")
@@ -571,7 +573,10 @@ def plot_exploration(diag_dir: Path, out: Path):
     ax_b.plot(sig, z_corr, color=BLUE, lw=2.6, zorder=3,
               label="AR(1), tau = 30: one deviation\nthat persists through the window")
     ax_b.axhline(2, color=GREEN, ls=":", lw=1.5, zorder=1)
-    ax_b.text(4.62, 2.25, "merely rare", ha="right", fontsize=10, color=GREEN)
+    # left of centre, in the gap between the two curves: the right end of this
+    # line runs under the centre-right legend
+    ax_b.text(0.92, 2.1, "merely rare", ha="left", va="bottom", fontsize=10,
+              color=GREEN)
 
     z_at_trained = LATERAL_NEEDED / (trained["std"] / np.sqrt(WINDOW))
     z_corr_trained = LATERAL_NEEDED / trained["std"]

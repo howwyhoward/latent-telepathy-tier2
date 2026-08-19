@@ -236,7 +236,9 @@ def main():
              ha="center", va="bottom", fontsize=8.0, color=NOTE_GRAY, style="italic",
              linespacing=1.45)
 
-    fig.subplots_adjust(left=0.062, right=0.995, top=0.895, bottom=0.105,
+    # top clears the two-line panel titles under the subtitle at y=0.952; at
+    # 0.895 they touched it
+    fig.subplots_adjust(left=0.062, right=0.995, top=0.874, bottom=0.105,
                         wspace=0.03, hspace=0.07)
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(args.out, dpi=200, facecolor="white")

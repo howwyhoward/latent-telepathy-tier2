@@ -144,8 +144,10 @@ def main():
 
     fig, axes = plt.subplots(
         2, 4, figsize=(11.5, 6.4),
+        # top leaves room for the suptitle plus two subtitle lines above the
+        # panel titles; at 0.86 the second line landed on them
         gridspec_kw={"hspace": 0.16, "wspace": 0.06,
-                     "left": 0.075, "right": 0.985, "top": 0.86, "bottom": 0.04},
+                     "left": 0.075, "right": 0.985, "top": 0.83, "bottom": 0.04},
     )
     for j, (idx, cap, col) in enumerate(sim_panels):
         axes[0, j].imshow(rgb[idx])
@@ -165,11 +167,11 @@ def main():
                           labelpad=10, color="#2c3e50")
     fig.suptitle("What the encoder sees: sim vs real, 64\u00d764 as fed to the network",
                  fontsize=13.5, y=0.975, color="#1b2631")
-    fig.text(0.5, 0.925,
+    fig.text(0.5, 0.922,
              "Camera geometry matched to the measured robot: "
              "height 0.20 m, pitch 2.1\u00b0 down, HFOV 32\u00b0",
              ha="center", fontsize=10, color="#566573")
-    fig.text(0.5, 0.893,
+    fig.text(0.5, 0.885,
              "Remaining differences are appearance only: wall tint, "
              "carpet texture, lighting",
              ha="center", fontsize=10, color="#566573")

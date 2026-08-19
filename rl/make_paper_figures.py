@@ -12,6 +12,7 @@ caption, not baked into the image.
 """
 
 import argparse
+import re
 import runpy
 import sys
 import traceback
@@ -22,6 +23,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.figure import Figure  # noqa: E402
+from matplotlib.text import Text  # noqa: E402
+from matplotlib.transforms import ScaledTranslation  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "plots" / "paper"
@@ -49,26 +52,78 @@ RENAMES = {
     "v8_entropy_curves.png": "decision_entropy",
     "v8_corruption_bars.png": "corruption_controls",
     "v8b_sweep_bars.png": "condition_sweep",
-    "handoff_analysis.png": "sim2real_transfer",
+    "sim_vs_real_frames.png": "sim2real_transfer",
 }
 
-# Per-figure text upscale applied to the PAPER copy only. These figures were
-# designed 11-21 in wide; printed at IEEE full width (7.16 in) their text
-# lands at 3.5-6 pt. The boost brings annotations to >=6.5 pt effective while
-# staying small enough not to wreck hand-tuned layouts (verified visually).
-FONT_BOOST = {
-    "exploration_collapse": 1.45,
-    "composition_check": 1.40,
-    "exploration_sweep": 1.15,  # denser annotations; 1.35 caused collisions
-    "occlusion_gate": 1.30,
-    "conditions_ladder": 1.30,
-    "pipeline": 1.30,
-    "throughput": 1.30,
-    "recruited_misused": 1.35,
-    "positive_control": 1.20,
-    "substrate": 1.20,
-    "sim2real_transfer": 1.20,
-}
+IEEE_FULL_WIDTH_IN = 7.16   # two-column text width, i.e. figure* placement
+TARGET_EFFECTIVE_PT = 6.5   # legibility floor for annotations once printed
+MAX_BOOST = 1.25            # past this, the hand-tuned layouts start colliding
+TITLE_PAD_PT = 7.0          # keeps panel content off its own axes title
+
+
+def _title_pad_pt(ax):
+    """Current axes-title pad in points, read back off the title's transform."""
+    try:
+        dy = (ax.title.get_transform().transform((0.0, 1.0))[1]
+              - ax.transAxes.transform((0.0, 1.0))[1])
+    except Exception:
+        return 0.0
+    return dy / ax.figure.dpi * 72.0
+
+
+def _set_title_pad_pt(ax, pad_pt):
+    """Offset an axes title by `pad_pt`.
+
+    Axes.set_title(pad=...) would reset the title's font properties to the
+    rcParam defaults and re-centre a loc="left" title, discarding the
+    per-panel sizes these scripts set deliberately. Composing the same
+    translation matplotlib uses internally moves the title and nothing else.
+    """
+    off = ScaledTranslation(0.0, pad_pt / 72.0, ax.figure.dpi_scale_trans)
+    ax.title.set_transform(ax.transAxes + off)
+    ax.title.set_clip_box(None)
+
+
+def _legibility_pass(fig):
+    """Raise only the SMALL text toward the print legibility floor.
+
+    These figures were designed 6-21 in wide, so at IEEE full width their text
+    shrinks by design_width / 7.16. Scaling every string by one per-figure
+    factor (the first attempt) grew titles and long annotations into their own
+    panel content -- visible as value labels touching category labels in
+    exploration_collapse and bar labels touching panel titles in
+    composition_check. Clamping each string up to the floor instead, capped at
+    MAX_BOOST, fixes the unreadably small text and leaves already-large text
+    exactly where it was designed to sit.
+
+    Returns the smallest surviving effective point size, so the caller can
+    report the figures that still need a layout redesign rather than a rescale.
+    """
+    shrink = fig.get_figwidth() / IEEE_FULL_WIDTH_IN
+    floor_pt = TARGET_EFFECTIVE_PT * shrink
+    smallest = None
+    for t in fig.findobj(Text):
+        if not t.get_visible() or not t.get_text().strip():
+            continue
+        fs = t.get_fontsize()
+        if fs < floor_pt:
+            fs = min(floor_pt, fs * MAX_BOOST)
+            t.set_fontsize(fs)
+        eff = fs / shrink
+        smallest = eff if smallest is None else min(smallest, eff)
+    for ax in fig.axes:
+        if ax.title.get_text().strip():
+            _set_title_pad_pt(ax, max(_title_pad_pt(ax), TITLE_PAD_PT))
+    return smallest
+
+# the deployment figure lives outside rl/ and needs the realcam20 checkpoints
+# named explicitly (its defaults are the original-camera ones)
+HANDOFF = ("handoff/analyze_handoff.py", [
+    "--jepa_ckpt", "checkpoints/jepa_realcam20.pt",
+    "--probe", "checkpoints/slab_probe_realcam20.pt",
+    "--policy", "export/policy_deploy_realcam20.pt",
+    "--sim_data", "/data/howard/isaac/datasets/chokepoint_v3_realcam20.npz",
+])
 
 SCRIPTS = [
     "rl/plot_fig1.py",
@@ -89,11 +144,17 @@ def apply_style() -> None:
     fonttype 42 embeds TrueType outlines instead of Type-3 bitmaps, which is
     what IEEE PDF eXpress checks for. Explicit per-call fontsizes inside the
     scripts are respected; only family/defaults change.
+
+    Every fallback here must be a real TrueType (glyf) face. Nimbus Roman was
+    in this list and is the default Times substitute on Linux, but it ships as
+    CFF OpenType: fonttype 42 then emits a CFF stream behind a TrueType font
+    descriptor, and validators report "mismatch between font type and embedded
+    font file". Liberation Serif is TrueType and metrically Times-compatible.
     """
     plt.rcParams.update({
         "font.family": "serif",
-        "font.serif": ["Times New Roman", "Nimbus Roman", "STIXGeneral",
-                       "DejaVu Serif"],
+        "font.serif": ["Times New Roman", "Liberation Serif", "Tinos",
+                       "STIXGeneral", "DejaVu Serif"],
         "mathtext.fontset": "stix",
         "pdf.fonttype": 42,
         "ps.fonttype": 42,
@@ -128,15 +189,47 @@ def _paper_savefig(self, fname, *args, **kwargs):
     for t in list(self.texts):
         if t.get_position()[1] < 0.13:
             t.remove()
-    boost = FONT_BOOST.get(clean, 1.0)
-    if boost > 1.0:
-        from matplotlib.text import Text
-        for t in self.findobj(Text):
-            t.set_fontsize(t.get_fontsize() * boost)
+    # per-seed index labels (s1/s2/s3) sit between the dots and the mean value
+    # and duplicate what the dots already show; dropping them is what buys the
+    # mean labels their clearance
+    for t in self.findobj(Text):
+        if re.fullmatch(r"s\d+", t.get_text().strip()):
+            t.set_visible(False)
+    smallest = _legibility_pass(self)
     OUT.mkdir(parents=True, exist_ok=True)
-    _orig_savefig(self, OUT / f"{clean}.pdf", bbox_inches="tight")
-    _orig_savefig(self, OUT / f"{clean}.png", dpi=300, bbox_inches="tight")
-    print(f"  paper: {clean}.pdf + .png")
+    # pad_inches keeps a tight bbox from cropping flush against the outermost
+    # label; 0.02 in is ~1.5 pt of margin at print size
+    save_kw = dict(bbox_inches="tight", pad_inches=0.12)
+    _orig_savefig(self, OUT / f"{clean}.pdf", **save_kw)
+    _orig_savefig(self, OUT / f"{clean}.png", dpi=300, **save_kw)
+    flag = "" if smallest is None or smallest >= 6.0 else "  << below 6 pt, needs redesign"
+    print(f"  paper: {clean}.pdf + .png   min {smallest:.1f} pt at full width{flag}")
+
+
+def check_embedded_fonts(paths):
+    """Report any PDF whose fonts are not embedded TrueType.
+
+    /FontFile2 is a TrueType stream; /FontFile3 is CFF (Type1C or OpenType)
+    and /FontFile is Type 1. A missing FontFile means Type 3, which PDF
+    eXpress rejects outright. Byte scanning is enough here and keeps this
+    check dependency-free.
+    """
+    bad = {}
+    for path in paths:
+        blob = path.read_bytes()
+        found = [m for m in (b"/FontFile3", b"/FontFile ", b"/FontFile\n",
+                             b"/CIDFontType0") if m in blob]
+        if b"/FontFile2" not in blob and b"/Font" in blob:
+            found.append(b"no TrueType stream")
+        if found:
+            bad[path.name] = sorted({m.decode().strip() for m in found})
+    if bad:
+        print("\nNON-TRUETYPE FONT DATA (PDF eXpress will flag these):")
+        for name, kinds in sorted(bad.items()):
+            print(f"  {name}: {', '.join(kinds)}")
+    else:
+        print(f"fonts: all {len(paths)} PDFs embed TrueType only")
+    return bad
 
 
 def main() -> None:
@@ -149,11 +242,11 @@ def main() -> None:
     Figure.savefig = _paper_savefig
 
     failures = []
-    for rel in SCRIPTS:
+    for rel, extra in [(s, []) for s in SCRIPTS] + [HANDOFF]:
         if args.only and args.only not in rel:
             continue
         print(f"== {rel}")
-        sys.argv = [rel]
+        sys.argv = [rel] + extra
         try:
             runpy.run_path(str(ROOT / rel), run_name="__main__")
         except Exception:
@@ -166,6 +259,8 @@ def main() -> None:
         print(f"\nFAILED: {failures}")
         sys.exit(1)
     print(f"\nall paper figures in {OUT}")
+    if check_embedded_fonts(sorted(OUT.glob("*.pdf"))):
+        sys.exit(1)
 
 
 if __name__ == "__main__":

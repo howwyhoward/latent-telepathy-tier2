@@ -389,7 +389,7 @@ def main():
     raw = results["raw_obs"]
     fig.text(0.5, 0.022,
              "* raw_obs seeds: " + " / ".join(f"{v:.2f}" for v in sorted(raw, reverse=True))
-             + " \u2014 one seed's decision entropy collapsed to ~10\u207b\u2076 a third of the way in and froze at chance. "
+             + " \u2014 one seed's decision entropy collapsed to ~$10^{-6}$ a third of the way in and froze at chance. "
                "The 186\u00d7 wider wire is the less reliable one to learn from.",
              ha="center", va="center", fontsize=8.2, color=NOTE_GRAY, style="italic")
 
