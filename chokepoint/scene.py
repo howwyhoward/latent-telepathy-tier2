@@ -32,7 +32,9 @@ from .geometry import (  # noqa: F401  (re-exported)
     BAFFLE_COLS,
     BAFFLE_L,
     BAFFLE_T,
+    CAM_FOCAL_MM,
     CAM_H,
+    CAM_ROT_ROS,
     HAZARD_H,
     ROBOT_SIZE,
     WALL_H,
@@ -222,13 +224,15 @@ def build_scene_cfg(
                 prim_path=f"{{ENV_REGEX_NS}}/{name.capitalize()}/cam",
                 # ros convention: +Z is the optical axis (view direction)
                 offset=TiledCameraCfg.OffsetCfg(
-                    pos=(0.16, 0.0, CAM_H), rot=(0.5, -0.5, 0.5, -0.5), convention="ros"
+                    pos=(0.16, 0.0, CAM_H), rot=CAM_ROT_ROS, convention="ros"
                 ),
                 update_period=0,
                 height=resolution,
                 width=resolution,
                 data_types=["rgb", "semantic_segmentation"],
-                spawn=sim_utils.PinholeCameraCfg(focal_length=12.0, clipping_range=(0.05, 30.0)),
+                spawn=sim_utils.PinholeCameraCfg(
+                    focal_length=CAM_FOCAL_MM, clipping_range=(0.05, 30.0)
+                ),
                 colorize_semantic_segmentation=False,
             ),
         )
@@ -247,14 +251,14 @@ def build_scene_cfg(
                 TiledCameraCfg(
                     prim_path=f"{{ENV_REGEX_NS}}/Probe{mouth.capitalize()}Cam",
                     offset=TiledCameraCfg.OffsetCfg(
-                        pos=(x, y, CAM_H), rot=(0.5, -0.5, 0.5, -0.5), convention="ros"
+                        pos=(x, y, CAM_H), rot=CAM_ROT_ROS, convention="ros"
                     ),
                     update_period=0,
                     height=resolution,
                     width=resolution,
                     data_types=["rgb", "semantic_segmentation"],
                     spawn=sim_utils.PinholeCameraCfg(
-                        focal_length=12.0, clipping_range=(0.05, 30.0)
+                        focal_length=CAM_FOCAL_MM, clipping_range=(0.05, 30.0)
                     ),
                     colorize_semantic_segmentation=False,
                 ),

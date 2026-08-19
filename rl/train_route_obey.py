@@ -415,6 +415,14 @@ def main():
             ]) + "\n")
             csv.flush()
 
+        # crash insurance: two machine outages have eaten full 3M-step runs
+        if args.save and iteration % 25 == 0:
+            Path(args.save).parent.mkdir(parents=True, exist_ok=True)
+            tmp = args.save + ".latest.tmp"
+            torch.save({"policy": policy.state_dict(), "args": vars(args),
+                        "iteration": iteration, "global_step": global_step}, tmp)
+            Path(tmp).rename(args.save + ".latest")
+
     # Obedience alone is gameable and was gamed: it scores the FIRST corridor
     # entered, so entering the commanded one and parking read 0.93 obedience at
     # 0.000 success (v2). Stage 2 swaps the command for the scout's message, so

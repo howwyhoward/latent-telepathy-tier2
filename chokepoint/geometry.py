@@ -27,7 +27,17 @@ from envs.map_generator import generate_chokepoint_map  # noqa: E402
 
 WALL_H = 0.5     # wall height (m)
 HAZARD_H = 0.05  # hazard slab height (m) — low slab, like Tier 1's
-CAM_H = 0.2      # camera height (m) — roughly RoboMaster S1 turret height
+# Camera constants aligned to the MEASURED RoboMaster retrofit (15 Aug 2026
+# handoff: pitch 2.1° below horizontal, effective HFOV of the square-cropped
+# 64×64 input 32.0° from a 54° lens; both validated against known-size pads).
+# Height: the handoff's tape-fit said 18 ± 1 cm but a direct ruler measurement
+# of the lens centre reads 20 cm — the ruler wins. Isaac's default 20.955 mm
+# horizontal aperture with focal 36.5 mm gives 2·atan(20.955/73) = 32.05°.
+CAM_H = 0.20     # camera height (m), ruler-verified on the robot
+CAM_FOCAL_MM = 36.5
+# ROS-convention orientation: forward (+X), pitched 2.1° below horizontal —
+# base (0.5,-0.5,0.5,-0.5) composed with R_x(-2.1°) in the optical frame.
+CAM_ROT_ROS = (0.490754, -0.509079, 0.509079, -0.490754)
 ROBOT_SIZE = (0.3, 0.24, 0.15)  # RoboMaster S1 footprint-ish (m)
 
 BAFFLE_COLS = (8, 10)

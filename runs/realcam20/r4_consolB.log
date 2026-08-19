@@ -1,0 +1,413 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /data/howard/isaac/IsaacLab/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /data/howard/isaac/envs/isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260819_115449.log
+2026-08-19T11:54:50Z [139ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:50Z [139ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:50Z [208ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-08-19T11:54:50Z [209ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-08-19T11:54:50Z [209ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-08-19T11:54:50Z [209ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-08-19T11:54:50Z [471ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:50Z [471ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:50Z [659ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [659ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-19T11:54:50Z [659ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [659ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Skipping NVIDIA GPU due CUDA being in bad state: NVIDIA RTX 6000 Ada Generation
+2026-08-19T11:54:50Z [660ms] [Warning] [gpu.foundation.plugin] Please restart your system if CUDA is known to work in your system.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 550.90.12     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | df04a158.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 5cfd6483.. |
+|     |                                  |        |     |            | 2c        |            |
+|---------------------------------------------------------------------------------------------|
+| 2   | NVIDIA RTX 6000 Ada Generation   | Yes: 0 |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | bdb0e57d.. |
+|     |                                  |        |     |            | 41        |            |
+|---------------------------------------------------------------------------------------------|
+| 3   | NVIDIA RTX 6000 Ada Generation   |        |     | 49386   MB | 10de      | 0          |
+|     |                                  |        |     |            | 26b1      | 21e14e0d.. |
+|     |                                  |        |     |            | 61        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-181-generic
+| Processor: AMD Ryzen Threadripper PRO 5995WX 64-Cores
+| Cores: 64 | Logical Cores: 128
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 515582 | Free Memory: 498974
+| Total Page/Swap (MB): 10239 | Free Page/Swap: 10239
+|---------------------------------------------------------------------------------------------|
+2026-08-19T11:54:51Z [1,771ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,771ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,780ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,780ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,786ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,786ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,794ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,794ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,795ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,795ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,796ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-08-19T11:54:51Z [1,796ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-08-19T11:54:51Z [1,996ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-08-19T11:54:52Z [2,292ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-08-19T11:54:52Z [2,302ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-08-19T11:54:53Z [4,080ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-08-19T11:54:54Z [4,225ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-08-19T11:54:54Z [4,225ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-08-19T11:54:54Z [4,226ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-08-19T11:54:55Z [5,550ms] [Warning] [omni.kvdb.plugin] Disabling key-value database because another kit process is locking it
+2026-08-19T11:54:57Z [7,750ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+2026-08-19T11:54:58Z [8,220ms] [Warning] [isaaclab.envs.direct_marl_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m========================================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /data/howard/isaac/tmp/isaaclab/logs/isaaclab_2026-08-19_11-54-58.log[0m
+[36m========================================================================================================[0m
+
+[33m11:54:58 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.016666666666666666
+	Rendering step-size   : 0.1
+	Environment step-size : 0.1
+[INFO]: Time taken for scene creation : 1.372666 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 64
+	Environment spacing   : 12.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[INFO]: Time taken for simulation start : 2.902819 seconds
+[INFO]: Completed setting up the environment...
+init_nav: loaded 19/19 tensors from runs/realcam20/r2A_rescue6M.pt; widened []
+log_std frozen at [0.607, 0.607, 0.607]
+route obedience: trainable=75,140 (encoder frozen)  wrong_corridor=0.0/step  route_shaping=True  abort_wrong=True
+2026-08-19T11:55:06Z [16,335ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[obey] iter   1/366  step     8192  obey top 0.00/bot nan  succ top 0.00/bot nan  | canonical obey 0.00/nan succ 0.00/nan  approx_kl 0.2532  SPS 1105
+[obey] iter   2/366  step    16384  obey top 0.67/bot 1.00  succ top 0.67/bot 1.00  | canonical obey 0.00/nan succ 0.00/nan  approx_kl 0.0538  SPS 1101
+[obey] iter   3/366  step    24576  obey top 0.56/bot 1.00  succ top 0.56/bot 1.00  | canonical obey 0.12/1.00 succ 0.12/1.00  approx_kl 0.0393  SPS 1089
+[obey] iter   4/366  step    32768  obey top 0.63/bot 1.00  succ top 0.63/bot 1.00  | canonical obey 0.29/1.00 succ 0.29/1.00  approx_kl 0.0895  SPS 1089
+[obey] iter   5/366  step    40960  obey top 0.73/bot 1.00  succ top 0.54/bot 0.80  | canonical obey 0.45/1.00 succ 0.20/0.61  approx_kl 0.0809  SPS 1089
+[obey] iter   6/366  step    49152  obey top 0.74/bot 1.00  succ top 0.58/bot 0.79  | canonical obey 0.43/1.00 succ 0.22/0.58  approx_kl 0.0932  SPS 1084
+[obey] iter   7/366  step    57344  obey top 0.76/bot 1.00  succ top 0.58/bot 0.79  | canonical obey 0.44/1.00 succ 0.19/0.52  approx_kl 0.0823  SPS 1082
+[obey] iter   8/366  step    65536  obey top 0.79/bot 1.00  succ top 0.57/bot 0.76  | canonical obey 0.50/1.00 succ 0.17/0.50  approx_kl 0.0442  SPS 1084
+[obey] iter   9/366  step    73728  obey top 0.81/bot 0.99  succ top 0.59/bot 0.74  | canonical obey 0.57/0.97 succ 0.22/0.47  approx_kl 0.0419  SPS 1083
+[obey] iter  10/366  step    81920  obey top 0.83/bot 0.99  succ top 0.59/bot 0.72  | canonical obey 0.64/0.98 succ 0.26/0.49  approx_kl 0.0751  SPS 1081
+[obey] iter  11/366  step    90112  obey top 0.84/bot 0.99  succ top 0.59/bot 0.72  | canonical obey 0.66/0.98 succ 0.26/0.50  approx_kl 0.0622  SPS 1082
+[obey] iter  12/366  step    98304  obey top 0.85/bot 0.99  succ top 0.60/bot 0.74  | canonical obey 0.68/0.98 succ 0.26/0.53  approx_kl 0.0529  SPS 1082
+[obey] iter  13/366  step   106496  obey top 0.86/bot 0.99  succ top 0.59/bot 0.73  | canonical obey 0.71/0.98 succ 0.26/0.52  approx_kl 0.0626  SPS 1083
+[obey] iter  14/366  step   114688  obey top 0.87/bot 0.99  succ top 0.59/bot 0.71  | canonical obey 0.73/0.98 succ 0.29/0.48  approx_kl 0.0502  SPS 1083
+[obey] iter  15/366  step   122880  obey top 0.88/bot 0.99  succ top 0.58/bot 0.69  | canonical obey 0.76/0.99 succ 0.30/0.49  approx_kl 0.0337  SPS 1080
+[obey] iter  16/366  step   131072  obey top 0.89/bot 0.99  succ top 0.59/bot 0.68  | canonical obey 0.78/0.99 succ 0.32/0.47  approx_kl 0.0730  SPS 1078
+[obey] iter  17/366  step   139264  obey top 0.90/bot 0.99  succ top 0.59/bot 0.68  | canonical obey 0.80/0.99 succ 0.34/0.46  approx_kl 0.0292  SPS 1078
+[obey] iter  18/366  step   147456  obey top 0.90/bot 0.98  succ top 0.58/bot 0.66  | canonical obey 0.82/0.96 succ 0.33/0.45  approx_kl 0.0317  SPS 1078
+[obey] iter  19/366  step   155648  obey top 0.91/bot 0.98  succ top 0.58/bot 0.66  | canonical obey 0.82/0.96 succ 0.32/0.45  approx_kl 0.0545  SPS 1078
+[obey] iter  20/366  step   163840  obey top 0.91/bot 0.97  succ top 0.57/bot 0.66  | canonical obey 0.83/0.94 succ 0.32/0.44  approx_kl 0.0373  SPS 1078
+[obey] iter  21/366  step   172032  obey top 0.94/bot 0.96  succ top 0.57/bot 0.65  | canonical obey 0.83/0.92 succ 0.33/0.44  approx_kl 0.0315  SPS 1078
+[obey] iter  22/366  step   180224  obey top 0.95/bot 0.95  succ top 0.57/bot 0.64  | canonical obey 0.84/0.90 succ 0.34/0.44  approx_kl 0.0471  SPS 1078
+[obey] iter  23/366  step   188416  obey top 0.96/bot 0.95  succ top 0.58/bot 0.62  | canonical obey 0.85/0.91 succ 0.35/0.45  approx_kl 0.0465  SPS 1078
+[obey] iter  24/366  step   196608  obey top 0.98/bot 0.94  succ top 0.59/bot 0.61  | canonical obey 0.86/0.90 succ 0.36/0.45  approx_kl 0.0558  SPS 1077
+[obey] iter  25/366  step   204800  obey top 0.99/bot 0.94  succ top 0.59/bot 0.61  | canonical obey 0.87/0.91 succ 0.35/0.45  approx_kl 0.0705  SPS 1078
+[obey] iter  26/366  step   212992  obey top 0.99/bot 0.94  succ top 0.59/bot 0.64  | canonical obey 0.87/0.90 succ 0.35/0.46  approx_kl 0.0187  SPS 1077
+[obey] iter  27/366  step   221184  obey top 0.99/bot 0.93  succ top 0.61/bot 0.63  | canonical obey 0.87/0.88 succ 0.36/0.45  approx_kl 0.0653  SPS 1078
+[obey] iter  28/366  step   229376  obey top 0.99/bot 0.93  succ top 0.61/bot 0.65  | canonical obey 0.88/0.89 succ 0.37/0.44  approx_kl 0.0872  SPS 1078
+[obey] iter  29/366  step   237568  obey top 1.00/bot 0.92  succ top 0.61/bot 0.65  | canonical obey 0.88/0.88 succ 0.37/0.44  approx_kl 0.0993  SPS 1077
+[obey] iter  30/366  step   245760  obey top 1.00/bot 0.92  succ top 0.61/bot 0.65  | canonical obey 0.88/0.87 succ 0.37/0.44  approx_kl 0.0431  SPS 1078
+[obey] iter  31/366  step   253952  obey top 1.00/bot 0.92  succ top 0.60/bot 0.64  | canonical obey 0.89/0.88 succ 0.36/0.44  approx_kl 0.0455  SPS 1078
+[obey] iter  32/366  step   262144  obey top 1.00/bot 0.92  succ top 0.60/bot 0.63  | canonical obey 0.89/0.88 succ 0.35/0.44  approx_kl 0.0906  SPS 1078
+[obey] iter  33/366  step   270336  obey top 1.00/bot 0.91  succ top 0.59/bot 0.65  | canonical obey 0.90/0.88 succ 0.34/0.44  approx_kl 0.0235  SPS 1078
+[obey] iter  34/366  step   278528  obey top 1.00/bot 0.91  succ top 0.60/bot 0.67  | canonical obey 0.90/0.88 succ 0.34/0.44  approx_kl 0.0675  SPS 1077
+[obey] iter  35/366  step   286720  obey top 1.00/bot 0.91  succ top 0.59/bot 0.67  | canonical obey 0.90/0.88 succ 0.34/0.44  approx_kl 0.2094  SPS 1076
+[obey] iter  36/366  step   294912  obey top 1.00/bot 0.91  succ top 0.61/bot 0.69  | canonical obey 0.91/0.88 succ 0.34/0.45  approx_kl 0.7272  SPS 1075
+[obey] iter  37/366  step   303104  obey top 1.00/bot 0.90  succ top 0.59/bot 0.69  | canonical obey 0.91/0.86 succ 0.34/0.45  approx_kl 0.0334  SPS 1074
+[obey] iter  38/366  step   311296  obey top 1.00/bot 0.90  succ top 0.61/bot 0.68  | canonical obey 0.91/0.85 succ 0.34/0.44  approx_kl 0.0262  SPS 1073
+[obey] iter  39/366  step   319488  obey top 1.00/bot 0.90  succ top 0.61/bot 0.68  | canonical obey 0.91/0.85 succ 0.33/0.43  approx_kl 0.0882  SPS 1073
+[obey] iter  40/366  step   327680  obey top 1.00/bot 0.89  succ top 0.59/bot 0.67  | canonical obey 0.91/0.83 succ 0.33/0.41  approx_kl 0.0792  SPS 1072
+[obey] iter  41/366  step   335872  obey top 1.00/bot 0.86  succ top 0.59/bot 0.65  | canonical obey 0.92/0.81 succ 0.34/0.38  approx_kl 0.0921  SPS 1071
+[obey] iter  42/366  step   344064  obey top 1.00/bot 0.83  succ top 0.57/bot 0.64  | canonical obey 0.95/0.78 succ 0.33/0.39  approx_kl 0.0546  SPS 1069
+[obey] iter  43/366  step   352256  obey top 1.00/bot 0.81  succ top 0.56/bot 0.63  | canonical obey 0.96/0.74 succ 0.32/0.39  approx_kl 0.0328  SPS 1068
+[obey] iter  44/366  step   360448  obey top 1.00/bot 0.81  succ top 0.56/bot 0.64  | canonical obey 0.97/0.73 succ 0.32/0.39  approx_kl 0.0577  SPS 1068
+[obey] iter  45/366  step   368640  obey top 1.00/bot 0.80  succ top 0.54/bot 0.64  | canonical obey 0.99/0.72 succ 0.32/0.39  approx_kl 0.0485  SPS 1068
+[obey] iter  46/366  step   376832  obey top 1.00/bot 0.80  succ top 0.55/bot 0.62  | canonical obey 0.99/0.71 succ 0.33/0.38  approx_kl 0.0612  SPS 1068
+[obey] iter  47/366  step   385024  obey top 1.00/bot 0.78  succ top 0.54/bot 0.62  | canonical obey 1.00/0.69 succ 0.32/0.37  approx_kl 0.0844  SPS 1068
+[obey] iter  48/366  step   393216  obey top 1.00/bot 0.76  succ top 0.55/bot 0.61  | canonical obey 1.00/0.67 succ 0.32/0.35  approx_kl 0.0265  SPS 1068
+[obey] iter  49/366  step   401408  obey top 1.00/bot 0.76  succ top 0.56/bot 0.62  | canonical obey 1.00/0.67 succ 0.32/0.35  approx_kl 0.0414  SPS 1068
+[obey] iter  50/366  step   409600  obey top 1.00/bot 0.74  succ top 0.56/bot 0.59  | canonical obey 1.00/0.64 succ 0.32/0.35  approx_kl 0.0132  SPS 1068
+[obey] iter  51/366  step   417792  obey top 1.00/bot 0.73  succ top 0.56/bot 0.59  | canonical obey 1.00/0.64 succ 0.32/0.35  approx_kl 0.1459  SPS 1067
+[obey] iter  52/366  step   425984  obey top 1.00/bot 0.73  succ top 0.58/bot 0.58  | canonical obey 1.00/0.64 succ 0.32/0.35  approx_kl 0.2771  SPS 1068
+[obey] iter  53/366  step   434176  obey top 1.00/bot 0.73  succ top 0.57/bot 0.57  | canonical obey 1.00/0.63 succ 0.31/0.34  approx_kl 0.2662  SPS 1067
+[obey] iter  54/366  step   442368  obey top 1.00/bot 0.74  succ top 0.57/bot 0.57  | canonical obey 1.00/0.63 succ 0.29/0.35  approx_kl 0.1532  SPS 1067
+[obey] iter  55/366  step   450560  obey top 1.00/bot 0.73  succ top 0.56/bot 0.56  | canonical obey 1.00/0.61 succ 0.28/0.34  approx_kl 0.2211  SPS 1067
+[obey] iter  56/366  step   458752  obey top 1.00/bot 0.72  succ top 0.56/bot 0.56  | canonical obey 1.00/0.59 succ 0.28/0.33  approx_kl 0.0398  SPS 1066
+[obey] iter  57/366  step   466944  obey top 1.00/bot 0.70  succ top 0.56/bot 0.52  | canonical obey 1.00/0.57 succ 0.27/0.32  approx_kl 0.0472  SPS 1066
+[obey] iter  58/366  step   475136  obey top 1.00/bot 0.68  succ top 0.55/bot 0.51  | canonical obey 1.00/0.54 succ 0.26/0.29  approx_kl 0.0611  SPS 1065
+[obey] iter  59/366  step   483328  obey top 1.00/bot 0.67  succ top 0.55/bot 0.49  | canonical obey 1.00/0.51 succ 0.26/0.27  approx_kl 0.1603  SPS 1065
+[obey] iter  60/366  step   491520  obey top 1.00/bot 0.68  succ top 0.55/bot 0.49  | canonical obey 1.00/0.49 succ 0.24/0.26  approx_kl 0.0327  SPS 1065
+[obey] iter  61/366  step   499712  obey top 1.00/bot 0.63  succ top 0.55/bot 0.46  | canonical obey 1.00/0.45 succ 0.24/0.23  approx_kl 0.0433  SPS 1065
+[obey] iter  62/366  step   507904  obey top 1.00/bot 0.62  succ top 0.50/bot 0.44  | canonical obey 1.00/0.41 succ 0.23/0.22  approx_kl 0.0429  SPS 1065
+[obey] iter  63/366  step   516096  obey top 1.00/bot 0.60  succ top 0.51/bot 0.43  | canonical obey 1.00/0.39 succ 0.21/0.20  approx_kl 0.0928  SPS 1065
+[obey] iter  64/366  step   524288  obey top 1.00/bot 0.61  succ top 0.50/bot 0.44  | canonical obey 1.00/0.38 succ 0.21/0.20  approx_kl 0.1990  SPS 1064
+[obey] iter  65/366  step   532480  obey top 1.00/bot 0.59  succ top 0.51/bot 0.43  | canonical obey 1.00/0.35 succ 0.23/0.18  approx_kl 0.0998  SPS 1064
+[obey] iter  66/366  step   540672  obey top 1.00/bot 0.57  succ top 0.50/bot 0.42  | canonical obey 1.00/0.32 succ 0.24/0.15  approx_kl 0.0307  SPS 1063
+[obey] iter  67/366  step   548864  obey top 1.00/bot 0.52  succ top 0.48/bot 0.40  | canonical obey 1.00/0.28 succ 0.21/0.14  approx_kl 0.0244  SPS 1062
+[obey] iter  68/366  step   557056  obey top 1.00/bot 0.51  succ top 0.46/bot 0.41  | canonical obey 1.00/0.26 succ 0.21/0.13  approx_kl 0.0248  SPS 1061
+[obey] iter  69/366  step   565248  obey top 1.00/bot 0.54  succ top 0.48/bot 0.46  | canonical obey 1.00/0.24 succ 0.20/0.12  approx_kl 0.0294  SPS 1061
+[obey] iter  70/366  step   573440  obey top 1.00/bot 0.55  succ top 0.50/bot 0.48  | canonical obey 1.00/0.23 succ 0.20/0.12  approx_kl 0.0295  SPS 1060
+[obey] iter  71/366  step   581632  obey top 1.00/bot 0.55  succ top 0.53/bot 0.48  | canonical obey 1.00/0.23 succ 0.20/0.12  approx_kl 0.0208  SPS 1059
+[obey] iter  72/366  step   589824  obey top 1.00/bot 0.56  succ top 0.54/bot 0.48  | canonical obey 1.00/0.23 succ 0.20/0.10  approx_kl 0.0226  SPS 1059
+[obey] iter  73/366  step   598016  obey top 1.00/bot 0.57  succ top 0.55/bot 0.48  | canonical obey 1.00/0.23 succ 0.20/0.10  approx_kl 0.0484  SPS 1059
+[obey] iter  74/366  step   606208  obey top 1.00/bot 0.57  succ top 0.56/bot 0.48  | canonical obey 1.00/0.21 succ 0.21/0.09  approx_kl 0.0775  SPS 1059
+[obey] iter  75/366  step   614400  obey top 1.00/bot 0.59  succ top 0.56/bot 0.51  | canonical obey 1.00/0.20 succ 0.21/0.09  approx_kl 0.0407  SPS 1059
+[obey] iter  76/366  step   622592  obey top 1.00/bot 0.60  succ top 0.58/bot 0.51  | canonical obey 1.00/0.20 succ 0.21/0.09  approx_kl 0.0598  SPS 1059
+[obey] iter  77/366  step   630784  obey top 1.00/bot 0.60  succ top 0.58/bot 0.52  | canonical obey 1.00/0.19 succ 0.21/0.07  approx_kl 0.0364  SPS 1059
+[obey] iter  78/366  step   638976  obey top 1.00/bot 0.59  succ top 0.58/bot 0.51  | canonical obey 1.00/0.18 succ 0.21/0.07  approx_kl 0.1347  SPS 1058
+[obey] iter  79/366  step   647168  obey top 1.00/bot 0.58  succ top 0.57/bot 0.51  | canonical obey 1.00/0.17 succ 0.20/0.06  approx_kl 0.0216  SPS 1058
+[obey] iter  80/366  step   655360  obey top 1.00/bot 0.59  succ top 0.56/bot 0.51  | canonical obey 1.00/0.17 succ 0.19/0.06  approx_kl 0.0353  SPS 1058
+[obey] iter  81/366  step   663552  obey top 1.00/bot 0.61  succ top 0.55/bot 0.52  | canonical obey 1.00/0.15 succ 0.18/0.05  approx_kl 0.0505  SPS 1057
+[obey] iter  82/366  step   671744  obey top 1.00/bot 0.61  succ top 0.56/bot 0.52  | canonical obey 1.00/0.15 succ 0.17/0.04  approx_kl 0.0355  SPS 1057
+[obey] iter  83/366  step   679936  obey top 1.00/bot 0.62  succ top 0.55/bot 0.52  | canonical obey 1.00/0.14 succ 0.16/0.04  approx_kl 0.0234  SPS 1057
+[obey] iter  84/366  step   688128  obey top 1.00/bot 0.61  succ top 0.54/bot 0.49  | canonical obey 1.00/0.15 succ 0.15/0.04  approx_kl 0.0452  SPS 1057
+[obey] iter  85/366  step   696320  obey top 1.00/bot 0.58  succ top 0.54/bot 0.45  | canonical obey 1.00/0.14 succ 0.16/0.04  approx_kl 0.0473  SPS 1057
+[obey] iter  86/366  step   704512  obey top 1.00/bot 0.58  succ top 0.52/bot 0.45  | canonical obey 1.00/0.13 succ 0.16/0.04  approx_kl 0.1093  SPS 1056
+[obey] iter  87/366  step   712704  obey top 1.00/bot 0.57  succ top 0.51/bot 0.43  | canonical obey 1.00/0.14 succ 0.16/0.04  approx_kl 0.2298  SPS 1057
+[obey] iter  88/366  step   720896  obey top 1.00/bot 0.58  succ top 0.49/bot 0.44  | canonical obey 1.00/0.13 succ 0.15/0.04  approx_kl 0.0573  SPS 1056
+[obey] iter  89/366  step   729088  obey top 1.00/bot 0.59  succ top 0.49/bot 0.45  | canonical obey 1.00/0.13 succ 0.15/0.04  approx_kl 0.0301  SPS 1057
+[obey] iter  90/366  step   737280  obey top 1.00/bot 0.59  succ top 0.47/bot 0.47  | canonical obey 1.00/0.13 succ 0.14/0.04  approx_kl 0.0485  SPS 1057
+[obey] iter  91/366  step   745472  obey top 1.00/bot 0.60  succ top 0.45/bot 0.46  | canonical obey 1.00/0.14 succ 0.14/0.04  approx_kl 0.0648  SPS 1057
+[obey] iter  92/366  step   753664  obey top 1.00/bot 0.59  succ top 0.45/bot 0.46  | canonical obey 1.00/0.13 succ 0.14/0.04  approx_kl 0.0413  SPS 1057
+[obey] iter  93/366  step   761856  obey top 1.00/bot 0.59  succ top 0.43/bot 0.45  | canonical obey 1.00/0.13 succ 0.14/0.04  approx_kl 0.0229  SPS 1057
+[obey] iter  94/366  step   770048  obey top 1.00/bot 0.60  succ top 0.43/bot 0.45  | canonical obey 1.00/0.14 succ 0.13/0.04  approx_kl 0.0282  SPS 1057
+[obey] iter  95/366  step   778240  obey top 1.00/bot 0.59  succ top 0.42/bot 0.43  | canonical obey 1.00/0.14 succ 0.11/0.04  approx_kl 0.0312  SPS 1058
+[obey] iter  96/366  step   786432  obey top 1.00/bot 0.59  succ top 0.42/bot 0.43  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.1127  SPS 1057
+[obey] iter  97/366  step   794624  obey top 1.00/bot 0.60  succ top 0.42/bot 0.45  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.0428  SPS 1057
+[obey] iter  98/366  step   802816  obey top 1.00/bot 0.60  succ top 0.41/bot 0.45  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.0640  SPS 1057
+[obey] iter  99/366  step   811008  obey top 1.00/bot 0.58  succ top 0.41/bot 0.43  | canonical obey 1.00/0.14 succ 0.11/0.04  approx_kl 0.2803  SPS 1057
+[obey] iter 100/366  step   819200  obey top 1.00/bot 0.58  succ top 0.40/bot 0.44  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.1482  SPS 1057
+[obey] iter 101/366  step   827392  obey top 1.00/bot 0.58  succ top 0.39/bot 0.46  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.0965  SPS 1056
+[obey] iter 102/366  step   835584  obey top 1.00/bot 0.60  succ top 0.38/bot 0.46  | canonical obey 1.00/0.13 succ 0.10/0.04  approx_kl 0.1565  SPS 1056
+[obey] iter 103/366  step   843776  obey top 1.00/bot 0.58  succ top 0.38/bot 0.45  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.0220  SPS 1056
+[obey] iter 104/366  step   851968  obey top 1.00/bot 0.56  succ top 0.37/bot 0.42  | canonical obey 1.00/0.14 succ 0.10/0.04  approx_kl 0.0392  SPS 1056
+[obey] iter 105/366  step   860160  obey top 1.00/bot 0.56  succ top 0.37/bot 0.41  | canonical obey 1.00/0.13 succ 0.09/0.04  approx_kl 0.0419  SPS 1056
+[obey] iter 106/366  step   868352  obey top 1.00/bot 0.56  succ top 0.36/bot 0.43  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.2580  SPS 1056
+[obey] iter 107/366  step   876544  obey top 1.00/bot 0.57  succ top 0.36/bot 0.45  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.0297  SPS 1056
+[obey] iter 108/366  step   884736  obey top 1.00/bot 0.56  succ top 0.36/bot 0.45  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.0397  SPS 1056
+[obey] iter 109/366  step   892928  obey top 1.00/bot 0.56  succ top 0.36/bot 0.45  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.0970  SPS 1055
+[obey] iter 110/366  step   901120  obey top 1.00/bot 0.56  succ top 0.36/bot 0.46  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.0333  SPS 1056
+[obey] iter 111/366  step   909312  obey top 1.00/bot 0.55  succ top 0.36/bot 0.45  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.1021  SPS 1056
+[obey] iter 112/366  step   917504  obey top 1.00/bot 0.56  succ top 0.38/bot 0.45  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.1034  SPS 1056
+[obey] iter 113/366  step   925696  obey top 1.00/bot 0.57  succ top 0.37/bot 0.46  | canonical obey 1.00/0.12 succ 0.09/0.03  approx_kl 0.0418  SPS 1056
+[obey] iter 114/366  step   933888  obey top 1.00/bot 0.57  succ top 0.35/bot 0.45  | canonical obey 1.00/0.10 succ 0.09/0.02  approx_kl 0.0169  SPS 1056
+[obey] iter 115/366  step   942080  obey top 1.00/bot 0.58  succ top 0.35/bot 0.46  | canonical obey 1.00/0.10 succ 0.09/0.02  approx_kl 0.0341  SPS 1056
+[obey] iter 116/366  step   950272  obey top 1.00/bot 0.58  succ top 0.36/bot 0.46  | canonical obey 1.00/0.10 succ 0.09/0.02  approx_kl 0.2211  SPS 1056
+[obey] iter 117/366  step   958464  obey top 1.00/bot 0.57  succ top 0.35/bot 0.45  | canonical obey 1.00/0.10 succ 0.09/0.02  approx_kl 0.1723  SPS 1056
+[obey] iter 118/366  step   966656  obey top 1.00/bot 0.58  succ top 0.36/bot 0.47  | canonical obey 1.00/0.09 succ 0.09/0.02  approx_kl 0.0322  SPS 1056
+[obey] iter 119/366  step   974848  obey top 1.00/bot 0.57  succ top 0.35/bot 0.46  | canonical obey 1.00/0.08 succ 0.09/0.02  approx_kl 0.0401  SPS 1056
+[obey] iter 120/366  step   983040  obey top 1.00/bot 0.58  succ top 0.35/bot 0.47  | canonical obey 1.00/0.08 succ 0.09/0.02  approx_kl 0.0392  SPS 1056
+[obey] iter 121/366  step   991232  obey top 1.00/bot 0.56  succ top 0.34/bot 0.44  | canonical obey 1.00/0.07 succ 0.08/0.02  approx_kl 0.0974  SPS 1056
+[obey] iter 122/366  step   999424  obey top 1.00/bot 0.54  succ top 0.35/bot 0.43  | canonical obey 1.00/0.07 succ 0.08/0.02  approx_kl 0.0193  SPS 1056
+[obey] iter 123/366  step  1007616  obey top 1.00/bot 0.53  succ top 0.36/bot 0.42  | canonical obey 1.00/0.06 succ 0.08/0.01  approx_kl 0.0214  SPS 1056
+[obey] iter 124/366  step  1015808  obey top 1.00/bot 0.54  succ top 0.36/bot 0.43  | canonical obey 1.00/0.06 succ 0.07/0.01  approx_kl 0.0835  SPS 1056
+[obey] iter 125/366  step  1024000  obey top 1.00/bot 0.53  succ top 0.36/bot 0.43  | canonical obey 1.00/0.06 succ 0.07/0.01  approx_kl 0.0736  SPS 1056
+[obey] iter 126/366  step  1032192  obey top 1.00/bot 0.52  succ top 0.37/bot 0.41  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0576  SPS 1056
+[obey] iter 127/366  step  1040384  obey top 1.00/bot 0.49  succ top 0.39/bot 0.40  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0507  SPS 1055
+[obey] iter 128/366  step  1048576  obey top 1.00/bot 0.47  succ top 0.38/bot 0.39  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0113  SPS 1055
+[obey] iter 129/366  step  1056768  obey top 1.00/bot 0.46  succ top 0.39/bot 0.37  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.3202  SPS 1055
+[obey] iter 130/366  step  1064960  obey top 1.00/bot 0.47  succ top 0.39/bot 0.39  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0323  SPS 1054
+[obey] iter 131/366  step  1073152  obey top 1.00/bot 0.47  succ top 0.37/bot 0.40  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0278  SPS 1054
+[obey] iter 132/366  step  1081344  obey top 1.00/bot 0.47  succ top 0.40/bot 0.39  | canonical obey 1.00/0.04 succ 0.07/0.01  approx_kl 0.0607  SPS 1053
+[obey] iter 133/366  step  1089536  obey top 1.00/bot 0.45  succ top 0.40/bot 0.35  | canonical obey 1.00/0.03 succ 0.07/0.01  approx_kl 0.0241  SPS 1053
+[obey] iter 134/366  step  1097728  obey top 1.00/bot 0.47  succ top 0.42/bot 0.36  | canonical obey 1.00/0.03 succ 0.07/0.01  approx_kl 0.0187  SPS 1053
+[obey] iter 135/366  step  1105920  obey top 1.00/bot 0.46  succ top 0.42/bot 0.35  | canonical obey 1.00/0.03 succ 0.07/0.01  approx_kl 0.0293  SPS 1053
+[obey] iter 136/366  step  1114112  obey top 1.00/bot 0.46  succ top 0.42/bot 0.36  | canonical obey 1.00/0.03 succ 0.07/0.01  approx_kl 0.0243  SPS 1054
+[obey] iter 137/366  step  1122304  obey top 1.00/bot 0.47  succ top 0.42/bot 0.36  | canonical obey 1.00/0.03 succ 0.06/0.01  approx_kl 0.0195  SPS 1054
+[obey] iter 138/366  step  1130496  obey top 1.00/bot 0.46  succ top 0.42/bot 0.35  | canonical obey 1.00/0.03 succ 0.06/0.01  approx_kl 0.0187  SPS 1054
+[obey] iter 139/366  step  1138688  obey top 1.00/bot 0.46  succ top 0.42/bot 0.35  | canonical obey 1.00/0.03 succ 0.06/0.01  approx_kl 0.0252  SPS 1054
+[obey] iter 140/366  step  1146880  obey top 1.00/bot 0.47  succ top 0.41/bot 0.38  | canonical obey 1.00/0.03 succ 0.06/0.01  approx_kl 0.0572  SPS 1054
+[obey] iter 141/366  step  1155072  obey top 1.00/bot 0.49  succ top 0.42/bot 0.39  | canonical obey 1.00/0.03 succ 0.06/0.01  approx_kl 0.0635  SPS 1054
+[obey] iter 142/366  step  1163264  obey top 1.00/bot 0.52  succ top 0.41/bot 0.41  | canonical obey 1.00/0.03 succ 0.05/0.01  approx_kl 0.0160  SPS 1054
+[obey] iter 143/366  step  1171456  obey top 1.00/bot 0.51  succ top 0.39/bot 0.40  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0131  SPS 1054
+[obey] iter 144/366  step  1179648  obey top 1.00/bot 0.51  succ top 0.39/bot 0.40  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0545  SPS 1054
+[obey] iter 145/366  step  1187840  obey top 1.00/bot 0.52  succ top 0.38/bot 0.41  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.1230  SPS 1054
+[obey] iter 146/366  step  1196032  obey top 1.00/bot 0.52  succ top 0.37/bot 0.41  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0296  SPS 1054
+[obey] iter 147/366  step  1204224  obey top 1.00/bot 0.54  succ top 0.39/bot 0.42  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0291  SPS 1054
+[obey] iter 148/366  step  1212416  obey top 1.00/bot 0.52  succ top 0.38/bot 0.40  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0399  SPS 1054
+[obey] iter 149/366  step  1220608  obey top 1.00/bot 0.51  succ top 0.35/bot 0.40  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0418  SPS 1054
+[obey] iter 150/366  step  1228800  obey top 1.00/bot 0.51  succ top 0.35/bot 0.40  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0154  SPS 1054
+[obey] iter 151/366  step  1236992  obey top 1.00/bot 0.51  succ top 0.35/bot 0.39  | canonical obey 1.00/0.03 succ 0.04/0.01  approx_kl 0.0533  SPS 1054
+[obey] iter 152/366  step  1245184  obey top 1.00/bot 0.50  succ top 0.34/bot 0.38  | canonical obey 1.00/0.04 succ 0.04/0.01  approx_kl 0.0291  SPS 1054
+[obey] iter 153/366  step  1253376  obey top 1.00/bot 0.50  succ top 0.32/bot 0.38  | canonical obey 1.00/0.04 succ 0.04/0.01  approx_kl 0.0149  SPS 1054
+[obey] iter 154/366  step  1261568  obey top 1.00/bot 0.50  succ top 0.32/bot 0.39  | canonical obey 1.00/0.04 succ 0.04/0.01  approx_kl 0.1396  SPS 1054
+[obey] iter 155/366  step  1269760  obey top 1.00/bot 0.52  succ top 0.33/bot 0.40  | canonical obey 1.00/0.04 succ 0.04/0.01  approx_kl 0.0253  SPS 1054
+[obey] iter 156/366  step  1277952  obey top 1.00/bot 0.52  succ top 0.33/bot 0.40  | canonical obey 1.00/0.04 succ 0.04/0.01  approx_kl 0.1289  SPS 1054
+[obey] iter 157/366  step  1286144  obey top 1.00/bot 0.51  succ top 0.32/bot 0.37  | canonical obey 1.00/0.04 succ 0.03/0.01  approx_kl 0.0461  SPS 1054
+[obey] iter 158/366  step  1294336  obey top 1.00/bot 0.51  succ top 0.30/bot 0.37  | canonical obey 1.00/0.04 succ 0.03/0.01  approx_kl 0.0142  SPS 1054
+[obey] iter 159/366  step  1302528  obey top 1.00/bot 0.52  succ top 0.30/bot 0.38  | canonical obey 1.00/0.04 succ 0.03/0.01  approx_kl 0.0458  SPS 1054
+[obey] iter 160/366  step  1310720  obey top 1.00/bot 0.53  succ top 0.32/bot 0.39  | canonical obey 1.00/0.04 succ 0.03/0.01  approx_kl 0.0457  SPS 1053
+[obey] iter 161/366  step  1318912  obey top 1.00/bot 0.50  succ top 0.31/bot 0.37  | canonical obey 1.00/0.03 succ 0.03/0.00  approx_kl 0.0452  SPS 1053
+[obey] iter 162/366  step  1327104  obey top 1.00/bot 0.50  succ top 0.32/bot 0.36  | canonical obey 1.00/0.03 succ 0.04/0.00  approx_kl 0.0153  SPS 1053
+[obey] iter 163/366  step  1335296  obey top 1.00/bot 0.49  succ top 0.32/bot 0.35  | canonical obey 1.00/0.03 succ 0.03/0.00  approx_kl 0.1238  SPS 1053
+[obey] iter 164/366  step  1343488  obey top 1.00/bot 0.47  succ top 0.30/bot 0.35  | canonical obey 1.00/0.03 succ 0.03/0.00  approx_kl 0.0302  SPS 1053
+[obey] iter 165/366  step  1351680  obey top 1.00/bot 0.47  succ top 0.29/bot 0.35  | canonical obey 1.00/0.03 succ 0.03/0.00  approx_kl 0.0394  SPS 1053
+[obey] iter 166/366  step  1359872  obey top 1.00/bot 0.50  succ top 0.29/bot 0.37  | canonical obey 1.00/0.02 succ 0.03/0.00  approx_kl 0.0207  SPS 1053
+[obey] iter 167/366  step  1368064  obey top 1.00/bot 0.50  succ top 0.29/bot 0.36  | canonical obey 1.00/0.02 succ 0.03/0.00  approx_kl 0.0196  SPS 1053
+[obey] iter 168/366  step  1376256  obey top 1.00/bot 0.48  succ top 0.30/bot 0.36  | canonical obey 1.00/0.01 succ 0.03/0.00  approx_kl 0.0294  SPS 1053
+[obey] iter 169/366  step  1384448  obey top 1.00/bot 0.48  succ top 0.30/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0482  SPS 1053
+[obey] iter 170/366  step  1392640  obey top 1.00/bot 0.48  succ top 0.30/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0625  SPS 1053
+[obey] iter 171/366  step  1400832  obey top 1.00/bot 0.49  succ top 0.30/bot 0.37  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0758  SPS 1053
+[obey] iter 172/366  step  1409024  obey top 1.00/bot 0.49  succ top 0.32/bot 0.38  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0521  SPS 1053
+[obey] iter 173/366  step  1417216  obey top 1.00/bot 0.49  succ top 0.31/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0202  SPS 1053
+[obey] iter 174/366  step  1425408  obey top 1.00/bot 0.48  succ top 0.32/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0458  SPS 1053
+[obey] iter 175/366  step  1433600  obey top 1.00/bot 0.48  succ top 0.33/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0635  SPS 1053
+[obey] iter 176/366  step  1441792  obey top 1.00/bot 0.48  succ top 0.32/bot 0.35  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0310  SPS 1054
+[obey] iter 177/366  step  1449984  obey top 1.00/bot 0.48  succ top 0.32/bot 0.35  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0269  SPS 1054
+[obey] iter 178/366  step  1458176  obey top 1.00/bot 0.49  succ top 0.32/bot 0.36  | canonical obey 1.00/0.01 succ 0.02/0.00  approx_kl 0.0189  SPS 1054
+[obey] iter 179/366  step  1466368  obey top 1.00/bot 0.49  succ top 0.32/bot 0.35  | canonical obey 1.00/0.02 succ 0.02/0.00  approx_kl 0.1074  SPS 1054
+[obey] iter 180/366  step  1474560  obey top 1.00/bot 0.51  succ top 0.33/bot 0.35  | canonical obey 1.00/0.03 succ 0.02/0.00  approx_kl 0.0137  SPS 1054
+[obey] iter 181/366  step  1482752  obey top 1.00/bot 0.54  succ top 0.34/bot 0.38  | canonical obey 1.00/0.04 succ 0.02/0.00  approx_kl 0.0133  SPS 1054
+[obey] iter 182/366  step  1490944  obey top 1.00/bot 0.53  succ top 0.34/bot 0.38  | canonical obey 1.00/0.04 succ 0.01/0.00  approx_kl 0.0148  SPS 1054
+[obey] iter 183/366  step  1499136  obey top 1.00/bot 0.54  succ top 0.33/bot 0.38  | canonical obey 1.00/0.06 succ 0.01/0.00  approx_kl 0.0195  SPS 1055
+[obey] iter 184/366  step  1507328  obey top 1.00/bot 0.56  succ top 0.32/bot 0.39  | canonical obey 1.00/0.07 succ 0.01/0.00  approx_kl 0.0476  SPS 1054
+[obey] iter 185/366  step  1515520  obey top 1.00/bot 0.56  succ top 0.32/bot 0.38  | canonical obey 1.00/0.07 succ 0.01/0.00  approx_kl 0.0229  SPS 1055
+[obey] iter 186/366  step  1523712  obey top 1.00/bot 0.56  succ top 0.32/bot 0.38  | canonical obey 1.00/0.07 succ 0.01/0.00  approx_kl 0.0173  SPS 1055
+[obey] iter 187/366  step  1531904  obey top 1.00/bot 0.57  succ top 0.33/bot 0.39  | canonical obey 1.00/0.07 succ 0.01/0.00  approx_kl 0.1032  SPS 1055
+[obey] iter 188/366  step  1540096  obey top 1.00/bot 0.56  succ top 0.31/bot 0.37  | canonical obey 1.00/0.08 succ 0.01/0.00  approx_kl 0.0164  SPS 1055
+[obey] iter 189/366  step  1548288  obey top 0.99/bot 0.57  succ top 0.30/bot 0.38  | canonical obey 0.99/0.09 succ 0.01/0.00  approx_kl 0.0754  SPS 1055
+[obey] iter 190/366  step  1556480  obey top 0.99/bot 0.59  succ top 0.29/bot 0.39  | canonical obey 0.99/0.10 succ 0.01/0.00  approx_kl 0.0419  SPS 1055
+[obey] iter 191/366  step  1564672  obey top 0.99/bot 0.59  succ top 0.29/bot 0.40  | canonical obey 0.99/0.10 succ 0.01/0.00  approx_kl 0.0410  SPS 1055
+[obey] iter 192/366  step  1572864  obey top 0.99/bot 0.58  succ top 0.29/bot 0.40  | canonical obey 0.99/0.10 succ 0.01/0.00  approx_kl 0.0393  SPS 1054
+[obey] iter 193/366  step  1581056  obey top 0.99/bot 0.57  succ top 0.30/bot 0.40  | canonical obey 0.99/0.10 succ 0.01/0.00  approx_kl 0.0257  SPS 1054
+[obey] iter 194/366  step  1589248  obey top 0.99/bot 0.58  succ top 0.30/bot 0.39  | canonical obey 0.99/0.11 succ 0.01/0.00  approx_kl 0.0264  SPS 1054
+[obey] iter 195/366  step  1597440  obey top 0.99/bot 0.58  succ top 0.30/bot 0.39  | canonical obey 0.99/0.11 succ 0.01/0.00  approx_kl 0.0573  SPS 1054
+[obey] iter 196/366  step  1605632  obey top 0.99/bot 0.58  succ top 0.33/bot 0.39  | canonical obey 0.99/0.12 succ 0.01/0.00  approx_kl 0.0426  SPS 1054
+[obey] iter 197/366  step  1613824  obey top 0.99/bot 0.59  succ top 0.33/bot 0.40  | canonical obey 0.99/0.12 succ 0.01/0.00  approx_kl 0.0386  SPS 1054
+[obey] iter 198/366  step  1622016  obey top 0.99/bot 0.59  succ top 0.34/bot 0.40  | canonical obey 0.99/0.14 succ 0.01/0.00  approx_kl 0.0181  SPS 1054
+[obey] iter 199/366  step  1630208  obey top 0.99/bot 0.60  succ top 0.32/bot 0.40  | canonical obey 0.99/0.15 succ 0.01/0.00  approx_kl 0.0991  SPS 1054
+[obey] iter 200/366  step  1638400  obey top 0.99/bot 0.58  succ top 0.34/bot 0.39  | canonical obey 0.99/0.15 succ 0.01/0.00  approx_kl 0.0257  SPS 1054
+[obey] iter 201/366  step  1646592  obey top 0.99/bot 0.60  succ top 0.35/bot 0.39  | canonical obey 0.99/0.17 succ 0.01/0.00  approx_kl 0.0647  SPS 1054
+[obey] iter 202/366  step  1654784  obey top 0.99/bot 0.60  succ top 0.35/bot 0.40  | canonical obey 0.99/0.18 succ 0.01/0.00  approx_kl 0.0487  SPS 1054
+[obey] iter 203/366  step  1662976  obey top 0.99/bot 0.60  succ top 0.35/bot 0.40  | canonical obey 0.99/0.20 succ 0.01/0.00  approx_kl 0.0301  SPS 1054
+[obey] iter 204/366  step  1671168  obey top 0.99/bot 0.60  succ top 0.34/bot 0.39  | canonical obey 0.99/0.21 succ 0.01/0.00  approx_kl 0.0259  SPS 1054
+[obey] iter 205/366  step  1679360  obey top 0.99/bot 0.62  succ top 0.37/bot 0.40  | canonical obey 0.99/0.22 succ 0.01/0.01  approx_kl 0.0149  SPS 1054
+[obey] iter 206/366  step  1687552  obey top 0.99/bot 0.62  succ top 0.38/bot 0.41  | canonical obey 0.99/0.22 succ 0.01/0.01  approx_kl 0.0114  SPS 1054
+[obey] iter 207/366  step  1695744  obey top 0.99/bot 0.64  succ top 0.38/bot 0.42  | canonical obey 0.99/0.22 succ 0.01/0.01  approx_kl 0.0419  SPS 1054
+[obey] iter 208/366  step  1703936  obey top 1.00/bot 0.63  succ top 0.39/bot 0.40  | canonical obey 0.99/0.23 succ 0.01/0.01  approx_kl 0.0144  SPS 1054
+[obey] iter 209/366  step  1712128  obey top 1.00/bot 0.63  succ top 0.39/bot 0.39  | canonical obey 0.99/0.23 succ 0.01/0.01  approx_kl 0.0274  SPS 1054
+[obey] iter 210/366  step  1720320  obey top 1.00/bot 0.63  succ top 0.38/bot 0.39  | canonical obey 0.99/0.24 succ 0.01/0.01  approx_kl 0.0338  SPS 1054
+[obey] iter 211/366  step  1728512  obey top 1.00/bot 0.66  succ top 0.35/bot 0.39  | canonical obey 0.99/0.27 succ 0.01/0.01  approx_kl 0.0252  SPS 1054
+[obey] iter 212/366  step  1736704  obey top 1.00/bot 0.68  succ top 0.34/bot 0.41  | canonical obey 0.99/0.28 succ 0.01/0.01  approx_kl 0.0287  SPS 1054
+[obey] iter 213/366  step  1744896  obey top 1.00/bot 0.69  succ top 0.34/bot 0.42  | canonical obey 0.99/0.28 succ 0.01/0.01  approx_kl 0.0184  SPS 1054
+[obey] iter 214/366  step  1753088  obey top 1.00/bot 0.69  succ top 0.33/bot 0.41  | canonical obey 0.99/0.29 succ 0.01/0.01  approx_kl 0.0205  SPS 1054
+[obey] iter 215/366  step  1761280  obey top 1.00/bot 0.70  succ top 0.33/bot 0.41  | canonical obey 0.99/0.31 succ 0.01/0.01  approx_kl 0.0098  SPS 1055
+[obey] iter 216/366  step  1769472  obey top 1.00/bot 0.70  succ top 0.30/bot 0.40  | canonical obey 0.99/0.32 succ 0.01/0.01  approx_kl 0.0288  SPS 1055
+[obey] iter 217/366  step  1777664  obey top 1.00/bot 0.70  succ top 0.30/bot 0.41  | canonical obey 0.99/0.33 succ 0.01/0.01  approx_kl 0.0401  SPS 1055
+[obey] iter 218/366  step  1785856  obey top 1.00/bot 0.71  succ top 0.28/bot 0.40  | canonical obey 0.99/0.34 succ 0.01/0.01  approx_kl 0.0529  SPS 1055
+[obey] iter 219/366  step  1794048  obey top 1.00/bot 0.71  succ top 0.28/bot 0.40  | canonical obey 0.99/0.34 succ 0.01/0.01  approx_kl 0.0555  SPS 1055
+[obey] iter 220/366  step  1802240  obey top 1.00/bot 0.72  succ top 0.28/bot 0.40  | canonical obey 0.99/0.37 succ 0.01/0.01  approx_kl 0.0123  SPS 1055
+[obey] iter 221/366  step  1810432  obey top 1.00/bot 0.74  succ top 0.28/bot 0.41  | canonical obey 0.99/0.38 succ 0.01/0.01  approx_kl 0.0094  SPS 1055
+[obey] iter 222/366  step  1818624  obey top 1.00/bot 0.76  succ top 0.29/bot 0.42  | canonical obey 0.99/0.38 succ 0.01/0.01  approx_kl 0.0178  SPS 1055
+[obey] iter 223/366  step  1826816  obey top 1.00/bot 0.78  succ top 0.29/bot 0.42  | canonical obey 0.99/0.40 succ 0.01/0.01  approx_kl 0.0617  SPS 1055
+[obey] iter 224/366  step  1835008  obey top 1.00/bot 0.78  succ top 0.30/bot 0.43  | canonical obey 0.99/0.40 succ 0.01/0.01  approx_kl 0.0123  SPS 1055
+[obey] iter 225/366  step  1843200  obey top 1.00/bot 0.79  succ top 0.29/bot 0.43  | canonical obey 0.99/0.40 succ 0.01/0.01  approx_kl 0.0259  SPS 1055
+[obey] iter 226/366  step  1851392  obey top 1.00/bot 0.79  succ top 0.29/bot 0.42  | canonical obey 0.99/0.41 succ 0.01/0.01  approx_kl 0.0356  SPS 1055
+[obey] iter 227/366  step  1859584  obey top 1.00/bot 0.78  succ top 0.29/bot 0.39  | canonical obey 0.99/0.41 succ 0.01/0.01  approx_kl 0.0560  SPS 1055
+[obey] iter 228/366  step  1867776  obey top 1.00/bot 0.78  succ top 0.32/bot 0.41  | canonical obey 0.99/0.41 succ 0.02/0.01  approx_kl 0.0163  SPS 1055
+[obey] iter 229/366  step  1875968  obey top 1.00/bot 0.77  succ top 0.30/bot 0.41  | canonical obey 0.99/0.41 succ 0.02/0.01  approx_kl 0.0189  SPS 1055
+[obey] iter 230/366  step  1884160  obey top 1.00/bot 0.76  succ top 0.30/bot 0.41  | canonical obey 0.99/0.42 succ 0.02/0.01  approx_kl 0.0339  SPS 1055
+[obey] iter 231/366  step  1892352  obey top 1.00/bot 0.74  succ top 0.32/bot 0.39  | canonical obey 0.99/0.44 succ 0.02/0.01  approx_kl 0.0298  SPS 1055
+[obey] iter 232/366  step  1900544  obey top 1.00/bot 0.74  succ top 0.31/bot 0.39  | canonical obey 0.99/0.45 succ 0.02/0.01  approx_kl 0.0169  SPS 1056
+[obey] iter 233/366  step  1908736  obey top 1.00/bot 0.73  succ top 0.33/bot 0.39  | canonical obey 1.00/0.45 succ 0.02/0.01  approx_kl 0.0264  SPS 1056
+[obey] iter 234/366  step  1916928  obey top 1.00/bot 0.73  succ top 0.33/bot 0.39  | canonical obey 1.00/0.46 succ 0.03/0.01  approx_kl 0.0463  SPS 1056
+[obey] iter 235/366  step  1925120  obey top 1.00/bot 0.74  succ top 0.33/bot 0.40  | canonical obey 1.00/0.46 succ 0.03/0.01  approx_kl 0.0211  SPS 1056
+[obey] iter 236/366  step  1933312  obey top 1.00/bot 0.73  succ top 0.33/bot 0.40  | canonical obey 1.00/0.46 succ 0.03/0.01  approx_kl 0.0206  SPS 1056
+[obey] iter 237/366  step  1941504  obey top 1.00/bot 0.72  succ top 0.34/bot 0.40  | canonical obey 1.00/0.45 succ 0.03/0.01  approx_kl 0.1040  SPS 1056
+[obey] iter 238/366  step  1949696  obey top 1.00/bot 0.72  succ top 0.36/bot 0.40  | canonical obey 1.00/0.45 succ 0.04/0.01  approx_kl 0.0332  SPS 1055
+[obey] iter 239/366  step  1957888  obey top 1.00/bot 0.70  succ top 0.35/bot 0.40  | canonical obey 1.00/0.44 succ 0.03/0.01  approx_kl 0.0127  SPS 1055
+[obey] iter 240/366  step  1966080  obey top 1.00/bot 0.69  succ top 0.34/bot 0.39  | canonical obey 1.00/0.44 succ 0.03/0.01  approx_kl 0.0374  SPS 1055
+[obey] iter 241/366  step  1974272  obey top 1.00/bot 0.69  succ top 0.35/bot 0.41  | canonical obey 1.00/0.44 succ 0.03/0.01  approx_kl 0.0085  SPS 1055
+[obey] iter 242/366  step  1982464  obey top 1.00/bot 0.69  succ top 0.35/bot 0.41  | canonical obey 1.00/0.43 succ 0.03/0.02  approx_kl 0.0382  SPS 1055
+[obey] iter 243/366  step  1990656  obey top 1.00/bot 0.67  succ top 0.36/bot 0.40  | canonical obey 1.00/0.44 succ 0.03/0.02  approx_kl 0.0175  SPS 1055
+[obey] iter 244/366  step  1998848  obey top 1.00/bot 0.67  succ top 0.36/bot 0.41  | canonical obey 1.00/0.44 succ 0.03/0.02  approx_kl 0.0275  SPS 1055
+[obey] iter 245/366  step  2007040  obey top 1.00/bot 0.68  succ top 0.37/bot 0.42  | canonical obey 1.00/0.45 succ 0.03/0.02  approx_kl 0.0362  SPS 1055
+[obey] iter 246/366  step  2015232  obey top 1.00/bot 0.68  succ top 0.38/bot 0.43  | canonical obey 1.00/0.44 succ 0.04/0.01  approx_kl 0.0405  SPS 1055
+[obey] iter 247/366  step  2023424  obey top 1.00/bot 0.68  succ top 0.37/bot 0.42  | canonical obey 1.00/0.45 succ 0.04/0.01  approx_kl 0.0209  SPS 1055
+[obey] iter 248/366  step  2031616  obey top 1.00/bot 0.68  succ top 0.36/bot 0.43  | canonical obey 1.00/0.45 succ 0.04/0.02  approx_kl 0.0068  SPS 1055
+[obey] iter 249/366  step  2039808  obey top 1.00/bot 0.69  succ top 0.36/bot 0.43  | canonical obey 1.00/0.44 succ 0.04/0.02  approx_kl 0.0353  SPS 1056
+[obey] iter 250/366  step  2048000  obey top 1.00/bot 0.69  succ top 0.37/bot 0.44  | canonical obey 1.00/0.44 succ 0.04/0.02  approx_kl 0.0236  SPS 1056
+[obey] iter 251/366  step  2056192  obey top 1.00/bot 0.69  succ top 0.39/bot 0.42  | canonical obey 1.00/0.43 succ 0.04/0.02  approx_kl 0.0226  SPS 1056
+[obey] iter 252/366  step  2064384  obey top 1.00/bot 0.69  succ top 0.38/bot 0.42  | canonical obey 1.00/0.45 succ 0.04/0.02  approx_kl 0.0227  SPS 1056
+[obey] iter 253/366  step  2072576  obey top 1.00/bot 0.70  succ top 0.38/bot 0.40  | canonical obey 1.00/0.46 succ 0.04/0.01  approx_kl 0.0177  SPS 1056
+[obey] iter 254/366  step  2080768  obey top 1.00/bot 0.72  succ top 0.38/bot 0.41  | canonical obey 1.00/0.46 succ 0.04/0.01  approx_kl 0.0125  SPS 1056
+[obey] iter 255/366  step  2088960  obey top 1.00/bot 0.71  succ top 0.38/bot 0.41  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0173  SPS 1056
+[obey] iter 256/366  step  2097152  obey top 1.00/bot 0.73  succ top 0.41/bot 0.41  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0162  SPS 1056
+[obey] iter 257/366  step  2105344  obey top 1.00/bot 0.75  succ top 0.41/bot 0.42  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0176  SPS 1056
+[obey] iter 258/366  step  2113536  obey top 1.00/bot 0.78  succ top 0.41/bot 0.43  | canonical obey 1.00/0.48 succ 0.04/0.01  approx_kl 0.0420  SPS 1057
+[obey] iter 259/366  step  2121728  obey top 1.00/bot 0.78  succ top 0.41/bot 0.42  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0259  SPS 1057
+[obey] iter 260/366  step  2129920  obey top 1.00/bot 0.78  succ top 0.41/bot 0.42  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0263  SPS 1057
+[obey] iter 261/366  step  2138112  obey top 1.00/bot 0.78  succ top 0.42/bot 0.42  | canonical obey 1.00/0.46 succ 0.04/0.01  approx_kl 0.0319  SPS 1057
+[obey] iter 262/366  step  2146304  obey top 1.00/bot 0.78  succ top 0.42/bot 0.41  | canonical obey 1.00/0.47 succ 0.04/0.01  approx_kl 0.0291  SPS 1057
+[obey] iter 263/366  step  2154496  obey top 1.00/bot 0.79  succ top 0.41/bot 0.42  | canonical obey 1.00/0.46 succ 0.04/0.02  approx_kl 0.0363  SPS 1057
+[obey] iter 264/366  step  2162688  obey top 1.00/bot 0.80  succ top 0.41/bot 0.41  | canonical obey 1.00/0.47 succ 0.04/0.02  approx_kl 0.0083  SPS 1057
+[obey] iter 265/366  step  2170880  obey top 1.00/bot 0.80  succ top 0.41/bot 0.41  | canonical obey 1.00/0.47 succ 0.04/0.02  approx_kl 0.0487  SPS 1057
+[obey] iter 266/366  step  2179072  obey top 0.99/bot 0.81  succ top 0.38/bot 0.42  | canonical obey 0.99/0.48 succ 0.04/0.02  approx_kl 0.0141  SPS 1057
+[obey] iter 267/366  step  2187264  obey top 0.99/bot 0.81  succ top 0.37/bot 0.43  | canonical obey 0.99/0.48 succ 0.04/0.02  approx_kl 0.0632  SPS 1058
+[obey] iter 268/366  step  2195456  obey top 0.99/bot 0.81  succ top 0.36/bot 0.42  | canonical obey 0.99/0.48 succ 0.04/0.02  approx_kl 0.0311  SPS 1058
+[obey] iter 269/366  step  2203648  obey top 0.99/bot 0.82  succ top 0.35/bot 0.42  | canonical obey 0.99/0.49 succ 0.04/0.02  approx_kl 0.0309  SPS 1058
+[obey] iter 270/366  step  2211840  obey top 0.99/bot 0.82  succ top 0.38/bot 0.41  | canonical obey 0.99/0.51 succ 0.04/0.02  approx_kl 0.0146  SPS 1058
+[obey] iter 271/366  step  2220032  obey top 0.99/bot 0.83  succ top 0.36/bot 0.42  | canonical obey 0.99/0.51 succ 0.04/0.02  approx_kl 0.0210  SPS 1058
+[obey] iter 272/366  step  2228224  obey top 0.99/bot 0.84  succ top 0.37/bot 0.41  | canonical obey 0.99/0.52 succ 0.04/0.02  approx_kl 0.0326  SPS 1058
+[obey] iter 273/366  step  2236416  obey top 0.99/bot 0.84  succ top 0.36/bot 0.42  | canonical obey 0.99/0.53 succ 0.04/0.02  approx_kl 0.0528  SPS 1058
+[obey] iter 274/366  step  2244608  obey top 0.99/bot 0.83  succ top 0.35/bot 0.43  | canonical obey 0.99/0.53 succ 0.04/0.02  approx_kl 0.0113  SPS 1058
+[obey] iter 275/366  step  2252800  obey top 0.99/bot 0.85  succ top 0.35/bot 0.43  | canonical obey 0.99/0.54 succ 0.04/0.02  approx_kl 0.0279  SPS 1058
+[obey] iter 276/366  step  2260992  obey top 0.99/bot 0.84  succ top 0.34/bot 0.43  | canonical obey 0.99/0.56 succ 0.04/0.03  approx_kl 0.0090  SPS 1058
+[obey] iter 277/366  step  2269184  obey top 0.99/bot 0.84  succ top 0.35/bot 0.42  | canonical obey 0.99/0.56 succ 0.03/0.03  approx_kl 0.0315  SPS 1058
+[obey] iter 278/366  step  2277376  obey top 0.99/bot 0.83  succ top 0.34/bot 0.41  | canonical obey 0.99/0.57 succ 0.03/0.03  approx_kl 0.0224  SPS 1058
+[obey] iter 279/366  step  2285568  obey top 0.99/bot 0.83  succ top 0.33/bot 0.41  | canonical obey 0.99/0.58 succ 0.03/0.03  approx_kl 0.0289  SPS 1058
+[obey] iter 280/366  step  2293760  obey top 0.99/bot 0.84  succ top 0.32/bot 0.41  | canonical obey 0.99/0.59 succ 0.04/0.03  approx_kl 0.0103  SPS 1058
+[obey] iter 281/366  step  2301952  obey top 0.99/bot 0.84  succ top 0.32/bot 0.41  | canonical obey 0.99/0.59 succ 0.04/0.03  approx_kl 0.0073  SPS 1058
+[obey] iter 282/366  step  2310144  obey top 0.99/bot 0.83  succ top 0.30/bot 0.41  | canonical obey 0.99/0.60 succ 0.04/0.03  approx_kl 0.0165  SPS 1058
+[obey] iter 283/366  step  2318336  obey top 0.99/bot 0.84  succ top 0.30/bot 0.39  | canonical obey 0.99/0.62 succ 0.04/0.03  approx_kl 0.0260  SPS 1058
+[obey] iter 284/366  step  2326528  obey top 0.99/bot 0.84  succ top 0.29/bot 0.38  | canonical obey 0.99/0.63 succ 0.03/0.02  approx_kl 0.0037  SPS 1058
+[obey] iter 285/366  step  2334720  obey top 0.99/bot 0.84  succ top 0.28/bot 0.38  | canonical obey 0.99/0.62 succ 0.04/0.02  approx_kl 0.0189  SPS 1058
+[obey] iter 286/366  step  2342912  obey top 0.99/bot 0.84  succ top 0.28/bot 0.39  | canonical obey 0.99/0.64 succ 0.04/0.02  approx_kl 0.0060  SPS 1058
+[obey] iter 287/366  step  2351104  obey top 0.99/bot 0.83  succ top 0.26/bot 0.39  | canonical obey 0.99/0.64 succ 0.04/0.02  approx_kl 0.0252  SPS 1058
+[obey] iter 288/366  step  2359296  obey top 0.99/bot 0.83  succ top 0.27/bot 0.38  | canonical obey 0.99/0.66 succ 0.04/0.03  approx_kl 0.0089  SPS 1058
+[obey] iter 289/366  step  2367488  obey top 0.99/bot 0.83  succ top 0.28/bot 0.38  | canonical obey 0.99/0.66 succ 0.04/0.03  approx_kl 0.0111  SPS 1058
+[obey] iter 290/366  step  2375680  obey top 0.99/bot 0.83  succ top 0.28/bot 0.36  | canonical obey 0.99/0.67 succ 0.04/0.03  approx_kl 0.0055  SPS 1058
+[obey] iter 291/366  step  2383872  obey top 0.99/bot 0.85  succ top 0.28/bot 0.36  | canonical obey 0.98/0.68 succ 0.04/0.02  approx_kl 0.0168  SPS 1058
+[obey] iter 292/366  step  2392064  obey top 0.99/bot 0.84  succ top 0.27/bot 0.37  | canonical obey 0.98/0.68 succ 0.04/0.02  approx_kl 0.0138  SPS 1058
+[obey] iter 293/366  step  2400256  obey top 0.99/bot 0.84  succ top 0.28/bot 0.38  | canonical obey 0.98/0.69 succ 0.04/0.03  approx_kl 0.0102  SPS 1058
+[obey] iter 294/366  step  2408448  obey top 0.99/bot 0.86  succ top 0.27/bot 0.39  | canonical obey 0.98/0.70 succ 0.04/0.04  approx_kl 0.0111  SPS 1058
+[obey] iter 295/366  step  2416640  obey top 0.99/bot 0.86  succ top 0.26/bot 0.40  | canonical obey 0.98/0.70 succ 0.04/0.04  approx_kl 0.0155  SPS 1058
+[obey] iter 296/366  step  2424832  obey top 0.99/bot 0.85  succ top 0.26/bot 0.39  | canonical obey 0.98/0.70 succ 0.04/0.04  approx_kl 0.0186  SPS 1058
+[obey] iter 297/366  step  2433024  obey top 0.99/bot 0.85  succ top 0.27/bot 0.40  | canonical obey 0.98/0.70 succ 0.04/0.04  approx_kl 0.0351  SPS 1058
+[obey] iter 298/366  step  2441216  obey top 0.99/bot 0.86  succ top 0.27/bot 0.41  | canonical obey 0.98/0.71 succ 0.04/0.04  approx_kl 0.0064  SPS 1058
+[obey] iter 299/366  step  2449408  obey top 0.99/bot 0.88  succ top 0.26/bot 0.41  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0244  SPS 1058
+[obey] iter 300/366  step  2457600  obey top 0.99/bot 0.88  succ top 0.26/bot 0.41  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0252  SPS 1058
+[obey] iter 301/366  step  2465792  obey top 0.99/bot 0.88  succ top 0.26/bot 0.42  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0185  SPS 1058
+[obey] iter 302/366  step  2473984  obey top 0.99/bot 0.89  succ top 0.27/bot 0.42  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0139  SPS 1058
+[obey] iter 303/366  step  2482176  obey top 0.99/bot 0.89  succ top 0.26/bot 0.41  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0311  SPS 1058
+[obey] iter 304/366  step  2490368  obey top 0.99/bot 0.89  succ top 0.26/bot 0.41  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0088  SPS 1058
+[obey] iter 305/366  step  2498560  obey top 0.99/bot 0.88  succ top 0.28/bot 0.42  | canonical obey 0.98/0.72 succ 0.04/0.04  approx_kl 0.0237  SPS 1058
+[obey] iter 306/366  step  2506752  obey top 0.99/bot 0.88  succ top 0.28/bot 0.42  | canonical obey 0.98/0.73 succ 0.04/0.04  approx_kl 0.0072  SPS 1058
+[obey] iter 307/366  step  2514944  obey top 0.99/bot 0.89  succ top 0.28/bot 0.42  | canonical obey 0.98/0.74 succ 0.04/0.04  approx_kl 0.0153  SPS 1058
+[obey] iter 308/366  step  2523136  obey top 0.99/bot 0.89  succ top 0.28/bot 0.43  | canonical obey 0.98/0.73 succ 0.04/0.04  approx_kl 0.0206  SPS 1058
+[obey] iter 309/366  step  2531328  obey top 0.99/bot 0.91  succ top 0.28/bot 0.42  | canonical obey 0.98/0.75 succ 0.04/0.04  approx_kl 0.0232  SPS 1058

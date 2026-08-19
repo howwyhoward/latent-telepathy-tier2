@@ -12,6 +12,10 @@ checkpoints/
 *.pt
 *.pth
 
+# Crash-insurance snapshots written every 25 iters by the trainers
+*.pt.latest
+*.pt.latest.tmp
+
 # Stray WebRTC livestream recordings (spike/quick_look.py), written next to
 # a literal unexpanded "${data}" dir when run outside the intended cwd.
 ${data}/

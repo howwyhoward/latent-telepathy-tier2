@@ -1,0 +1,19 @@
+{
+  "seed": 2,
+  "resolution": 64,
+  "baffles": true,
+  "slab_side": "TOP",
+  "total_pixels": 4096,
+  "hazard_pixels": {
+    "navigator": 0,
+    "scout": 1381,
+    "probe_top": 0,
+    "probe_bottom": 0
+  },
+  "gates": {
+    "navigator": true,
+    "scout": true,
+    "choice_points": true,
+    "overall": true
+  }
+}
