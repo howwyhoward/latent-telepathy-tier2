@@ -1,5 +1,50 @@
 # Figure index
 
+## `paper/` — ICRA submission assets (`rl/make_paper_figures.py`)
+
+Every report figure re-rendered for publication: vector PDF (TrueType fonts
+embedded, IEEE PDF-eXpress compatible) + 300 dpi PNG, serif typography,
+narrative suptitles and bottom-margin footnote paragraphs stripped (that prose
+belongs in the caption), per-figure font boosts so text stays legible after
+the shrink to IEEE full width (the report figures were designed 11-21 in
+wide), and clean un-numbered names so LaTeX reordering never touches a
+filename. Regenerate the whole set with `python rl/make_paper_figures.py`;
+the sim-to-real figure comes from `handoff/analyze_handoff.py` run with the
+realcam20 checkpoints. Place the dense multi-panel figures as `figure*`
+(full text width); the single-panel figures survive single-column placement.
+
+Suggested main-paper set (the science, in narrative order): `substrate`,
+`conditions_ladder`, `occlusion_gate`, `exploration_collapse`,
+`recruited_misused`, `composition_check`, `race_curves`, `condition_sweep`,
+`corruption_controls`, `sim2real_transfer` (deployment section).
+Supplementary / appendix: `pipeline`, `throughput`, `positive_control`,
+`exploration_sweep`, `encoder_training`, `encoder_probes`, `obedience_gate`,
+`route_optimality`, `task_success`, `hazard_exposure`, `decision_entropy`.
+
+| Paper name | Source figure |
+|---|---|
+| `substrate` | `fig1_substrate.png` |
+| `pipeline` | `diagrams/fig_tier2_pipeline.png` |
+| `conditions_ladder` | `diagrams/fig_tier2_conditions.png` |
+| `throughput` | `diagnostics/fig2b_throughput.png` |
+| `occlusion_gate` | `diagnostics/fig3_occlusion_gate.png` |
+| `positive_control` | `diagnostics/fig4_m7_positive_control.png` |
+| `exploration_collapse` | `diagnostics/fig7_exploration_collapse.png` |
+| `exploration_sweep` | `diagnostics/fig7b_exploration_sweep.png` |
+| `recruited_misused` | `diagnostics/fig8_v7_recruited_misused.png` |
+| `composition_check` | `diagnostics/fig8b_composition_check.png` |
+| `encoder_training` | `jepa/jepa_training.png` |
+| `encoder_probes` | `jepa/jepa_probes.png` |
+| `obedience_gate` | `stage15/obey_gate_curves.png` |
+| `race_curves` | `race_v8/v8_race_curves.png` |
+| `route_optimality` | `race_v8/v8_race_seed_bars.png` |
+| `task_success` | `race_v8/v8_success_seed_bars.png` |
+| `hazard_exposure` | `race_v8/v8_hazard_bars.png` |
+| `decision_entropy` | `race_v8/v8_entropy_curves.png` |
+| `corruption_controls` | `race_v8/v8_corruption_bars.png` |
+| `condition_sweep` | `race_v8/v8b_sweep_bars.png` |
+| `sim2real_transfer` | `handoff/sim_vs_real_frames.png` (realcam20 checkpoints) |
+
 Every figure regenerates from committed artifacts. `rl/plot_jepa.py`,
 `rl/plot_v8.py`, `rl/plot_diagnostics.py`, `rl/plot_fig3_occlusion.py` and
 `rl/plot_fig2b_throughput.py` rebuild the whole set without touching Isaac.
