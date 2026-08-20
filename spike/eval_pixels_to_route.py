@@ -195,8 +195,11 @@ def main():
     print(f"success        {np.mean(succ):.3f}")
     print(f"obeyed decode  {np.mean(obey):.3f}")
     print(f"hazard steps   {np.mean(haz):.2f} per episode")
-    print("\nreference: cont.pt with ground-truth route read 0.935/0.895 success; "
-          "a blind policy pays ~20 hazard steps or refuses.")
+    # cont.pt is a Stage 1.5 checkpoint: it predates the 20-degree-FOV camera
+    # rebuild and was scored from the canonical start, where these runs score
+    # LOWER than from randomized starts. Quoting it as headroom compares across
+    # camera regimes, so it is no longer printed as a target.
+    print("\nreference: a blind policy pays ~20 hazard steps or refuses.")
     sys.stdout.flush()
     os._exit(0)
 

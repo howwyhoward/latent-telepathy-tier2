@@ -682,8 +682,8 @@ The v8 result is the evidence for that bet: the task-coupled module is 4,483
 parameters recruited from reward alone — the kind of thing you re-fit on
 hardware in a session, not a training campaign.
 
-**The gating measurement is fully tooled and waiting only on data.** The
-slab-side probe is fitted on sim latents and persisted
+**The gating measurement has now been run, and the encoder does not
+transfer.** The slab-side probe is fitted on sim latents and persisted
 (`spike/fit_slab_probe.py` — 1.000 held-out on 512 samples); the real-frame
 evaluator (`spike/eval_real_frames.py`) is Isaac-free and reports latent
 health plus zero-shot probe transfer against a pre-registered decision rule
@@ -692,6 +692,81 @@ domain-randomize the JEPA data and retrain — which is the interesting
 scientific result of Phase 4, not a failure). Capture protocol and tooling:
 `spike/capture_real_frames.py` (ROS2, session-folder labels, rectified
 frames only).
+
+Run against the 15 Aug handoff (`handoff/analyze_handoff.py`, 13 frames, 11
+labelled), pooled accuracy is 0.636, which lands nominally in the rule's
+"partial" band. **That reading is wrong, and the number should not be quoted
+without its baseline.** The probe predicts "hazard present" on all 13 frames,
+including both empty-arena controls and both green pads: TPR 1.000, TNR
+0.000. With 7 present and 4 absent, a constant predictor that ignores the
+image scores the same 0.636, so balanced accuracy is 0.500 — chance. The
+threshold-free ranking is *below* chance at AUC 0.286, and the best accuracy
+achievable over every possible threshold is also 0.636, so recalibration
+cannot recover the bit. Applying the pre-registered rule to the
+chance-corrected statistic gives **no transfer**, and the ≤0.6 remedy is the
+one that applies. This is the same majority-baseline correction already
+applied to the hazard-visible probe in §5 (0.935 against a 0.857 majority);
+the transfer number simply had not received it. Note also that at 7 present /
+4 absent the rule's 0.6 boundary is decided by the capture set's class
+balance rather than by the encoder — one additional negative frame would have
+moved the same saturated probe from "partial" to "no transfer".
+
+**The mechanism is more specific than "domain-randomize", and it implicates
+the test as well as the encoder.** The probe's response is graded in the
+hazard's *apparent size*, and it only separates when the slab is large: at
+>25 % of the view its mean logit is +24.2, but at 2–4.5 % coverage it is
++0.66 against +0.46 for no hazard at all. The real captures put the pad at
+2–21 % of the view — inside the sim coverage range, so apparent size is not
+itself the gap, but mostly inside the band where **the probe has no usable
+signal in simulation either**. Layered on top, the real background alone
+displaces the logit by +9.5 relative to the sim no-hazard band (measured on
+the pad-free controls), roughly 47× what the pad is worth at matched
+coverage, and the pad at ≥2 m then moves the logit −3.4 the *wrong* way
+relative to those controls. So the handoff asked the probe a question it
+cannot resolve in-domain, against a nuisance shift an order of magnitude
+larger than the signal. Two independent fixes are needed: the capture
+protocol must present the hazard at the apparent size the encoder was trained
+on (or the probe must be retrained for small-object sensitivity), *and* the
+JEPA data needs appearance randomization to remove the background
+displacement. Until both are done the handoff cannot be scored as a clean
+test of the architectural bet.
+
+The exported executor is also not usable on real imagery as-is: across the
+same 13 frames it emits only 2 distinct actions with 97 % of action
+components saturated at ±1, against 32 distinct actions over 128 sim frames.
+The handoff was a static-frame study; the chain has never been run
+closed-loop on hardware.
+
+**On the sim side the executor search is exhausted, but the task is not.**
+Fourteen executor variants were trained across four rounds on the realcam20
+camera; the shipped checkpoint (`r2A_rescue6M`) scores 0.840 obeyed-decode,
+0.504 success and 4.44 hazard steps per episode over 256 episodes, with
+decode accuracy 1.000 — though that decode figure is an in-session supervised
+probe refit on the same distribution, so it measures pipeline sufficiency
+rather than generalisation. Within this search the checkpoint is
+Pareto-optimal: across roughly 5,000 logged evaluation points in all fourteen
+runs, not one exceeds both 0.840 obedience and 0.504 success. That is a
+saturated *search*, not a task ceiling — roughly half of episodes still fail
+with a perfectly decoded route bit.
+
+The instability is the lever, not the compute. Nine of the fourteen runs peak
+mid-run and then decline, and the round-3 and round-4 continuations peak
+within their first 0.1–0.4 M steps and lose the competence they inherited.
+Obedience is being bought with success: across `r2A_rescue6M`'s training,
+success runs 0.243 → 0.027 → 0.045 → 0.119 → 0.260 while obedience climbs
+monotonically 0.668 → 0.812. The run also ended stalled rather than
+converged, with success rising +0.13/M over the final 30 % before rolling
+over in the last 10 % as approximate KL collapsed from 0.050 to 0.005. The
+next round should attack the objective and the trust-region schedule, not add
+seeds or steps.
+
+One comparison to retire: the Stage 1.5 figure of 0.935/0.895 (`cont.pt`) is
+not a valid headroom target for these runs. It predates the 20°-FOV camera
+rebuild and was scored from canonical spawns, and in the realcam20 regime
+canonical spawns are *harder* than randomized ones (`r2A_rescue6M`: 0.247
+canonical success against 0.257 randomized). The best canonical success
+logged in any realcam20 run is 0.447. `spike/eval_pixels_to_route.py` no
+longer prints it as a reference.
 
 Known gaps for deployment, unchanged: no domain randomization anywhere in
 training (one dome light, flat diffuse colours, no texture variation, no
