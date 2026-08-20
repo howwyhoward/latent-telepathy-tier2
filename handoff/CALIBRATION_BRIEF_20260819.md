@@ -23,8 +23,12 @@ extended on the sim side:
   destroy it.
 - Root cause measured in sim: the lab backdrop (carpet, wall tint, lighting)
   displaces the probe logit ~47× more than the pad itself does at 2–2.8 m
-  apparent sizes. A domain-randomized encoder is training sim-side to close
-  this; the calibration refit below works with either encoder.
+  apparent sizes. A domain-randomized encoder (`jepa_realcam20_dr2.pt`,
+  trained 19 Aug) closes most of this: its sim-fitted probe now ranks your
+  13 frames at 0.964 AUC (one error: green pad at 2.8 m vs red pad
+  offset-left at 2.8 m). Only the decision threshold is still wrong, which
+  is exactly what your calibration set fixes. The refit below works with
+  either encoder; both get re-scored on your captures.
 
 The pre-registered fallback is exactly this: **re-fit the 65-param probe on
 real frames in a session**. Your captures are that session.

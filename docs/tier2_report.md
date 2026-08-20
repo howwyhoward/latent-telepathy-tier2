@@ -813,6 +813,7 @@ CPU-trained, all pass the Stage-A sim gates):
 | baseline `jepa_realcam20` | 0.986 | 0.786 | 0.857 FAIL | 1.84 |
 | DR v1: shared smooth texture field | 0.976 | 0.714 | 0.661 FAIL | 2.47 |
 | DR v2: per-class two-band texture | 0.963 | **0.964** | **0.929 PASS** | 1.76 |
+| DR v3: v2 + red-hue guard, tighter ranges | 0.980 | 0.893 | 0.786 FAIL | 1.78 |
 
 v1 (one smooth 8×8 field shared by floor and wall) made everything *worse*
 than no randomization — the lab's carpet is pixel-level speckle, and an
@@ -824,13 +825,18 @@ offset-left at 2.8 m. Zero-shot gate B still fails on the operating point
 (all logits above the sim threshold), and a bias-only calibration from
 pad-free frames is not robust because the clear-frame logits sit within 0.3
 of the hardest positives; the full 65-parameter refit on the calibration set
-remains the protocol. Two honesty caveats: the augmentation design was
-iterated against the same 11 frames that score it, which is why the
-calibration brief demands held-out validation sessions; and unguarded tint
-draws can produce red-tinted walls (a hazard-hue collision), so v3 — running
-as of this writing — adds a red-hue guard on backdrop tints. The champion by
-gates A+C ships as the encoder candidate; the executor still consumes raw
-pixels through its own encoder and is untouched by all of this.
+remains the protocol. v3 tested a red-hue guard on the backdrop tints (a
+red-tinted wall is a hazard-hue collision) together with tighter tint
+ranges: sim sensitivity recovered but real-frame transfer dropped, so the
+wide appearance range is doing real invariance work and the guard-only
+ablation is still unrun. **`jepa_realcam20_dr2.pt` is the champion
+candidate by gates A+C.** Honesty caveats: the augmentation design was
+iterated against the same 11 frames that score it — the calibration brief's
+held-out validation sessions exist to catch exactly that — and at n=11 the
+v2/v3 gap is a handful of frames; the ~120-frame calibration set re-scores
+all candidates via `spike/gate_probe_coverage.py` before anything ships.
+The executor still consumes raw pixels through its own encoder and is
+untouched by all of this.
 
 The exported executor is also not usable on real imagery as-is: across the
 same 13 frames it emits only 2 distinct actions with 97 % of action

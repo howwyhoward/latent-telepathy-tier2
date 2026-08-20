@@ -33,7 +33,7 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 source setup/env.sh >/dev/null 2>&1
-JEPA=checkpoints/jepa_realcam20.pt          # swap to jepa_realcam20_dr.pt once it wins gate A+C
+JEPA=checkpoints/jepa_realcam20.pt          # swap to jepa_realcam20_dr2.pt once the calibration set confirms it
 OUT=runs/realcam20
 INIT="$OUT/r2A_rescue6M.pt"
 
