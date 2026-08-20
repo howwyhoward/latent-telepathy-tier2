@@ -89,6 +89,13 @@ class ChokepointEnvCfg(DirectMARLEnvCfg):
     rew_hazard_entry = 0.0
     rew_time = -0.01          # per control step
     rew_success = 10.0        # team bonus, both robots at goals
+    # Round-5 lever (19 Aug audit): rounds 2-4 bought obedience with success --
+    # the global wrong-corridor penalty and the abort suppress goal-reaching
+    # gradients everywhere, and every run peaked mid-run then declined. This
+    # instead gates the success BONUS on never having committed to the wrong
+    # corridor: disobedient arrivals earn nothing, obedient ones keep the full
+    # unpenalized gradient. Only meaningful with route_instruction.
+    rew_success_obedient_only = False
     goal_radius = 0.3         # m
 
     # Which robots must reach their goals to terminate. None = the full team.
@@ -205,6 +212,8 @@ class ChokepointEnv(DirectMARLEnv):
         }
         # True where the running episode used a curriculum (random) spawn
         self.curriculum_spawn = torch.zeros(n, dtype=torch.bool, device=dev)
+        # latch: navigator has entered the wrong corridor this episode
+        self._committed_wrong = torch.zeros(n, dtype=torch.bool, device=dev)
 
         self._goal_pos = {
             a: torch.tensor(self._geo.goals[a], device=dev).repeat(n, 1)
@@ -377,6 +386,8 @@ class ChokepointEnv(DirectMARLEnv):
 
     def _get_rewards(self):
         team_success = self._team_success()
+        if self.cfg.route_instruction:
+            self._committed_wrong |= self.in_wrong_corridor("navigator")
         rewards = {}
         for a in self.cfg.possible_agents:
             dist = self._shaping_dist(a)
@@ -392,12 +403,16 @@ class ChokepointEnv(DirectMARLEnv):
             in_haz = self._in_hazard(a)
             entered = in_haz & ~self._prev_in_hazard[a]
             self._prev_in_hazard[a] = in_haz
+            bonus = team_success
+            if (a == "navigator" and self.cfg.route_instruction
+                    and self.cfg.rew_success_obedient_only):
+                bonus = team_success & ~self._committed_wrong
             rewards[a] = (
                 self.cfg.rew_progress * progress
                 + self.cfg.rew_hazard * in_haz.float()
                 + self.cfg.rew_hazard_entry * entered.float()
                 + self.cfg.rew_time
-                + self.cfg.rew_success * team_success.float()
+                + self.cfg.rew_success * bonus.float()
             )
             if self.cfg.route_instruction and a == "navigator":
                 rewards[a] = rewards[a] + (
@@ -577,3 +592,4 @@ class ChokepointEnv(DirectMARLEnv):
         for a in self.cfg.possible_agents:
             self._prev_dist[a][env_ids] = self._shaping_dist(a)[env_ids]
             self._prev_in_hazard[a][env_ids] = self._in_hazard(a)[env_ids]
+        self._committed_wrong[env_ids] = False

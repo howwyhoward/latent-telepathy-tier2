@@ -5,7 +5,7 @@
 # The only learner is a ~4.5k-parameter route head, one categorical decision
 # per episode, trained on episode return alone — a contextual bandit. This is
 # the exploration structure v1-v7 lacked: the alternative corridor costs one
-# sampled bit, not a 14-sigma Gaussian excursion.
+# sampled bit, not a 13-sigma Gaussian excursion.
 #
 # Pre-registered readout (canonical spawns only):
 #   oracle : optimization ceiling — must pass or the machinery is broken

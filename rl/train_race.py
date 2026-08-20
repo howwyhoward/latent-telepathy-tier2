@@ -108,7 +108,7 @@ parser.add_argument("--spawn_mouths", type=float, default=0.0,
 # for silence, at either discount. The precondition was never met: reaching
 # the far mouth needs ~+1.3 of SUSTAINED lateral action across the ~30-step
 # decision window, and under iid noise the mean deviation over those steps has
-# std sigma/sqrt(30) ~ 0.09 — a 14-sigma event, so the alternative corridor is
+# std sigma/sqrt(30) ~ 0.10 at σ=0.55 — a 13-sigma event, so the alternative corridor is
 # never in the batch and there is nothing for a message to be recruited by.
 # (Tier 1 never hit this: one gridworld action moved a whole cell.) Fix is
 # correlation, not scale: AR(1) noise with rho=exp(-1/tau) has marginal

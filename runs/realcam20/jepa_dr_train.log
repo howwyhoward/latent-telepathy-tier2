@@ -1,0 +1,34 @@
+device: cpu
+loaded 204800 frames (1600 steps x 128 streams) in 6.6s
+transitions: train 175502  val 4096
+training...
+epoch 0 step    200  loss 2.3517 (inv 0.0126 val_inv 0.0185 var 0.717 cov 8.737 rec 1.273)  mean_std 0.569  eff_rank  6.1/64
+epoch 1 step    400  loss 1.5636 (inv 0.0228 val_inv 0.0246 var 0.330 cov 10.916 rec 0.774)  mean_std 0.769  eff_rank  9.3/64
+epoch 1 step    600  loss 1.2118 (inv 0.0415 val_inv 0.0373 var 0.101 cov 10.827 rec 0.636)  mean_std 0.752  eff_rank 12.5/64
+epoch 2 step    800  loss 0.9321 (inv 0.0435 val_inv 0.0333 var 0.027 cov 9.882 rec 0.466)  mean_std 0.811  eff_rank 15.7/64
+epoch 2 step   1000  loss 0.9135 (inv 0.0546 val_inv 0.0450 var 0.129 cov 5.500 rec 0.510)  mean_std 0.788  eff_rank 19.7/64
+epoch 3 step   1200  loss 0.7445 (inv 0.0587 val_inv 0.0519 var 0.084 cov 4.955 rec 0.404)  mean_std 0.770  eff_rank 23.0/64
+epoch 4 step   1400  loss 0.6646 (inv 0.0690 val_inv 0.0554 var 0.028 cov 4.876 rec 0.373)  mean_std 0.792  eff_rank 25.1/64
+epoch 4 step   1600  loss 0.5398 (inv 0.0534 val_inv 0.0487 var 0.018 cov 4.271 rec 0.297)  mean_std 0.764  eff_rank 27.0/64
+epoch 5 step   1800  loss 0.5390 (inv 0.0546 val_inv 0.0679 var 0.010 cov 4.083 rec 0.312)  mean_std 0.817  eff_rank 28.2/64
+epoch 5 step   2000  loss 0.5179 (inv 0.0643 val_inv 0.0563 var 0.004 cov 4.241 rec 0.280)  mean_std 0.813  eff_rank 29.3/64
+epoch 6 step   2200  loss 0.4698 (inv 0.0540 val_inv 0.0609 var 0.036 cov 3.090 rec 0.256)  mean_std 0.764  eff_rank 31.0/64
+epoch 6 step   2400  loss 0.5274 (inv 0.0620 val_inv 0.0536 var 0.000 cov 4.077 rec 0.302)  mean_std 0.839  eff_rank 31.7/64
+epoch 7 step   2600  loss 0.5276 (inv 0.0536 val_inv 0.0567 var 0.000 cov 3.479 rec 0.335)  mean_std 0.789  eff_rank 32.6/64
+epoch 8 step   2800  loss 0.4933 (inv 0.0544 val_inv 0.0581 var 0.046 cov 2.235 rec 0.303)  mean_std 0.811  eff_rank 33.5/64
+epoch 8 step   3000  loss 0.4365 (inv 0.0525 val_inv 0.0548 var 0.006 cov 2.587 rec 0.275)  mean_std 0.844  eff_rank 34.6/64
+epoch 9 step   3200  loss 0.3487 (inv 0.0516 val_inv 0.0596 var 0.026 cov 2.116 rec 0.186)  mean_std 0.778  eff_rank 35.4/64
+epoch 9 step   3400  loss 0.3947 (inv 0.0534 val_inv 0.0577 var 0.010 cov 2.122 rec 0.247)  mean_std 0.810  eff_rank 36.0/64
+
+running probes on frozen encoder...
+  hazard-visible acc: linear 0.966  mlp 0.974  (majority 0.947)
+  goal-visible acc: linear 0.944  mlp 0.946  (majority 0.927)
+  wall-count R^2  0.987
+  final latents: mean_std 0.823  min_std 0.564  eff_rank 36.3/64
+  gate hazard_probe: PASS
+  gate goal_probe: PASS
+  gate wall_r2: PASS
+  gate latent_health: PASS
+
+M8 STAGE-A PASS  (inv 0.0513)
+saved frozen encoder -> checkpoints/jepa_realcam20_dr.pt

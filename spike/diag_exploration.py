@@ -12,7 +12,8 @@ Sweeps exploration SCALE (log_std) against exploration CORRELATION TIME, the
 quantity the arithmetic says actually matters. Reaching the top mouth from
 the canonical start needs ~+1.3 of sustained lateral action over the ~30-step
 decision window; under iid noise the mean deviation across those steps has
-std sigma/sqrt(30) ~ 0.09, i.e. a 14-sigma event at any usable sigma. Under
+std sigma/sqrt(30) ~ 0.10 at σ=0.55, i.e. a 13-sigma event at the measured
+grid point. Under
 noise correlated over the window it is a ~1.3/sigma-sigma event, which is
 merely rare. Correlated noise keeps the PER-STEP marginal at N(mu, sigma),
 so PPO's per-timestep log-probs and importance ratios stay exact.

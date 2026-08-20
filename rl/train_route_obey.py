@@ -71,6 +71,10 @@ parser.add_argument("--route_shaping", type=int, default=1,
                          "the wrong-corridor penalty alone buys obedience")
 parser.add_argument("--rew_hazard", type=float, default=-0.05)
 parser.add_argument("--rew_hazard_entry", type=float, default=-2.0)
+parser.add_argument("--rew_success_obedient_only", type=int, default=0,
+                    help="gate the success bonus on never entering the wrong "
+                         "corridor, instead of penalizing it everywhere "
+                         "(round-5 experiment B)")
 parser.add_argument("--init_nav", type=str, default=None,
                     help="stage-1 trunk; actor/critic inputs are zero-widened "
                          "for the route command so the controller loads intact")
@@ -146,6 +150,7 @@ def main():
     cfg.rew_wrong_corridor = args.rew_wrong_corridor
     cfg.rew_hazard = args.rew_hazard
     cfg.rew_hazard_entry = args.rew_hazard_entry
+    cfg.rew_success_obedient_only = bool(args.rew_success_obedient_only)
     env = ChokepointEnv(cfg)
     device = env.device
 
@@ -217,6 +222,7 @@ def main():
     succ_can = {1: deque(maxlen=200), 0: deque(maxlen=200)}
     wrong_steps: deque = deque(maxlen=200)
     curve = []
+    best_joint = -1.0
     global_step = 0
     start_time = time.time()
 
@@ -414,6 +420,28 @@ def main():
                 "wrong_steps", "segment_return", "approx_kl", "sps",
             ]) + "\n")
             csv.flush()
+
+        # Peak snapshotting (19 Aug audit): every realcam20 run peaked mid-run
+        # and declined -- 0 of ~5000 end-of-run points beat the mid-run bests
+        # on both axes -- so end-of-run selection threw the best policies away.
+        # Joint = worst-direction obedience x worst-direction success, smoothed.
+        if args.save and len(curve) >= 9:
+            w9 = curve[-9:]
+            jo = min(float(np.nanmean([r["obey_top"] for r in w9])),
+                     float(np.nanmean([r["obey_bottom"] for r in w9])))
+            js = min(float(np.nanmean([r["success_top"] for r in w9])),
+                     float(np.nanmean([r["success_bottom"] for r in w9])))
+            joint = jo * js
+            if joint > best_joint:
+                best_joint = joint
+                Path(args.save).parent.mkdir(parents=True, exist_ok=True)
+                tmp = args.save + ".best.tmp"
+                torch.save({"policy": policy.state_dict(), "args": vars(args),
+                            "iteration": iteration, "global_step": global_step,
+                            "joint_obey": jo, "joint_succ": js}, tmp)
+                Path(tmp).rename(args.save + ".best")
+                print(f"[obey] new joint peak {joint:.4f} "
+                      f"(obey {jo:.3f} succ {js:.3f}) -> {args.save}.best")
 
         # crash insurance: two machine outages have eaten full 3M-step runs
         if args.save and iteration % 25 == 0:

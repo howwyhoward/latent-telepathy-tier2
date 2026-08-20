@@ -63,7 +63,7 @@ def plot_training(csv_path, out):
 
 def plot_probes(ckpt_path, out):
     pm = torch.load(ckpt_path, map_location="cpu")["probe_metrics"]
-    names = ["hazard side", "goal side"]
+    names = ["hazard visible", "goal visible"]
     linear = [pm["hazard_acc"], pm["goal_acc"]]
     mlp = [pm["hazard_acc_mlp"], pm["goal_acc_mlp"]]
     majority = [pm["hazard_majority"], pm["goal_majority"]]
@@ -78,7 +78,7 @@ def plot_probes(ckpt_path, out):
         for dx, v in zip((-w, 0, w), vals):
             ax.text(xi + dx, v + 0.008, f"{v:.3f}", ha="center", fontsize=8)
     ax.text(0.02, 0.96,
-            f"wall-distance regression R² = {pm['wall_r2']:.3f}",
+            f"wall-count regression R² = {pm['wall_r2']:.3f}",
             transform=ax.transAxes, ha="left", va="top", fontsize=9,
             color="#333333")
     ax.set_xticks(x)

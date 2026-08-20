@@ -4,13 +4,19 @@ Part II of the Tier 2 documentation (sections 7–12; sections 1–6 cover
 motivation, claims, conditions, and architecture). Every number in this
 document traces to a committed artifact; sources are named per figure.
 
-Updated 2026-08-07: incorporates WP1 (corruption-controlled deterministic
-evaluation) and WP2 (the complete condition sweep, 5-seed headline), which
-resolve former caveats 3 and 4 and settle the raw_obs question.
+Updated 2026-08-19: WP1/WP2 remain the confirmatory program. Mechanical
+corrections in this pass: dual-stack perception (the navigator encoder
+crosses too), figure/table n aligned at 5 seeds, probe labels, and
+number-drifts listed in §12.
 
 ---
 
 ## 7. Roadmap Part I — Building the Instrument (Phases 0–1)
+
+> **[FIGURE 1 — Same information structure, different substrate]**
+> `plots/fig1_substrate.png` — 2×3: rows = gridworld vs Isaac, columns =
+> world / corridor mouth / scout's post. Seed 2 throughout. Source:
+> `rl/plot_fig1.py`.
 
 ### 7.1 Phase 0 — Feasibility spike
 
@@ -109,7 +115,7 @@ failed runs each taught a design constraint.
 |---|---|---|
 | m7 | 0.00 | Euclidean shaping pins the robot into the second baffle's corner — the potential points through a wall. Fix: geodesic Dijkstra field with a stall-point regression test asserting the gradient at that exact corner points north; episodes extended to 60 s. |
 | m7b | 0.45 | Undertrained at 2M steps, still climbing at anneal end. A budget problem, not a design problem. |
-| m7c/d | 0.55 | Hazard at −0.5/step made crossing cost 2× the success bonus, so the policy rationally refused to cross — slab-side split 1.00 / 0.00. Fix: −0.05/step, restoring Tier 1's ~20% ratio. Warm-starting across the reward change did not work: a refusing policy never samples the slab, so it never observes the new price. Retrained fresh. |
+| m7c/d | 0.55 | Hazard at −0.5/step made crossing cost 2× the success bonus, so the policy rationally refused to cross — slab-side split 0.98 / 0.00. Fix: −0.05/step, restoring Tier 1's ~20% ratio. Warm-starting across the reward change did not work: a refusing policy never samples the slab, so it never observes the new price. Retrained fresh. |
 | m7e | **0.94** | **PASS.** Balanced across slab sides (0.92 / 0.98), ~21–25 hazard steps/episode — blind crossing on roughly half the episodes, exactly as expected of a policy with no information about slab side. |
 
 That hazard figure is the tier's **no-communication floor** — what a
@@ -145,33 +151,36 @@ table silently mislabels the rare classes that matter most.
 
 Results — frozen checkpoint, all four gates PASS on the first trained model:
 
-| Metric | Gate | Result |
+| Metric | Gate (as coded) | Result |
 |---|---|---|
 | Hazard-visible probe (linear / MLP) | > majority | 0.935 / 0.942 (majority 0.857) |
 | Goal-visible probe (linear / MLP) | > majority | 0.911 / 0.927 (majority 0.850) |
-| Wall-count R² | ≥ 0.70 | 0.985 |
-| Effective rank | ≥ 30 | 44.5 / 64 |
-| Min per-dim std | > 0 | 0.924 (mean 1.032) |
+| Wall-count R² | > 0.5 | 0.985 |
+| Effective rank | > 0.3 × 64 | 44.5 / 64 |
+| Min per-dim std | ≥ 1e-2 | 0.924 (mean 1.032) |
 
 Effective rank climbed monotonically from 6.9/64 at step 200 to 44.4/64 at
 step 3400 — VICReg doing visible work against the collapse that bit Tier 1
 immediately.
 
-**Honest reading of the hazard probe.** 0.935 against a 0.857 majority is a
-55% reduction in error, not a dramatic absolute margin. The base rate is high
-because the scout sees the slab only when it is in the scout's own corridor.
-The probe is a necessary check that the content exists; the race is the
-arbiter of whether it is usable — and the race's answer (0.997) is
-considerably stronger than the probe alone would predict.
+**Honest reading of the hazard probe.** These are *visibility* probes on
+uniform free-pose frames, not slab-side probes at the scout's post. 0.935
+against a 0.857 majority is a 55% reduction in error, not a dramatic absolute
+margin, and it is pooled accuracy only — no balanced accuracy was logged, the
+same omission that later inflated the sim-to-real transfer number. One
+encoder seed. The probe is a necessary check that hazard/goal pixels are
+linearly present in z; the race is the arbiter of whether that content is
+usable as a route bit — and the race's answer (0.997) is considerably
+stronger than the probe alone would predict.
 
 > **[FIGURE 5 — JEPA training health]** `plots/jepa/jepa_training.png` —
 > invariance loss (train vs held-out val) and effective rank over training.
 > Source: `runs/archive/jepa_v1/jepa_v1.csv`.
 
 > **[FIGURE 6 — Latent information content]** `plots/jepa/jepa_probes.png` —
-> probe accuracies vs majority baselines; wall-count R² annotated. Baselines
-> visually prominent: the point of the figure is clearing them. Source:
-> `checkpoints/jepa_pixels.pt` (probe_metrics), log in
+> visibility-probe accuracies vs majority baselines; wall-count R² annotated.
+> Baselines visually prominent: the point of the figure is clearing them.
+> Source: `checkpoints/jepa_pixels.pt` (probe_metrics), log in
 > `runs/archive/jepa_v1/`.
 
 ### 8.2 Phase 3 — the diagnostic chain
@@ -190,19 +199,20 @@ v2–v6  ── the refusal optimum ──────────────�
     Fixed price, rung, discount, spawn curriculum. Kept landing on:
     solve one slab side perfectly, refuse the other, sit at ~0.5.
     v6 is the diagnostic low point:
-       a NOISELESS ORACLE BIT scored 0.44/0.53 vs 0.50 for silence.
+       a NOISELESS ORACLE BIT scored 0.44/0.53 vs 0.51 for silence.
     → A perfect message worth nothing is not a tuning problem.
 
 DIAGNOSIS  ── route exploration ≠ action exploration ──────────────────────
     The alternative corridor was sampled 0 / 128 episodes at trained noise.
     Still 0 at double it.  Needs ~+1.3 sustained lateral over ~30 steps;
-    σ/√30 ≈ 0.09  ⟹  a 14σ event.
+    at the measured grid point σ = 0.55, σ/√30 ≈ 0.10  ⟹  a 13σ event.
     Six nulls, one cause: no batch ever CONTAINED the alternative route.
 
 v7  ── coverage achieved, then optimized away ─────────────────────────────
-    AR(1) noise (τ=30), lateral axis, first 40 steps → 0.22 coverage.
+    AR(1) noise (τ=30), lateral axis, first 40 steps, σ = 4.48
+    (explore_log_std = 1.5) → 0.22 coverage.
     Then: slab-bottom success 0.18–0.23 → 0.00 by iter 80,
-          WHILE the boost was still near full strength.
+          WHILE the boost had only annealed to σ = 2.2 (3.6× learned).
     ∂logπ/∂μ = (a−μ)/σ²  ⟹  the σ that buys coverage attenuates its
     own gradient. ~100× more aggregate gradient says "keep going straight."
 
@@ -218,7 +228,7 @@ level, how often the navigator ever sampled the alternative corridor:
 
 | log_std | σ | τ | top | bottom | success |
 |---|---|---|---|---|---|
-| −0.60 (trained) | 0.55 | 0 | 0.00 | 1.00 | 0.68 |
+| −0.60 (nearest grid; policy vy σ ≈ 0.60) | 0.55 | 0 | 0.00 | 1.00 | 0.68 |
 | 0.00 (≈2× noise) | 1.00 | 0 | 0.00 | 1.00 | 0.58 |
 | 0.50 | 1.65 | 30 | 0.16 | 0.60 | 0.11 |
 
@@ -259,11 +269,13 @@ the lateral axis for the first 40 steps. The construction is deliberately
 PPO-safe — AR(1) has marginal N(μ, σ) at every step, so per-step ratios stay
 exact provided actions are re-scored under the σ they were drawn with.
 
-Measured 0.22 top-corridor coverage at 0.51 success. Then the optimizer
-undid it: slab-bottom success peaked near 0.22 in the first ~20 iterations and
-decayed to 0.00–0.06 by iteration 80 — while the exploration boost was still
-σ = 2.2, or 3.6× the policy's own learned noise. The policy found the other
-corridor and learned to steer back out of it.
+Measured 0.22 top-corridor coverage at 0.51 success — that is the
+**start-of-schedule** diagnostic (`explore_log_std = 1.5`, σ = 4.48), not the
+iter-80 value. Then the optimizer undid it: slab-bottom success peaked near
+0.22 in the first ~20 iterations and decayed to 0.00–0.06 by iteration 80 —
+while the exploration boost had annealed only to σ = 2.2, or 3.6× the
+policy's own learned noise. The policy found the other corridor and learned
+to steer back out of it.
 
 The cause is intrinsic to Gaussian policy gradients. Since
 ∂logπ/∂μ = (a − μ)/σ², the σ that buys coverage attenuates the very gradient
@@ -332,12 +344,18 @@ The two surviving mechanisms:
 2. **Route-conditioned geodesic shaping.** The potential field routes via the
    commanded corridor, making the wrong corridor a dead-end pocket whose
    gradient points back out, with slopes bounded so no region outpays the
-   correct route. Four unit tests assert exactly these properties — which is
-   why the field could be trusted when training results were ambiguous.
+   correct route. Five unit tests assert exactly these properties — downhill
+   from the start, own-mouth preference, commanded-corridor descent, bounded
+   slope, wrong-corridor pocket — which is why the field could be trusted
+   when training results were ambiguous.
 
 **Gate: PASS.** Canonical spawns, both directions: obedience 0.960 / 0.985,
-success 0.935 / 0.895. Under ±0.5 rad spawn-yaw jitter: 0.97 / 0.91
-obedience, 0.915 / 0.835 success.
+success 0.935 / 0.895. (A constant corridor command would score 0.5
+obedience.) Under ±0.5 rad spawn-yaw jitter: 0.97 / 0.91 obedience,
+0.915 / 0.835 success.
+
+> **[FIGURE — Stage 1.5 obedience gate]**
+> `plots/stage15/obey_gate_curves.png`. Source: `runs/route_obey_v6/cont.json`.
 
 **Composition check** — the full pipeline with a supervised decoder, run
 before the unsupervised one was attempted:
@@ -350,7 +368,9 @@ held-out probe accuracy 1.000 · decode accuracy 1.000
 success 0.996 (255/256) · hazard steps 0.00
 ```
 
-This established that the pipeline is sound, and isolated the remaining
+The 1.000 probe is a **slab-side** logistic fitted on scout-at-post frames
+during this eval — not the 0.935 free-pose visibility probe of §8.1. This
+established that the pipeline is sound, and isolated the remaining
 question to exactly one thing: **can reward replace the probe's
 supervision?**
 
@@ -381,7 +401,14 @@ trainable module is a 4,483-parameter route head: message (66) → 64 hidden →
 uniform with no prior on either corridor. One categorical decision per
 episode, committed at step 2, credited with the whole episode's return. The
 head's mistakes are priced by the hazard — the physical fact of the world —
-not by an instructor that already knows the answer.
+not by an instructor that already knows the answer. The executor still
+consumes the navigator's camera through a second copy of the same frozen
+PixelEncoder — the head is latent-only; the body is not.
+
+> **[FIGURE 12 — The race v8 pipeline]**
+> `plots/diagrams/fig_tier2_pipeline.png` — scout camera and navigator camera
+> both enter Encoder E (shared frozen weights); only the route head is
+> trained; episode return is the only gradient. Source: `rl/plot_fig_pipeline.py`.
 
 Why step 2 rather than step 0: camera frames for a just-reset environment are
 stale for the first few rendered steps; the composition eval measured a
@@ -397,13 +424,14 @@ floor in `runs/race_v8b/`):
 | z_t (thesis) | 0.986 | 0.998 | 1.000 | 1.000 | 1.000 | **0.997 ± 0.006** | 0.00 | 1.000 |
 | oracle (ceiling) | 0.996 | 0.990 | 0.990 | 0.984 | 0.982 | 0.988 ± 0.006 | 0.00 | 1.000 |
 
-- **Zero seed overlap. Exact one-sided rank test at 5 vs 5: p = 0.004.**
+- **Zero seed overlap. Exact one-sided rank test at 5 vs 5: p = 0.004**
+  (1/C(10,5); H1 was directional: z_t > none).
 - The floor lands at 0.496. Given a content-free wire, the head can only
   learn a constant corridor preference, so it pays the hazard on half the
   episodes. Its hazard steps vary by seed only because which constant it
   settles on determines how much of the slab it clips.
-- z_t is statistically indistinguishable from a noiseless ground-truth bit
-  and numerically edges it on four of five seeds.
+- z_t numerically edges a noiseless ground-truth bit on four of five seeds.
+  No equivalence test was run.
 - Obedience 1.000 everywhere — the frozen controller never drifts, so what is
   being measured is the route decision.
 - Zero episodes discarded by the numerical guard across all runs.
@@ -425,17 +453,20 @@ Two post-mortems worth keeping, both of which cost real runs:
 
 > **[FIGURE 9 — Race v8 headline]** `plots/race_v8/v8_race_seed_bars.png` —
 > final route-optimality by condition, per-seed dots over condition means,
-> floor line at 0.50. The visual point is zero overlap. Source:
-> `runs/race_v8/*.json`, `runs/race_v8b/*.json`.
+> 5 seeds, anchored-`none` floor. The visual point is zero overlap. Source:
+> `runs/race_v8/{z_t,oracle}*.json` + `runs/race_v8b/{none,z_t,oracle}*.json`
+> (same pooling as Figure 11c; original zero-wire `none` excluded).
 
 > **[FIGURE 10 — Race v8 learning curves]**
-> `plots/race_v8/v8_race_curves.png` (+ `v8_entropy_curves.png`). Source:
-> `runs/race_v8/*.csv`.
+> `plots/race_v8/v8_race_curves.png` (+ `v8_entropy_curves.png`). 5 seeds.
+> Source: the same JSON pooling as Figure 9 (`curve` field, last-500 readout
+> in the JSON, not the last CSV row).
 
-> **[FIGURE 11 — Hazard contacts]** `plots/race_v8/v8_hazard_bars.png`, with
-> the m7e no-comms floor (~21–25) as a reference line: both informed
-> conditions sit at exactly 0.00 while a fully-trained blind policy pays the
-> full price. Source: `runs/race_v8/*.json` + `runs/archive/m7_navsolo/`.
+> **[FIGURE 11 — Hazard contacts]** `plots/race_v8/v8_hazard_bars.png`.
+> Informed conditions sit at 0.00; the none floor clips ≤ 0.64. The m7e
+> no-comms crossing (~21–25 steps, a different agent) is the text reference
+> for what a blind policy pays — it is not drawn, because it would squash
+> this axis. Source: same pooling as Figure 9.
 
 ### 8.7 WP1 — deterministic evaluation under corruption (formerly caveat 4)
 
@@ -445,32 +476,40 @@ actions, head argmax) and re-measures under five wire conditions: intact,
 zero-content (anchor kept), zero-wire, shuffled sender (each env receives
 another env's real message), and Gaussian-noise content.
 
-| Mode | z_t heads (3 seeds) | oracle head | Pre-registered |
+| Mode | z_t heads (3 seeds) | oracle head (n=1) | Coded gate |
 |---|---|---|---|
-| intact | **1.000 / 1.000 / 1.000** | 1.000 | ≈ training final |
-| zero content | 0.496–0.527 | 0.547 | chance |
-| zero wire | 0.496–0.555 | 0.488 | chance |
-| shuffled sender | 0.445–0.520 | 0.547 | chance |
-| gaussian noise | 0.410–0.484 | 0.555 | chance |
+| intact | **1.000 / 1.000 / 1.000** | 1.000 | ≥ 0.95 |
+| zero content | 0.496–0.527 | 0.547 | \|x − 0.5\| ≤ 0.10 |
+| zero wire | 0.496–0.555 | 0.488 | \|x − 0.5\| ≤ 0.10 |
+| shuffled sender | 0.445–0.520 | 0.547 | \|x − 0.5\| ≤ 0.10 |
+| gaussian noise | 0.410–0.484 | 0.555 | \|x − 0.5\| ≤ 0.10 |
 
 Executor obedience 1.000 in every mode; worst hazard 0.88 steps — a
-balk-clip, never a ~20-step crossing. **All pre-registered checks pass.** The
-decision lives in the message content, and only there.
-
-One estimator lesson, diagnosed on the first run and worth keeping: a
-completion-stream counter is length-biased. Correct decisions finish in ~206
-steps, wrong ones in ~380+, so fast (correct) episodes are over-collected and
-corrupted modes read 0.55–0.64. The fix — each env contributes exactly its
-first K episodes, equal weight — collapsed every corrupted mode to clean
-chance. Artifacts: `runs/diag/eval_race_head_*.{json,log}`.
+balk-clip, never a ~20-step crossing. Seeds 4–5 were not greedily evaluated.
+The coded checks pass. Two amendments relative to the original work spec,
+both documented in `spike/eval_race_head.py`: the equal-weight estimator
+replaced a length-biased completion-stream counter after the first run
+(corrupted modes had read 0.55–0.64), and the hazard expectation was rewritten
+from "crossings" to "balk-clips" after observing that this executor refuses
+the slab. The ±0.10 chance band is the coded threshold, not a test of
+equivalence to 0.5. The decision lives in the message content, and only
+there. Artifacts: `runs/diag/eval_race_head_*.{json,log}`.
 
 > **[FIGURE 11b — Corruption controls]**
-> `plots/race_v8/v8_corruption_bars.png`.
+> `plots/race_v8/v8_corruption_bars.png`. 3 z_t seeds + 1 oracle seed; 256
+> episodes/mode. Source: `runs/diag/eval_race_head_*.json`.
 
 ### 8.8 WP2 — the complete condition sweep (formerly caveat 3)
 
 All remaining conditions raced under the identical v8 protocol (frozen
-executor, bandit head, 6,000 episodes, 3 seeds each), in `runs/race_v8b/`:
+executor, bandit head, 6,000 episodes), in `runs/race_v8b/`. These are
+**3-seed** results; do not read them at the 5-seed confidence of the
+z_t/oracle/none headline.
+
+> **[FIGURE 2 — One channel, six message contents]**
+> `plots/diagrams/fig_tier2_conditions.png` — shared 66-float wire, every
+> raced row carrying its measured route-optimality (n labelled per row).
+> Source: `rl/plot_fig2_conditions.py` from the same pooling as Figure 11c.
 
 | Condition | Wire | Seeds | Route-optimality |
 |---|---|---|---|
@@ -498,8 +537,9 @@ executor, bandit head, 6,000 episodes, 3 seeds each), in `runs/race_v8b/`:
   radio-feasible; it is easier to recruit.**
 
 > **[FIGURE 11c — The seven-condition sweep]**
-> `plots/race_v8/v8b_sweep_bars.png` — floors, percept conditions, and
-> ceilings in one frame, the raw_obs collapse annotated rather than hidden.
+> `plots/race_v8/v8b_sweep_bars.png` — floors (3-seed position/kinematic; 5-seed
+> none), percept conditions, and ceilings in one frame, the raw_obs collapse
+> annotated rather than hidden. 2/3 vs 5/5 is unequal n.
 
 ---
 
@@ -520,9 +560,10 @@ the renderer, by the same scene builder the policy trains in.
 decoding. No probe target, no label, no auxiliary loss, no alignment layer,
 no gradient into the encoder. The episode return is a single scalar that
 names nothing; the head had to invert it. It recovered the decisive bit from
-a frozen, task-agnostic representation to within noise of a noiseless oracle
-— now at 5 seeds, p = 0.004, and confirmed by greedy evaluation under
-corruption controls (§8.7).
+a frozen, task-agnostic representation and numerically edged a noiseless
+oracle on four of five seeds — now at 5 seeds, p = 0.004 vs the floor, with
+greedy evaluation under corruption controls on the first three z_t seeds plus
+one oracle (§8.7).
 
 **C2 under pixels (decodability half).** The predicted latent ẑ is as
 recruitable as z_t (§8.8). The *latency* half of C2 — "prediction wins when
@@ -533,12 +574,12 @@ latency exists and episodes are ~100× cheaper.
 floor (§8.8). Tier 1's falsifier named position-sharing explicitly; it is now
 measured, not argued.
 
-Causality here is architectural, not inferential. The route head's only
-input is the message. Unlike Tier 1, there is no counterfactual needed to
-rule out the policy solving the task from its own view — it cannot see its
-own view. The corruption suite (§8.7) additionally converts the structural
-argument into a measured one: destroy the content, keep everything else, and
-performance falls to chance.
+Causality here is architectural, not inferential. The route **head's** only
+input is the message. The frozen executor still sees the navigator camera
+through a second PixelEncoder; what the head cannot do is solve the corridor
+choice from ego pixels, because it is not given them. The corruption suite
+(§8.7) additionally converts that structural argument into a measured one:
+destroy the content, keep everything else, and performance falls to chance.
 
 ### The caveats, in the order a reviewer will raise them
 
@@ -558,12 +599,13 @@ performance falls to chance.
    Tier 2 does not reproduce Tier 1's joint-learning result on pixels; it
    isolates the representation question and answers that cleanly. A reviewer
    asking "does this still learn end-to-end?" gets an honest "not yet, and
-   here is the 14σ arithmetic explaining why not."
+   here is the 13σ arithmetic explaining why not."
 3. ~~No position or kinematic condition was raced.~~ **Resolved** (§8.8):
    both at the floor, 3/3 seeds each.
 4. ~~Training averages, not a frozen-head deterministic evaluation.~~
    **Resolved** (§8.7): greedy evaluation with shuffle, noise, and zeroing
-   controls; intact 1.000 on every seed, all corruptions at chance.
+   controls on 3 z_t seeds + 1 oracle; intact 1.000 on every evaluated seed,
+   all corruptions inside the coded ±0.10 band.
 5. **One scene, one map seed.** The slab side is randomized per episode, but
    the corridor geometry, the baffles, and the scout's vantage are fixed.
    Generality across occlusion structures is unproven. (Seed count is no
@@ -589,7 +631,7 @@ performance falls to chance.
 |---|---|---|
 | Occlusion does not survive extrusion | High → **materialized, resolved** | 10 hazard pixels leaked to the choice point. Staggered baffles designed against the measurement; gate passes at 0 px on both choice points, both slab placements. Gate and env share one scene builder, so this cannot silently regress. |
 | JEPA recipe fails to transfer to pixels | Medium → did not materialize | Tier 1's class-weighted reconstruction fix was ported pre-emptively rather than rediscovered. All four gates passed on the first checkpoint. |
-| Latent carries the info but the policy can't use it | High → **materialized, resolved, re-scoped** | Six race generations. Root cause was not the encoder — a noiseless oracle bit failed identically. Real cause: continuous-action exploration never samples the alternative route (0/128; 14σ). Resolved by the Phase 3.5 decomposition. |
+| Latent carries the info but the policy can't use it | High → **materialized, resolved, re-scoped** | Six race generations. Root cause was not the encoder — a noiseless oracle bit failed identically. Real cause: continuous-action exploration never samples the alternative route (0/128; 13σ). Resolved by the Phase 3.5 decomposition. |
 | Exploration fixes distort the policy gradient | Medium → managed | AR(1) has marginal N(μ, σ) per step, so ratios stay exact when actions are re-scored under the σ they were drawn with. v7 nonetheless failed for a different reason (1/σ² attenuation) — which is why v8 abandoned noise-based coverage for categorical structure. |
 | Message recruited for the wrong function | Unlisted → materialized, quantified | v7's oracle was strongly message-driven (2.69 vs 0.23) but gated advance-vs-balk inside the chosen corridor; corridor choice unchanged in 100% of rollouts. Directly motivated making route choice a first-class decision variable. |
 | Separation reflects something other than decision-time message use | Low → **structurally excluded, now also measured** | The v8 head's only input is the message; no ego pathway exists. The corruption suite (§8.7) measured it anyway: intact 1.000, shuffle/noise/zero at chance. |
@@ -608,16 +650,17 @@ core proven on raw pixels, the message validated before freezing, the
 executor built and gated to obey a route command, the decisive race run to a
 clean verdict, and that verdict then hardened: **a frozen self-supervised
 perceptual latent, broadcast over a physics-accurate pixel pipeline, is
-decodable from task reward alone to within noise of a noiseless oracle —
-0.997 ± 0.006 against a 0.496 ± 0.020 floor, 5 seeds, zero overlap,
-p = 0.004, zero hazard contacts — while position, kinematics, silence, and
-every corrupted wire sit at chance, and the raw-pixel firehose proves harder
-to learn from than the 66-float latent it was supposed to embarrass.**
+decodable from task reward alone, numerically edging a noiseless oracle on
+4/5 seeds — 0.997 ± 0.006 (sd) against a 0.496 ± 0.020 (sd) floor, 5 seeds,
+zero overlap, p = 0.004 vs the floor, zero hazard contacts — while position,
+kinematics, silence, and every corrupted wire sit at chance, and the
+raw-pixel firehose proves harder to learn from than the 66-float latent it
+was supposed to embarrass.**
 
 The intellectual centre of the tier is not that number. It is the diagnosis
 that produced it: Tier 1's gridworld action space was silently doing the work
 of temporal abstraction. Once that abstraction was removed, no amount of
-tuning could recover the result, because the alternative route was a 14σ
+tuning could recover the result, because the alternative route was a 13σ
 event the optimizer literally never observed. Restoring it as architecture
 recovered the finding immediately. That is a lesson about porting MARL
 communication results to continuous control generally — and it is the part
@@ -663,24 +706,29 @@ control. The lab has already demonstrated zero-shot sim-to-real MARL and
 TensorRT inference at 20 ms on this hardware — every hard deployment problem
 has a working precedent on this exact platform.
 
-The architectural bet Tier 2 was built to test is that **only the encoder
-must cross the reality gap**, because everything downstream consumes latents
-rather than pixels:
+The architectural bet was that **only the encoder must cross the reality
+gap**, because everything downstream would consume latents rather than pixels.
+That is not the implementation. Two pixel stacks share one frozen
+PixelEncoder: the scout's camera on the way onto the wire, and the
+navigator's camera inside the executor. The route head is latent-only
+(4,483 parameters, re-fittable in a session). The executor is not
+modality-agnostic.
 
 ```
-     ┌──────────────── the reality gap ────────────────┐
-     │                                                 │
-real camera ──► ENCODER ──► latent ──► head ──► executor ──► cmd_vel
-                   ▲                     ▲          ▲
-                   │                     │          │
-           must transfer or       4.5k params,   frozen,
-           be re-fit on real      re-fittable    modality-
-           frames                 in a session   agnostic
+     ┌────────────── the reality gap (twice) ──────────────┐
+     │                                                     │
+real scout cam ──► ENCODER ──► latent ──► head ──► route bit
+real nav  cam ──► ENCODER ──► z_ego  ──► executor ──► cmd_vel
+                   ▲                         ▲
+                   │                         │
+           must transfer or           frozen, but still
+           be re-fit on real          a pixel stack
+           frames
 ```
 
-The v8 result is the evidence for that bet: the task-coupled module is 4,483
-parameters recruited from reward alone — the kind of thing you re-fit on
-hardware in a session, not a training campaign.
+The v8 result is evidence that the *task-coupled* module is 4,483 parameters
+recruited from reward alone — re-fittable on hardware in a session. It is not
+evidence that the executor is latent-only.
 
 **The gating measurement has now been run, and the encoder does not
 transfer.** The slab-side probe is fitted on sim latents and persisted
@@ -705,7 +753,7 @@ achievable over every possible threshold is also 0.636, so recalibration
 cannot recover the bit. Applying the pre-registered rule to the
 chance-corrected statistic gives **no transfer**, and the ≤0.6 remedy is the
 one that applies. This is the same majority-baseline correction already
-applied to the hazard-visible probe in §5 (0.935 against a 0.857 majority);
+applied to the hazard-visible probe in §8.1 (0.935 against a 0.857 majority);
 the transfer number simply had not received it. Note also that at 7 present /
 4 absent the rule's 0.6 boundary is decided by the capture set's class
 balance rather than by the encoder — one additional negative frame would have
@@ -730,6 +778,59 @@ on (or the probe must be retrained for small-object sensitivity), *and* the
 JEPA data needs appearance randomization to remove the background
 displacement. Until both are done the handoff cannot be scored as a clean
 test of the architectural bet.
+
+**Two follow-up measurements (19 Aug evening) sharpen the diagnosis in the
+encoder's favour.** First, the *latent* is not the small-object bottleneck:
+a hazard-visibility probe fitted directly on sim latents with balanced class
+weighting separates 2–8 %-coverage hazards from hazard-free frames at **AUC
+0.986** on held-out streams (`spike/gate_probe_coverage.py`, gate A). The
+deployed slab-side probe direction simply never used that information.
+Second, the hazard bit **survives the reality gap inside the latent**:
+refitting the 65-parameter probe on the real handoff latents recovers
+**0.857 balanced accuracy leave-one-out from just 11 frames** (misses:
+`red_100`, `red_r_280`), against 0.500 for the sim-fitted direction, while a
+trivial raw-pixel red-fraction rule scores 1.000. The encoder degrades the
+bit but does not destroy it — which makes the pre-registered fallback
+("re-fit the probe on real frames in a session") the shortest path to a
+working chain. Tooling for that session now exists:
+`spike/refit_probe_real.py` (stratified-CV refit with a balanced-accuracy
+≥ 0.90 gate, emits a drop-in probe checkpoint) and
+`handoff/CALIBRATION_BRIEF_20260819.md` (the robot-side capture protocol:
+~160 frames, ≥ 40 % negatives, distance/lateral/lighting-stratified, with a
+held-out validation session). In parallel, `rl/train_jepa.py
+--appearance-dr` now trains the encoder under seg-mask-guided appearance
+randomization (per-sample backdrop tint/texture/photometrics with recon
+targets unchanged) to attack the +9.5 background displacement at the source;
+gates A/B/C of `spike/gate_probe_coverage.py` are the pre-registered
+comparison between encoder candidates.
+
+**Appearance randomization works, and the texture model is what decides it**
+(19 Aug evening, all runs 10 epochs on the unchanged realcam20 dataset,
+CPU-trained, all pass the Stage-A sim gates):
+
+| encoder | sim 2–8 % AUC (gate A) | real zero-shot AUC | real refit LOO (gate C) | latent dist |
+|---|---|---|---|---|
+| baseline `jepa_realcam20` | 0.986 | 0.786 | 0.857 FAIL | 1.84 |
+| DR v1: shared smooth texture field | 0.976 | 0.714 | 0.661 FAIL | 2.47 |
+| DR v2: per-class two-band texture | 0.963 | **0.964** | **0.929 PASS** | 1.76 |
+
+v1 (one smooth 8×8 field shared by floor and wall) made everything *worse*
+than no randomization — the lab's carpet is pixel-level speckle, and an
+augmentation that cannot produce it buys nothing but lost capacity. v2 gives
+each backdrop class its own low- plus high-frequency field, and the
+sim-fitted probe direction then *ranks* the real frames at 0.964 AUC — one
+inversion in 28 pairs, the green pad at 2.8 m against the red pad
+offset-left at 2.8 m. Zero-shot gate B still fails on the operating point
+(all logits above the sim threshold), and a bias-only calibration from
+pad-free frames is not robust because the clear-frame logits sit within 0.3
+of the hardest positives; the full 65-parameter refit on the calibration set
+remains the protocol. Two honesty caveats: the augmentation design was
+iterated against the same 11 frames that score it, which is why the
+calibration brief demands held-out validation sessions; and unguarded tint
+draws can produce red-tinted walls (a hazard-hue collision), so v3 — running
+as of this writing — adds a red-hue guard on backdrop tints. The champion by
+gates A+C ships as the encoder candidate; the executor still consumes raw
+pixels through its own encoder and is untouched by all of this.
 
 The exported executor is also not usable on real imagery as-is: across the
 same 13 frames it emits only 2 distinct actions with 97 % of action
@@ -759,6 +860,18 @@ converged, with success rising +0.13/M over the final 30 % before rolling
 over in the last 10 % as approximate KL collapsed from 0.050 to 0.005. The
 next round should attack the objective and the trust-region schedule, not add
 seeds or steps.
+
+Round 5 is specified and ready to launch (`spike/launch_round5.sh`), one
+lever per variant: the trainer now snapshots the smoothed joint
+obedience×success peak (`*.pt.best` — end-of-run selection is what discarded
+every previous peak), LR annealing is off and the budget is 12 M so the
+recovery phase can finish; variant A keeps the r2A objective to isolate
+selection+schedule, variant B replaces the global wrong-corridor
+penalty/abort with a success bonus gated on obedience
+(`rew_success_obedient_only` in `chokepoint/env.py`) so the goal-reaching
+gradient is never suppressed. Blocked only on the machine's wedged CUDA
+state (new contexts fail system-wide; a `nvidia_uvm` reload or reboot fixes
+it but kills the two running jobs owned by another user).
 
 One comparison to retire: the Stage 1.5 figure of 0.935/0.895 (`cont.pt`) is
 not a valid headroom target for these runs. It predates the 20°-FOV camera
@@ -794,22 +907,23 @@ as a standalone methods contribution.
 | 7 | The exploration collapse — the decision, the arithmetic, the five measured settings | **done** | `plots/diagnostics/fig7_exploration_collapse.png` (parametrics: `fig7b_exploration_sweep.png`) — `rl/plot_diagnostics.py` from `runs/diag/exploration*.log` |
 | 8 | Recruited but misused — v7 decay + the lie test | **done** | `plots/diagnostics/fig8_v7_recruited_misused.png` — `rl/plot_diagnostics.py` from `runs/race_v7/*.csv`, `runs/diag/route_choice_v7oracle.log` |
 | 8b | The composition check — the frozen chain, its one supervised link | **done** | `plots/diagnostics/fig8b_composition_check.png` — `rl/plot_fig8b_composition.py` from `runs/route_obey_v6/eval_pixels_to_route.log` |
-| 9 | Race v8 headline — per-seed dots, floor line | **done** | `plots/race_v8/v8_race_seed_bars.png` |
-| 10 | Race v8 learning curves + entropy | **done** | `plots/race_v8/v8_race_curves.png`, `v8_entropy_curves.png` |
-| 11 | Hazard contacts vs the m7e no-comms floor | **done** (floor line pending) | `plots/race_v8/v8_hazard_bars.png` |
+| 9 | Race v8 headline — per-seed dots, 5 seeds, anchored none | **done** | `plots/race_v8/v8_race_seed_bars.png` — `rl/plot_v8.py` headline pooling (`race_v8b/*.json` + `race_v8/{z_t,oracle}*.json`) |
+| 10 | Race v8 learning curves + entropy | **done** | `plots/race_v8/v8_race_curves.png`, `v8_entropy_curves.png` — same 5-seed pooling |
+| 11 | Hazard contacts (v8 scale; m7e ~21–25 is a text reference, not a line) | **done** | `plots/race_v8/v8_hazard_bars.png` — same pooling |
 | 11b | Corruption controls (WP1) | **done** | `plots/race_v8/v8_corruption_bars.png` |
 | 11c | Seven-condition sweep (WP2) | **done** | `plots/race_v8/v8b_sweep_bars.png` |
 | 12 | Pipeline schematic, 4,483-param trainable surface highlighted | `plots/diagrams/fig_tier2_pipeline.png` | `rl/plot_fig_pipeline.py`: closed loop through the world, episode return drawn as the only gradient, the two absent pathways named |
 | — | Stage 1.5 obedience gate | **done** | `plots/stage15/obey_gate_curves.png` |
 
 Every figure the report cites is now rendered. Diagrams still drafted as ASCII
-inline (§7.2 baffle before/after, §8.2 diagnostic chain, §11 reality gap) are
+inline (§7.2 baffle before/after, §8.2 diagnostic chain, §10 reality gap) are
 narrative aids rather than results; the baffle before/after is now also a
 measurement in Figure 3, so §7.2's sketch is redundant with it.
 
-Updated 2026-08-10: figures 2b, 3, 4, 7, 8 rendered
+Updated 2026-08-19: figures 2b, 3, 4, 7, 8 rendered
 (`rl/plot_diagnostics.py`, `rl/plot_fig3_occlusion.py`,
 `rl/plot_fig2b_throughput.py`), and two prose-only numbers turned into
 committed artifacts — the throughput benchmark (`runs/spike/fps_benchmark.log`)
 and the pre-baffle 10 px leak (`runs/gate/occl_s2_nobaffle.json`, via the new
-`--no_baffles` diagnostic path).
+`--no_baffles` diagnostic path). Headline race figures pool the 5-seed
+anchored protocol rather than the superseded 3-seed zero-wire `none`.

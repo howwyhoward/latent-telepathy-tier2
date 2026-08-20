@@ -4,12 +4,11 @@ Same visual language as Tier 1's rl/plot_m10.py — thesis condition in red,
 controls in blue/gray, per-seed dots over translucent mean bars, the `none`
 floor as a dashed reference — so the two tiers' figures read as one series.
 
-Reads the per-run JSONs written by the trainers:
+Reads the per-run JSONs written by the trainers. Default headline pool is
+the report table: anchored `none` from `runs/race_v8b/`, `z_t`/`oracle`
+seeds 1-3 from `runs/race_v8/` plus 4-5 from v8b. Original v8 `none`
+(whole wire zeroed) is excluded.
 
-  runs/race_v8/{oracle,z_t,none}[_s{2,3}].json   (rl/train_race_route.py)
-  runs/route_obey_v6/cont.json                   (rl/train_route_obey.py)
-
-Usage:
     python rl/plot_v8.py --out-dir plots
 """
 
@@ -59,6 +58,29 @@ def load_runs(pattern):
         runs[d["args"]["condition"]].append(d)
     if not runs:
         raise SystemExit(f"no run JSONs matched: {pattern}")
+    return runs
+
+
+HEADLINE_GLOBS = (
+    "runs/race_v8b/*.json",
+    "runs/race_v8/z_t*.json",
+    "runs/race_v8/oracle*.json",
+)
+
+
+def load_headline():
+    """5-seed z_t/oracle plus the anchored none floor.
+
+    Original v8 none (whole wire zeroed) stays out: superseded protocol.
+    """
+    runs = defaultdict(list)
+    for pat in HEADLINE_GLOBS:
+        for fp in sorted(glob.glob(pat)):
+            with open(fp) as f:
+                d = json.load(f)
+            runs[d["args"]["condition"]].append(d)
+    if not runs:
+        raise SystemExit(f"no run JSONs matched: {HEADLINE_GLOBS}")
     return runs
 
 
@@ -325,7 +347,8 @@ def plot_obedience(json_path, out):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--runs", default="runs/race_v8/*.json")
+    p.add_argument("--runs", default=None,
+                   help="glob override; default is the 5-seed headline pool")
     p.add_argument("--obey-json", default="runs/route_obey_v6/cont.json")
     p.add_argument("--out-dir", default="plots")
     args = p.parse_args()
@@ -335,7 +358,10 @@ def main():
     obey_dir = os.path.join(args.out_dir, "stage15")
     os.makedirs(race_dir, exist_ok=True)
     os.makedirs(obey_dir, exist_ok=True)
-    runs = load_runs(args.runs)
+    # Default matches the report table: anchored none from v8b, z_t/oracle
+    # seeds 1-3 from v8 plus 4-5 from v8b. Passing --runs restores a raw glob.
+    headline = load_headline()
+    runs = load_runs(args.runs) if args.runs else headline
     for c, rs in runs.items():
         print(f"{c}: {len(rs)} seeds, route_opt {[round(r['route_opt'], 3) for r in rs]}")
 
@@ -351,18 +377,7 @@ def main():
     plot_corruption("runs/diag/eval_race_head_*.json",
                     f"{race_dir}/v8_corruption_bars.png")
 
-    # WP2 sweep: v8b runs (all conditions incl. the anchored none floor and
-    # headline seeds 4-5) pooled with v8's z_t/oracle seeds 1-3. v8's original
-    # none (whole wire zeroed) stays out: same result, superseded protocol.
-    sweep = defaultdict(list)
-    for pat in ("runs/race_v8b/*.json", "runs/race_v8/z_t*.json",
-                "runs/race_v8/oracle*.json"):
-        for fp in sorted(glob.glob(pat)):
-            with open(fp) as f:
-                d = json.load(f)
-            sweep[d["args"]["condition"]].append(d)
-    if sweep:
-        plot_sweep(sweep, f"{race_dir}/v8b_sweep_bars.png")
+    plot_sweep(headline, f"{race_dir}/v8b_sweep_bars.png")
 
     plot_obedience(args.obey_json, f"{obey_dir}/obey_gate_curves.png")
 

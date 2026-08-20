@@ -1,0 +1,13 @@
+device: cpu
+loaded 204800 frames (1600 steps x 128 streams) in 6.9s
+transitions: train 175502  val 4096
+training...
+epoch 0 step    200  loss 2.1861 (inv 0.0112 val_inv 0.0109 var 0.749 cov 8.020 rec 1.105)  mean_std 0.553  eff_rank  6.5/64
+epoch 1 step    400  loss 1.4096 (inv 0.0385 val_inv 0.0304 var 0.204 cov 12.641 rec 0.661)  mean_std 0.821  eff_rank 11.5/64
+epoch 1 step    600  loss 1.0474 (inv 0.0322 val_inv 0.0326 var 0.161 cov 8.471 rec 0.516)  mean_std 0.795  eff_rank 14.8/64
+epoch 2 step    800  loss 0.9036 (inv 0.0425 val_inv 0.0358 var 0.024 cov 9.626 rec 0.453)  mean_std 0.857  eff_rank 18.0/64
+epoch 2 step   1000  loss 0.7781 (inv 0.0438 val_inv 0.0414 var 0.073 cov 6.179 rec 0.415)  mean_std 0.832  eff_rank 21.2/64
+epoch 3 step   1200  loss 0.6643 (inv 0.0654 val_inv 0.0546 var 0.047 cov 5.693 rec 0.324)  mean_std 0.825  eff_rank 23.6/64
+epoch 4 step   1400  loss 0.5968 (inv 0.0570 val_inv 0.0538 var 0.037 cov 4.690 rec 0.315)  mean_std 0.836  eff_rank 25.2/64
+epoch 4 step   1600  loss 0.5434 (inv 0.0552 val_inv 0.0595 var 0.017 cov 4.499 rec 0.292)  mean_std 0.838  eff_rank 27.1/64
+epoch 5 step   1800  loss 0.5084 (inv 0.0501 val_inv 0.0560 var 0.005 cov 4.782 rec 0.262)  mean_std 0.888  eff_rank 28.5/64

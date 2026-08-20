@@ -11,7 +11,7 @@ This trainer closes the loop with the smallest possible learner. The executor
 is FROZEN (deterministic mean actions). The only trainable module is a route
 head: message -> 2 logits, sampled ONCE per episode, credited with the whole
 episode's return — a contextual bandit. Exploration of the alternative route
-now costs one categorical sample instead of a 14-sigma Gaussian event, which
+now costs one categorical sample instead of a 13-sigma Gaussian event, which
 is the entire point of the decomposition.
 
 Conditions (anchored, matched 66-float wire unless noted):

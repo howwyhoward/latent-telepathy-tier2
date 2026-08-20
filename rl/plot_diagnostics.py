@@ -779,7 +779,7 @@ def plot_v7(race_dir: Path, diag_dir: Path, out: Path):
         for i, (rk, rlab) in enumerate(rows):
             c = lie[ck][rk]
             chose_bottom = c["to_bottom"]
-            fill = plt.get_cmap("RdYlGn")(0.12 + 0.76 * c["success"])
+            fill = plt.get_cmap("Blues")(0.18 + 0.72 * c["success"])
             ax_r.add_patch(plt.Rectangle((j, 1 - i), 1, 1, facecolor=fill,
                                          edgecolor="white", lw=3, alpha=0.55))
             ax_r.text(j + 0.5, 1 - i + 0.66,

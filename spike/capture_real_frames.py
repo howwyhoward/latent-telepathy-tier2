@@ -5,9 +5,12 @@ a Jetson Orin NX, published via ROS2 (Ubuntu + Docker onboard). There is no
 DJI camera and no DJI SDK on this build.
 
 Two requirements that make the measurement mean something:
-  1. Capture RECTIFIED frames, through the exact OpenCV rectification that
-     will feed the deployed encoder — and rectify to the sim's 82.3-deg HFOV
-     pinhole, not the default 120. The rectification is part of the sensor.
+  1. Capture through the exact preprocessing that feeds the deployed encoder.
+     STALE-INSTRUCTION WARNING: this used to say "rectify to the sim's
+     82.3-deg pinhole"; since the 15 Aug realcam20 rebuild the sim matches the
+     MEASURED robot optics instead (54-deg lens, 32-deg effective HFOV over
+     the central 360x360 crop of 640x360, rotate 180). Use the handoff's
+     fov_check.py pipeline, no rectification beyond it.
   2. One invocation per session; the session folder name is the ground-truth
      label (slab_top_*, slab_bottom_*, background). Native resolution PNG,
      no resizing — preprocessing happens on the sim side.

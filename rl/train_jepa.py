@@ -63,12 +63,20 @@ def parse_args():
     p.add_argument("--recon-class-weight", type=float, default=10.0)
     p.add_argument("--val-streams", type=int, default=16,
                    help="streams held out for validation (of num_envs*2)")
+    # WP7 finding: the real-lab background alone displaces the slab-probe
+    # logit by ~9.5 (47x the hazard signal at deployment distances) because
+    # training saw exactly one appearance. Randomizing backdrop appearance
+    # per sample, with recon targets unchanged, forces the invariance.
+    p.add_argument("--appearance-dr", type=float, default=0.0,
+                   help="seg-guided appearance randomization strength "
+                        "(0 = off, 1 = full)")
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--eval-interval", type=int, default=200)
     p.add_argument("--min-std", type=float, default=1e-2)
     p.add_argument("--out", type=str, default="checkpoints/jepa_pixels.pt")
     p.add_argument("--log-csv", type=str, default=None)
     p.add_argument("--cpu", action="store_true")
+    p.add_argument("--threads", type=int, default=8)
     return p.parse_args()
 
 
@@ -80,6 +88,77 @@ def downsample_seg(seg: torch.Tensor) -> torch.Tensor:
     """
     k = seg.shape[-1] // SEG_RES
     return torch.nn.functional.max_pool2d(seg.float().unsqueeze(1), k).squeeze(1).long()
+
+
+# -- appearance randomization (WP7 sim-to-real fix) --------------------------
+
+BACKDROP_CLASSES = (0, 1)  # background (incl. floor) and wall
+
+
+def draw_appearance(bsz: int, strength: float, device) -> dict:
+    """One appearance draw per transition pair.
+
+    Lighting and surface appearance do not change between consecutive frames,
+    so the same draw must be applied to x_t and x_{t+1}; only the seg masks
+    differ with viewpoint.
+    """
+    def u(lo, hi, *shape):
+        return lo + (hi - lo) * torch.rand(*shape, device=device)
+
+    s = strength
+    k = len(BACKDROP_CLASSES)
+    # independent per-channel tints for floor/background vs wall: the lab
+    # has dark carpet under pink-tinted walls, the sim has uniform grey
+    tint_scale = 1.0 + u(-0.35 * s, 0.35 * s, bsz, k, 3)
+    tint_off = u(-0.12 * s, 0.12 * s, bsz, k, 3)
+    # Hue guard: never let the backdrop go red. A red-tinted wall teaches the
+    # encoder that red backdrop is plausible -- exactly the hazard confusion
+    # deployment cannot afford (the unguarded v1/v2 draws produced brick-red
+    # walls and scored worse on the real frames than no DR at all).
+    grey = 0.55
+    ch = grey * tint_scale + tint_off  # backdrop mid-grey after tint, (b,k,3)
+    excess = (ch[..., 0] - torch.maximum(ch[..., 1], ch[..., 2]) - 0.05
+              ).clamp(min=0)
+    tint_off[..., 0] -= excess
+    return {
+        "tint_scale": tint_scale,
+        "tint_off": tint_off,
+        # per-class two-band texture: the carpet is pixel-level speckle at
+        # 64x64 while walls vary smoothly, so each backdrop class gets its own
+        # low-frequency field plus an independent high-frequency component
+        # (the first DR attempt shared one smooth field and scored WORSE on
+        # the real frames than no DR at all)
+        "tex_amp_lo": u(0.0, 0.18 * s, bsz, k, 1, 1, 1),
+        "tex_lo": torch.randn(bsz, k, 1, 8, 8, device=device),
+        "tex_amp_hi": u(0.0, 0.12 * s, bsz, k, 1, 1, 1),
+        "tex_hi": torch.randn(bsz, k, 1, 64, 64, device=device),
+        # global photometrics: exposure, gamma, sensor noise
+        "gamma": torch.exp(u(-0.4 * s, 0.4 * s, bsz, 1, 1, 1)),
+        "gain": 1.0 + u(-0.3 * s, 0.3 * s, bsz, 1, 1, 1),
+        "noise_std": u(0.0, 0.03 * s, bsz, 1, 1, 1),
+    }
+
+
+def apply_appearance(x: torch.Tensor, seg_full: torch.Tensor, d: dict) -> torch.Tensor:
+    """x (B,3,64,64) in [0,1]; seg_full (B,64,64) class indices at full res.
+
+    Hazard/goal/agent pixels keep their identity (only global photometrics
+    touch them): the red pad's hue transfers, it is the backdrop that does
+    not, so that is what gets randomized.
+    """
+    out = x
+    for k, ci in enumerate(BACKDROP_CLASSES):
+        lo = torch.nn.functional.interpolate(
+            d["tex_lo"][:, k], size=x.shape[-2:], mode="bilinear",
+            align_corners=False)
+        tex = 1.0 + d["tex_amp_lo"][:, k] * lo + d["tex_amp_hi"][:, k] * d["tex_hi"][:, k]
+        m = (seg_full == ci).unsqueeze(1).float()
+        scale = d["tint_scale"][:, k].view(-1, 3, 1, 1)
+        off = d["tint_off"][:, k].view(-1, 3, 1, 1)
+        out = out * (1 - m) + (out * scale * tex + off) * m
+    out = d["gain"] * out.clamp(0.0, 1.0) ** d["gamma"]
+    out = out + d["noise_std"] * torch.randn_like(out)
+    return out.clamp(0.0, 1.0)
 
 
 # -- probes (Tier 1's run_probe, targets adapted to pixels) -----------------
@@ -152,7 +231,7 @@ def run_probes(encoder, train_rgb, train_seg, val_rgb, val_seg, device):
 
 def main():
     args = parse_args()
-    torch.set_num_threads(8)
+    torch.set_num_threads(args.threads)
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     device = torch.device("cuda" if torch.cuda.is_available() and not args.cpu else "cpu")
@@ -191,14 +270,20 @@ def main():
     )
     opt = torch.optim.Adam(params, lr=args.lr)
 
-    def fetch(idx: np.ndarray):
+    def fetch(idx: np.ndarray, augment: bool = False):
         """Gather a transition batch onto the GPU as float tensors."""
         x_t = torch.from_numpy(rgb[idx]).to(device).permute(0, 3, 1, 2).float() / 255.0
         x_n = torch.from_numpy(rgb[idx + streams]).to(device).permute(0, 3, 1, 2).float() / 255.0
         a_t = torch.from_numpy(action[idx]).to(device)
-        s_t = downsample_seg(torch.from_numpy(seg[idx]).to(device))
-        s_n = downsample_seg(torch.from_numpy(seg[idx + streams]).to(device))
-        return x_t, a_t, x_n, s_t, s_n
+        sf_t = torch.from_numpy(seg[idx]).to(device)
+        sf_n = torch.from_numpy(seg[idx + streams]).to(device)
+        if augment and args.appearance_dr > 0:
+            # recon targets stay the un-augmented seg: semantics must survive
+            # every appearance, which is the whole point
+            d = draw_appearance(len(idx), args.appearance_dr, device)
+            x_t = apply_appearance(x_t, sf_t, d)
+            x_n = apply_appearance(x_n, sf_n, d)
+        return x_t, a_t, x_n, downsample_seg(sf_t), downsample_seg(sf_n)
 
     vx_t, va_t, vx_n, _, _ = fetch(val_pairs)
 
@@ -217,7 +302,7 @@ def main():
         model.train()
         for start in range(0, len(order), args.batch_size):
             idx = train_pairs[order[start : start + args.batch_size]]
-            x_t, a_t, x_n, s_t, s_n = fetch(idx)
+            x_t, a_t, x_n, s_t, s_n = fetch(idx, augment=True)
 
             z_pred, z_target, z_t = model(x_t, a_t, x_n)
             inv = jepa_loss(z_pred, z_target)
@@ -308,6 +393,7 @@ def main():
                 "latent_dim": model.encoder.latent_dim,
                 "seg_classes": list(SEG_CLASSES),
                 "recon_coef": args.recon_coef,
+                "appearance_dr": args.appearance_dr,
             },
             "probe_metrics": metrics,
             "gates": gates,

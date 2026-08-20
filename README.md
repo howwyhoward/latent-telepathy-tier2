@@ -93,7 +93,7 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
     2. m7b (0.45): undertrained at 2M steps, still climbing at anneal end.
     3. m7c/d (0.55): hazard at -0.5/step made crossing cost 2x the success
        bonus — the policy rationally refused to cross (slab-side split
-       1.00/0.00). Fix: -0.05/step restores Tier 1's 20% ratio. Warm-starting
+       0.98/0.00). Fix: -0.05/step restores Tier 1's 20% ratio. Warm-starting
        across the reward change did NOT work (the refusing policy never
        samples the slab, so it never sees the new price); m7e retrained fresh.
 - **Phase 2 — JEPA on pixels**: DONE, all four pre-registered gates PASS.
@@ -110,13 +110,13 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
 - **Phase 3 — positive control, then reduced race** (4 conditions x 3 seeds).
   Six race generations returned nulls, ending with v6: warm-started from the
   mouth-curriculum trunk, a noiseless ground-truth slab bit (`oracle`) scored
-  0.44/0.53 against 0.50 for silence, at either discount. `spike/
+  0.44/0.53 against 0.51 for silence, at either discount. `spike/
   diag_exploration.py` found why, and it was not the encoder or the credit
   horizon. From the canonical start the navigator sampled the top corridor
   **0.00 of 128 episodes** at its trained noise, and still 0.00 at double it:
   reaching that mouth needs ~+1.3 of sustained lateral action over the ~30-step
-  decision window, and under iid noise the mean deviation across those steps
-  has std sigma/sqrt(30) ~ 0.09 — a 14-sigma event. Every race so far trained
+  decision window, and under iid noise at σ = 0.55 the mean deviation across
+  those steps has std sigma/sqrt(30) ~ 0.10 — a 13-sigma event. Every race so far trained
   on batches containing no alternative route, so no message could be recruited.
   Tier 1 never met this: one gridworld action moved a whole cell, making route
   exploration and action exploration the same thing.
@@ -181,10 +181,13 @@ Run everything long-lived inside `tmux` so it survives SSH disconnects.
   episode's return — a contextual bandit, which is exactly the exploration
   structure v1-v7 lacked. Conditions on the same anchored 66-float wire:
   oracle (ground-truth bit, ceiling), z_t (scout's frozen JEPA latent, the
-  thesis), none (zeros, floor). Route-optimality over 3 seeds:
-  **oracle 0.990-0.996, z_t 0.986-1.000, none 0.488-0.518**; z_t hazard 0.00,
+  thesis), none (zeros, floor). Route-optimality over 5 seeds:
+  **z_t 0.986-1.000 (mean 0.997 ± 0.006 sd), oracle 0.982-0.996,
+  none (anchored) 0.472-0.522 (mean 0.496 ± 0.020 sd)**; z_t hazard 0.00,
   executor obedience 1.000. Nobody told the head what the latent means — task
-  reward alone recovered the slab bit from it, to within noise of the oracle.
+  reward alone recovered the slab bit from it. The original 3-seed zero-wire
+  `none` (0.488-0.518) is superseded by the anchored floor; they agree to
+  within noise.
   Post-mortems worth keeping: Bessel-corrected std() on a 1-element remainder
   minibatch NaNs the update (three runs died before it was traced), and a
   bandit head wants lr ~3e-3, not the pixel-policy 3e-4 (which reads as
